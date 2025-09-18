@@ -58,7 +58,7 @@ nav{
     justify-content: space-evenly;
     align-items: center;
     
-   
+
 }
 
 .section-pasos__recuadros{
@@ -73,6 +73,28 @@ nav{
 .section-pasos__recuadros p{
     text-align: justify;
 }
+
+
+/****************************   CURSOS DESTACADOS  ********************/
+#cursos__titulo{
+    background-color: #7e9612;
+}
+.cursos{
+    background-color: #7e9612;
+    width: auto;
+    height: 80em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+.cursos__recuadro{
+    background-color: #15aed4;
+    width: 20em;
+    height: 20em;
+    border: 5px solid black;
+}
+
 
 
 
