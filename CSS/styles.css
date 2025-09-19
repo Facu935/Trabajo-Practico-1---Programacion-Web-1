@@ -18,11 +18,16 @@ header{
 }
 #logo{
     width: 10em;
-    margin-left: 2em;
+    margin-left: 5em;
+}
+#buscador{
+    height: 3em;
+    width: 40em;
 }
 #carrito{
     height: 5em;
     width: 5em;
+    margin-right: 5em;
 }
 /******************   NAV (y sliders)  ********************************************/
 nav{
