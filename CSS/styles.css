@@ -24,29 +24,34 @@ header{
     height: 5em;
     width: 5em;
 }
-/******************   NAV   ********************************************/
+/******************   NAV (y sliders)  ********************************************/
 nav{
     height: 3em;
     width: auto;
     background-color: #beca51;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .slider{
-    display: flex;
-    flex-direction: row;
-    background-color: #00032c;
-}
-.main__slider{
     height: 40em;
     width: auto;
-    
+    background-color: #00032c;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
+
 
 .icono_slider{
     height: 8em;
     width: 8em;
+}
+#icono_slider_IZQ{
+    transform: rotate(180deg);
 }
 /*****************    Pasos    ****************************************/
 .section-pasos{
@@ -78,14 +83,19 @@ nav{
 /****************************   CURSOS DESTACADOS  ********************/
 #cursos__titulo{
     background-color: #7e9612;
+    height: 4em;
+    text-align: center;
+    align-content: center;
 }
 .cursos{
-    background-color: #7e9612;
+    background-color: rgb(179, 136, 18);
     width: auto;
-    height: 80em;
+    height: 60em;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: center;
     
 }
 .cursos__recuadro{
@@ -93,8 +103,51 @@ nav{
     width: 20em;
     height: 20em;
     border: 5px solid black;
+    margin: 5em;
+    align-content: center;
+    text-align: center;
+}
+/****************************   Medios de Pago  ********************/
+
+.medios_de_pago{
+    background-color: #220400;
+    height: 30em;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+
 }
 
+.medios_de_pago__recuadros{
+    background-color: #9eaf04;
+    width: 15em;
+    height: 10em;
+    align-content: center;
+    text-align: center;
 
+}
 
+/****************************   Footer  ********************/
+
+footer{
+    width: auto;
+    height: 20em;
+    background-color: #01097a;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer_recuadros{
+    width: 30em;
+    height: 15em;
+    background-color: #9eaf04;
+    text-align: center;
+    align-content: center;
+}
 
