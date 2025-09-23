@@ -22,9 +22,6 @@ header{
     margin-left: 5em;
 }
 
-.header-div__buscador{
-   
-}
 
 #buscador{
     height: 3em;
@@ -65,7 +62,7 @@ header{
 }
 
 
-/******************   NAV (y sliders)  ********************************************/
+/******************   NAV  ********************************************/
 .navegation{
     height: 5em;
     width: auto;
@@ -83,7 +80,7 @@ header{
     font-weight: 700;
 }
 
-
+/******************  Slider  ********************************************/
 .slider{
     height: 40em;
     width: auto;
@@ -92,6 +89,7 @@ header{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    background-image:url(../IMG/Slider-Imagen1-Home.jpg)
 }
 
 
@@ -142,9 +140,8 @@ header{
     width: auto;
     height: 60em;
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: space-evenly;
-    flex-wrap: wrap;
     align-content: center;
     
 }
@@ -153,7 +150,7 @@ header{
     width: 20em;
     height: 20em;
     border: 5px solid black;
-    margin: 5em;
+    margin: 8em;
     align-content: center;
     text-align: center;
 }
