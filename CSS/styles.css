@@ -4,8 +4,15 @@
     font-family: sans-serif;
 }
 
+.titulos{
+    background-color: #45b5c4;
+    height: 4em;
+    text-align: center;
+    align-content: center;
+}
+
 header{
-    background-color: #888888;
+    background-color: #1693a5;
     height: 12em;
     display: flex;
     flex-direction: row;
@@ -66,7 +73,7 @@ header{
 .navegation{
     height: 5em;
     width: auto;
-    background-color: #beca51; 
+    background-color: #45b5c4; 
 }
 
 .navegation__items{
@@ -105,7 +112,7 @@ header{
 .section-pasos{
     height: 40em;
     width: auto;
-    background-color: #01097a;
+    background-color: #a0ded6;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -118,7 +125,7 @@ header{
     background-color: #8890ff;
     height: 20em;
     width: 30em;
-    border: 1em solid yellow;
+    border: 5px solid black;
     text-align: center;
     align-content: center;
 }
@@ -129,14 +136,9 @@ header{
 
 
 /****************************   CURSOS DESTACADOS  ********************/
-#cursos__titulo{
-    background-color: #7e9612;
-    height: 4em;
-    text-align: center;
-    align-content: center;
-}
+
 .cursos{
-    background-color: rgb(179, 136, 18);
+    background-color: #a0ded6;
     width: auto;
     height: 60em;
     display: flex;
@@ -157,7 +159,7 @@ header{
 /****************************   Medios de Pago  ********************/
 
 .medios_de_pago{
-    background-color: #220400;
+    background-color: #a0ded6;
     height: 30em;
     width: auto;
     display: flex;
@@ -170,6 +172,7 @@ header{
 
 .medios_de_pago__recuadros{
     background-color: #9eaf04;
+    border: 5px solid black;
     width: 15em;
     height: 10em;
     align-content: center;
@@ -182,19 +185,27 @@ header{
 footer{
     width: auto;
     height: 20em;
-    background-color: #01097a;
+    background-color: #1693a5;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
     justify-content: space-evenly;
+    align-items: center;
+    
 }
 
 .footer_recuadros{
     width: 30em;
     height: 15em;
     background-color: #9eaf04;
+    border: 5px solid black;
     text-align: center;
-    align-content: center;
+    justify-content: center;
 }
+
+.footer_recuadros h3{
+    padding: 2em;
+}
+
+
+
 
