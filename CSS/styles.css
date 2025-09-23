@@ -6,6 +6,7 @@
 
 header{
     background-color: #888888;
+    height: 12em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -13,7 +14,7 @@ header{
 }
 
 
-#header-div__logo{
+.header-div__logo{
     height: auto;     /*Arreglar altura del logo*/
 }
 #logo{
@@ -24,11 +25,41 @@ header{
     height: 3em;
     width: 40em;
 }
+
+.header-div__carrito{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+}
+
+
 #carrito{
     height: 5em;
     width: 5em;
-    margin-right: 5em;
 }
+
+#header-div__cantidad_items{
+    height: 2.5em;
+    width: 2.5em;
+    background-color: #ff000000;
+    border-radius: 100%;
+    border: black solid 0.25em;
+    position: absolute;
+    right: 5em;
+    bottom: 8em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+}
+
+
 /******************   NAV (y sliders)  ********************************************/
 .navegation{
     height: 5em;
@@ -62,6 +93,7 @@ header{
 .icono_slider{
     height: 8em;
     width: 8em;
+    margin: 3em;
 }
 #icono_slider_IZQ{
     transform: rotate(180deg);
