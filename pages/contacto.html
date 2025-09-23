@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/contacto.css">
+    <link rel="stylesheet" href="../CSS/contacto.css">
     <title>Contacto</title>
 </head>
+
 <body>
-    <h2>CONTACTO</h2>
-    
+    <div class="container-contacto">
+        <div class="contacto">
+            <form action="./detalle.html" method="get" class="contacto__form">
+                <h2 class="titulo">Contacto</h2>
+                <label for="name" class="contacto__label">
+                    <input type="text" name="name" id="name" required placeholder="Nombre" class="contacto__input">
+                </label>
+                <label for="lastname" class="contacto__label">
+                    <input type="text" name="lastname" id="lastname" required placeholder="Apellido"
+                        class="contacto__input">
+                </label>
+                <label for="email" class="contacto__label">
+                    <input type="email" name="email" id="email" required placeholder="ejemplo@ejemplo.com"
+                        class="contacto__input">
+                </label>
+                <label for="phone" class="contacto__label">
+                    <input type="number" name="phone" id="phone" placeholder="1111111111" class="contacto__input" max="9999999999" min="1111111111">
+                </label>
+                <label for="message">
+                    <textarea name="message" id="message" placeholder="Consulta"></textarea>
+                </label>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <div class="nosotros">
+            <h2 class="titulo">Nosotros</h2>
+            <ul>
+                <li>E-mail: empresa@gmail.com</li>
+                <li>Telefono: 9999999999</li>
+                <li>Direccion: Adolfo Alsina 2458</li>
+            </ul>
+        </div>
+        <div class="ubicacion">
+            <h2 class="titulo">Ubicacion</h2>
+            <div>
+                <img src="../IMG/Ubicacion-contacto.jpg" alt="Ubicacion: Adolfo Alsina 2458">
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
