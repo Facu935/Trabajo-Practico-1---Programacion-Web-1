@@ -30,15 +30,23 @@ header{
     margin-right: 5em;
 }
 /******************   NAV (y sliders)  ********************************************/
-nav{
-    height: 3em;
+.navegation{
+    height: 5em;
     width: auto;
-    background-color: #beca51;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    background-color: #beca51; 
 }
+
+.navegation__items{
+    height: 5em;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    font-weight: 700;
+}
+
 
 .slider{
     height: 40em;
