@@ -100,9 +100,37 @@ a {
 .contacto__form {
     display: flex;
     flex-direction: column;
+    gap: 2em;
+    padding: 2em;
+    border: 1px solid black;
+    border-radius: 1em;
+    width: 430px;
 }
 
 .contacto {
     display: flex;
+    justify-content: space-around;
+    padding: 4em;
 }
 
+.contacto__input {
+    padding: 0.3em;
+    margin-top: 8px ;
+}
+
+.contacto__label {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+.ubicacion__img {
+    width: 32em;
+}
