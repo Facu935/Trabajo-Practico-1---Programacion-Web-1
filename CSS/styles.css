@@ -153,8 +153,27 @@ header{
     height: 20em;
     border: 5px solid black;
     margin: 8em;
+    display: flex;
+    flex-flow: row wrap;
     align-content: center;
-    text-align: center;
+}
+
+.cursos__recuadro ul{
+    list-style: none;
+}
+
+#cursos-recuadro_curso1_imagen{
+    height: 55%;
+    width: 80%;
+    background-color: #00032c;
+    margin-left: 1.8em;
+}
+
+.cursos-recuadors_titulos{
+    font-size: 1.3em;
+    font-weight: 800;
+    margin: 1em;
+    
 }
 /****************************   Medios de Pago  ********************/
 
@@ -199,7 +218,7 @@ footer{
     background-color: #9eaf04;
     border: 5px solid black;
     text-align: center;
-    justify-content: center;
+    
 }
 
 .footer_recuadros h3{
