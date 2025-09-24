@@ -9,6 +9,30 @@
 </head>
 
 <body>
+    <header>
+        <div class="header-div__logo">
+            <img src="../IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo">
+        </div>
+        <div class="header-div__buscador">
+            <input type="text" name="buscador" id="buscador" placeholder="Buscar"> <!--con placeholder-->
+        </div>
+        <div class="header-div__carrito">
+            <img src="../IMG/Icono Carrito de Compra.png" alt="Carrito de Compra" id="carrito">
+            <div id="header-div__cantidad_items">
+                <p>1</p>
+            </div>
+        </div>
+    </header>
+    <nav class="navegation">
+        <div>
+            <ul class="navegation__items">
+                <li><a href="../index.html">INICIO</a></li>
+                <li><a href="">CALENDARIO</a></li>
+                <li><a href="">GIFT CARD</a></li>
+                <li><a href="./contacto.html">CONTACTO</a></li>
+            </ul>
+        </div>
+    </nav>
     <div class="container-contacto">
         <div class="contacto">
             <form action="./detalle.html" method="get" class="contacto__form">
@@ -25,21 +49,23 @@
                         class="contacto__input">
                 </label>
                 <label for="phone" class="contacto__label">
-                    <input type="number" name="phone" id="phone" placeholder="1111111111" class="contacto__input" max="9999999999" min="1111111111">
+                    <input type="number" name="phone" id="phone" placeholder="1111111111" class="contacto__input"
+                        max="9999999999" min="1111111111">
                 </label>
                 <label for="message">
                     <textarea name="message" id="message" placeholder="Consulta"></textarea>
                 </label>
                 <button type="submit">Enviar</button>
             </form>
-        </div>
-        <div class="nosotros">
-            <h2 class="titulo">Nosotros</h2>
-            <ul>
-                <li>E-mail: empresa@gmail.com</li>
-                <li>Telefono: 9999999999</li>
-                <li>Direccion: Adolfo Alsina 2458</li>
-            </ul>
+            <div class="contacto__nosotros">
+                <h2 class="titulo">Nosotros</h2>
+                <ul>
+                    <li>E-mail: empresa@gmail.com</li>
+                    <li>Telefono: 9999999999</li>
+                    <li>Direccion: Adolfo Alsina 2458</li>
+                </ul>
+            </div>
+
         </div>
         <div class="ubicacion">
             <h2 class="titulo">Ubicacion</h2>
