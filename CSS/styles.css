@@ -243,6 +243,11 @@ footer{
     padding: 2em;
 }
 
+.footer_redes{
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+}
 
 
 
