@@ -140,7 +140,7 @@ header{
 .cursos{
     background-color: #a0ded6;
     width: auto;
-    height: 60em;
+    height: 80em;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
@@ -149,32 +149,50 @@ header{
 }
 .cursos__recuadro{
     background-color: #15aed4;
-    width: 20em;
-    height: 20em;
+    width: 27em;
+    height: 27em;
     border: 5px solid black;
-    margin: 8em;
+    margin: 6em;
     display: flex;
     flex-flow: row wrap;
-    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
-.cursos__recuadro ul{
+.cursos-recuadro_imagen{
+    width: 80%;
+    height: 15em;
+    margin: 0;
+    background-color: #00032c;
+}
+
+.cursos-recuadro_datos{
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    
+}
+
+.cursos-recuadro_datos h4{
+    font-size: 1.3em;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.cursos-recuadro_datos ul{
     list-style: none;
 }
 
-#cursos-recuadro_curso1_imagen{
-    height: 55%;
-    width: 80%;
-    background-color: #00032c;
-    margin-left: 1.8em;
-}
 
-.cursos-recuadors_titulos{
-    font-size: 1.3em;
-    font-weight: 800;
-    margin: 1em;
-    
-}
+
+
+
+
+
+
+
+
 /****************************   Medios de Pago  ********************/
 
 .medios_de_pago{
