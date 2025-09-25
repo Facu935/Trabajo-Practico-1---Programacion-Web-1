@@ -140,13 +140,93 @@ header{
 .cursos{
     background-color: #a0ded6;
     width: auto;
-    height: 80em;
+    height: 70em;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-content: center;
+    justify-content: center;
+    align-items: center;
     
 }
+
+#contenedor-grid-padre{
+    background-color: #b3bd31;
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 5em;
+    grid-row-gap: 2em;
+}
+
+.contenedor-grid-hijo{
+    background-color: #15aed4;
+    border: 1px solid black;
+    display: grid;
+    grid-template-rows: 3fr 0.8fr 2.5fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.3em;
+}
+
+.imagen{
+    
+    grid-column: 1/3;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.titulo{
+    
+    grid-column: 1/3;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+}
+
+.datos{
+    
+    grid-column: 1/2;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    border: none;
+}
+
+.datos a{
+    display: inline;
+    margin: 0 0 0 4%
+}
+.datos button{
+    width: 50%;
+    height: 30%;
+    margin: 0 0 4% 4%
+}
+
+.horas-y-precio{
+    
+    grid-column: 2/3;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: none;
+}
+
+
+
+
+
+
+
+
+/*
 .cursos__recuadro{
     background-color: #15aed4;
     width: 27em;
@@ -183,7 +263,7 @@ header{
 .cursos-recuadro_datos ul{
     list-style: none;
 }
-
+*/
 
 
 
