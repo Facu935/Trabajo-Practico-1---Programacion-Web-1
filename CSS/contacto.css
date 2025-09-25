@@ -93,18 +93,23 @@ a {
 
 /* START CONTACTO */
 
-.contacto {
+.container-contacto {
     display: flex;
+    justify-content: center;
+    background-color: rgb(65, 151, 608);
+    font-size: 1.2em;
 }
 
 .contacto__form {
     display: flex;
     flex-direction: column;
+    text-align: center;
     gap: 2em;
     padding: 2em;
     border: 1px solid black;
-    border-radius: 1em;
-    width: 430px;
+    border-radius: 0.5em;
+    width: 38em;
+    background-color: #a0ded6;
 }
 
 .contacto {
@@ -115,7 +120,7 @@ a {
 
 .contacto__input {
     padding: 0.3em;
-    margin-top: 8px ;
+    margin-top: 0.5em ;
 }
 
 .contacto__label {
@@ -123,14 +128,58 @@ a {
     flex-direction: column;
 }
 
-
-
-
-
-
-
-
+textarea {
+    resize: none;
+    height: 5em;
+}
 
 .ubicacion__img {
-    width: 32em;
+    width: 40.75em;
+    margin-top: 1.2em;
+    border: 1px solid black;
+    border-radius: 0.5em;
 }
+
+.container__nosotros {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2em;
+    border: 1px solid black;
+    border-radius: 0.5em;
+    width: 40.875em;
+    background-color: #a0ded6;
+}
+
+.contacto__nosotros {
+    padding: 4em;
+}
+
+.nosotros__lista {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2em;
+    padding-top: 0;
+}
+
+.button-submit {
+    width: 6.25em;
+    padding: 0.625em;
+    border-radius: 0.3125em;
+    background-color: rgb(65, 151, 208);
+    color: white;
+}
+
+.contacto__label {
+    border: 1px solid black;
+    padding: 0.3125em;
+    border-radius: 0.3125em;
+}
+
+.contacto__input {
+    border-radius: 0.3125em;
+    padding: 0.3125em 0;
+}
+
+
