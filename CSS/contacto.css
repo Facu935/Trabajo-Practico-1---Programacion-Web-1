@@ -183,3 +183,37 @@ textarea {
 }
 
 
+/* FOOTER START */
+
+footer{
+    width: auto;
+    height: 20em;
+    background-color: #1693a5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+.footer_recuadros{
+    width: 30em;
+    height: 15em;
+    background-color: #9eaf04;
+    border: 5px solid black;
+    text-align: center;
+}
+
+.footer_recuadros h3{
+    padding: 2em;
+}
+
+.footer_redes{
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+.footer_recuadros ul {
+    list-style: none;
+}
