@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/contacto.css">
     <title>Contacto</title>
+    <link rel="stylesheet" href="../CSS/confirmacion-contacto.css">
 </head>
 
 <body>
@@ -61,8 +61,15 @@
                     <textarea class="contacto__input" name="message" id="message"
                         placeholder="Quisiera consultar sobre..."></textarea>
                 </label>
-                <button type="submit" class="button-submit">Enviar</button>
+                <button type="submit" class="button-submit" popovertarget="confirmacion">Enviar</button>
             </form>
+        </div>
+        <div class="overlay">
+            <div class="popup">
+                ✔ Tu mensaje se ha enviado por mail
+                <br><br>
+                <a href="./contacto.html" class="button-submit">OK</a>
+            </div>
         </div>
 
         <div class="contacto__nosotros">
