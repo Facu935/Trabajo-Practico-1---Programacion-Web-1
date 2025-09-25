@@ -108,7 +108,7 @@ a {
     padding: 2em;
     border: 1px solid black;
     border-radius: 0.5em;
-    width: 38em;
+    width: 38em; /*cambiar para el mediaquery*/
     background-color: #a0ded6;
 }
 
@@ -134,7 +134,7 @@ textarea {
 }
 
 .ubicacion__img {
-    width: 40.75em;
+    width: 40.75em; /*cambiar para el mediaquery*/
     margin-top: 1.2em;
     border: 1px solid black;
     border-radius: 0.5em;
@@ -147,7 +147,7 @@ textarea {
     padding: 2em;
     border: 1px solid black;
     border-radius: 0.5em;
-    width: 40.875em;
+    width: 40.875em; /*cambiar para el mediaquery*/
     background-color: #a0ded6;
 }
 
@@ -182,6 +182,7 @@ textarea {
     padding: 0.3125em 0;
 }
 
+/* CONTACTO END */
 
 /* FOOTER START */
 
