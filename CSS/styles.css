@@ -280,9 +280,17 @@ footer{
     padding: 2em;
 }
 
+.footer-recuadros_cursos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+
+
+
 .footer_redes{
     display: flex;
-    justify-content: center;
+    justify-content: center;    
     gap: 1.5em;
 }
 .footer-redes_logos{
