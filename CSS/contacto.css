@@ -5,7 +5,7 @@
     font-family: sans-serif;
 }
 
-/* START HEADER Y NAV */
+/* HEADER Y NAV START */
 
 header{
     background-color: #1693a5;
@@ -24,14 +24,16 @@ header{
 #logo{
     width: 10em;
     margin-left: 5em;
-    border-radius: 50%; /*Diferencia del home*/
-    border: 1px solid black; /*Diferencia del home*/
+    border-radius: 50%;
+    border: 1px solid black;
 }
 
 
 #buscador{
     height: 3em;
-    width: 40em;
+    width: 40em; /* cambiar para el mediaquery */
+    border-radius: 0.4em;
+    border: 1px solid black;
 }
 
 .header-div__carrito{
@@ -70,6 +72,8 @@ header{
     height: 5em;
     width: auto;
     background-color: #45b5c4; 
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .navegation__items{
@@ -88,10 +92,10 @@ a {
     color: #000;
 }
 
-/* END HEADER Y NAV */
+/* HEADER Y NAV END */
 
 
-/* START CONTACTO */
+/* CONTACTO START */
 
 .container-contacto {
     display: flex;
@@ -194,7 +198,7 @@ footer{
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    
+    border-top: 1px solid black;
 }
 
 .footer_recuadros{
@@ -217,4 +221,110 @@ footer{
 
 .footer_recuadros ul {
     list-style: none;
+}
+
+/* FOOTER END */
+
+@media screen and (width < 1850px) {
+    .contacto__form {
+        width: 25em;
+        margin-bottom: 1em;
+    }
+
+    .ubicacion__img {
+    width: 20.75em; 
+    }
+
+    .container__nosotros {
+        width: 20.875em; /*cambiar para el mediaquery*/
+    }
+
+    #buscador {
+        width: 20em;
+    }
+
+    .contacto {
+        padding: 0;
+        margin-top: 2em;
+    }
+
+    .contacto__nosotros {
+        padding: 0;
+        margin-top: 2em;
+    }
+
+    .container-contacto {
+        gap: 1em;
+    }
+}
+
+@media screen and (width < 900px) {
+    .container-contacto {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .container__nosotros {
+        width: 18em;;
+    }
+
+    #logo {
+        margin-left: 2em;
+        width: 5em;
+    }
+
+    #carrito {
+        width: 2em;
+        height: 2em;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 1.5em;
+        height: 100%;
+    }
+
+    .contacto__form {
+        width: 18em;
+    }
+
+    .contacto {
+        padding: 0;
+        margin-top: 2em;
+    }
+
+    .contacto__nosotros {
+        padding: 0;
+        margin-top: 2em;
+    }
+
+    .footer_recuadros {
+        width: 20em;
+        margin: 1em;
+    }
+    
+    .img__redes {
+        width: 2.5em;
+    }
+
+    #buscador {
+        width: 12em;
+    }
+
+    .container__ubicacion {
+        margin-bottom: 2em;
+    }
+
+    .ubicacion__img {
+        width: 18em; 
+    }
+
+    #header-div__cantidad_items{
+    height: 1.5em;
+    width: 1.5em;
+    right: 1em;
+    bottom: 6.9em;
+    border: 2px solid black;
+    }
 }
