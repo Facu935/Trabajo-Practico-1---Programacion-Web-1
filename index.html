@@ -1,165 +1,189 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/styles.css" />
+    <title>Edu Courses | INICIO</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/styles.css">
-    <title>Home</title>
-</head>
-
-<body>
+  <body>
     <header>
-        <div class="header-div__logo">
-            <img src="./IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo">
+      <div class="header-div__logo">
+        <img src="./IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo" />
+      </div>
+      <div class="header-div__buscador">
+        <input type="text" name="buscador" id="buscador" />
+      </div>
+      <div class="header-div__carrito">
+        <img
+          src="./IMG/Icono Carrito de Compra.png"
+          alt="Carrito de Compra"
+          id="carrito"
+        />
+        <div id="header-div__cantidad_items">
+          <p>1</p>
         </div>
-        <div class="header-div__buscador">
-            <input type="text" name="buscador" id="buscador">
-        </div>
-        <div class="header-div__carrito">
-            <img src="./IMG/Icono Carrito de Compra.png" alt="Carrito de Compra" id="carrito">
-            <div id="header-div__cantidad_items">
-                <p>1</p>
-            </div>
-        </div>
+      </div>
     </header>
     <main>
-        <nav class="navegation">
-            <div>
-                <ul class="navegation__items">
-                    <li><a href="./index.html">INICIO</a></li>
-                    <li><a href="">CALENDARIO</a></li>
-                    <li><a href="">GIFT CARD</a></li>
-                    <li><a href="./pages/contacto.html">CONTACTO</a></li>
-                </ul>
+      <nav class="navegation">
+        <div>
+          <ul class="navegation__items">
+            <li><a href="./index.html">INICIO</a></li>
+            <li><a href="">CALENDARIO</a></li>
+            <li><a href="">GIFT CARD</a></li>
+            <li><a href="pages/inscripcion.html">INSCRIPCIÓN</a></li>
+            <li><a href="./pages/contacto.html">CONTACTO</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <section class="slider">
+        <img
+          src="./IMG/Icono Slider.png"
+          alt="Icono Slider IZQ"
+          class="icono_slider"
+          id="icono_slider_IZQ"
+        />
+        <img
+          src="./IMG/Icono Slider.png"
+          alt="Icono Slider DER"
+          class="icono_slider"
+          id="slider_icono_der"
+        />
+      </section>
+
+      <section>
+        <div class="section-pasos">
+          <div class="section-pasos__recuadros">
+            <h3>Paso 1</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+              voluptatum cumque dolor. Fugiat deleniti modi fugit dignissimos
+              quia nihil repellat explicabo perspiciatis ratione quas autem
+              minus alias, esse molestias nostrum?
+            </p>
+          </div>
+
+          <div class="section-pasos__recuadros">
+            <h3>Paso 2</h3>
+          </div>
+
+          <div class="section-pasos__recuadros">
+            <h3>Paso 3</h3>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="titulos">CURSOS DESTACADOS</h2>
+        <div class="cursos">
+          <div id="contenedor-grid-padre">
+            <div class="contenedor-grid-hijo">
+              <div class="contenedor-grid-hijo imagen">
+                <img src="./IMG/Logo HTML5.png" alt="Logo HTML5" />
+              </div>
+              <div class="contenedor-grid-hijo titulo">
+                <h4>CURSO HTML5</h4>
+              </div>
+              <div class="contenedor-grid-hijo datos">
+                <a href="">Ver Detalles</a>
+                <button>Comprar</button>
+              </div>
+              <div class="contenedor-grid-hijo horas-y-precio">
+                <p>60 hs</p>
+                <p>$ 25000</p>
+              </div>
             </div>
-        </nav>
 
-        <section class="slider">
-            <img src="./IMG/Icono Slider.png" alt="Icono Slider IZQ" class="icono_slider" id="icono_slider_IZQ">
-            <img src="./IMG/Icono Slider.png" alt="Icono Slider DER" class="icono_slider" id="slider_icono_der">
-        </section>
-
-        <section>
-            <div class="section-pasos">
-                <div class="section-pasos__recuadros">
-                    <h3>Paso 1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum voluptatum cumque dolor. Fugiat
-                        deleniti modi fugit dignissimos quia nihil repellat explicabo perspiciatis ratione quas autem
-                        minus alias, esse molestias nostrum?</p>
-                </div>
-
-                <div class="section-pasos__recuadros">
-                    <h3>Paso 2</h3>
-                </div>
-
-                <div class="section-pasos__recuadros">
-                    <h3>Paso 3</h3>
-                </div>
+            <div class="contenedor-grid-hijo">
+              <div class="contenedor-grid-hijo imagen">
+                <img src="./IMG/Logo HTML5.png" alt="Logo HTML5" />
+              </div>
+              <div class="contenedor-grid-hijo titulo">
+                <h4>CURSO HTML5</h4>
+              </div>
+              <div class="contenedor-grid-hijo datos">
+                <a href="">Ver Detalles</a>
+                <button>Comprar</button>
+              </div>
+              <div class="contenedor-grid-hijo horas-y-precio">
+                <p>60 hs</p>
+                <p>$ 25000</p>
+              </div>
             </div>
-        </section>
 
-
-        <section>
-            <h2 class="titulos">CURSOS DESTACADOS</h2>
-            <div class="cursos">
-            
-                <div id="contenedor-grid-padre">
-                    <div class="contenedor-grid-hijo">
-                        <div class="contenedor-grid-hijo imagen">
-                            <img src="./IMG/Logo HTML5.png" alt="Logo HTML5">
-                        </div>
-                        <div class="contenedor-grid-hijo titulo"><h4>CURSO HTML5</h4></div>
-                        <div class="contenedor-grid-hijo datos">
-                            <a href="">Ver Detalles</a>
-                            <button>Comprar</button>
-                        </div>
-                        <div class="contenedor-grid-hijo horas-y-precio">
-                            <p>60 hs</p>
-                            <p>$ 25000</p>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="contenedor-grid-hijo">
-                        <div class="contenedor-grid-hijo imagen">
-                            <img src="./IMG/Logo HTML5.png" alt="Logo HTML5">
-                        </div>
-                        <div class="contenedor-grid-hijo titulo"><h4>CURSO HTML5</h4></div>
-                        <div class="contenedor-grid-hijo datos">
-                            <a href="">Ver Detalles</a>
-                            <button>Comprar</button>
-                        </div>
-                        <div class="contenedor-grid-hijo horas-y-precio">
-                            <p>60 hs</p>
-                            <p>$ 25000</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contenedor-grid-hijo">
-                        <div class="contenedor-grid-hijo imagen">
-                            <img src="./IMG/Logo HTML5.png" alt="Logo HTML5">
-                        </div>
-                        <div class="contenedor-grid-hijo titulo"><h4>CURSO HTML5</h4></div>
-                        <div class="contenedor-grid-hijo datos">
-                            <a href="">Ver Detalles</a>
-                            <button>Comprar</button>
-                        </div>
-                        <div class="contenedor-grid-hijo horas-y-precio">
-                            <p>60 hs</p>
-                            <p>$ 25000</p>
-                        </div>
-                    </div>
-
-                    <div class="contenedor-grid-hijo">
-                        <div class="contenedor-grid-hijo imagen">
-                            <img src="./IMG/Logo HTML5.png" alt="Logo HTML5">
-                        </div>
-                        <div class="contenedor-grid-hijo titulo"><h4>CURSO HTML5</h4></div>
-                        <div class="contenedor-grid-hijo datos">
-                            <a href="">Ver Detalles</a>
-                            <button>Comprar</button>
-                        </div>
-                        <div class="contenedor-grid-hijo horas-y-precio">
-                            <p>60 hs</p>
-                            <p>$ 25000</p>
-                        </div>
-                    </div>
-
-                    <div class="contenedor-grid-hijo">
-                        <div class="contenedor-grid-hijo imagen">
-                            <img src="./IMG/Logo HTML5.png" alt="Logo HTML5">
-                        </div>
-                        <div class="contenedor-grid-hijo titulo"><h4>CURSO HTML5</h4></div>
-                        <div class="contenedor-grid-hijo datos">
-                            <a href="">Ver Detalles</a>
-                            <button>Comprar</button>
-                        </div>
-                        <div class="contenedor-grid-hijo horas-y-precio">
-                            <p>60 hs</p>
-                            <p>$ 25000</p>
-                        </div>
-                    </div>
-
-                    <div class="contenedor-grid-hijo">
-                        <div class="contenedor-grid-hijo imagen">
-                            <img src="./IMG/Logo HTML5.png" alt="Logo HTML5">
-                        </div>
-                        <div class="contenedor-grid-hijo titulo"><h4>CURSO HTML5</h4></div>
-                        <div class="contenedor-grid-hijo datos">
-                            <a href="">Ver Detalles</a>
-                            <button>Comprar</button>
-                        </div>
-                        <div class="contenedor-grid-hijo horas-y-precio">
-                            <p>60 hs</p>
-                            <p>$ 25000</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="contenedor-grid-hijo">
+              <div class="contenedor-grid-hijo imagen">
+                <img src="./IMG/Logo HTML5.png" alt="Logo HTML5" />
+              </div>
+              <div class="contenedor-grid-hijo titulo">
+                <h4>CURSO HTML5</h4>
+              </div>
+              <div class="contenedor-grid-hijo datos">
+                <a href="">Ver Detalles</a>
+                <button>Comprar</button>
+              </div>
+              <div class="contenedor-grid-hijo horas-y-precio">
+                <p>60 hs</p>
+                <p>$ 25000</p>
+              </div>
             </div>
-        </section>
+
+            <div class="contenedor-grid-hijo">
+              <div class="contenedor-grid-hijo imagen">
+                <img src="./IMG/Logo HTML5.png" alt="Logo HTML5" />
+              </div>
+              <div class="contenedor-grid-hijo titulo">
+                <h4>CURSO HTML5</h4>
+              </div>
+              <div class="contenedor-grid-hijo datos">
+                <a href="">Ver Detalles</a>
+                <button>Comprar</button>
+              </div>
+              <div class="contenedor-grid-hijo horas-y-precio">
+                <p>60 hs</p>
+                <p>$ 25000</p>
+              </div>
+            </div>
+
+            <div class="contenedor-grid-hijo">
+              <div class="contenedor-grid-hijo imagen">
+                <img src="./IMG/Logo HTML5.png" alt="Logo HTML5" />
+              </div>
+              <div class="contenedor-grid-hijo titulo">
+                <h4>CURSO HTML5</h4>
+              </div>
+              <div class="contenedor-grid-hijo datos">
+                <a href="">Ver Detalles</a>
+                <button>Comprar</button>
+              </div>
+              <div class="contenedor-grid-hijo horas-y-precio">
+                <p>60 hs</p>
+                <p>$ 25000</p>
+              </div>
+            </div>
+
+            <div class="contenedor-grid-hijo">
+              <div class="contenedor-grid-hijo imagen">
+                <img src="./IMG/Logo HTML5.png" alt="Logo HTML5" />
+              </div>
+              <div class="contenedor-grid-hijo titulo">
+                <h4>CURSO HTML5</h4>
+              </div>
+              <div class="contenedor-grid-hijo datos">
+                <a href="">Ver Detalles</a>
+                <button>Comprar</button>
+              </div>
+              <div class="contenedor-grid-hijo horas-y-precio">
+                <p>60 hs</p>
+                <p>$ 25000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
         <section>
             <h2 class="titulos">MEDIOS DE PAGO</h2>
@@ -170,7 +194,7 @@
                     <img src="./IMG/Logo VISA CREDITO.png" alt="Visa">
                 </div>
                 <div class="medios_de_pago__recuadros">
-                    <img src="./IMG/Logo MASTERCARD CREDITO.png" alt="Mastercard">
+                   <img src="./IMG/Logo MASTERCARD CREDITO.png" alt="Mastercard">
                 </div>
                 <div class="medios_de_pago__recuadros">
                     <img src="./IMG/Logo American Express.png" alt="American Express">
@@ -202,12 +226,6 @@
         <div class="footer_recuadros">
             <h3>ACERCA DE</h3>
             <div class="footer-recuadros_cursos">
-                
-
-                <ul>
-                    <li><a href="./pages/sobre-nosotros.html">Sobre Nosotros</a></li>
-                </ul>
-
                 <ul>
                     <h4>Cursos</h4>
                     <li>Html 5</li>
@@ -215,6 +233,10 @@
                     <li>Blockchain</li>
                     <li></li>
                     <li></li>
+                </ul>
+
+                <ul>
+                    <li>Opiniones de los Alumnos</li>
                 </ul>
             </div>
         </div>
@@ -230,6 +252,5 @@
         </div>
     </footer>
     <a href="./index.html"><i id="flecha-vuelta-inicio">&#x1F53C;</i></a>
-</body>
-
+  </body>
 </html>

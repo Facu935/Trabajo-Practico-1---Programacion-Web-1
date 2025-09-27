@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  background-color: #a0ded6;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-titulo-curso {
+  margin: 2em 0em;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  margin: 1em 2em 1em 0em;
+  align-items: center;
+}
+
+.titulo-inscripcion {
+  margin-bottom: 1em;
+}
+
+.container-input {
+  margin: 1em 2em 1em 0em;
+}
+
+input {
+  height: 2.5em;
+  border-radius: 5px;
+  padding-left: 1em;
+}
+
+.icon-delete {
+  margin-left: 0.5em;
+  font-size: 2em;
+  background-color: #a0ded6;
+  border: none;
+}
+
+.add-persona {
+  margin: 1em 0em;
+  display: flex;
+  align-items: center;
+}
+
+.icon-add {
+  background-color: none;
+  border: none;
+  font-size: 2em;
+}
+
+.container-precio-incribirse {
+  display: flex;
+  align-items: center;
+}
+
+.btn-inscribirse {
+  margin-left: 1em;
+  width: 10em;
+  height: 2.5em;
+  border-radius: 0.3125em;
+  background-color: rgb(65, 151, 208);
+  color: white;
+}

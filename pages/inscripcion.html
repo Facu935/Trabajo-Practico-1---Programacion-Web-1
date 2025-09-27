@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="../IMG/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../CSS/styles.css" />
+  <link rel="stylesheet" href="../CSS/inscripcion.css" />
+  <title>Edu Courses | INSCRIPCION</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-div__logo">
+      <img src="../IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo" />
+    </div>
+    <div class="header-div__buscador">
+      <input type="text" name="buscador" id="buscador" />
+    </div>
+    <div class="header-div__carrito">
+      <img src="../IMG/Icono Carrito de Compra.png" alt="Carrito de Compra" id="carrito" />
+      <div id="header-div__cantidad_items">
+        <p>1</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navegation">
+    <div>
+      <ul class="navegation__items">
+        <li><a href="../index.html">INICIO</a></li>
+        <li><a href="">CALENDARIO</a></li>
+        <li><a href="">GIFT CARD</a></li>
+        <li><a href="../pages/inscripcion.html">INSCRIPCIÓN</a></li>
+        <li><a href="../pages/contacto.html">CONTACTO</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div>
+      <div class="container-titulo-curso">
+        <h2>CURSO HTML 5</h2>
+      </div>
+      <form action="/procesar-formulario" class="formulario">
+        <h3 class="titulo-inscripcion">INSCRIPCIÓN</h3>
+
+        <fieldset>
+          <div class="container-input">
+            <input type="text" id="nombre1" name="nombre1" placeholder="Nombre" autocomplete="name" required />
+          </div>
+          <div class="container-input">
+            <input type="text" id="apellido1" name="apellido1" placeholder="Apellido" autocomplete="family-name"
+              required />
+          </div>
+          <div class="container-input">
+            <input type="number" id="dni1" name="dni1" placeholder="DNI" required />
+          </div>
+          <div>
+            <button type="button" class="icon-delete" aria-label="Eliminar participante 1">
+              &#10060;
+            </button>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="container-input">
+            <input type="text" id="nombre2" name="nombre2" placeholder="Nombre" autocomplete="name" required />
+          </div>
+          <div class="container-input">
+            <input type="text" id="apellido2" name="apellido2" placeholder="Apellido" autocomplete="family-name"
+              required />
+          </div>
+          <div class="container-input">
+            <input type="number" id="dni2" name="dni2" placeholder="DNI" required />
+          </div>
+          <div>
+            <button type="button" class="icon-delete" aria-label="Eliminar participante 2">
+              &#10060;
+            </button>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="container-input">
+            <input type="text" id="nombre3" name="nombre3" placeholder="Nombre" autocomplete="name" required />
+          </div>
+          <div class="container-input">
+            <input type="text" id="apellido3" name="apellido3" placeholder="Apellido" autocomplete="family-name"
+              required />
+          </div>
+          <div class="container-input">
+            <input type="number" id="dni3" name="dni3" placeholder="DNI" required />
+          </div>
+          <div>
+            <button type="button" class="icon-delete" aria-label="Eliminar participante 3">
+              &#10060;
+            </button>
+          </div>
+        </fieldset>
+
+        <div class="add-persona">
+          <span class="icon-add">&#10133;</span>
+          <p>Agregar persona</p>
+        </div>
+        <div class="container-precio-incribirse">
+          <p>Precio total: $25000</p>
+          <button class="btn-inscribirse" type="submit">INSCRIBIRSE</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer_recuadros">
+      <h3>Datos del Grupo</h3>
+      <ul>
+        <li>Facundo Nicolás Olivieri (DNI: 42.290.776)</li>
+        <li>Agustin Bejarano (DNI: 41.173.682)</li>
+        <li></li>
+        <li></li>
+        <li>Nicolas Felipe Alvarez (DNI: 43.321.421)</li>
+      </ul>
+    </div>
+
+    <div class="footer_recuadros">
+      <h3>ACERCA DE:</h3>
+      <div class="footer-recuadros_cursos">
+        <ul>
+          <h4>Cursos</h4>
+          <li>Html 5</li>
+          <li>CSS</li>
+          <li>Blockchain</li>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul>
+          <li>Opiniones de los Alumnos</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer_recuadros">
+      <h3>Redes Sociales</h3>
+      <div class="footer_redes">
+        <img src="../IMG/Logo Facebook.png" alt="Facebook" class="footer-redes_logos" />
+        <img src="../IMG/Logo Instagram.jpeg" alt="Instagram" class="footer-redes_logos" />
+        <img src="../IMG/Logo LinkedIn.png" alt="LinkedIn" class="footer-redes_logos" />
+        <img src="../IMG/Logo Xpng.png" alt="X" class="footer-redes_logos" />
+        <img src="../IMG/Logo YT.png" alt="YouTube" class="footer-redes_logos" />
+      </div>
+    </div>
+  </footer>
+
+  <a href="../pages/inscripcion.html"><i id="flecha-vuelta-inicio">&#x1F53C;</i></a>
+</body>
+
+</html>
