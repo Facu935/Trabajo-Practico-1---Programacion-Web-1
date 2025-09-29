@@ -10,15 +10,22 @@
 </head>
 
 <body>
-    <header>
+    <header id="inicio">
         <div class="header-div__logo">
-            <img src="../IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo">
+            <img src="../IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo" />
         </div>
         <div class="header-div__buscador">
-            <input type="text" name="buscador" id="buscador" placeholder="Buscar"> <!--con placeholder-->
+            <input list="cursos" name="buscador" id="buscador" placeholder="Buscar Curso" />
+            <datalist id="cursos">
+                <option value="HTML5">HTML5</option>
+                <option value="CSS3">CSS3</option>
+                <option value="JavaScript">Javascript</option>
+                <option value="Blockchain">Blockchain</option>
+                <option value="JQuery">JQuery</option>
+            </datalist>
         </div>
         <div class="header-div__carrito">
-            <img src="../IMG/Icono Carrito de Compra.png" alt="Carrito de Compra" id="carrito">
+            <img src="../IMG/Icono Carrito de Compra.png" alt="Carrito de Compra" id="carrito"/>
             <div id="header-div__cantidad_items">
                 <p>0</p>
             </div>
@@ -90,7 +97,7 @@
                 <li>Facundo Nicolás Olivieri  (DNI:  42.290.776)</li>
                 <li>Agustin Bejarano (DNI:  41.173.682)</li>
                 <li>Nicolas Felipe Alvarez (DNI: 43.321.421)</li>
-                <li></li>
+                <li>Franco David Pereyra (DNI: 44.181.869)</li>
                 <li></li>
             </ul>
         </div>
