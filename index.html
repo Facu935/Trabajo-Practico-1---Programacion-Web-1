@@ -4,16 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./CSS/styles.css" />
+    <link rel="stylesheet" href="./CSS/header-footer.css">
     <title>Edu Courses | INICIO</title>
   </head>
 
   <body>
-    <header>
+    <header id="inicio">
       <div class="header-div__logo">
         <img src="./IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo" />
       </div>
       <div class="header-div__buscador">
-        <input type="text" name="buscador" id="buscador" />
+        <input type="text" name="buscador" id="buscador" placeholder="Buscar" />
       </div>
       <div class="header-div__carrito">
         <img
@@ -22,7 +23,7 @@
           id="carrito"
         />
         <div id="header-div__cantidad_items">
-          <p>1</p>
+          <p>0</p>
         </div>
       </div>
     </header>
@@ -33,7 +34,7 @@
             <li><a href="./index.html">INICIO</a></li>
             <li><a href="">CALENDARIO</a></li>
             <li><a href="">GIFT CARD</a></li>
-            <li><a href="pages/inscripcion.html">INSCRIPCIÓN</a></li>
+            <li><a href="./pages/inscripcion.html">INSCRIPCIÓN</a></li>
             <li><a href="./pages/contacto.html">CONTACTO</a></li>
           </ul>
         </div>
@@ -213,44 +214,52 @@
     </main>
 
     <footer>
-        <div class="footer_recuadros">
+        <div class="footer-recuadros">
             <h3>Datos del Grupo</h3>
-            <ul>
+            <ul  id="footer-datos-grupo">
                 <li>Facundo Nicolás Olivieri  (DNI:  42.290.776)</li>
                 <li>Agustin Bejarano (DNI:  41.173.682)</li>
-                <li></li>
+                <li>Nicolas Felipe Alvarez (DNI: 43.321.421)</li>
                 <li></li>
                 <li></li>
             </ul>
         </div>
-        <div class="footer_recuadros">
+        <div class="footer-recuadros">
             <h3>ACERCA DE</h3>
-            <div class="footer-recuadros_cursos">
+            <div class="footer-recuadros-info">
+              <div class="footer-recuadros-info-datos" id="footer-recuadros-info-datos-cursos">
+                <h4>Cursos</h4>
                 <ul>
-                    <h4>Cursos</h4>
                     <li>Html 5</li>
                     <li>CSS</li>
+                    <li>JavaScript</li>
                     <li>Blockchain</li>
-                    <li></li>
-                    <li></li>
+                    <li>JQuery</li>
                 </ul>
-
+              </div>
+                
+              <div class="footer-recuadros-info-datos" id="footer-recuadros-info-datos-generales">
                 <ul>
-                    <li>Opiniones de los Alumnos</li>
+                    <a href="./pages/sobre-nosotros.html"><li>Sobre Nosotros</li></a>
+                    <a href="./pages/preguntas-frecuentes.html"><li>Preguntas Frecuentes</li></a>
                 </ul>
+              </div>
             </div>
+            <p id="footer-nota-legal">© Edu Courses. Todos los derechos reservados.</p>
         </div>
-        <div class="footer_recuadros">
+        <div class="footer-recuadros">
             <h3>Redes Sociales</h3>
-            <div class="footer_redes">
-                <img src="./IMG/Logo Facebook.png" alt="Facebook" class="footer-redes_logos">
-                <img src="./IMG/Logo Instagram.jpeg" alt="Instagram" class="footer-redes_logos">
-                <img src="./IMG/Logo LinkedIn.png" alt="LinkedIn" class="footer-redes_logos">
-                <img src="./IMG/Logo Xpng.png" alt="X" class="footer-redes_logos">
-                <img src="./IMG/Logo YT.png" alt="YouTube" class="footer-redes_logos">
+            <div class="footer-redes">
+                <img src="./IMG/Logo Facebook.png" alt="Facebook" class="footer-redes-logos">
+                <img src="./IMG/Logo Instagram.jpeg" alt="Instagram" class="footer-redes-logos">
+                <img src="./IMG/Logo LinkedIn.png" alt="LinkedIn" class="footer-redes-logos">
+                <img src="./IMG/Logo Xpng.png" alt="X" class="footer-redes-logos">
+                <img src="./IMG/Logo YT.png" alt="YouTube" class="footer-redes-logos">
             </div>
         </div>
+        
+        
     </footer>
-    <a href="./index.html"><i id="flecha-vuelta-inicio">&#x1F53C;</i></a>
+    <a href="#inicio"><i id="flecha-vuelta-inicio">&#x1F53C;</i></a>
   </body>
 </html>
