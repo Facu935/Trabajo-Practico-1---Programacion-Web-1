@@ -1,0 +1,23 @@
+body{
+    margin: 0;
+    background-color: #4197ff;
+}
+
+.preguntas-frecuentes{
+    padding: 4em;
+}
+
+.preguntas-frecuentes h1{
+    font-size: 4em;
+}
+
+.preguntas-frecuentes li{
+    margin-top: 3em;
+    margin-bottom: 1.5em;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+.preguntas-frecuentes p{
+    font-size: 1.3em;
+    margin-left: 0.7em;
+}
