@@ -1,3 +1,16 @@
+body{
+    background-color: #4197ff;
+}
+
+.titulos{
+    background-color: #45b5c4;
+    height: 4em;
+    text-align: center;
+    align-content: center;
+    
+}
+
+
 .slider{
     height: 41em;
     width: auto;
@@ -19,6 +32,10 @@
     transform: rotate(180deg);
 }
 /*****************    Pasos    ****************************************/
+
+#titulo-pasos{
+    margin-top: 8em;
+}
 .section-pasos{
     height: 40em;
     width: auto;
@@ -27,8 +44,17 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    
+}
 
+.section-pasos h2{
+    height: 40em;
+    width: auto;
+    background-color: #4197ff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    
 }
 
 .section-pasos__recuadros{
@@ -119,7 +145,7 @@
 }
 .detalles-comprar a{
     display: inline;
-    text-decoration: underline;
+    
 }
 .detalles-comprar button{
     width: 70%;
@@ -128,7 +154,6 @@
 }
 
 .horas-y-precio{
-    
     grid-column: 2/3;
     grid-row: 3;
     display: flex;
@@ -167,6 +192,5 @@
     align-items: center;
 }
 
-/****************************   Footer  ********************/
-
+/****************************  Media Queries ********************/
 
