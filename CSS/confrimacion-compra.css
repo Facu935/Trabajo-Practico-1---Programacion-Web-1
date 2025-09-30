@@ -1,0 +1,140 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    background-color: #4197ff;
+    height: 75em;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*********   grid general   *********/
+
+.pago{
+
+    width: 80%;
+    height: 35em;
+    margin-top: 10em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+
+/*********  Metodo      ***********/
+.pago-metodo{
+    background-color: #a0ded6;
+    margin: 2em;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.pago-metodo h2{
+    text-align: center;
+    margin: 1.5em;
+    font-size: 1.8em;
+    
+}
+
+.pago-metodo form{
+    background-color: #a0ded6;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 1.5em;
+}
+
+.pago-metodo input{
+    height: 3.5em;
+    border-radius: 10px;
+}
+.pago-metodo label{
+    display: block;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.pago-metodo button{
+    height: 3.5em;
+    margin-top: 4em;
+    border-radius: 10px;
+}
+
+#numero-tarjeta{
+    width: 100%;
+}
+#vencimiento-seguridad label{
+    display: inline;
+    margin-left: 1em;
+}
+#titular{
+    width: 100%;
+}
+
+
+
+/***************    Resumen        ********************/
+.pago-resumen{
+    background-color: #a0ded6;
+    height: 25em;
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.pago-resumen h3{
+    text-align: center;
+    margin: 1em;
+    font-size: 2em;
+}
+
+.pago-resumen-datos{
+    background-color: #45b5c4;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+
+
+#detalle-curso{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1em;
+}
+
+#detalle-curso h4{
+    font-size: 1.2em;
+}
+#detalle-curso p{
+    font-size: 1.2em;
+}
+
+#total{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1.2em;
+    
+}
+
+#total h4{
+    font-size: 1.6em;
+    text-decoration: underline;
+}
+
+#total p{
+    font-size: 1.2em;
+    font-weight: 600;
+
+}
