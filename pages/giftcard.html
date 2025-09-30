@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./CSS/styles.css" />
+  <link rel="stylesheet" href="./CSS/header-footer.css">
+  <link rel="stylesheet" href="./CSS/giftcard.css" />
+  <title>Edu Courses | Gift Card</title>
+</head>
+
+<body>
+  <header id="inicio">
+    <div class="header-div__logo">
+      <img src="../IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo" />
+    </div>
+    <div class="header-div__buscador">
+      <input list="cursos" name="buscador" id="buscador" placeholder="Buscar Curso" />
+    </div>
+    <div class="header-div__carrito">
+      <a href="./carrito.html"><button><img src="../IMG/Icono Carrito de Compra.png" alt="Carrito de Compra"
+            id="carrito" /></button></a>
+      <div id="header-div__cantidad_items">
+        <p>0</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navegation">
+    <ul class="navegation__items">
+      <li><a href="../index.html">INICIO</a></li>
+      <li><a href="./pages.calendario.html">CALENDARIO</a></li>
+      <li><a href="./pages/giftcard.html">GIFT CARD</a></li>
+      <li><a href="./inscripcion.html">INSCRIPCIÓN</a></li>
+      <li><a href="./contacto.html">CONTACTO</a></li>
+    </ul>
+  </nav>
+
+  <main class="giftcard-main">
+    <h2 class="titulos">Personalización de Gift Card</h2>
+
+    <div class="giftcard-container">
+      <!-- Vista previa -->
+      <div class="giftcard-preview">
+        <div class="giftcard-box" id="preview-box">
+          <p id="preview-text">GIFT CARD para <br><span id="preview-name">Destinatario</span></p>
+          <div id="preview-amount">$0000.-</div>
+        </div>
+        <p class="preview-label">VISTA PREVIA DE RESULTADO DE PERSONALIZACIÓN</p>
+      </div>
+
+      <!-- Formulario de opciones -->
+      <div class="giftcard-form">
+        <label for="nombre">Nombre Destinatario</label>
+        <input type="text" id="nombre" placeholder="Ingrese el nombre">
+
+        <p>Color</p>
+        <div class="color-options">
+          <input type="radio" name="color" id="color1"><label for="color1" class="circle color1"></label>
+          <input type="radio" name="color" id="color2"><label for="color2" class="circle color2"></label>
+          <input type="radio" name="color" id="color3"><label for="color3" class="circle color3"></label>
+          <input type="radio" name="color" id="color4"><label for="color4" class="circle color4"></label>
+        </div>
+
+        <p>Tamaño de fuente</p>
+        <div class="font-options">
+          <label><input type="radio" name="font-size">20px</label>
+          <label><input type="radio" name="font-size">28px</label>
+          <label><input type="radio" name="font-size">32px</label>
+          <label><input type="radio" name="font-size">48px</label>
+          <label><input type="radio" name="font-size">60px</label>
+        </div>
+
+        <label for="monto">Monto $</label>
+        <input type="number" id="monto" min="0" placeholder="0000">
+
+        <p>Ubicación del monto</p>
+        <div class="location-options">
+          <label><input type="radio" name="ubicacion">Arriba</label>
+          <label><input type="radio" name="ubicacion">Centro</label>
+          <label><input type="radio" name="ubicacion">Abajo</label>
+        </div>
+
+        <p>Fondo</p>
+        <div class="bg-options">
+          <div class="bg-sample bg1"></div>
+          <div class="bg-sample bg2"></div>
+          <div class="bg-sample bg3"></div>
+        </div>
+
+        <button class="btn-confirmar">CONFIRMAR</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-recuadros">
+      <h3>Datos del Grupo</h3>
+      <ul id="footer-datos-grupo">
+        <li>Facundo Nicolás Olivieri</li>
+        <li>Agustin Bejarano</li>
+        <li>Nicolas Felipe Alvarez</li>
+        <li>Franco David Pereyra</li>
+      </ul>
+    </div>
+    <div class="footer-recuadros">
+      <h3>Redes Sociales</h3>
+      <p>Facebook | Instagram | LinkedIn | X | YouTube</p>
+    </div>
+  </footer>
+</body>
+
+</html>
