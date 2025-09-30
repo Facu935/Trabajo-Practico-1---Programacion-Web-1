@@ -1,11 +1,20 @@
-h1{
-padding: 2em;
-text-align: center;
+.carrito-titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    text-decoration: underline;
+    gap: 2em;
+    margin: 2em 0;
+}
+
+.carrito-titulo img{
+    height: 5em;
+    width: 5em;
 }
 
 .carrito {
     background-color: #a0ded6;
-    height: 20em;
     width: auto;
     margin: 2em 10em;
     border: 2px solid black;
@@ -13,19 +22,90 @@ text-align: center;
     
 }
 
-#carrito-item1{
-    background-color: burlywood;
+.carrito-item{
     width: auto;
-    height: 10em;
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 3fr 1.5fr;
+    grid-template-rows: 6em 3em 6em;
+    border-bottom: 1px solid black;
 }
 
-#carrito-item1-datos{
+.imagen{
+    grid-column: 1;
+    grid-row: 2;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: none;
+}
+
+.titulo-curso{
+    grid-row: 1;
+    grid-column: 2;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    letter-spacing: 0.3em;
+    border-bottom: none;
+}
+.datos{
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5em;
+    border-bottom: none;
+}
+
+.datos  p{
+    margin-top: 0.3em;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+#valoracion-curso{
+    display: flex;
+    align-items: center;
+}
+
+.precio-unitario{
+    grid-row: 2;
+    grid-column: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    border-bottom: none;
+}
+
+
+
+#carrito-precio-total{
+    width: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: center;
 }
 
+#carrito-precio-total h2{
+    font-size: 2em;
+    text-decoration: underline;
+    padding: 2em 0 0.5em 0;
+}
 
+#carrito-precio-total p{
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    padding: 0.5em;
+}
+
+#carrito-precio-total button{
+    width: 15em;
+    height: 4em;
+    margin-bottom: 3em;
+}

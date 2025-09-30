@@ -47,6 +47,11 @@ header{
     align-items: center;
     position: relative;
 }
+.header-div__carrito button{
+   border: none;
+   background-color: transparent;
+   cursor: pointer;
+}
 
 
 #carrito{

@@ -25,11 +25,11 @@
             </datalist>
         </div>
         <div class="header-div__carrito">
-        <img src="../IMG/Icono Carrito de Compra.png" alt="Carrito de Compra" id="carrito"/>
+        <a href="../pages/carrito.html"><button><img src="../IMG/Icono Carrito de Compra.png" alt="Carrito de Compra" id="carrito"/></button></a>
         <div id="header-div__cantidad_items">
-        <p>0</p>
+          <p>1</p>
         </div>
-        </div>
+      </div>
     </header>
     <nav class="navegation">
         <div>
@@ -48,28 +48,38 @@
 
         
         <section>
-            <h1>CARRITO</h1>
+            <div class="carrito-titulo">
+                <img src="../IMG/Icono Carrito de Compra.png" alt="Carrito de Compra">
+                <h1>CARRITO</h1>
+            </div>
+            
             
             
             <div class="carrito">
-                <div id="carrito-item1">
-                    <img src="../IMG/Logo HTML5.png" alt="Logo HTML5">
-                        <div id="carrito-item1-datos">
-                            <h2>Curso HTML</h2>
-                            <div>
-                                <ul>
-                                    <li>Duración: 20hs</li>
-                                </ul>
-                                <img src="../IMG/Cursos/estrella.png" alt="Valoración del Curso">
-                                
-                            </div>
+                <div class="carrito-item">
+                    <div class="carrito-item imagen">
+                        <img src="../IMG/Logo HTML5.png" alt="Logo HTML5"> 
+                    </div>
+                    <div class="carrito-item titulo-curso">
+                        <h2>Curso HTML</h2>
+                    </div>
+                    <div class="carrito-item datos">
+                        <div id="valoracion-curso">
+                            <img src="../IMG/Cursos/estrella.png" alt="Valoracion del Curso">
+                            <p>4.8</p>
                         </div>
-                    
+                        <p>20 hs</p>
+                    </div>
+                    <div class="carrito-item precio-unitario">
+                        <p>$ 120.000</p>
+                    </div>
+                </div>
 
 
-
-
-
+                <div id="carrito-precio-total">
+                    <h2>TOTAL</h2>
+                    <p>$ 120.000</p>
+                    <button>CONFIRMAR COMPRA</button>
                 </div>
             </div>
         </section>    
