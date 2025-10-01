@@ -15,7 +15,6 @@ main{
 /*********   grid general   *********/
 
 .pago{
-
     width: 80%;
     height: 35em;
     margin-top: 10em;
@@ -169,4 +168,37 @@ main{
     border-radius: 0.3125em;
     background-color: rgb(65, 151, 208);
     color: white;
+}
+
+
+
+/*********************************/
+
+@media screen and (width < 900px){
+
+    .pago{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    label {
+        text-align: center;
+    }
+    #tarjeta label{
+        margin-bottom: 0.5em;
+        
+    } 
+
+    #vencimiento-seguridad {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5em;
+    }
+
+    .pago-resumen{
+        height: 45em;
+    }
+
 }
