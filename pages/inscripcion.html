@@ -8,31 +8,24 @@
   <link rel="stylesheet" href="../CSS/styles.css" />
   <link rel="stylesheet" href="../CSS/header-footer.css">
   <link rel="stylesheet" href="../CSS/inscripcion.css" />
-  <title>Edu Courses | INSCRIPCION</title>
+  <title>Edu Courses | INSCRIPCIÓN</title>
 </head>
 
 <body>
-  <header id="inicio">
-        <div class="header-div__logo">
-            <img src="../IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo" />
-        </div>
-        <div class="header-div__buscador">
-            <input list="cursos" name="buscador" id="buscador" placeholder="Buscar Curso" />
-            <datalist id="cursos">
-                <option value="HTML5">HTML5</option>
-                <option value="CSS3">CSS3</option>
-                <option value="JavaScript">Javascript</option>
-                <option value="Blockchain">Blockchain</option>
-                <option value="JQuery">JQuery</option>
-            </datalist>
-        </div>
-        <div class="header-div__carrito">
-        <a href="../pages/carrito.html"><button><img src="../IMG/Icono Carrito de Compra.png" alt="Carrito de Compra" id="carrito"/></button></a>
-          <div id="header-div__cantidad_items">
-            <p>1</p>
-          </div>
+  <header>
+    <div class="header-div__logo">
+      <img src="../IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo" />
+    </div>
+    <div class="header-div__buscador">
+      <input type="text" name="buscador" id="buscador" placeholder="Buscar"/>
+    </div>
+    <div class="header-div__carrito">
+      <img src="../IMG/Icono Carrito de Compra.png" alt="Carrito de Compra" id="carrito" />
+      <div id="header-div__cantidad_items">
+        <p>0</p>
       </div>
-    </header>
+    </div>
+  </header>
 
   <nav class="navegation">
     <div>
@@ -51,73 +44,66 @@
       <div class="container-titulo-curso">
         <h2>CURSO HTML 5</h2>
       </div>
-      <form action="../pages/carrito.html" class="formulario">
+      <form action="/procesar-formulario" class="formulario">
         <h3 class="titulo-inscripcion">INSCRIPCIÓN</h3>
 
-        <fieldset>
-          <div class="container-input">
-            <input type="text" id="nombre1" name="nombre1" placeholder="Nombre" autocomplete="name" required />
-          </div>
-          <div class="container-input">
-            <input type="text" id="apellido1" name="apellido1" placeholder="Apellido" autocomplete="family-name"
-              required />
-          </div>
-          <div class="container-input">
-            <input type="number" id="dni1" name="dni1" placeholder="DNI" required />
-          </div>
-          <div>
-            <button type="button" class="icon-delete" aria-label="Eliminar participante 1">
-              &#10060;
-            </button>
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <div class="container-input">
-            <input type="text" id="nombre2" name="nombre2" placeholder="Nombre" autocomplete="name" required />
-          </div>
-          <div class="container-input">
-            <input type="text" id="apellido2" name="apellido2" placeholder="Apellido" autocomplete="family-name"
-              required />
-          </div>
-          <div class="container-input">
-            <input type="number" id="dni2" name="dni2" placeholder="DNI" required />
-          </div>
-          <div>
-            <button type="button" class="icon-delete" aria-label="Eliminar participante 2">
-              &#10060;
-            </button>
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <div class="container-input">
-            <input type="text" id="nombre3" name="nombre3" placeholder="Nombre" autocomplete="name" required />
-          </div>
-          <div class="container-input">
-            <input type="text" id="apellido3" name="apellido3" placeholder="Apellido" autocomplete="family-name"
-              required />
-          </div>
-          <div class="container-input">
-            <input type="number" id="dni3" name="dni3" placeholder="DNI" required />
-          </div>
-          <div>
-            <button type="button" class="icon-delete" aria-label="Eliminar participante 3">
-              &#10060;
-            </button>
-          </div>
-        </fieldset>
-
-        <div class="add-persona">
-          <span class="icon-add">&#10133;</span>
-          <p>Agregar persona</p>
+      <fieldset>
+        <div class="container-input">
+          <input type="text" id="nombre1" name="nombre1" placeholder="Nombre" autocomplete="name" required />
         </div>
-        <div class="container-precio-incribirse">
-          <p>Precio total: $25000</p>
-          <button class="btn-inscribirse" type="submit">INSCRIBIRSE</button>
+        <div class="container-input">
+          <input type="text" id="apellido1" name="apellido1" placeholder="Apellido" autocomplete="family-name"
+            required />
         </div>
-      </form>
-    </div>
+        <div class="container-input">
+          <input type="number" id="dni1" name="dni1" placeholder="DNI" required />
+        </div>
+        <div class="container-button">
+          <button type="button" class="icon-delete" aria-label="Eliminar participante 1">&#10060;</button>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="container-input">
+          <input type="text" id="nombre2" name="nombre2" placeholder="Nombre" autocomplete="name" required />
+        </div>
+        <div class="container-input">
+          <input type="text" id="apellido2" name="apellido2" placeholder="Apellido" autocomplete="family-name"
+            required />
+        </div>
+        <div class="container-input">
+          <input type="number" id="dni2" name="dni2" placeholder="DNI" required />
+        </div>
+        <div class="container-button">
+          <button type="button" class="icon-delete" aria-label="Eliminar participante 2">&#10060;</button>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="container-input">
+          <input type="text" id="nombre3" name="nombre3" placeholder="Nombre" autocomplete="name" required />
+        </div>
+        <div class="container-input">
+          <input type="text" id="apellido3" name="apellido3" placeholder="Apellido" autocomplete="family-name"
+            required />
+        </div>
+        <div class="container-input">
+          <input type="number" id="dni3" name="dni3" placeholder="DNI" required />
+        </div>
+        <div class="container-button">
+          <button type="button" class="icon-delete" aria-label="Eliminar participante 3">&#10060;</button>
+        </div>
+      </fieldset>
+
+      <div class="add-persona">
+        <span class="icon-add">&#10133;</span>
+        <p>Agregar persona</p>
+      </div>
+      <div class="container-precio-inscribirse">
+        <p>Precio total: $25000</p>
+        <button class="btn-inscribirse" type="submit">INSCRIBIRSE</button>
+      </div>
+    </form>
   </main>
 
   <footer>
@@ -127,7 +113,7 @@
                 <li>Facundo Nicolás Olivieri  (DNI:  42.290.776)</li>
                 <li>Agustin Bejarano (DNI:  41.173.682)</li>
                 <li>Nicolas Felipe Alvarez (DNI: 43.321.421)</li>
-                <li>Franco David Pereyra (DNI: 44.181.869)</li>
+                <li></li>
                 <li></li>
             </ul>
         </div>
@@ -142,7 +128,6 @@
                     <li>JavaScript</li>
                     <li>Blockchain</li>
                     <li>JQuery</li>
-                    <li>Java</li>
                 </ul>
               </div>
                 
