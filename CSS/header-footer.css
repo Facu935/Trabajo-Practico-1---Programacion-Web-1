@@ -1,17 +1,10 @@
-*{
+* {
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
 
-.titulos{
-    background-color: #45b5c4;
-    height: 4em;
-    text-align: center;
-    align-content: center;
-}
-
-header{
+header {
     background-color: #1693a5;
     height: 12em;
     display: flex;
@@ -20,25 +13,23 @@ header{
     align-items: center;
 }
 
-
-.header-div__logo{
-    height: auto; 
+.header-div__logo {
+    height: auto;
 }
 
-#logo{
+#logo {
     width: 10em;
     margin-left: 5em;
-    border-radius: 50%; 
-    border: 1px solid black; 
+    border-radius: 50%;
+    border: 1px solid black;
 }
 
-
-#buscador{
+#buscador {
     height: 3em;
     width: 40em;
 }
 
-.header-div__carrito{
+.header-div__carrito {
     height: 100%;
     width: 15%;
     display: flex;
@@ -47,19 +38,19 @@ header{
     align-items: center;
     position: relative;
 }
-.header-div__carrito button{
+
+.header-div__carrito button {
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
 
-
-#carrito{
+#carrito {
     height: 5em;
     width: 5em;
 }
 
-#header-div__cantidad_items{
+#header-div__cantidad_items {
     height: 2.5em;
     width: 2.5em;
     background-color: #ff000000;
@@ -75,15 +66,15 @@ header{
     font-weight: 800;
 }
 
-.navegation{
+.navegation {
     height: 5em;
     width: auto;
     background-color: #45b5c4;
     border-top: 1px solid black;
-    border-bottom: 1px solid black;  
+    border-bottom: 1px solid black;
 }
 
-.navegation__items{
+.navegation__items {
     height: 5em;
     padding: 0;
     margin: 0;
@@ -99,11 +90,9 @@ a {
     color: #000;
 }
 
-
-
 /********************************************************************/
 
-footer{
+footer {
     width: auto;
     height: 30em;
     background-color: #1693a5;
@@ -114,72 +103,172 @@ footer{
     border: 1px solid black;
 }
 
-.footer-recuadros{
+.footer-recuadros {
     width: 30em;
     height: 15em;
 }
 
-.footer-recuadros h3{
-    padding: 1em;
+.footer-recuadros h3 {
+    padding: 0 1em;
 }
 
-#footer-datos-grupo{
+#footer-datos-grupo {
     line-height: 2em;
     margin-top: 2em;
 }
 
-.footer-recuadros-info{
+#footer-datos-grupo{
+    list-style: none;
+    padding-left: 1em;
+}
+
+.footer-recuadros-info {
     display: flex;
     justify-content: space-between;
 }
-.footer-recuadros-info ul{
+
+.footer-recuadros-info ul {
     list-style: none;
 }
 
-.footer-recuadros-info-datos{
+.footer-recuadros-info-datos {
     width: 50%;
 }
-.footer-recuadros-info-datos h4{
+
+.footer-recuadros-info-datos h4 {
     text-align: center;
     text-decoration: underline;
 }
-#footer-recuadros-info-datos-cursos{
+
+#footer-recuadros-info-datos-cursos {
     line-height: 1.8em;
 }
-#footer-recuadros-info-datos-generales ul{
+
+#footer-recuadros-info-datos-generales ul {
     line-height: 3em;
     margin-top: 2.5em;
 }
 
-#footer-nota-legal{
+#footer-nota-legal {
     text-align: center;
     padding: 1em;
 }
 
-
-
-.footer-redes{
+.footer-redes {
     height: 10em;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    align-items: center;   
-
+    align-items: center;
 }
-.footer-redes-logos{
+
+.footer-redes-logos {
     border-radius: 1em;
 }
 
-#flecha-vuelta-inicio{
+#flecha-vuelta-inicio {
     font-size: 4em;
     position: fixed;
     bottom: 0.5em;
     right: 0.35em;
 }
 
-
-
 /**********************  Media Queries  ******************************/
 
+@media screen and (width < 900px) {
+    /********************************************************/
 
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
 
+    #logo {
+        margin-left: 0;
+        width: 8em;
+    }
+
+    #buscador {
+        height: 3em;
+        width: 15em;
+    }
+
+    #header-div__cantidad_items {
+        left: 2em;
+        bottom: 9em;
+    }
+
+    /*********************************************************/
+    footer {
+        width: 100%;
+        height: 80em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1em;
+    }
+
+    .footer-recuadros {
+        width: 35em;
+        height: 100em;
+    }
+
+    .footer-recuadros h3 {
+        font-size: 2em;
+    }
+
+    .footer-recuadros-info-datos h4 {
+        font-size: 2em;
+        margin-bottom: 1em;
+        margin-right: 1em;
+    }
+
+    .footer-recuadros-info-datos li {
+        font-size: 1.5em;
+        margin: 0.8em;
+    }
+
+    #footer-datos-grupo li {
+        font-size: 1.4em;
+    }
+}
+
+@media screen and (max-width: 47em) {
+    .footer-recuadros {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    #footer-recuadros-info-datos-cursos h4 {
+        text-align: start;
+        padding-left: 0.5em;
+    }
+
+    #footer-recuadros-info-datos-generales {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #footer-recuadros-info-datos-generales ul li {
+        text-align: center;
+    }
+
+    .footer-redes-logos {
+        width: 4em;
+        margin: 0.5em;
+    }
+
+    #flecha-vuelta-inicio {
+        display: none;
+    }
+}
