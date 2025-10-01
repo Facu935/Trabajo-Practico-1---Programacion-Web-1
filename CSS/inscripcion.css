@@ -11,62 +11,225 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
 }
 
 .container-titulo-curso {
-  margin: 2em 0em;
+  margin: 2rem 0;
 }
 
-fieldset {
-  border: none;
-  display: flex;
-  margin: 1em 2em 1em 0em;
-  align-items: center;
+.formulario {
+  width: 100%;
+  max-width: 120vh;
+  padding: 1rem;
 }
 
 .titulo-inscripcion {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
+  text-align: start;
+  font-size: 1.5rem;
+}
+
+fieldset {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 0.5fr;
+  gap: 1rem;
+  border: none;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  border-radius: 8px;
 }
 
 .container-input {
-  margin: 1em 2em 1em 0em;
+  display: flex;
+  align-items: center;
 }
 
-input {
-  height: 2.5em;
+.container-input input {
+  width: 100%;
+  height: 2.5rem;
   border-radius: 5px;
-  padding-left: 1em;
+  padding-left: 1rem;
+  border: 1px solid #ccc;
+}
+
+.container-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon-delete {
-  margin-left: 0.5em;
-  font-size: 2em;
-  background-color: #a0ded6;
+  font-size: 1.5rem;
+  background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .add-persona {
-  margin: 1em 0em;
   display: flex;
   align-items: center;
+  margin: 1rem 0;
+  cursor: pointer;
 }
 
 .icon-add {
-  background-color: none;
-  border: none;
-  font-size: 2em;
+  font-size: 2rem;
+  margin-right: 0.5rem;
 }
 
-.container-precio-incribirse {
+.add-persona p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.container-precio-inscribirse {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.container-precio-inscribirse p {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .btn-inscribirse {
-  margin-left: 1em;
-  width: 10em;
-  height: 2.5em;
-  border-radius: 0.3125em;
+  width: 10rem;
+  height: 2.5rem;
+  border-radius: 0.3125rem;
   background-color: rgb(65, 151, 208);
   color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-inscribirse:hover {
+  background-color: rgb(50, 120, 180);
+}
+
+@media (max-width: 47em) {
+  .container {
+    padding: 0.5rem; /* Menos padding para ahorrar espacio */
+  }
+
+  .container-titulo-curso {
+    margin: 1rem 0; /* Menos margen */
+  }
+
+  .formulario {
+    max-width: 100%; /* Ocupa todo el ancho */
+    padding: 0.5rem;
+  }
+
+  .titulo-inscripcion {
+    font-size: 1.2rem; /* Título más pequeño */
+  }
+
+  fieldset {
+    display: flex; /* Cambiamos a flex para apilar verticalmente */
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .container-input input {
+    height: 2rem; /* Inputs más pequeños */
+    padding-left: 0.5rem;
+  }
+
+  .icon-delete {
+    font-size: 1.2rem; /* Icono más pequeño */
+  }
+
+  .add-persona {
+    margin: 0.5rem 0;
+  }
+
+  .icon-add {
+    font-size: 1.5rem; /* Icono de agregar más pequeño */
+  }
+
+  .add-persona p {
+    font-size: 0.8rem; /* Texto más pequeño */
+  }
+
+  .container-precio-inscribirse {
+    flex-direction: column; /* Apilamos precio y botón */
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .container-precio-inscribirse p {
+    font-size: 1rem; /* Texto más pequeño */
+  }
+
+  .btn-inscribirse {
+    width: 100%; /* Botón ocupa todo el ancho */
+    max-width: 8rem;
+    height: 2rem;
+    font-size: 0.8rem;
+  }
+
+  /* Header */
+  header {
+    flex-direction: column; /* Apilamos verticalmente */
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .header-div__logo img {
+    max-width: 100px; /* Logo más pequeño */
+  }
+
+  .header-div__buscador input {
+    max-width: 200px; /* Buscador más estrecho */
+    height: 1.8rem;
+  }
+
+  .header-div__carrito img {
+    width: 30px; /* Carrito más pequeño */
+  }
+
+  .header-div__cantidad_items {
+    font-size: 0.8rem; /* Número en carrito más pequeño */
+  }
+
+  /* Navegación */
+  .navegation__items {
+    flex-direction: column; /* Menú vertical */
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .navegation__items li a {
+    font-size: 0.8rem; /* Texto más pequeño */
+  }
+
+  /* Footer */
+  .footer_recuadros {
+    text-align: center; /* Centramos contenido */
+    padding: 0.5rem;
+  }
+
+  .footer_recuadros h3 {
+    font-size: 1rem; /* Títulos más pequeños */
+  }
+
+  .footer_recuadros ul {
+    font-size: 0.8rem; /* Texto más pequeño */
+  }
+
+  .footer-redes_logos {
+    width: 25px; /* Iconos de redes más pequeños */
+  }
+
+  /* Flecha de vuelta al inicio */
+  #flecha-vuelta-inicio {
+    display: none;
+  }
 }
