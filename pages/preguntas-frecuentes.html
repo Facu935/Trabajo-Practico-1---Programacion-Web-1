@@ -10,25 +10,27 @@
 </head>
 <body>
     <header id="inicio">
-      <div class="header-div__logo">
+        <div class="header-div__logo">
         <img src="../IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo" />
-      </div>
-      <div class="header-div__buscador">
-        <input type="text" name="buscador" id="buscador" />
-      </div>
-      <div class="header-div__carrito">
-        <img
-          src="../IMG/Icono Carrito de Compra.png"
-          alt="Carrito de Compra"
-          id="carrito"
-        />
-        <div id="header-div__cantidad_items">
-          <p>0</p>
         </div>
+        <div class="header-div__buscador">
+            <input list="cursos" name="buscador" id="buscador" placeholder="Buscar Curso" />
+            <datalist id="cursos">
+                <option value="HTML5">HTML5</option>
+                <option value="CSS3">CSS3</option>
+                <option value="JavaScript">Javascript</option>
+                <option value="Blockchain">Blockchain</option>
+                <option value="JQuery">JQuery</option>
+            </datalist>
+        </div>
+        <div class="header-div__carrito">
+          <a href="../pages/carrito.html"><button><img src="../IMG/Icono Carrito de Compra.png" alt="Carrito de Compra" id="carrito"/></button></a>
+          <div id="header-div__cantidad_items">
+            <p>1</p>
+          </div>
       </div>
     </header>
-    <main>
-        <nav class="navegation">
+    <nav class="navegation">
         <div>
           <ul class="navegation__items">
             <li><a href="../index.html">INICIO</a></li>
@@ -39,15 +41,30 @@
           </ul>
         </div>
       </nav>
+    <main>
+        <section>
+          <div class="preguntas-frecuentes">
+            <h1>PREGUNTAS FRECUENTES</h1>
+            <ul>
+              <li>¿Necesito experiencia previa?</li>
+              <p>No. Tenemos cursos desde nivel inicial hasta avanzado</p>
+              <li>¿Puedo estudiar a mi ritmo?</li>
+              <p>Sí. Muchos cursos ofrecen modalidad autoasistida; otros incluyen sesiones en vivo con horario fijo.</p>
+              <li>¿Ofrecen certificación?</li>
+              <p>Sí. Al completar entregas clave y el proyecto final emitimos un certificado de finalización.</p>
+            </ul>
+          </div>
+        </section>
+
+
+
+
 
 
 
 
 
     </main>
-
-
-
     <footer>
         <div class="footer-recuadros">
             <h3>Datos del Grupo</h3>
@@ -55,7 +72,7 @@
                 <li>Facundo Nicolás Olivieri  (DNI:  42.290.776)</li>
                 <li>Agustin Bejarano (DNI:  41.173.682)</li>
                 <li>Nicolas Felipe Alvarez (DNI: 43.321.421)</li>
-                <li></li>
+                <li>Franco David Pereyra (DNI: 44.181.869)</li>
                 <li></li>
             </ul>
         </div>
@@ -70,6 +87,7 @@
                     <li>JavaScript</li>
                     <li>Blockchain</li>
                     <li>JQuery</li>
+                    <li>Java</li>
                 </ul>
               </div>
                 

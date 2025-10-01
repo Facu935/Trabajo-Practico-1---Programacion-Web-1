@@ -178,11 +178,7 @@ ul {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    /* separa los cursos en el eje horizontal */
     align-items: stretch;
-    /* todos tendrán la misma altura */
-    gap: 2em;
-    /* espacio entre cursos */
     padding: 2em;
 }
 
@@ -193,11 +189,9 @@ ul {
     padding: 1em 5em;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-}
-
-.contenedor-curso img{
-    height: 150px;
+    justify-content: center;
+    flex: 1;
+    margin: 0 7em;
 }
 
 .imagen {

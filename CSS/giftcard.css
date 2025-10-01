@@ -1,0 +1,154 @@
+.giftcard-main {
+  background-color: #4197ff;
+  padding: 2em;
+}
+
+.giftcard-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 2em;
+}
+
+/* Vista previa */
+.giftcard-preview {
+  width: 45%;
+  text-align: center;
+}
+
+.giftcard-box {
+  background-color: #a0ded6;
+  width: 100%;
+  height: 250px;
+  border: 4px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Para ubicar el monto */
+  text-align: center;
+}
+
+#preview-amount {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  padding: 0.3em 0.8em;
+  font-weight: bold;
+}
+
+#preview-name {
+  font-size: 32px;
+  display: block;
+  margin-top: 0.5em;
+}
+
+
+.preview-label {
+  margin-top: 1em;
+  font-size: 14px;
+}
+
+/* Formulario */
+.giftcard-form {
+  width: 40%;
+  background-color: #a0ded6;
+  padding: 1.5em;
+  border: 3px solid black;
+}
+
+.giftcard-form label,
+.giftcard-form p {
+  display: block;
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+.giftcard-form input[type="text"],
+.giftcard-form input[type="number"] {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.3em;
+}
+
+.color-options {
+  display: flex;
+  gap: 1em;
+  margin-top: 0.5em;
+}
+
+.circle {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.color1 { background: #000000; }
+.color2 { background: #ffffff; }
+.color3 { background: #4197ff; }
+.color4 { background: #45b5c4; }
+
+.font-options label {
+  margin-right: 1em;
+}
+
+.location-options label {
+  margin-right: 1em;
+}
+
+.bg-options {
+  display: flex;
+  gap: 1em;
+  margin-top: 0.5em;
+}
+
+.bg-sample {
+  width: 40px;
+  height: 40px;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.bg1 { background-color: #ffffff; }
+.bg2 { background-color: #4197ff; }
+.bg3 { background-color: #45b5c4; }
+
+.btn-confirmar {
+  margin-top: 2em;
+  width: 100%;
+  padding: 1em;
+  font-size: 1.2em;
+  background-color: #45b5c4;
+  border: 3px solid black;
+  cursor: pointer;
+}
+
+.color-options input[type="radio"] {
+  display: none;
+}
+
+.color-options label {
+  cursor: pointer;
+}
+
+.color-options input[type="radio"]:checked + label {
+  outline: 3px solid black;
+  border-radius: 50%;
+}
+
+.bg-options input[type="radio"] {
+  display: none;
+}
+
+.bg-options label {
+  cursor: pointer;
+}
+
+.bg-options input[type="radio"]:checked + .bg-sample {
+  outline: 3px solid black;
+}

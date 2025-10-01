@@ -1,3 +1,7 @@
+body{
+    background-color: #4197ff;
+}
+
 .separaciones{
     background-color: #000000;
     height: 4em;
@@ -10,15 +14,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 8%;
+    margin: 0 8% 5% 8%;
 }
 .encabezado-principal h1{
-    font-size: 3em;
+    font-size: 4em;
     margin-bottom: 1em;
 }
 .encabezado-principal h2{
     width: 80%;
-    font-size: 1.5m;
+    font-size: 2em;
     text-align: justify;
 }
 
@@ -31,42 +35,42 @@
 /*****************************************************************************/
 
 .introduccion{
-    background-color: #a0ded6;
+    
     height: 20em;
-    width: 80%;
+    width: auto;
     display: flex;
     text-align: center;
     align-items: center;
+    margin: 0 8%;
 }
 .introduccion-texto{
-    background-color: azure;
-    width: 80%;
-    height: 80%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: justify;
+}
+.introduccion img{
+    border-radius: 10%;
+}
+.introduccion p{
+    padding: 5em 0 5em 5em;
+    font-size: 1.3em;
+    line-height: 1.5em;
 }
 
 
-.introduccion{
-    background-color: #a0ded6;
-    height: 20em;
-    width: 80%;
-    display: flex;
-    text-align: center;
-    align-items: center;
-}
 
 
 /*****************************************************************************/
 
 .informacion-empresa{
-    background-color: #a0ded6;
+    
     height: 60em;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin: 10em 0;
+    margin: 6em 0;
 }
 
 .informacion-empresa-recuadros{
@@ -86,6 +90,7 @@
     text-align: start;
     margin-left: 5%;
     font-size: 1.3em;
+    line-height: 1.5em;
 }
 
 
@@ -98,14 +103,13 @@
 
 /*****************************************************************************/
 .equipo{
-    background-color: #a0ded6;
-    height: 100em;
-    text-align: center;
+    height: 130em;
 }
 
 .equipo h2{
-    padding: 2em;
+    padding: 3em 2em 2em 2em;
     font-size: 3em;
+    text-align: center;
 }
 
 .equipo-integrantes{
@@ -117,9 +121,9 @@
     text-align: center;
 }
 .equipo-integrante-individuo{
-    background-color: #9eaf04;
-    height: 35em;
-    width: 24em;
+    background-color: #a0ded6;
+    height: 45em;
+    width: 32em;
     border: 5px solid black;
     border-radius: 1em;
 }
@@ -130,6 +134,16 @@
 
 .equipo-integrante-individuo h3{
     padding: 0.5em;
+    font-size: 2em;
+}
+.equipo-integrante-individuo h4{
+    padding: 0 0.5em 1em 0.5em;
+    font-size: 1.4em;
+}
+.equipo-integrante-individuo p{
+    margin: 0 10%;
+    font-size: 1.3em;
+    text-align: start;
 }
 
 
