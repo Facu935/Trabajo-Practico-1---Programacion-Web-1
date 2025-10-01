@@ -1,0 +1,178 @@
+/* Estilos Específicos para el Calendario */
+
+.calendar-main {
+    padding: 1em;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #4197ff; /* Color de fondo base de tu tema */
+}
+
+.calendar-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 2em auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* -------------------- Encabezado de Mes -------------------- */
+.calendar-nav-header {
+    text-align: center;
+    padding: 0.5em 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+
+/* -------------------- Estilos GRID -------------------- */
+/* Aplicamos Grid al contenedor de días de la semana y al de las fechas */
+.calendar-grid {
+    display: grid;
+    /* 7 columnas de igual ancho (1fr) */
+    grid-template-columns: repeat(7, 1fr); 
+    border-left: 1px solid #ccc; /* Borde izquierdo para completar la cuadrícula */
+}
+
+/* Estilos para los nombres de los días (DOM, LUN, etc.) */
+.day-name {
+    padding: 8px 5px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #555;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #f0f0f0;
+}
+
+/* -------------------- Celdas de Fechas -------------------- */
+
+.day-cell {
+    /* Mínimo de altura para que los cursos tengan espacio */
+    min-height: 120px; 
+    padding: 5px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    /* Usamos Flexbox para ordenar el número y los eventos */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    cursor: default;
+}
+
+.date-number {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Marcar la transición de meses */
+.today-month {
+    color: #888; /* Color tenue para el mes siguiente */
+}
+
+/* Estilo para el día actual (18) */
+.today {
+    background-color: #e0f7fa; /* Un ligero resaltado */
+}
+
+.current-day-marker {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #4197ff; /* Azul para el marcador de hoy */
+    color: white;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Ocultamos el marcador si el día está cubierto por el número (como en la imagen) */
+    display: none; 
+}
+/* Estilo del 18 en la imagen es simplemente un círculo */
+.day-cell:nth-child(18) .date-number { 
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    background-color: #4197ff;
+    color: white;
+    text-align: center;
+    padding: 0;
+}
+
+
+/* -------------------- Eventos/Cursos -------------------- */
+
+.event-tag {
+    /* Debe ser un enlace, así que lo mostramos como un bloque */
+    display: block;
+    width: 95%; 
+    font-size: 0.75em;
+    padding: 4px 6px;
+    margin: 2px 0;
+    border-radius: 3px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.event-tag:hover {
+    filter: brightness(1.1);
+}
+
+/* Paleta de colores para los cursos */
+.html { background-color: #e34c26; } /* Naranja */
+.css { background-color: #264de4; } /* Azul */
+.js { background-color: #f7df1e; color: #333; font-weight: bold; } /* Amarillo */
+.jquery { background-color: #0769ad; } /* Azul oscuro */
+.blockchain { background-color: #3c3c3c; } /* Gris oscuro */
+
+/* -------------------- Media Queries -------------------- */
+
+@media (max-width: 768px) {
+    .day-cell {
+        min-height: 80px; /* Reducir la altura en tablet */
+    }
+    .date-number {
+        font-size: 0.8em;
+    }
+    .event-tag {
+        font-size: 0.65em;
+        padding: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar-wrapper {
+        margin: 1em auto;
+    }
+    .day-cell {
+        min-height: 60px; /* Más compacto en móvil */
+        padding: 3px;
+    }
+    .day-name {
+        padding: 0.5em 0;
+        font-size: 0.7em;
+    }
+    .date-number {
+        font-size: 0.75em;
+    }
+    .event-tag {
+        font-size: 0.55em;
+        padding: 2px;
+        margin: 1px 0;
+    }
+}
