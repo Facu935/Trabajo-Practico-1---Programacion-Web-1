@@ -1,4 +1,7 @@
-/*****************************************************/
+
+body{
+    background-color: #4197ff;
+}
 
 .carrito-titulo{
     display: flex;
@@ -27,7 +30,7 @@
 .carrito-item{
     width: auto;
     display: grid;
-    grid-template-columns: 1fr 3fr 1.5fr;
+    grid-template-columns: 1fr 3fr 2fr;
     grid-template-rows: 6em 3em 6em;
     border-bottom: 1px solid black;
 }
@@ -110,4 +113,65 @@
     width: 15em;
     height: 4em;
     margin-bottom: 3em;
+}
+
+
+
+/**************************************/
+
+@media screen and (width < 900px){
+    body{
+        font-size: 70%;
+    }
+
+    
+    .carrito {
+    width: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0em  0em;
+    margin-left: 3em;
+    margin-bottom: 3em;
+    }
+
+
+    .carrito-item{
+    grid-template-columns: 1fr 3fr 3.5fr;
+    }
+
+
+    .imagen-curso{
+        width: 10em;
+    }
+
+    .titulo-curso{
+        text-align: center;
+    }
+
+    .datos{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 1em;
+    
+    }
+
+
+    .datos p{
+        margin-left: 2.8em;
+    }
+
+    #valoracion-curso p{
+        margin-left: 0;
+    }
+    .precio-unitario{
+    font-size: 2em;
+    letter-spacing: 0em;
+    }
+
+
+    
 }
