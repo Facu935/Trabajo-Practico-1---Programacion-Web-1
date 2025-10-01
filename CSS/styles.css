@@ -200,16 +200,53 @@ body{
     align-items: center;
 }
 
-/*********************  Footer *********************************************/
-
 
 
 /****************************  Media Queries ********************/
 
-@media screen  and (width < 900px){
+@media screen and (max-width: 61em){
 
+    body{
+        font-size: 90%;
+    }
+    .section-pasos{
+    height: 30%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 5em;
+    }
+
+    .section-pasos-recuadros{
+    margin-top: 5em;
+    height: 50%;
+    width: 70%;
+    }
+
+
+
+
+    #contenedor-grid-padre{
+    width: 90%;
+    }
+
+    .contenedor-grid-hijo{
+        width: 90%;
+    }
 
     
+}
+    
+    
+    
+
+
+
+@media screen  and (max-width: 47em){
+
+
     body {
         font-size: 70%;
     }
