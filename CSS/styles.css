@@ -46,37 +46,43 @@ body{
     align-items: center;
 }
 
-.section-pasos h2{
-    height: 40em;
-    width: auto;
-    background-color: #4197ff;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    
-}
-
-.section-pasos__recuadros{
+.section-pasos-recuadros{
     background-color: #a0ded6;
     height: 20em;
     width: 30em;
     border: 5px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     text-align: center;
-    align-content: center;
 }
 
-.section-pasos__recuadros p{
+.section-pasos-recuadros h3{
+    font-size: 1.8em;
+    
+}
+.section-pasos-recuadros-textos{
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 1.8em;
     text-align: justify;
+    margin: 0 1em;
 }
 
+.pasos-flecha{
+    font-size: 8em;
+}
 
+.palabra-clave {
+    color: blue;
+}
 /****************************   CURSOS DESTACADOS  ********************/
 
 .cursos{
     background-color: #4197ff;
     width: auto;
-    height: 90em;
+    height: 100em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,8 +90,8 @@ body{
 }
 
 #contenedor-grid-padre{
-    width: 80%;
-    height: 80%;
+    width: 80em;
+    height: 80em;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -193,4 +199,97 @@ body{
 }
 
 /****************************  Media Queries ********************/
+
+@media screen  and (width < 900px){
+
+
+    
+    body {
+        font-size: 70%;
+    }
+
+    
+    /******************************************************/
+    .slider{
+        width: 100%;
+        height: 50%;
+    }
+
+    .icono_slider{
+        width: 15%;
+        height: 15%;
+    }
+
+    #titulo-pasos{
+    margin-top: 4em;
+    }
+
+    .section-pasos{
+    height: 30%;
+    width: auto;
+    background-color: #4197ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    }
+
+    .section-pasos-recuadros{
+    margin-top: 5em;
+    background-color: #a0ded6;
+    height: 50%;
+
+    }
+    .pasos-flecha{
+    font-size: 0em;
+    }
+
+
+
+    /***********************************************************/
+    
+    .cursos{
+    display: flex;
+    flex-direction: column;
+    height: 120em;
+    
+    }
+
+    #contenedor-grid-padre{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        
+    }
+    
+
+
+.contenedor-grid-hijo{
+    width: 30em;
+    margin-left: 10em;
+    /*
+    display: grid;
+    grid-template-rows: 3fr 1.2fr 1.5fr 2.5fr;
+    grid-template-columns: 1fr;
+    grid-gap: 0.3em;*/
+}
+
+.titulo{
+    width: 100%;
+}
+.contenedor-grid-hijo h4{ 
+    font-size: 70%;
+}
+.contenedor-grid-hijo p{ 
+    font-size: 90%;
+}
+
+.contenedor-grid-hijo button{ 
+    width: 10em;
+}
+
+
+
+
+}
 

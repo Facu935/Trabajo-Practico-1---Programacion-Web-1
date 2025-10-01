@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./CSS/styles.css" />
+  <link rel="stylesheet" href="./CSS/styles.css"/>
   <link rel="stylesheet" href="./CSS/header-footer.css">
   <title>Edu Courses | INICIO</title>
 </head>
@@ -25,8 +25,7 @@
       </datalist>
     </div>
     <div class="header-div__carrito">
-      <a href="./pages/carrito.html"><button><img src="./IMG/Icono Carrito de Compra.png" alt="Carrito de Compra"
-            id="carrito" /></button></a>
+      <a href="./pages/carrito.html"><button><img src="./IMG/Icono Carrito de Compra.png" alt="Carrito de Compra" id="carrito" /></button></a>
       <div id="header-div__cantidad_items">
         <p>1</p>
       </div>
@@ -53,32 +52,38 @@
     <section>
       <h2 class="titulos" id="titulo-pasos">PASOS DE INSCRIPCION DE UN CURSO</h2>
       <div class="section-pasos">
-        <div class="section-pasos__recuadros">
+        <div class="section-pasos-recuadros">
           <h3>Paso 1</h3>
-          <p>
-            Una vez elegido el curso a realizar, puede comenzar con el proceso de incripción haciendo click en el botón
-            inscribirme, tanto el que se encuentra en la sección de cursos de la pagina de inicio asi como tambien en
-            lás paginas informativas respectivas de los cursos
+          <p class="section-pasos-recuadros-textos">
+            Puede comenzar con el proceso de incripción haciendo click en el botón
+            <a href="#inscribirse" class="palabra-clave">"Inscribirme"</a>, de cada curso.
           </p>
         </div>
 
-        <div class="section-pasos__recuadros">
+        <p class="pasos-flecha">&#x2192;</p>
+
+        <div class="section-pasos-recuadros">
           <h3>Paso 2</h3>
-          <p>
+          <p class="section-pasos-recuadros-textos">
             Cargue sus datos (nombre, apellido y DNI). Una vez hecho esto haga click en el botón "inscribirse" para
-            pasar a la seccion del carrito y confirmar la compra
+            pasar a la seccion del carrito y confirmar la compra. O en su defecto, haga click en el boton del  <a href="#carrito" class="palabra-clave">carrito</a> más arriba
           </p>
         </div>
 
-        <div class="section-pasos__recuadros">
+        <p class="pasos-flecha">&#x2192;</p>
+
+        <div class="section-pasos-recuadros">
           <h3>Paso 3</h3>
-          <p></p>
+          <p class="section-pasos-recuadros-textos">
+            Confirme la compra del o los cursos seleccionados. Luego, cargue los datos de su tarjeta para realizar el abono. Puede ver las tarjetas que aceptamos <a href="#medios-pago" class="palabra-clave">aquí</a> 
+          </p>
         </div>
       </div>
     </section>
 
+    
     <section>
-      <h2 class="titulos">CURSOS DESTACADOS</h2>
+      <h2 class="titulos" id="inscribirse">CURSOS DESTACADOS</h2>
 
       <div class="cursos">
         <div id="contenedor-grid-padre">
@@ -198,10 +203,11 @@
       </div>
     </section>
 
-    <section>
-      <h2 class="titulos">MEDIOS DE PAGO</h2>
-      <div class="medios_de_pago">
 
+    <!--
+    <section>
+      <h2 class="titulos" id="medios-pago">MEDIOS DE PAGO</h2>
+      <div class="medios_de_pago">
 
         <div class="medios_de_pago__recuadros">
           <img src="./IMG/Logo VISA CREDITO.png" alt="Visa">
@@ -278,6 +284,7 @@
 
   </footer>
   <a href="#inicio"><i id="flecha-vuelta-inicio">&#x1F53C;</i></a>
+  -->
 </body>
 
 </html>

@@ -48,9 +48,9 @@ header{
     position: relative;
 }
 .header-div__carrito button{
-   border: none;
-   background-color: transparent;
-   cursor: pointer;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 
@@ -178,3 +178,10 @@ footer{
     bottom: 0.5em;
     right: 0.35em;
 }
+
+
+
+/**********************  Media Queries  ******************************/
+
+
+
