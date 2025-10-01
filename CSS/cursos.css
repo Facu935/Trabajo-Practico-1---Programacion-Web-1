@@ -232,7 +232,7 @@ ul {
 
 /************************************/
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 590px) {
     #imagen-texto {
         flex-direction: column;
         gap: 1em;
@@ -251,7 +251,7 @@ ul {
 
     #contenidos {
         width: 100%;
-        padding: 1em;
+        padding: 2em;
     }
 
     #contenedor-docente {
