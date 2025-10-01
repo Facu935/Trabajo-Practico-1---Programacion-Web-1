@@ -1,0 +1,237 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #a0ded6;
+    font-weight: 600;
+}
+
+.contenedor-principal {
+    width: 60%;
+    margin: 3em auto 3em auto;
+    border-radius: 50px;
+    padding: 1em;
+    background-color: #45b5c4;
+}
+
+#imagen-texto {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 5em;
+    margin-top: 1em;
+}
+
+#valoracion-curso {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 0.2em 0 1em 0;
+}
+
+#valoracion-curso p {
+    margin-right: 2em;
+}
+
+#imagen {
+    margin: 2em 4em 0 8em;
+}
+
+#listas {
+    margin-top: 1.5em;
+}
+
+#listas li {
+    margin: 0.8em;
+    padding-left: 0.5em;
+}
+
+ul {
+    margin: 0.5em;
+}
+
+#boton {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0.5em;
+    margin-top: 2.5em;
+}
+
+#div-boton {
+    color: black;
+    font-weight: bold;
+    background-color: #17ede8;
+    padding: 1em;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+#div-boton:hover {
+    background-color: #a0ded6;
+    color: black;
+    cursor: pointer;
+}
+
+#contenidos {
+    padding: 2.5em;
+    width: 40%;
+}
+
+#contenidos h2 {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 1em;
+}
+
+.unidad {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid black;
+    padding: 1em;
+}
+
+.unidad img {
+    cursor: pointer;
+}
+
+#unidad-uno {
+    border: 1px solid black;
+}
+
+.clases {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5em;
+}
+
+.clase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2em;
+    cursor: not-allowed;
+}
+
+#contenedor-docente {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 5em;
+    margin-top: 1em;
+}
+
+#imagen-profe {
+    height: 150px;
+    width: 150px;
+    border-radius: 70px;
+    object-fit: cover;
+    margin-left: 1em;
+}
+
+#info h2 {
+    margin-top: 0.3em;
+    margin-bottom: 0.8em;
+}
+
+#contenedor-estrella {
+    display: flex;
+    align-items: center;
+}
+
+#contenedor-estrella p {
+    margin-top: 0.2em;
+}
+
+#contenedor-opiniones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2.5em;
+    width: 100%;
+    margin-top: 1em;
+}
+
+#contenedor-opiniones div {
+    background-color: #a0ded6;
+    border-radius: 50px;
+    padding: 1em;
+}
+
+#contenedor-opiniones img {
+    height: 35px;
+}
+
+#opinion {
+    margin-left: 5em;
+}
+
+.cursos {
+    background-color: #45b5c4;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    /* separa los cursos en el eje horizontal */
+    align-items: stretch;
+    /* todos tendrán la misma altura */
+    gap: 2em;
+    /* espacio entre cursos */
+    padding: 2em;
+}
+
+.contenedor-curso {
+    background-color: #a0ded6;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1em 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contenedor-curso img{
+    height: 150px;
+}
+
+.imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.titulo {
+    text-align: center;
+    border: 2px solid black;
+    margin-bottom: 1em;
+}
+
+.datos {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 0.5em;
+}
+
+.datos a {
+    margin: 0.5em 0;
+}
+
+.datos button {
+    padding: 0.2em;
+    margin: 0.5em;
+}
+
+.horas-y-precio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}

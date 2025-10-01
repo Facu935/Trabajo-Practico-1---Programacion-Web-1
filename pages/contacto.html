@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/contacto.css">
+    <link rel="stylesheet" href="../CSS/header-footer.css">
     <title>Contacto</title>
 </head>
 
@@ -19,21 +20,21 @@
         <div class="header-div__carrito">
             <img src="../IMG/Icono Carrito de Compra.png" alt="Carrito de Compra" id="carrito">
             <div id="header-div__cantidad_items">
-                <p>1</p>
+                <p>0</p>
             </div>
         </div>
     </header>
     <nav class="navegation">
-        <div>
-            <ul class="navegation__items">
-                <li><a href="../index.html">INICIO</a></li>
-                <li><a href="">CALENDARIO</a></li>
-                <li><a href="">GIFT CARD</a></li>
-                <li><a href="./inscripcion.html">INSCRIPCIÓN</a></li>
-                <li><a href="./contacto.html">CONTACTO</a></li>
-            </ul>
-        </div>
-    </nav>
+            <div>
+                <ul class="navegation__items">
+                    <li><a href="../index.html">INICIO</a></li>
+                    <li><a href="">CALENDARIO</a></li>
+                    <li><a href="">GIFT CARD</a></li>
+                    <li><a href="../pages/inscripcion.html">INSCRIPCIÓN</a></li>
+                    <li><a href="../pages/contacto.html">CONTACTO</a></li>
+                </ul>
+            </div>
+        </nav>
     <div class="container-contacto">
         <div class="contacto">
             <form action="./confirmacion-contacto.html" method="get" class="contacto__form">
@@ -83,30 +84,53 @@
         </div>
     </div>
     <footer>
-        <div class="footer_recuadros">
+        <div class="footer-recuadros">
             <h3>Datos del Grupo</h3>
-            <ul>
-                <li>Facundo Nicolás Olivieri (DNI: 42.290.776)</li>
-                <li>Agustin Bejarano (DNI: 41.173.682)</li>
+            <ul  id="footer-datos-grupo">
+                <li>Facundo Nicolás Olivieri  (DNI:  42.290.776)</li>
+                <li>Agustin Bejarano (DNI:  41.173.682)</li>
+                <li>Nicolas Felipe Alvarez (DNI: 43.321.421)</li>
                 <li></li>
                 <li></li>
-                <li>Nicolas Felipe Alvarez (DNI: 43321421)</li>
             </ul>
         </div>
-        <div class="footer_recuadros">
-            <h3>Menu Inferior</h3>
+        <div class="footer-recuadros">
+            <h3>ACERCA DE</h3>
+            <div class="footer-recuadros-info">
+              <div class="footer-recuadros-info-datos" id="footer-recuadros-info-datos-cursos">
+                <h4>Cursos</h4>
+                <ul>
+                    <li>Html 5</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Blockchain</li>
+                    <li>JQuery</li>
+                </ul>
+              </div>
+                
+              <div class="footer-recuadros-info-datos" id="footer-recuadros-info-datos-generales">
+                <ul>
+                    <a href="../pages/sobre-nosotros.html"><li>Sobre Nosotros</li></a>
+                    <a href="../pages/preguntas-frecuentes.html"><li>Preguntas Frecuentes</li></a>
+                </ul>
+              </div>
+            </div>
+            <p id="footer-nota-legal">© Edu Courses. Todos los derechos reservados.</p>
         </div>
-        <div class="footer_recuadros">
+        <div class="footer-recuadros">
             <h3>Redes Sociales</h3>
-            <div class="footer_redes">
-                <img class="img__redes" src="../IMG/Logo Facebook.png" alt="">
-                <img class="img__redes" src="../IMG/Logo Instagram.jpeg" alt="">
-                <img class="img__redes" src="../IMG/Logo LinkedIn.png" alt="">
-                <img class="img__redes" src="../IMG/Logo Xpng.png" alt="">
-                <img class="img__redes" src="../IMG/Logo YT.png" alt="">
+            <div class="footer-redes">
+                <img src="../IMG/Logo Facebook.png" alt="Facebook" class="footer-redes-logos">
+                <img src="../IMG/Logo Instagram.jpeg" alt="Instagram" class="footer-redes-logos">
+                <img src="../IMG/Logo LinkedIn.png" alt="LinkedIn" class="footer-redes-logos">
+                <img src="../IMG/Logo Xpng.png" alt="X" class="footer-redes-logos">
+                <img src="../IMG/Logo YT.png" alt="YouTube" class="footer-redes-logos">
             </div>
         </div>
+        
+        
     </footer>
+    <a href="#inicio"><i id="flecha-vuelta-inicio">&#x1F53C;</i></a>
 </body>
 
 </html>
