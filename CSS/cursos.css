@@ -236,6 +236,7 @@ ul {
 
     .contenedor-principal{
         width: 100%;
+        justify-content: start;
     }
 
     #imagen{
