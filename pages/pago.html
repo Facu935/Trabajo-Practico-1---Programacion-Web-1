@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,11 @@
     <title>Edu Courses | Pago</title>
 
 </head>
+
 <body>
     <header id="inicio">
         <div class="header-div__logo">
-        <img src="../IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo" />
+            <img src="../IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo" />
         </div>
         <div class="header-div__buscador">
             <input list="cursos" name="buscador" id="buscador" placeholder="Buscar Curso" />
@@ -24,7 +26,8 @@
             </datalist>
         </div>
         <div class="header-div__carrito">
-            <a href="../pages/carrito.html"><button><img src="../IMG/Icono Carrito de Compra.png" alt="Carrito de Compra" id="carrito"/></button></a>
+            <a href="../pages/carrito.html"><button><img src="../IMG/Icono Carrito de Compra.png"
+                        alt="Carrito de Compra" id="carrito" /></button></a>
             <div id="header-div__cantidad_items">
                 <p>1</p>
             </div>
@@ -34,13 +37,13 @@
         <div>
             <ul class="navegation__items">
                 <li><a href="../index.html">INICIO</a></li>
-                <li><a href="">CALENDARIO</a></li>
-                <li><a href="">GIFT CARD</a></li>
+                <li><a href="../pages/calendario.html">CALENDARIO</a></li>
+                <li><a href="../pages/giftcard.html">GIFT CARD</a></li>
                 <li><a href="../pages/inscripcion.html">INSCRIPCIÓN</a></li>
                 <li><a href="../pages/contacto.html">CONTACTO</a></li>
-                </ul>
+            </ul>
         </div>
-        </nav>
+    </nav>
     <main>
         <div class="pago">
             <div class="pago-metodo">
@@ -48,16 +51,18 @@
                 <h2>PAGO</h2>
 
 
-                <form action="../pages/confirmacion-compra.html" method="get" enctype="application/x-www-form-urlencoded">
+                <form action="../pages/confirmacion-compra.html" method="get"
+                    enctype="application/x-www-form-urlencoded">
                     <div id="tarjeta">
                         <label for="numero-tarjeta">Numero de Tarjeta</label>
-                        <input type="number" id="numero-tarjeta" name="numero-tarjeta" placeholder="Ej: 9999 9999 9999 9999" maxlength="16">
+                        <input type="number" id="numero-tarjeta" name="numero-tarjeta"
+                            placeholder="Ej: 9999 9999 9999 9999" maxlength="16">
                     </div>
-                    
+
 
                     <div id="vencimiento-seguridad">
-                        <label for="vencimiento">Fecha de Vencimiento </label>   
-                        <input type="date" id="vencimiento" name="vencimiento" required> 
+                        <label for="vencimiento">Fecha de Vencimiento </label>
+                        <input type="date" id="vencimiento" name="vencimiento" required>
                         <label for="codigo-seguridad">Codigo de Seguridad </label>
                         <input type="number" maxlength="3" placeholder="CVV" required>
                     </div>
@@ -65,12 +70,12 @@
                         <label for="titular">Nombre y Apellido del titular</label>
                         <input type="text" id="titular" name="titular" placeholder="Nicolás Gomez" required>
                     </div>
-                    
+
                     <button type="submit">Confirmar Compra</button>
                 </form>
-                
+
             </div>
-            
+
 
 
             <div class="pago-resumen">
@@ -80,18 +85,19 @@
                         <h4>Curso HTML - 5</h4>
                         <p>120000</p>
                     </div>
-                    
+
                     <div id="total">
                         <h4>Total:</h4>
                         <p>$120.000</p>
                     </div>
                 </div>
 
-                
+
             </div>
         </div>
-        
+
     </main>
-    
+
 </body>
+
 </html>

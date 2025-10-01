@@ -49,23 +49,24 @@
         <h2 class="titulos">Personalización de Gift Card</h2>
 
         <div class="giftcard-container">
-            
+
             <div class="giftcard-preview-area">
                 <div class="giftcard-box" id="preview-box">
-                    <span class="preview-monto" id="monto-top-right">$0000.-</span> 
-                    
+                    <span class="preview-monto" id="monto-top-right">$0000.-</span>
+
                     <p class="preview-text-label">GIFT CARD para</p>
                     <h3 class="preview-destinatario" id="destinatario-name">Destinatario</h3>
-                    
+
                     <span class="preview-monto" id="monto-bottom-left" style="display: none;">$0000.-</span>
                 </div>
                 <p class="preview-label">VISTA PREVIA DE RESULTADO DE PERSONALIZACIÓN</p>
             </div>
 
             <form class="giftcard-form" action="./pago-giftcard.html" method="post">
-                
+
                 <label for="destinatario">Nombre Destinatario</label>
-                <input type="text" id="destinatario" name="nombre_destinatario" required placeholder="Nombre Destinatario" />
+                <input type="text" id="destinatario" name="nombre_destinatario" required
+                    placeholder="Nombre Destinatario" />
 
                 <div class="form-group">
                     <label>Color</label>
@@ -75,13 +76,13 @@
 
                         <input type="radio" id="color-gris" name="color" value="#666">
                         <label for="color-gris" class="color-swatch" style="background-color: #666;"></label>
-                        
+
                         <input type="radio" id="color-rojo" name="color" value="#C00">
                         <label for="color-rojo" class="color-swatch" style="background-color: #C00;"></label>
-                        
+
                         <input type="radio" id="color-azul" name="color" value="#00F">
                         <label for="color-azul" class="color-swatch" style="background-color: #00F;"></label>
-                        
+
                         <input type="radio" id="color-verde" name="color" value="#080">
                         <label for="color-verde" class="color-swatch" style="background-color: #080;"></label>
                     </div>
@@ -92,16 +93,16 @@
                     <div class="size-options">
                         <input type="radio" id="size-20" name="font_size" value="20px">
                         <label for="size-20">20px</label>
-                        
+
                         <input type="radio" id="size-28" name="font_size" value="28px" checked>
                         <label for="size-28">28px</label>
-                        
+
                         <input type="radio" id="size-32" name="font_size" value="32px">
                         <label for="size-32">32px</label>
-                        
+
                         <input type="radio" id="size-48" name="font_size" value="48px">
                         <label for="size-48">48px</label>
-                        
+
                         <input type="radio" id="size-60" name="font_size" value="60px">
                         <label for="size-60">60px</label>
                     </div>
@@ -109,33 +110,33 @@
 
                 <label for="monto">Monto $</label>
                 <input type="number" id="monto" name="monto_giftcard" placeholder="Ej: 50000" min="1000" required />
-                
+
                 <div class="form-group">
                     <label>Ubicación</label>
                     <div class="location-options">
                         <input type="radio" id="loc-top-right" name="monto_location" value="top_right" checked>
                         <label for="loc-top-right" class="loc-label">Top Der.</label>
-                        
+
                         <input type="radio" id="loc-bottom-left" name="monto_location" value="bottom_left">
                         <label for="loc-bottom-left" class="loc-label">Bottom Izq.</label>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                     <label>Fondo</label>
                     <div class="background-options">
                         <input type="radio" id="bg-1" name="fondo" value="bg-blue" checked>
                         <label for="bg-1" class="bg-swatch"></label>
-                        
+
                         <input type="radio" id="bg-2" name="fondo" value="bg-gray">
                         <label for="bg-2" class="bg-swatch"></label>
-                        
+
                         <input type="radio" id="bg-3" name="fondo" value="bg-green">
                         <label for="bg-3" class="bg-swatch"></label>
-                        
+
                         <input type="radio" id="bg-4" name="fondo" value="bg-pattern-1">
                         <label for="bg-4" class="bg-swatch"></label>
-                        
+
                         <input type="radio" id="bg-5" name="fondo" value="bg-pattern-2">
                         <label for="bg-5" class="bg-swatch"></label>
                     </div>
@@ -145,13 +146,13 @@
             </form>
         </div>
     </main>
-    
+
     <footer>
         <div class="footer-recuadros">
             <h3>Datos del Grupo</h3>
-            <ul  id="footer-datos-grupo">
-                <li>Facundo Nicolás Olivieri  (DNI:  42.290.776)</li>
-                <li>Agustin Bejarano (DNI:  41.173.682)</li>
+            <ul id="footer-datos-grupo">
+                <li>Facundo Nicolás Olivieri (DNI: 42.290.776)</li>
+                <li>Agustin Bejarano (DNI: 41.173.682)</li>
                 <li>Nicolas Felipe Alvarez (DNI: 43.321.421)</li>
                 <li>Franco David Pereyra (DNI: 44.181.869)</li>
                 <li></li>
@@ -160,24 +161,28 @@
         <div class="footer-recuadros">
             <h3>ACERCA DE</h3>
             <div class="footer-recuadros-info">
-              <div class="footer-recuadros-info-datos" id="footer-recuadros-info-datos-cursos">
-                <h4>Cursos</h4>
-                <ul>
-                    <li>Html 5</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>Blockchain</li>
-                    <li>JQuery</li>
-                    <li>Java</li>
-                </ul>
-              </div>
-                
-              <div class="footer-recuadros-info-datos" id="footer-recuadros-info-datos-generales">
-                <ul>
-                    <a href="../pages/sobre-nosotros.html"><li>Sobre Nosotros</li></a>
-                    <a href="../pages/preguntas-frecuentes.html"><li>Preguntas Frecuentes</li></a>
-                </ul>
-              </div>
+                <div class="footer-recuadros-info-datos" id="footer-recuadros-info-datos-cursos">
+                    <h4>Cursos</h4>
+                    <ul>
+                        <li>Html 5</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>Blockchain</li>
+                        <li>JQuery</li>
+                        <li>Java</li>
+                    </ul>
+                </div>
+
+                <div class="footer-recuadros-info-datos" id="footer-recuadros-info-datos-generales">
+                    <ul>
+                        <a href="../pages/sobre-nosotros.html">
+                            <li>Sobre Nosotros</li>
+                        </a>
+                        <a href="../pages/preguntas-frecuentes.html">
+                            <li>Preguntas Frecuentes</li>
+                        </a>
+                    </ul>
+                </div>
             </div>
             <p id="footer-nota-legal">© Edu Courses. Todos los derechos reservados.</p>
         </div>
