@@ -1,7 +1,6 @@
 /* Estilos Específicos para la Página de Gift Card */
 
 body {
-    /* Color de fondo consistente con el tema general (#4197ff) */
     background-color: #4197ff;
 }
 
@@ -9,16 +8,14 @@ main {
     padding: 2em;
 }
 
-/* Estilo para el título de sección que usas en contacto.css */
 .titulos {
     background-color: #45b5c4;
     height: 4em;
     text-align: center;
     align-content: center;
-    /* Asegura que el texto esté centrado verticalmente */
     display: grid;
     place-items: center;
-    font-size: 1.5em; /* Ajuste de tamaño para asegurar visibilidad */
+    font-size: 1.5em;
 }
 
 .giftcard-container {
@@ -124,7 +121,6 @@ main {
     gap: 0.5em;
 }
 
-/* Estilos para las opciones de radio */
 .color-options,
 .size-options,
 .location-options,
@@ -139,9 +135,8 @@ main {
     font-weight: normal;
 }
 
-/* Opciones de Color (Swatches) */
 .color-options input[type="radio"] {
-    opacity: 0; /* Oculta el radio button original */
+    opacity: 0;
     position: fixed;
     width: 0;
 }
@@ -159,7 +154,6 @@ main {
     border-width: 4px;
 }
 
-/* Opciones de Fondo (Simulación) */
 .background-options input[type="radio"] {
     opacity: 0; 
     position: fixed;
@@ -174,22 +168,19 @@ main {
     transition: border 0.2s;
 }
 
-/* Asignación de estilos de fondo simulados */
-#bg-1 + .bg-swatch { background-color: #4197ff; } /* Azul */
-#bg-2 + .bg-swatch { background-color: #DDD; } /* Gris */
-#bg-3 + .bg-swatch { background-color: #45b5c4; } /* Cian */
-#bg-4 + .bg-swatch { background-color: #f0f0f0; border: 1px solid #333;} /* Patrón 1 (Claro) */
+#bg-1 + .bg-swatch { background-color: #4197ff; }
+#bg-2 + .bg-swatch { background-color: #DDD; }
+#bg-3 + .bg-swatch { background-color: #45b5c4; }
+#bg-4 + .bg-swatch { background-color: #f0f0f0; border: 1px solid #333;}
 #bg-5 + .bg-swatch { 
     background-image: linear-gradient(to right, #444, #666); 
-} /* Patrón 2 (Oscuro) */
+}
 
 .background-options input[type="radio"]:checked + .bg-swatch {
     border-color: #000;
     border-width: 4px;
 }
 
-
-/* Botón Confirmar */
 .button-confirmar {
     background-color: #1693a5;
     color: white;
