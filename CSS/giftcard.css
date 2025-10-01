@@ -1,154 +1,222 @@
-.giftcard-main {
-  background-color: #4197ff;
-  padding: 2em;
+/* Estilos Específicos para la Página de Gift Card */
+
+body {
+    /* Color de fondo consistente con el tema general (#4197ff) */
+    background-color: #4197ff;
+}
+
+main {
+    padding: 2em;
+}
+
+/* Estilo para el título de sección que usas en contacto.css */
+.titulos {
+    background-color: #45b5c4;
+    height: 4em;
+    text-align: center;
+    align-content: center;
+    /* Asegura que el texto esté centrado verticalmente */
+    display: grid;
+    place-items: center;
+    font-size: 1.5em; /* Ajuste de tamaño para asegurar visibilidad */
 }
 
 .giftcard-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    gap: 4em;
+    padding: 2em 1em;
+    flex-wrap: wrap; 
 }
 
-/* Vista previa */
-.giftcard-preview {
-  width: 45%;
-  text-align: center;
+/* ------------------ VISTA PREVIA (IZQUIERDA) ------------------ */
+
+.giftcard-preview-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
 }
 
 .giftcard-box {
-  background-color: #a0ded6;
-  width: 100%;
-  height: 250px;
-  border: 4px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative; /* Para ubicar el monto */
-  text-align: center;
+    width: 400px;
+    height: 250px;
+    background-color: #a0ded6; 
+    border: 3px solid black;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
-
-#preview-amount {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  background-color: black;
-  color: white;
-  padding: 0.3em 0.8em;
-  font-weight: bold;
-}
-
-#preview-name {
-  font-size: 32px;
-  display: block;
-  margin-top: 0.5em;
-}
-
 
 .preview-label {
-  margin-top: 1em;
-  font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9em;
 }
 
-/* Formulario */
+.preview-monto {
+    position: absolute;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+#monto-top-right {
+    top: 15px;
+    right: 15px;
+}
+
+#monto-bottom-left {
+    bottom: 15px;
+    left: 15px;
+}
+
+.preview-text-label {
+    font-size: 1em;
+    color: #333;
+}
+
+.preview-destinatario {
+    font-size: 28px; 
+    font-weight: 700;
+    margin-top: 5px;
+    word-break: break-word;
+    max-width: 90%;
+    /* Estilo por defecto */
+    color: #000; 
+}
+
+
+/* ------------------ FORMULARIO (DERECHA) ------------------ */
+
 .giftcard-form {
-  width: 40%;
-  background-color: #a0ded6;
-  padding: 1.5em;
-  border: 3px solid black;
+    background-color: #a0ded6;
+    padding: 2em;
+    border-radius: 10px;
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    border: 1px solid black;
 }
 
-.giftcard-form label,
-.giftcard-form p {
-  display: block;
-  margin-top: 1em;
-  font-weight: bold;
+.giftcard-form label {
+    font-weight: 600;
+    margin-bottom: -0.5em; 
 }
 
 .giftcard-form input[type="text"],
 .giftcard-form input[type="number"] {
-  width: 100%;
-  padding: 0.5em;
-  margin-top: 0.3em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.color-options {
-  display: flex;
-  gap: 1em;
-  margin-top: 0.5em;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
 }
 
-.circle {
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  border-radius: 50%;
-  border: 2px solid black;
-  cursor: pointer;
+/* Estilos para las opciones de radio */
+.color-options,
+.size-options,
+.location-options,
+.background-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: center;
 }
 
-.color1 { background: #000000; }
-.color2 { background: #ffffff; }
-.color3 { background: #4197ff; }
-.color4 { background: #45b5c4; }
-
-.font-options label {
-  margin-right: 1em;
+.size-options label, .location-options label {
+    font-weight: normal;
 }
 
-.location-options label {
-  margin-right: 1em;
-}
-
-.bg-options {
-  display: flex;
-  gap: 1em;
-  margin-top: 0.5em;
-}
-
-.bg-sample {
-  width: 40px;
-  height: 40px;
-  border: 2px solid black;
-  cursor: pointer;
-}
-
-.bg1 { background-color: #ffffff; }
-.bg2 { background-color: #4197ff; }
-.bg3 { background-color: #45b5c4; }
-
-.btn-confirmar {
-  margin-top: 2em;
-  width: 100%;
-  padding: 1em;
-  font-size: 1.2em;
-  background-color: #45b5c4;
-  border: 3px solid black;
-  cursor: pointer;
-}
-
+/* Opciones de Color (Swatches) */
 .color-options input[type="radio"] {
-  display: none;
+    opacity: 0; /* Oculta el radio button original */
+    position: fixed;
+    width: 0;
 }
 
-.color-options label {
-  cursor: pointer;
+.color-swatch {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    transition: border 0.2s;
+}
+.color-options input[type="radio"]:checked + .color-swatch {
+    border-color: #000; 
+    border-width: 4px;
 }
 
-.color-options input[type="radio"]:checked + label {
-  outline: 3px solid black;
-  border-radius: 50%;
+/* Opciones de Fondo (Simulación) */
+.background-options input[type="radio"] {
+    opacity: 0; 
+    position: fixed;
+    width: 0;
 }
 
-.bg-options input[type="radio"] {
-  display: none;
+.bg-swatch {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    transition: border 0.2s;
 }
 
-.bg-options label {
-  cursor: pointer;
+/* Asignación de estilos de fondo simulados */
+#bg-1 + .bg-swatch { background-color: #4197ff; } /* Azul */
+#bg-2 + .bg-swatch { background-color: #DDD; } /* Gris */
+#bg-3 + .bg-swatch { background-color: #45b5c4; } /* Cian */
+#bg-4 + .bg-swatch { background-color: #f0f0f0; border: 1px solid #333;} /* Patrón 1 (Claro) */
+#bg-5 + .bg-swatch { 
+    background-image: linear-gradient(to right, #444, #666); 
+} /* Patrón 2 (Oscuro) */
+
+.background-options input[type="radio"]:checked + .bg-swatch {
+    border-color: #000;
+    border-width: 4px;
 }
 
-.bg-options input[type="radio"]:checked + .bg-sample {
-  outline: 3px solid black;
+
+/* Botón Confirmar */
+.button-confirmar {
+    background-color: #1693a5;
+    color: white;
+    padding: 1em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1em;
+    width: 100%;
+}
+
+/* ------------------ Media Queries ------------------ */
+
+@media (max-width: 850px) {
+    .giftcard-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+    }
+}
+
+@media (max-width: 450px) {
+    .giftcard-form,
+    .giftcard-box {
+        width: 100%;
+        max-width: none;
+    }
 }
