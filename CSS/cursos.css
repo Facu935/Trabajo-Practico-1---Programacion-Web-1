@@ -232,6 +232,48 @@ ul {
 
 /************************************/
 
+@media screen and (max-width: 425px) {
+    #imagen-texto {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    #imagen {
+        margin: 0 auto;
+        height: auto;
+        max-width: 80%;
+    }
+
+    .contenedor-principal {
+        width: 95%;
+        padding: 1em;
+    }
+
+    #contenidos {
+        width: 100%;
+        padding: 1em;
+    }
+
+    #contenedor-docente {
+        flex-direction: column;
+        gap: 1em;
+        align-items: center;
+        text-align: center;
+    }
+
+    #imagen-profe {
+        margin: 0 auto;
+        height: auto;
+        max-width: 80%;
+    }
+
+    #info {
+        width: 100%;
+        padding: 1em;
+    }
+}
+
+
 @media screen and (max-width: 768px) {
 
     .contenedor-principal {
@@ -273,6 +315,46 @@ ul {
 }
 
 @media screen and (max-width: 1024px) {
+    .contenedor-principal {
+        width: 100%;
+        justify-content: start;
+    }
+
+    #imagen {
+        margin: 0;
+        height: 10em;
+    }
+
+    #contenidos {
+        width: 100%;
+    }
+
+    #contenedor-opiniones {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+
+    #contenedor-opiniones div {
+        padding: 2em;
+    }
+
+    .cursos-similares {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .contenedor-curso {
+        width: 100%;
+        margin: 0.5em 0;
+    }
+
+    
+}
+@media screen and (max-width: 1440px) {
     .contenedor-principal {
         width: 100%;
         justify-content: start;
