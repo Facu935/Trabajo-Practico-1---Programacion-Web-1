@@ -5,7 +5,7 @@
     padding: 0;
 }
 
-body{
+body {
     background-color: #4197ff;
     font-weight: 600;
 }
@@ -232,41 +232,80 @@ ul {
 
 /************************************/
 
-@media screen  and (width < 900px){
+@media screen and (max-width: 768px) {
 
-    .contenedor-principal{
+    .contenedor-principal {
         width: 100%;
         justify-content: start;
     }
 
-    #imagen{
+    #imagen {
         margin: 0;
         height: 10em;
     }
 
-    #contenidos{
+    #contenidos {
         width: 100%;
     }
 
-    #contenedor-opiniones{
+    #contenedor-opiniones {
         display: flex;
         flex-direction: column;
         justify-content: start;
         align-items: start;
     }
 
-    #contenedor-opiniones div{
+    #contenedor-opiniones div {
         padding: 2em;
     }
 
-    .cursos-similares{
+    .cursos-similares {
         display: flex;
         flex-direction: column;
         justify-content: start;
         align-items: start;
     }
 
-    .contenedor-curso{
+    .contenedor-curso {
+        width: 100%;
+        margin: 0.5em 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .contenedor-principal {
+        width: 100%;
+        justify-content: start;
+    }
+
+    #imagen {
+        margin: 0;
+        height: 10em;
+    }
+
+    #contenidos {
+        width: 100%;
+    }
+
+    #contenedor-opiniones {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+
+    #contenedor-opiniones div {
+        padding: 2em;
+    }
+
+    .cursos-similares {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .contenedor-curso {
         width: 100%;
         margin: 0.5em 0;
     }
