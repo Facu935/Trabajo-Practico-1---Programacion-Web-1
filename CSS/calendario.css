@@ -99,17 +99,17 @@
     /* Ocultamos el marcador si el día está cubierto por el número (como en la imagen) */
     display: none; 
 }
-/* Estilo del 18 en la imagen es simplemente un círculo */
+/* Estilo del 18 en la imagen es simplemente un círculo
 .day-cell:nth-child(18) .date-number { 
     width: 20px;
     height: 20px;
     line-height: 20px;
     /*border-radius: 50%;
-    background-color: #4197ff;*/
+    background-color: #4197ff;
     color: white;
     text-align: center;
     padding: 0;
-}
+} */
 
 
 /* -------------------- Eventos/Cursos -------------------- */
