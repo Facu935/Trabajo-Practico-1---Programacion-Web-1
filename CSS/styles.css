@@ -164,12 +164,12 @@ body{
     font-size: 1.8em;
     
 }
-.section-pasos-recuadros-textos{
+.section-pasos-recuadros p{
     font-size: 1.2em;
     font-weight: 600;
-    line-height: 1.8em;
+    line-height: 1.3em;
     text-align: justify;
-    margin: 0 1em;
+    margin: 1em 1em;
 }
 
 .pasos-flecha{
