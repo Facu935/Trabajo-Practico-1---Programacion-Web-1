@@ -34,17 +34,17 @@
     </div>
   </header>
 
-  <nav class="navegation">
-    <div>
-      <ul class="navegation__items">
-        <li><a href="../index.html">INICIO</a></li>
-        <li><a href="pages/calendario.html">CALENDARIO</a></li>
-        <li><a href="pages/giftcard.html">GIFT CARD</a></li>
-        <li><a href="ages/inscripcion.html">INSCRIPCIÓN</a></li>
-        <li><a href="pages/contacto.html">CONTACTO</a></li>
-      </ul>
-    </div>
-  </nav>
+    <nav class="navegation">
+        <div>
+            <ul class="navegation__items">
+                <li><a href="../index.html">INICIO</a></li>
+                <li><a href="pages/calendario.html">CALENDARIO</a></li>
+                <li><a href="pages/giftcard.html">GIFT CARD</a></li>
+                <li><a href="ages/inscripcion.html">INSCRIPCIÓN</a></li>
+                <li><a href="pages/contacto.html">CONTACTO</a></li>
+            </ul>
+        </div>
+    </nav>
   <main>
 
 
@@ -57,16 +57,16 @@
     <section>
       <h2 class="titulos" id="titulo-pasos">PASOS DE INSCRIPCION DE UN CURSO</h2>
       <div class="section-pasos">
-        <div class="section-pasos__recuadros">
+        <div class="section-pasos-recuadros">
           <h3>Paso 1</h3>
           <p>
             Una vez elegido el curso a realizar, puede comenzar con el proceso de incripción haciendo click en el botón
-            inscribirme, tanto el que se encuentra en la sección de cursos de la pagina de inicio asi como tambien en
+            <a href="#insc"class="palabra-clave">inscribirme</a> , tanto el que se encuentra en la sección de cursos de la pagina de inicio asi como tambien en
             lás paginas informativas respectivas de los cursos
           </p>
         </div>
 
-        <div class="section-pasos__recuadros">
+        <div class="section-pasos-recuadros">
           <h3>Paso 2</h3>
           <p>
             Cargue sus datos (nombre, apellido y DNI). Una vez hecho esto haga click en el botón "inscribirse" para
@@ -74,15 +74,17 @@
           </p>
         </div>
 
-        <div class="section-pasos__recuadros">
+        <div class="section-pasos-recuadros">
           <h3>Paso 3</h3>
-          <p></p>
+          <p>
+            Confirme los cursos a comprar, cargue los datos de la tarjeta y confirme el pago.Puede ver las tarjetas aceptadas <a href="#pagos" class="palabra-clave">aquí</a>
+          </p>
         </div>
       </div>
     </section>
 
     <section>
-      <h2 class="titulos">CURSOS DESTACADOS</h2>
+      <h2 class="titulos" id="insc">CURSOS DESTACADOS</h2>
 
       <div class="cursos">
         <div id="contenedor-grid-padre">
@@ -203,7 +205,7 @@
     </section>
 
     <section>
-      <h2 class="titulos">MEDIOS DE PAGO</h2>
+      <h2 class="titulos" id="pagos">MEDIOS DE PAGO</h2>
       <div class="medios_de_pago">
 
 
@@ -264,27 +266,31 @@
           </ul>
         </div>
 
-      </div>
-    </div>
-
-    <div class="footer-recuadros">
-      <h3>Redes Sociales</h3>
-      <div class="footer-redes">
-        <a href="https://www.facebook.com/" target="_blank"><img src="./IMG/Logo Facebook.png" alt="Facebook"
-            class="footer-redes-logos"></a>
-        <a href="http://www.instagram.com" target="_blank"><img src="./IMG/Logo Instagram.jpeg" alt="Instagram"
-            class="footer-redes-logos"></a>
-        <a href="http://www.linkedin.com" target="_blank"><img src="./IMG/Logo LinkedIn.png" alt="LinkedIn"
-            class="footer-redes-logos"></a>
-        <a href="http://www.x.com" target="_blank"><img src="./IMG/Logo Xpng.png" alt="X"
-            class="footer-redes-logos"></a>
-        <a href="http://www.youtube.com" target="_blank"><img src="./IMG/Logo YT.png" alt="YouTube"
-            class="footer-redes-logos"></a>
-      </div>
-    </div>
-  </footer>
-  <a href="#inicio"><i id="flecha-vuelta-inicio">&#x1F53C;</i></a>
-  <p id="footer-nota-legal">© Edu Courses. Todos los derechos reservados.</p>
+                <div class="footer-recuadros-info-datos" id="footer-recuadros-info-datos-generales">
+                    <ul>
+                        <a href="../pages/sobre-nosotros.html">
+                            <li>Sobre Nosotros</li>
+                        </a>
+                        <a href="../pages/preguntas-frecuentes.html">
+                            <li>Preguntas Frecuentes</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <p id="footer-nota-legal">© Edu Courses. Todos los derechos reservados.</p>
+        </div>
+        <div class="footer-recuadros">
+            <h3>Redes Sociales</h3>
+            <div class="footer-redes">
+                <img src="../IMG/Logo Facebook.png" alt="Facebook" class="footer-redes-logos">
+                <img src="../IMG/Logo Instagram.jpeg" alt="Instagram" class="footer-redes-logos">
+                <img src="../IMG/Logo LinkedIn.png" alt="LinkedIn" class="footer-redes-logos">
+                <img src="../IMG/Logo Xpng.png" alt="X" class="footer-redes-logos">
+                <img src="../IMG/Logo YT.png" alt="YouTube" class="footer-redes-logos">
+            </div>
+        </div>
+    </footer>
+    <a href="#inicio"><i id="flecha-vuelta-inicio">&#x1F53C;</i></a>
 </body>
 
 </html>
