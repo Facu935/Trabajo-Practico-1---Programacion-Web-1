@@ -32,8 +32,8 @@ header{
 #buscador{
     height: 3em;
     width: 40em; /* cambiar para el mediaquery */
-    border-radius: 0.4em;
-    border: 1px solid black;
+    /*border-radius: 0.4em;
+    border: 1px solid black;*/
 }
 
 .header-div__carrito{
