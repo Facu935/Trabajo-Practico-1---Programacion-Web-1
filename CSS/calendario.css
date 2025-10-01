@@ -29,12 +29,10 @@
 
 .calendar-grid {
     display: grid;
-    /* 7 columnas de igual ancho (1fr) */
     grid-template-columns: repeat(7, 1fr); 
     border-left: 1px solid #ccc; 
 }
 
-/* Estilos para los nombres de los días (DOM, LUN, etc.) */
 .day-name {
     padding: 8px 5px;
     font-size: 0.85em;
@@ -125,11 +123,11 @@
     filter: brightness(1.1);
 }
 
-.html { background-color: #e34c26; } /* Naranja */
-.css { background-color: #264de4; } /* Azul */
-.js { background-color: #f7df1e; color: #333; font-weight: bold; } /* Amarillo */
-.jquery { background-color: #0769ad; } /* Azul oscuro */
-.blockchain { background-color: #3c3c3c; } /* Gris oscuro */
+.html { background-color: #e34c26; }
+.css { background-color: #264de4; } 
+.js { background-color: #f7df1e; color: #333; font-weight: bold; } 
+.jquery { background-color: #0769ad; } 
+.blockchain { background-color: #3c3c3c; } 
 
 /* -------------------- Media Queries -------------------- */
 
