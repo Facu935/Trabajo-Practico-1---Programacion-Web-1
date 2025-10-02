@@ -55,7 +55,10 @@ main{
     font-size: 0.9em;
     font-weight: 600;
 }
-
+#asterisco{
+    font-size: 1.5em;
+    font-weight: 800;
+}
 #nombre-apellido-titular{
     margin-bottom: 3em;
 }
@@ -84,18 +87,26 @@ main{
 }
 #vencimiento-seguridad label{
     display: inline;
-    margin-left: 1em;
 }
 #titular{
     width: 100%;
 }
 
+.boton-cancelar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 #cancelar{
+    padding: 0 18em;
     background-color: rgb(209, 37, 37);
     color: white;
     height: 3.5em;
     border-radius: 10px;
     font-size: 1em;
+    
 }
 
 
@@ -204,8 +215,10 @@ main{
         display: flex;
         flex-direction: column;
         margin: 0;
-        height: 70em;
+        height: 80em;
     }
+
+
 
     label {
         text-align: center;
@@ -223,7 +236,21 @@ main{
     }
 
     .pago-resumen{
-        height: 45em;
+        height: 25em;
+    }
+
+    .pago-resumen-datos{
+    margin-bottom: 1.5em;
+    }
+    .boton-cancelar{
+    justify-content: start;
+    }
+
+    #cancelar{
+    padding: 0 12.5em;
+    margin-left: 1.5em;
+    margin-right: 1.5em; 
+    margin-bottom: 1em;   
     }
 
 }

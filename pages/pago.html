@@ -51,40 +51,40 @@
                 <form action="../pages/confirmacion-compra.html" method="get"
                     >
                     <div id="tarjeta">
-                        <label for="numero-tarjeta">Numero de Tarjeta</label>
+                        <label for="numero-tarjeta">Numero de Tarjeta <span id="asterisco">*</span></label>
                         <input type="number" id="numero-tarjeta" name="numero-tarjeta"
                             placeholder="Ej: 9999 9999 9999 9999" maxlength="16">
                     </div>
 
 
                     <div id="vencimiento-seguridad">
-                        <label for="vencimiento">Fecha de Vencimiento </label>
+                        <label for="vencimiento">Fecha de Vencimiento <span id="asterisco">*</span></label>
                         <input type="date" id="vencimiento" name="vencimiento" required>
-                        <label for="codigo-seguridad">Codigo de Seguridad </label>
+                        <label for="codigo-seguridad">Codigo de Seguridad <span id="asterisco">*</span></label>
                         <input type="number" maxlength="3" placeholder="CVV" required>
                     </div>
                     <div id="nombre-apellido-titular">
-                        <label for="titular">Nombre y Apellido del titular</label>
+                        <label for="titular">Nombre y Apellido del titular <span id="asterisco">*</span></label>
                         <input type="text" id="titular" name="titular" placeholder="Nicolás Gomez" required>
                     </div>
-                    
                         <button type="submit">Confirmar Compra</button>
-                        <button type="submit" id="cancelar"><a href="../index.html">Cancelar</a></button>
-                    
                 </form>
-
+                <div class="boton-cancelar">
+                    <a href="../index.html"><button id="cancelar">Cancelar</button></a>
+                </div>
+                
             </div>
             <div class="pago-resumen">
                 <h3>Resumen de Compra</h3>
                 <div class="pago-resumen-datos">
                     <div id="detalle-curso">
                         <h4>Curso HTML - 5</h4>
-                        <p>120000</p>
+                        <p>$ 60.000</p>
                     </div>
 
                     <div id="total">
                         <h4>Total:</h4>
-                        <p>$120.000</p>
+                        <p>$ 60.000</p>
                     </div>
                 </div>
 
