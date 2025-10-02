@@ -49,7 +49,7 @@
             <div class="pago-metodo">
                 <h2>PAGO</h2>
                 <form action="../pages/confirmacion-compra.html" method="get"
-                    enctype="application/x-www-form-urlencoded">
+                    >
                     <div id="tarjeta">
                         <label for="numero-tarjeta">Numero de Tarjeta</label>
                         <input type="number" id="numero-tarjeta" name="numero-tarjeta"
@@ -63,12 +63,14 @@
                         <label for="codigo-seguridad">Codigo de Seguridad </label>
                         <input type="number" maxlength="3" placeholder="CVV" required>
                     </div>
-                    <div>
+                    <div id="nombre-apellido-titular">
                         <label for="titular">Nombre y Apellido del titular</label>
                         <input type="text" id="titular" name="titular" placeholder="Nicolás Gomez" required>
                     </div>
-
-                    <button type="submit">Confirmar Compra</button>
+                    
+                        <button type="submit">Confirmar Compra</button>
+                        <button type="submit" id="cancelar"><a href="../index.html">Cancelar</a></button>
+                    
                 </form>
 
             </div>

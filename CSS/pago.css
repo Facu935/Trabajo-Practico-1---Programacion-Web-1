@@ -16,8 +16,8 @@ main{
 
 .pago{
     width: 80%;
-    height: 35em;
-    margin-top: 10em;
+    height: 40em;
+    margin-top: 5em;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
@@ -56,11 +56,28 @@ main{
     font-weight: 600;
 }
 
+#nombre-apellido-titular{
+    margin-bottom: 3em;
+}
+
+.pago-metodo-botones{
+    width: auto;
+    height: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
 .pago-metodo button{
     height: 3.5em;
-    margin-top: 4em;
     border-radius: 10px;
 }
+.pago-metodo a{
+    color: white;
+}
+
 
 #numero-tarjeta{
     width: 100%;
@@ -73,6 +90,13 @@ main{
     width: 100%;
 }
 
+#cancelar{
+    background-color: rgb(209, 37, 37);
+    color: white;
+    height: 3.5em;
+    border-radius: 10px;
+    font-size: 1em;
+}
 
 
 /***************    Resumen        ********************/
@@ -180,7 +204,7 @@ main{
         display: flex;
         flex-direction: column;
         margin: 0;
-        height: 65em;
+        height: 70em;
     }
 
     label {
