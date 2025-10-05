@@ -1,0 +1,65 @@
+body {
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    background-color: rgb(65, 151, 608);
+    margin: 0;
+    padding: 2em 0;
+}
+
+.tc-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.tc-content {
+    background-color: #a0ded6;
+    padding: 3em;
+    border-radius: 0.9375em;
+    box-shadow: 0 0 0.9375em rgba(0,0,0,0.2);
+    width: 60em; 
+    max-width: 95%; 
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.tc-logo-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+    gap: 1em;
+}
+
+.tc-logo {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+}
+
+.tc-company-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.tc-title {
+    text-align: center;
+    margin-bottom: 1.5em;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #333;
+}
+
+.tc-text {
+    font-size: 0.875em;
+    color: #333;
+    line-height: 1.6em;
+}
+
+.tc-text h3 {
+    margin-top: 1em;
+    font-size: 1em;
+    font-weight: bold;
+}
