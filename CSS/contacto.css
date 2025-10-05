@@ -225,7 +225,7 @@ footer{
 
 /* FOOTER END */
 
-@media screen and (width < 1850px) {
+@media screen and (width < 115.625em) {
     .contacto__form {
         width: 25em;
         margin-bottom: 1em;
@@ -258,7 +258,7 @@ footer{
     }
 }
 
-@media screen and (width < 900px) {
+@media screen and (width < 56.25em) {
     .container-contacto {
         flex-direction: column;
         align-items: center;

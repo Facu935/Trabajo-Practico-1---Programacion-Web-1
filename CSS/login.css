@@ -13,7 +13,7 @@ body {
     padding: 6em;
     border-radius: 0.9375em;
     box-shadow: 0 0 0.9375em rgba(0,0,0,0.2);
-    width: 40em;
+    width: 45em;
     box-sizing: border-box;
     border: 1px solid black;
 }
@@ -83,4 +83,32 @@ button {
     border-radius: 0.3125em;
     font-size: 0.875em;
     box-sizing: border-box;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 50em) {
+    .login-form-container {
+        width: 90%;
+        padding: 2em;
+        margin: 0 auto;
+    }
+
+    .logo {
+        width: 3em;
+        height: 3em;
+    }
+
+    .empresa-nombre {
+        font-size: 1.2em;
+    }
+
+    .boton-container {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .boton {
+        width: 100%;
+        text-align: center;
+    }
 }
