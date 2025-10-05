@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+    background-color: rgb(65, 151, 608);
+    margin: 0;
+}
+
+.login-form-container {
+    background-color: #a0ded6;
+    padding: 6em;
+    border-radius: 0.9375em;
+    box-shadow: 0 0 0.9375em rgba(0,0,0,0.2);
+    width: 40em;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+    gap: 1em;
+}
+
+.logo {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+}
+
+.empresa-nombre {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 1.25em;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #333;
+}
+
+.login__label, .contacto__label {
+    display: block;
+    margin-bottom: 0.625em;
+    font-size: 0.875em;
+    color: #555;
+}
+
+.login__input {
+    width: 100%;
+    padding: 0.625em;
+    margin-top: 0.3125em;
+    margin-bottom: 0.9375em;
+    border: 0.0625em solid #ccc;
+    border-radius: 0.3125em;
+    box-sizing: border-box;
+}
+
+.boton-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+button {
+    border: none;
+}
+
+.boton {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    background-color: #4f46e5;
+    color: white;
+    padding: 0.625em 0.875em;
+    border-radius: 0.3125em;
+    font-size: 0.875em;
+    box-sizing: border-box;
+}
