@@ -112,7 +112,12 @@ body{
 #carrito-precio-total button{
     width: 15em;
     height: 4em;
-    margin-bottom: 3em;
+    margin: 0 1em 4em 1em;
+    font-weight: 600;
+}
+#boton-cancelar{
+    background-color: red;
+    color: white
 }
 
 
