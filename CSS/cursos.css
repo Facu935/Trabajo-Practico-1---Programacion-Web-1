@@ -231,134 +231,6 @@ ul {
 }
 
 /************************************/
-
-@media screen and (max-width: 590px) {
-    #imagen-texto {
-        flex-direction: column;
-        gap: 1em;
-    }
-
-    #imagen {
-        margin: 0 auto;
-        height: auto;
-        max-width: 80%;
-    }
-
-    .contenedor-principal {
-        width: 95%;
-        padding: 1em;
-    }
-
-    #contenidos {
-        width: 100%;
-        padding: 2em;
-    }
-
-    #contenedor-docente {
-        flex-direction: column;
-        gap: 1em;
-        align-items: center;
-        text-align: center;
-    }
-
-    #imagen-profe {
-        margin: 0 auto;
-        height: auto;
-        max-width: 80%;
-    }
-
-    #info {
-        width: 100%;
-        padding: 1em;
-    }
-
-    #contenedor-opiniones img{
-        height: 1.5em;
-    }
-}
-
-
-@media screen and (max-width: 768px) {
-
-    .contenedor-principal {
-        width: 100%;
-        justify-content: start;
-    }
-
-    #imagen {
-        margin: 0;
-        height: 10em;
-    }
-
-    #contenidos {
-        width: 100%;
-    }
-
-    #contenedor-opiniones {
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: start;
-    }
-
-    #contenedor-opiniones div {
-        padding: 2em;
-    }
-
-    .cursos-similares {
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: start;
-    }
-
-    .contenedor-curso {
-        width: 100%;
-        margin: 0.5em 0;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .contenedor-principal {
-        width: 100%;
-        justify-content: start;
-    }
-
-    #imagen {
-        margin: 0;
-        height: 10em;
-    }
-
-    #contenidos {
-        width: 100%;
-    }
-
-    #contenedor-opiniones {
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: start;
-    }
-
-    #contenedor-opiniones div {
-        padding: 2em;
-    }
-
-    .cursos-similares {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        flex: 1;
-    }
-
-    .contenedor-curso {
-        width: 80%;
-        margin: 0.5em 0;
-    }
-
-
-}
-
 @media screen and (max-width: 1440px) {
     .contenedor-principal {
         width: 75%;
@@ -394,12 +266,132 @@ ul {
         justify-content: space-around;
         align-items: stretch;
         padding: 2em;
-        flex-wrap: wrap;
     }
 
     .contenedor-curso {
         width: 100%;
-        flex: 1;
         margin: 0.5em;
+    }
+
+    .contenedor-curso img{
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .contenedor-principal {
+        width: 90%;
+        justify-content: start;
+    }
+
+    #imagen {
+        margin: 0;
+        height: 10em;
+    }
+
+    #contenidos {
+        width: 100%;
+    }
+
+    .cursos-similares {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .contenedor-curso img {
+        max-width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .contenedor-principal {
+        width: 100%;
+        justify-content: start;
+    }
+
+    #imagen {
+        margin: 0;
+        height: 10em;
+    }
+
+    #contenidos {
+        width: 100%;
+    }
+
+    #contenedor-opiniones {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+
+    #contenedor-opiniones div {
+        padding: 2em;
+    }
+
+    .cursos-similares {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenedor-curso {
+        width: 100%;
+        margin: 0.5em 0;
+        max-width: 60%;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    #imagen-texto {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    #imagen {
+        margin: 0 auto;
+        height: auto;
+        max-width: 80%;
+    }
+
+    .contenedor-principal {
+        width: 100%;
+        padding: 1em;
+    }
+
+    #contenidos {
+        width: 100%;
+        padding: 2em;
+    }
+
+    #contenedor-docente {
+        flex-direction: column;
+        gap: 1em;
+        align-items: center;
+        text-align: center;
+    }
+
+    #imagen-profe {
+        margin: 0 auto;
+        height: auto;
+        max-width: 80%;
+    }
+
+    #info {
+        width: 100%;
+        padding: 1em;
+    }
+
+    #contenedor-opiniones img {
+        height: 1.5em;
+    }
+
+    .cursos-similares {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
