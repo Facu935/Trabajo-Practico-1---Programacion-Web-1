@@ -34,9 +34,52 @@ header {
     width: 15%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     position: relative;
+}
+
+
+.buscador-links summary {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    padding: 0.5em 0.75em;
+    border: 0.06em solid #cfcfcf;
+    width: 18em;
+    background: #fff;
+    font-weight: 600;
+     }
+
+.buscador-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0.5em 0;
+    line-height: 1em; 
+    border-radius: 0 0  10px 10px;
+    width: 18em;
+    background: #fff;
+}
+
+.buscador-links li {
+  margin: 0.25em 0;
+  font-size: 0.8em;
+  font-weight: 600; 
+}
+
+.buscador-links a {
+  text-decoration: none;
+  padding: 0.25em 0.5em; 
+}
+
+
+#boton-login{
+    background-color: white;
+    border-radius: 10px;
+    padding: 1em 2em;
+    font-weight: 600;
 }
 
 .header-div__carrito button {
@@ -57,7 +100,7 @@ header {
     border-radius: 100%;
     border: black solid 0.25em;
     position: absolute;
-    right: 5em;
+    right: 3em;
     bottom: 8em;
     display: flex;
     flex-direction: row;

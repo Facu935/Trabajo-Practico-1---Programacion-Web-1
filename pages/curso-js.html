@@ -13,26 +13,30 @@
 
 <body>
     <header id="inicio">
-        <div class="header-div__logo">
-            <img src="../IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo" />
-        </div>
-        <div class="header-div__buscador">
-            <input list="cursos" name="buscador" id="buscador" placeholder="Buscar Curso" />
-            <datalist id="cursos">
-                <option value="HTML5">HTML5</option>
-                <option value="CSS3">CSS3</option>
-                <option value="JavaScript">Javascript</option>
-                <option value="Blockchain">Blockchain</option>
-                <option value="JQuery">JQuery</option>
-            </datalist>
-        </div>
-        <div class="header-div__carrito">
-            <a href="../pages/carrito.html"><button><img src="../IMG/Icono Carrito de Compra.png"
-                        alt="Carrito de Compra" id="carrito" /></button></a>
-            <div id="header-div__cantidad_items">
-                <p>0</p>
-            </div>
-        </div>
+    <div class="header-div__logo">
+      <img src="../IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo" />
+    </div>
+    <div class="buscador-links">
+    <details>
+    <summary>Buscar curso</summary>
+    <ul>
+      <li><a href="../pages/curso-html.html">HTML5</a></li>
+      <li><a href="../pages/curso-css.html">CSS3</a></li>
+      <li><a href="../pages/curso-js.html">JavaScript</a></li>
+      <li><a href="../pages/curso-blockchain.html">Blockchain</a></li>
+      <li><a href="../pages/curso-jquery.html">JQuery</a></li>
+      <li><a href="../pages/curso-java.html">Java</a></li>
+    </ul>
+    </details>
+    </div>
+    <div class="header-div__carrito">
+      <a href="../pages/login.html"><button id="boton-login">Login</button></a>
+      <a href="../pages/carrito.html"><button><img src="../IMG/Icono Carrito de Compra.png" alt="Carrito de Compra"
+            id="carrito" /></button></a>
+      <div id="header-div__cantidad_items">
+        <p>0</p>
+      </div>
+    </div>
     </header>
     <main>
         <nav class="navegation">
