@@ -239,6 +239,11 @@ footer {
         width: 10em;
     }
 
+    .buscador-links ul {
+        height: 8em;
+        width: 10em;
+    }
+
     #boton-login{
         display: flex;
         justify-content: center;
@@ -364,7 +369,11 @@ footer {
     .buscador-links summary {
         height: 3em;
         width: 10em;
-        position: relative;
+    }
+
+    .buscador-links ul {
+        height: 8em;
+        width: 10em;
     }
 
 }
