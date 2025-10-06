@@ -37,6 +37,7 @@ header {
     justify-content: space-evenly;
     align-items: center;
     position: relative;
+    margin-right: 2em;
 }
 
 
@@ -86,11 +87,19 @@ header {
     border: none;
     background-color: transparent;
     cursor: pointer;
+    position: relative;
 }
 
+#carrito-y-numero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 #carrito {
     height: 5em;
     width: 5em;
+    
 }
 
 #header-div__cantidad_items {
@@ -99,9 +108,6 @@ header {
     background-color: #ff000000;
     border-radius: 100%;
     border: black solid 0.25em;
-    position: absolute;
-    right: 3em;
-    bottom: 8em;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -256,11 +262,6 @@ footer {
         width: 10em;
     }
 
-    #header-div__cantidad_items {
-        left: 8em;
-        bottom: 9em;
-    }
-
 }
 
 @media screen and (max-width: 61em) {
@@ -268,13 +269,9 @@ footer {
     .header-div__carrito {
         justify-content: space-evenly;
         margin-right: 2em;
+        position: relative;
     }
 
-     #header-div__cantidad_items {
-        left: 8em;
-        bottom: 9em;
-    }
-    
     
     footer {
         flex-direction: column;
@@ -327,10 +324,7 @@ footer {
         height: 1.5em;
         width: 4em;
     }
-    #header-div__cantidad_items {
-        left: 8em;
-        bottom: 9em;
-    }
+    
     .footer-recuadros {
         display: flex;
         justify-content: center;
