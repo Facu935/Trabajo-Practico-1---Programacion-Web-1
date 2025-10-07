@@ -75,6 +75,7 @@ main{
 
 .pago-metodo button{
     height: 3.5em;
+    width: 100%;
     border-radius: 10px;
 }
 .pago-metodo a{
@@ -100,10 +101,11 @@ main{
 
 
 #cancelar{
+    height: 3.5em;
+    width: 100%;
     padding: 0 18em;
     background-color: rgb(209, 37, 37);
     color: white;
-    height: 3.5em;
     border-radius: 10px;
     font-size: 1em;
     
@@ -209,11 +211,64 @@ main{
 
 /*********************************/
 
-@media screen and (width < 900px){
+@media screen and (min-width: 1520.1px) and (max-width: 1864px){
+    /*
+    #vencimiento-seguridad{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }*/
+
+    .pago{
+        height: 50em;
+    }
+
+    #vencimiento-seguridad {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5em;
+    }
+    .boton-cancelar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #cancelar{
+        padding: 0 13.5em;
+        margin-bottom: 2em;
+    }
+
+}
+
+@media screen and (width < 1520px){
+
+    .pago{
+        margin: 0;
+        height: 80em;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pago-resumen{
+        width: 42em;
+        height: 20em;
+    }   
+
+    #cancelar{
+        width: 39.5em;
+        margin-bottom: 3em;
+    }
+}
+
+@media screen and (width < 932px){
 
     .pago{
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         margin: 0;
         height: 80em;
     }

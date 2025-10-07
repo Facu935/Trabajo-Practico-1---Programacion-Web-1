@@ -3,6 +3,12 @@ body{
     background-color: #4197ff;
 }
 
+.carrito-layout{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .carrito-titulo{
     display: flex;
     justify-content: center;
@@ -124,7 +130,22 @@ body{
 
 /**************************************/
 
-@media screen and (width < 900px){
+@media screen and (max-width: 1184px){
+
+.precio-unitario{
+    font-size: 2em;
+}    
+#carrito-precio-total p{
+    font-size: 2em;
+    
+}
+
+}
+
+
+
+
+@media screen and (width < 958px){
     body{
         font-size: 70%;
     }
@@ -177,6 +198,11 @@ body{
     letter-spacing: 0em;
     }
 
-
+    .carrito-botones{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     
 }
