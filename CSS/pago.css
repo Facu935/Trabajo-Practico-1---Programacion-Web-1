@@ -308,4 +308,33 @@ main{
     margin-bottom: 1em;   
     }
 
+
+
+
+}
+
+@media screen and (width < 730px){
+
+    .pago-resumen{
+        width: 70%;
+        font-size: 80%;
+    }
+
+    .pago-metodo{
+        width: 70%;
+        font-size: 80%;
+    }
+
+    .boton-cancelar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #cancelar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 0.5em;
+        padding: 0 11em;
+    }
 }
