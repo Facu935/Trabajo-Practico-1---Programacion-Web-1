@@ -51,7 +51,6 @@ main{
     border-radius: 10px;
 }
 .pago-metodo label{
-    display: block;
     font-size: 0.9em;
     font-weight: 600;
 }
@@ -86,9 +85,7 @@ main{
 #numero-tarjeta{
     width: 100%;
 }
-#vencimiento-seguridad label{
-    display: inline;
-}
+
 #titular{
     width: 100%;
 }
