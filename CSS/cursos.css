@@ -211,16 +211,20 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    align-items: center;
     margin-bottom: 0.5em;
-}
-
-.abrir-comprar a {
-    margin: 0.5em 0;
 }
 
 .abrir-comprar button {
     padding: 0.2em;
     margin: 0.5em;
+    width: 100%;
+    cursor: pointer;
+}
+
+.abrir-comprar a {
+  display: block;
+  width: 100%; 
 }
 
 .duracion-valor {
