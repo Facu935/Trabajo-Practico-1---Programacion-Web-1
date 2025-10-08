@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/login.css">
+    <title>Edu Courses | Crear Cuenta</title>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-form-container">
+            <form action="./login.html" method="get" class="login__form">
+
+                <div class="logo-container">
+                    <img src="../IMG/Logo TP.jpeg" alt="Logo" class="logo">
+                    <span class="empresa-nombre">Edu Courses</span>
+                </div>
+
+                <h2 class="titulo">CREAR CUENTA</h2>
+
+                <label for="username" class="login__label">
+                    *Nombre de usuario:
+                    <input type="text" name="username" id="username" required placeholder="Usuario"
+                        class="login__input">
+                </label>
+
+                <label for="email" class="login__label">
+                    *Correo electrónico:
+                    <input type="email" name="email" id="email" required placeholder="Correo" class="login__input">
+                </label>
+
+                <label for="telefono" class="login__label">
+                    *Teléfono:
+                    <input type="tel" name="telefono" id="telefono" required placeholder="Teléfono"
+                        class="login__input">
+                </label>
+
+                <label for="password" class="login__label">
+                    *Contraseña:
+                    <input type="password" name="password" id="password" required placeholder="Contraseña"
+                        class="login__input">
+                </label>
+
+                <label for="confirm-password" class="login__label">
+                    *Confirmar contraseña:
+                    <input type="password" name="confirm-password" id="confirm-password" required
+                        placeholder="Repetir Contraseña" class="login__input">
+                </label>
+
+                <label class="terminos__label">
+                    <input type="checkbox" name="acepto-terminos" required>
+                    Acepto los <a href="./terminos-condiciones.html" target="_blank">Términos y Condiciones</a>
+                </label>
+
+                <div class="boton-container">
+                    <a class="boton" href="./login.html">Volver</a>
+                    <button type="submit" class="boton">Crear Cuenta</button>
+                </div>
+
+                <div class="overlay">
+                    <div class="popup">
+                        ✔ Cuenta creada con éxito!
+                        <br><br>
+                        <a href="./zz03-login-p-jquery.html" class="button-submit">Volver</a>
+                        <a href="../pages/zz02-curso-jquery-sesion-iniciada.html" class="button-submit">Iniciar Sesión</a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
