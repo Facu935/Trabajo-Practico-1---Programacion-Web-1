@@ -77,6 +77,12 @@ ul {
     cursor: pointer;
 }
 
+.cupos{
+    margin: 0.5em 0 0 0.5em;
+    color: red;
+    font-weight: 900;
+}
+
 #contenidos {
     padding: 2.5em;
     width: 40%;
