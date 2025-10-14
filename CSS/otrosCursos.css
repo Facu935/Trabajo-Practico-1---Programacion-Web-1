@@ -1,0 +1,126 @@
+body{
+    background-color: #4197ff;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    margin: 2em 0;
+    font-size: 3em;
+}
+.otros-cursos{
+    width: 60%;
+    margin-bottom: 4em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.otros-cursos-recuadro{
+    display: grid;
+    grid-template-rows: 2fr 0.5fr 0.5fr 0.5fr 1fr;
+    background-color: #a0ded6;
+    border-radius: 10px;
+    margin: 3em 0em;
+}
+
+.imagen{
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo{
+    grid-row: 2/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.datos{
+    grid-row: 3/4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.detalle{
+    grid-row: 4/5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.inscripcion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inscripcion button{
+    padding: 0.5em 5em;
+    font-size: 2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+/****************************  Media Queries ********************/
+@media screen and (max-width: 82em) and (min-width: 47.001em){
+
+
+
+
+
+
+
+
+
+}
+
+
+@media screen  and (max-width: 54em){
+
+
+    body {
+        font-size: 70%;
+    }
+
+    
+
+
+
+
+
+
+
+    
+
+
+    
+    
+
+    
+    
+}
