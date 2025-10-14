@@ -169,6 +169,16 @@ body{
     border: none;
 }
 
+#boton-ver-cursos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#boton-ver-cursos button{
+    padding: 2em;
+    margin-bottom: 5em;
+}
 
 
 /****************************   Medios de Pago  ********************/
@@ -330,7 +340,8 @@ body{
     .detalles-comprar button{
         width: 100%;
     }
-
+    
+    
     /***********************************************************/
 
     .medios_de_pago{
