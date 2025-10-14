@@ -87,40 +87,70 @@ h1{
 
 
 /****************************  Media Queries ********************/
-@media screen and (max-width: 82em) and (min-width: 47.001em){
+@media (max-width: 900px) {
+.otros-cursos {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 1.5em;
+    margin-bottom: 2em;
+    align-items: center;
+}
 
+.otros-cursos-recuadro {
+    flex: 1 1 auto;
+    width: 100%;
+    margin: 0;
+    grid-template-rows: 1.6fr .6fr .5fr .5fr .9fr;
+}
 
+h1 {
+    font-size: 2em;
+    margin: 1.2em 0;
+}
 
+.inscripcion button {
+    padding: .4em 2.5em;
+    font-size: 1.2em;
+}
 
-
-
-
-
+.otros-cursos-recuadro img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
 }
 
 
-@media screen  and (max-width: 54em){
+@media (max-width: 480px) {
 
+.otros-cursos {
+    width: 95%;
+    grid-template-columns: 1fr;
+    gap: 1em;
 
-    body {
-        font-size: 70%;
-    }
+}
 
-    
+.otros-cursos-recuadro {
+    grid-template-rows: 1.2fr .5fr .45fr .45fr .7fr;
+    margin: 1em 0;
+    padding: 0.5em;
 
+}
 
+h1 {
+    font-size: 1.6em;
+    margin: 0.8em 0;
+}
 
+.titulo, .datos {
+    font-size: 1em;
+}
 
+.inscripcion button {
+    padding: 0.35em 1.5em;
+    font-size: 1em;
+}
 
-
-
-    
-
-
-    
-    
-
-    
-    
 }
