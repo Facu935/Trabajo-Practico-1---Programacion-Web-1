@@ -211,7 +211,7 @@ body{
 
 
 /****************************  Media Queries ********************/
-@media screen and (max-width: 82em) and (min-width: 47.001em){
+@media screen and (width < 82em) {
 
 
 .section-pasos{
@@ -251,7 +251,9 @@ body{
     width: auto;
 }
 
-
+.medios_de_pago{
+    height: 40em;
+}
 
 
 
@@ -259,7 +261,7 @@ body{
 }
 
 
-@media screen  and (max-width: 54em){
+@media screen  and (max-width: 47em){
 
 
     body {
@@ -292,6 +294,7 @@ body{
     align-items: center;
     margin-bottom: 5em;
     }
+    
 
     .section-pasos-recuadros{
     margin-top: 5em;
@@ -346,12 +349,7 @@ body{
 
     .medios_de_pago{
     height: 50em;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+
     }
 
     .medios_de_pago__recuadros{
@@ -369,12 +367,46 @@ body{
         height: 90%;
     }
 
-    
-    /********************************************************/
 
-    
-    
-
-    
-    
 }
+    
+@media screen  and (max-width: 30em){
+
+    .section-pasos-recuadros{
+    font-size: 0.8em;
+
+    }
+
+    .cursos{
+        height: 260em;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+    }
+
+
+    .medios_de_pago{
+    height: 50em;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .medios_de_pago__recuadros{
+    
+    width: 12em;
+    height: 11em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .medios_de_pago__recuadros img{
+        width: 90%;
+    }   
+} 
