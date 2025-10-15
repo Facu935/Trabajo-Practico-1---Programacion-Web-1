@@ -236,6 +236,10 @@ footer {
 
 /* === Para Tablets (hasta 992px) === */
 @media screen and (max-width: 992px) {
+    .buscador-links{
+        width: 80%;
+    }
+
     header {
         justify-content: space-around;
     }
