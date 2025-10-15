@@ -125,72 +125,62 @@ body {
 /**************************************/
 
 @media screen and (max-width: 61em) {
-    .carrito-layout{
-        width: 90%;
-    }
+  .carrito-layout {
+    width: 90%;
+  }
 
-    .carrito {
-        /* Reducimos los márgenes laterales para dar más espacio al contenido */
-        margin: 2em 1.5em;
-    }
+  .carrito {
+    margin: 2em 1.5em;
+  }
 
-    .carrito-item {
-        /* ¡EL CAMBIO CLAVE! Pasamos de 3 columnas a 2 para que no se apriete el contenido */
-        grid-template-columns: 1fr 2fr; /* Columna 1 para la imagen, Columna 2 para el texto */
-        grid-template-rows: auto;      /* Las filas se ajustan solas al contenido que tengan */
-        
-        /* Definimos un mapa visual para reubicar los elementos fácilmente */
-        grid-template-areas: 
-            "imagen titulo"
-            "imagen datos"
-            "imagen precio";
-        
-        padding: 1.5em 1em; /* Añadimos espacio interno para que no se pegue a los bordes */
-        column-gap: 1.5em;    /* Un poco de espacio entre la imagen y el texto */
-    }
+  .carrito-item {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
 
-    /* Ahora, reasignamos cada elemento a su nueva área en la grilla de tablet */
-    
-    .imagen {
-        grid-area: imagen; /* Ocupa el área 'imagen' */
-        /* Reseteamos la posición fija anterior para que la grilla la controle */
-        grid-row: auto;
-        grid-column: auto;
-    }
+    grid-template-areas:
+      "imagen titulo"
+      "imagen datos"
+      "imagen precio";
+    padding: 1.5em 1em;
+    column-gap: 1.5em;
+  }
 
-    .titulo-curso {
-        grid-area: titulo; /* Ocupa el área 'titulo' */
-        grid-row: auto;
-        grid-column: auto;
-        /* Lo alineamos hacia abajo para que esté más cerca de los datos */
-        align-items: flex-end;
-    }
+  .imagen {
+    grid-area: imagen;
+    grid-row: auto;
+    grid-column: auto;
+  }
 
-    .datos {
-        grid-area: datos; /* Ocupa el área 'datos' */
-        grid-row: auto;
-        grid-column: auto;
-        gap: 2em; /* Reducimos el espacio entre valoración y horas */
-        font-size: 0.9em; /* Ajustamos ligeramente el tamaño de la fuente */
-    }
+  .titulo-curso {
+    grid-area: titulo;
+    grid-row: auto;
+    grid-column: auto;
+    align-items: flex-end;
+  }
 
-    .precio-unitario {
-        grid-area: precio; /* Ocupa el área 'precio' */
-        grid-row: auto;
-        grid-column: auto;
-        /* Lo alineamos a la izquierda y arriba de su celda */
-        justify-content: flex-start;
-        align-items: flex-start;
-        font-size: 2.2em; /* Reducimos el tamaño para que no sea tan grande */
-    }
+  .datos {
+    grid-area: datos;
+    grid-row: auto;
+    grid-column: auto;
+    gap: 2em;
+    font-size: 0.9em;
+  }
 
-    /* Ajustamos también el tamaño de la sección del total */
-    #carrito-precio-total h2{
-        font-size: 1.8em;
-    }
-    #carrito-precio-total p {
-        font-size: 2.5em;
-    }
+  .precio-unitario {
+    grid-area: precio;
+    grid-row: auto;
+    grid-column: auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 2.2em;
+  }
+
+  #carrito-precio-total h2 {
+    font-size: 1.8em;
+  }
+  #carrito-precio-total p {
+    font-size: 2.5em;
+  }
 }
 
 @media screen and (max-width: 47em) {
