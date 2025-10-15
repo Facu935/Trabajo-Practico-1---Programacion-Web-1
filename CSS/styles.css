@@ -1,220 +1,209 @@
-
 /************************************/
-body{
-    background-color: #4197ff;
+body {
+  background-color: #4197ff;
 }
 
-.titulos{
-    background-color: #45b5c4;
-    height: 4em;
-    text-align: center;
-    align-content: center;
-    
+.titulos {
+  background-color: #45b5c4;
+  height: 4em;
+  text-align: center;
+  align-content: center;
 }
 
-.slider{
-    height: 41em;
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    background-image:url(../IMG/Slider-Imagen1-Home.jpg)
+.slider {
+  height: 41em;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url(../IMG/Slider-Imagen1-Home.jpg);
 }
 
+.icono_slider {
+  height: 8em;
+  width: 8em;
+  margin: 3em;
+}
+#icono_slider_IZQ {
+  transform: rotate(180deg);
+}
 
-.icono_slider{
-    height: 8em;
-    width: 8em;
-    margin: 3em;
-}
-#icono_slider_IZQ{
-    transform: rotate(180deg);
-}
 /*****************    Pasos    ****************************************/
 
-#titulo-pasos{
-    margin-top: 8em;
+#titulo-pasos {
+  margin-top: 8em;
 }
-.section-pasos{
-    height: 40em;
-    width: auto;
-    background-color: #4197ff;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.section-pasos-recuadros{
-    background-color: #a0ded6;
-    height: 20em;
-    width: 30em;
-    border: 5px solid black;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
+.section-pasos {
+  height: 40em;
+  width: auto;
+  background-color: #4197ff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.section-pasos-recuadros h3{
-    font-size: 1.8em;
-    
-}
-.section-pasos-recuadros p{
-    font-size: 1.2em;
-    font-weight: 600;
-    line-height: 1.3em;
-    text-align: justify;
-    margin: 1em 1em;
+.section-pasos-recuadros {
+  background-color: #a0ded6;
+  height: 20em;
+  width: 30em;
+  border: 5px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
 }
 
-.pasos-flecha{
-    font-size: 8em;
+.section-pasos-recuadros h3 {
+  font-size: 1.8em;
+}
+.section-pasos-recuadros p {
+  font-size: 1.2em;
+  font-weight: 600;
+  line-height: 1.3em;
+  text-align: justify;
+  margin: 1em 1em;
+}
+
+.pasos-flecha {
+  font-size: 8em;
 }
 
 .palabra-clave {
-    color: blue;
+  color: blue;
 }
+
 /****************************   CURSOS DESTACADOS  ********************/
 
-.cursos{
-    background-color: #4197ff;
-    width: auto;
-    height: 100em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+.cursos {
+  background-color: #4197ff;
+  width: auto;
+  height: 100em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#contenedor-grid-padre{
-    width: 80em;
-    height: 80em;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 5em;
-    grid-row-gap: 2em;
+#contenedor-grid-padre {
+  width: 80em;
+  height: 80em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 5em;
+  grid-row-gap: 2em;
 }
 
-.contenedor-grid-hijo{
-    background-color: #a0ded6;
-    border: 1px solid black;
-    border-radius: 10px;
-    display: grid;
-    grid-template-rows: 3fr 1.2fr 1.5fr 2.5fr;
-    grid-template-columns: 1fr;
-    grid-gap: 0.3em;
+.contenedor-grid-hijo {
+  background-color: #a0ded6;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 3fr 1.2fr 1.5fr 2.5fr;
+  grid-template-columns: 1fr;
+  grid-gap: 0.3em;
 }
 
-.imagen{
-    grid-row: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
+.imagen {
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
 }
 
-.titulo{
-    grid-row: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid black;
-    border-radius: 0;
-    font-size: 2em;
-    letter-spacing: 0.1em;
+.titulo {
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+  border-radius: 0;
+  font-size: 2em;
+  letter-spacing: 0.1em;
 }
 
-.datos{
-    grid-row: 3;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    border: none;
+.datos {
+  grid-row: 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  border: none;
 }
-.datos p{
-    font-size: 2em;
-    font-weight: 800;
-}
-
-.detalles-comprar{
-    grid-row: 4;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    border: none;
-}
-.detalles-comprar a{
-    display: inline;
-    
-}
-.detalles-comprar button{
-    width: 70%;
-    height: 40%;
-    font-size: 2em;
+.datos p {
+  font-size: 2em;
+  font-weight: 800;
 }
 
-.horas-y-precio{
-    grid-column: 2/3;
-    grid-row: 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    border: none;
+.detalles-comprar {
+  grid-row: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: none;
+}
+.detalles-comprar a {
+  display: inline;
+}
+.detalles-comprar button {
+  width: 70%;
+  height: 40%;
+  font-size: 2em;
 }
 
-#boton-ver-cursos{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.horas-y-precio {
+  grid-column: 2/3;
+  grid-row: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: none;
 }
 
-#boton-ver-cursos button{
-    padding: 2em;
-    margin-bottom: 5em;
+#boton-ver-cursos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+#boton-ver-cursos button {
+  padding: 2em;
+  margin-bottom: 5em;
+}
 
 /****************************   Medios de Pago  ********************/
 
-.medios_de_pago{
-    background-color: #4197ff;
-    height: 30em;
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    justify-items: center;
-    align-items: center;
-
+.medios_de_pago {
+  background-color: #4197ff;
+  height: 30em;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
 }
 
-.medios_de_pago__recuadros{
-    background-color: white;
-    border: 5px solid black;
-    border-radius: 10px;
-    width: 18em;
-    height: 13em;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.medios_de_pago__recuadros {
+  background-color: white;
+  border: 5px solid black;
+  border-radius: 10px;
+  width: 18em;
+  height: 13em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-
-
-/****************************  Media Queries ********************/
 @media screen and (width < 82em) {
-
-
-.section-pasos{
+  .section-pasos {
     height: 50%;
     width: auto;
     display: flex;
@@ -223,68 +212,60 @@ body{
     align-items: center;
     margin: 5em 0;
     gap: 1em;
-    }
+  }
 
-.cursos{
+  .cursos {
     height: 130em;
     align-items: start;
     margin-top: 5em;
-}
+  }
 
-.cursos p{
+  .cursos p {
     font-size: 1.5em;
-}
-#contenedor-grid-padre{
+  }
+  #contenedor-grid-padre {
     width: 80%;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 5em;
     grid-row-gap: 2em;
-}
+  }
 
-.contenedor-grid-hijo{
+  .contenedor-grid-hijo {
     width: 20em;
     grid-gap: 0;
-}
+  }
 
-.titulo{
+  .titulo {
     width: auto;
-}
+  }
 
-.medios_de_pago{
+  .medios_de_pago {
     height: 40em;
+  }
 }
 
+@media screen and (max-width: 47em) {
+  body {
+    font-size: 70%;
+  }
 
+  /******************************************************/
+  .slider {
+    width: 100%;
+    height: 50%;
+  }
 
+  .icono_slider {
+    width: 15%;
+    height: 15%;
+  }
 
-}
-
-
-@media screen  and (max-width: 47em){
-
-
-    body {
-        font-size: 70%;
-    }
-
-    
-    /******************************************************/
-    .slider{
-        width: 100%;
-        height: 50%;
-    }
-
-    .icono_slider{
-        width: 15%;
-        height: 15%;
-    }
-
-    #titulo-pasos{
+  #titulo-pasos {
     margin-top: 4em;
-    }
+  }
 
-    .section-pasos{
+  .section-pasos {
     height: 50%;
     width: auto;
     background-color: #4197ff;
@@ -293,100 +274,86 @@ body{
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: 5em;
-    }
-    
+  }
 
-    .section-pasos-recuadros{
+  .section-pasos-recuadros {
     margin-top: 5em;
     background-color: #a0ded6;
     width: 80%;
     font-size: 1.5em;
-    justify-content: space-evenly;    
-    }
-    .pasos-flecha{
+    justify-content: space-evenly;
+  }
+  .pasos-flecha {
     font-size: 0em;
-    }
+  }
 
+  /***********************************************************/
 
+  .cursos {
+    height: 350em;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
 
-    /***********************************************************/
-    
-    .cursos{
-        height: 350em;
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: center;
-    }
+  #contenedor-grid-padre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5em;
+  }
 
-    
-    #contenedor-grid-padre{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 5em;
-    }
+  .contenedor-grid-hijo {
+    width: 25em;
+  }
 
+  .titulo {
+    width: 12.5em;
+  }
+  .detalles-comprar a {
+    font-size: 2em;
+  }
 
-    .contenedor-grid-hijo{
-        width: 25em;
-    }
+  .detalles-comprar button {
+    width: 100%;
+  }
 
-    .titulo{
-        width: 12.5em;
-    }
-    .detalles-comprar a{
-        font-size: 2em;
-    
-    }
-    
-    .detalles-comprar button{
-        width: 100%;
-    }
-    
-    
-    /***********************************************************/
+  /***********************************************************/
 
-    .medios_de_pago{
+  .medios_de_pago {
     height: 50em;
+  }
 
-    }
-
-    .medios_de_pago__recuadros{
-    
+  .medios_de_pago__recuadros {
     width: 15em;
     height: 13em;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    }
+  }
 
-    .medios_de_pago__recuadros img{
-        width: 90%;
-        height: 90%;
-    }
-
-
+  .medios_de_pago__recuadros img {
+    width: 90%;
+    height: 90%;
+  }
 }
-    
-@media screen  and (max-width: 30em){
 
-    .section-pasos-recuadros{
+@media screen and (max-width: 30em) {
+  .section-pasos-recuadros {
     font-size: 0.8em;
+  }
 
-    }
+  .cursos {
+    height: 260em;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
 
-    .cursos{
-        height: 260em;
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: center;
-    }
-
-
-    .medios_de_pago{
+  .medios_de_pago {
     height: 50em;
     width: auto;
     display: flex;
@@ -394,19 +361,18 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    }
+  }
 
-    .medios_de_pago__recuadros{
-    
+  .medios_de_pago__recuadros {
     width: 12em;
     height: 11em;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    }
+  }
 
-    .medios_de_pago__recuadros img{
-        width: 90%;
-    }   
-} 
+  .medios_de_pago__recuadros img {
+    width: 90%;
+  }
+}
