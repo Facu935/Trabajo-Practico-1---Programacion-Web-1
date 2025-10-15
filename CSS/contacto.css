@@ -5,8 +5,11 @@
     font-family: sans-serif;
 }
 
-/* HEADER Y NAV START */
 
+/* HEADER Y NAV START */
+body{
+    background-color: rgb(65, 151, 608);
+}
 header{
     background-color: #1693a5;
     height: 12em;
