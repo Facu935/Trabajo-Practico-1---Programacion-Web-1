@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../CSS/cursos.css">
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="../CSS/header-footer.css">
-    <title>Edu Courses | Curso de JavaScript</title>
+    <title>Edu Courses | Curso de C#</title>
 </head>
 
 <body>
@@ -36,10 +36,10 @@
             </details>
         </div>
         <div class="header-div__carrito">
-            <a href="../index.html"><button id="boton-login">Cerrar Sesion</button></a>
+            <a href="../pages/login.html"><button id="boton-login">Login</button></a>
             <div id="carrito-y-numero">
                 <div id="header-div__cantidad_items">
-                    <p>1</p>
+                    <p>0</p>
                 </div>
                 <a href="../pages/carrito.html"><button id="button-carrito"><img
                             src="../IMG/Icono Carrito de Compra.png" alt="Carrito de Compra"
@@ -47,60 +47,58 @@
             </div>
         </div>
     </header>
+
     <main>
         <nav class="navegation">
             <div>
                 <ul class="navegation__items">
-                    <li><a href="../pages/zz01-inicio-sesion-iniciada.html">INICIO</a></li>
+                    <li><a href="../index.html">INICIO</a></li>
                     <li><a href="../pages/calendario.html">CALENDARIO</a></li>
                     <li><a href="../pages/giftcard.html">GIFT CARD</a></li>
                     <li><a href="../pages/contacto.html">CONTACTO</a></li>
                 </ul>
             </div>
         </nav>
+
         <section class="contenedor-principal">
             <div id="imagen-texto">
                 <div>
-                    <img src="../IMG/Logo Javascript.png" alt="Logo JavaScript" id="imagen">
+                    <img src="../IMG/Otros Cursos/logo-csharp.png" alt="Logo C#" id="imagen">
                 </div>
                 <div>
-                    <h1>JavaScript</h1>
+                    <h1>C#</h1>
                     <div id="valoracion-curso">
                         <img src="../IMG/Cursos/estrella.png" alt="puntuacion del curso" title="Valoración del curso">
                         <p>4.8</p>
                         <img src="../IMG/Cursos/users.png" alt="Cantidad de estudiantes"
                             title="Cantidad de estudiantes">
-                        <p>8.7k</p>
+                        <p>1.3k</p>
                     </div>
                     <p>
-                        Este curso te introduce al mundo de la programación en JavaScript, el lenguaje que da vida a las
-                        páginas web. Aprenderás desde variables, tipos de datos y estructuras de control hasta la
-                        manipulación del DOM y eventos.
-                        Cada tema incluye ejemplos prácticos y proyectos para que puedas interactuar con elementos de la
-                        página, validar formularios y crear pequeñas aplicaciones web. También se enseñan arrays y
-                        objetos, fundamentales para manejar datos de manera eficiente. Al final del curso, tendrás la
-                        base necesaria para avanzar a frameworks modernos como React o Node.js.
+                        Este curso aborda C# a nivel profesional, ideal para quienes ya tienen experiencia básica en
+                        programación y desean crear aplicaciones robustas. Se cubren programación orientada a objetos,
+                        LINQ, manejo de archivos, colecciones, manejo de errores, interfaces gráficas con Windows Forms
+                        y WPF, y desarrollo de aplicaciones web con ASP.NET. Cada unidad incluye proyectos prácticos y
+                        ejercicios que simulan escenarios de desarrollo profesional. Al finalizar, podrás desarrollar
+                        aplicaciones completas de escritorio y web, aplicando buenas prácticas y patrones de diseño.
                     </p>
-                    <div id="listas"></div>
                     <ul>
                         <li>Requisitos previos:
                             <ul>
-                                <li>Acceso a internet</li>
-                                <li>HTML y CSS básicos</li>
+                                <li>Conocimientos básicos de programación</li>
                             </ul>
                         </li>
-                        <li>Duración: 30 hs</li>
+                        <li>Duración: 40 hs</li>
                     </ul>
                     <div id="boton">
-                        <a href="./inscripcion.html">
-                            <button id="div-boton">INSCRIBIRME</button>
-                        </a>
-                        <p>$100.000</p>
+                        <a href="../pages/zz03-login-p-html.html"><button id="div-boton">INSCRIBIRME</button></a>
+                        <p>$15.000</p>
                     </div>
-                    <p class="cupos">8 CUPOS DISPONIBLES</p>
+                    <p class="cupos">13 CUPOS DISPONIBLES</p>
                 </div>
             </div>
         </section>
+
         <section class="contenedor-principal" id="contenidos">
             <div>
                 <h2>CONTENIDOS</h2>
@@ -108,7 +106,7 @@
             <div id="unidades">
                 <div id="unidad-uno">
                     <div class="unidad">
-                        <h4>UNIDAD 1:Introducción a JavaScript</h4>
+                        <h4>UNIDAD 1: Fundamentos y sintaxis avanzada de C#</h4>
                         <img src="../IMG/Cursos/menos.png" alt="ver menos">
                     </div>
                     <div class="clases">
@@ -131,147 +129,145 @@
                     </div>
                 </div>
                 <div class="unidad">
-                    <h4>UNIDAD 2: Variables y tipos de datos</h4>
+                    <h4>UNIDAD 2: Programación orientada a objetos y colecciones</h4>
                     <img src="../IMG/Cursos/mas.png" alt="ver más">
                 </div>
                 <div class="unidad">
-                    <h4>UNIDAD 3: Funciones y estructuras de control</h4>
+                    <h4>UNIDAD 3: LINQ y manejo de datos</h4>
                     <img src="../IMG/Cursos/mas.png" alt="ver más">
                 </div>
                 <div class="unidad">
-                    <h4>UNIDAD 4: DOM y eventos</h4>
+                    <h4>UNIDAD 4: Interfaces gráficas con Windows Forms y WPF</h4>
                     <img src="../IMG/Cursos/mas.png" alt="ver más">
                 </div>
                 <div class="unidad">
-                    <h4>UNIDAD 5: Arrays y objetos</h4>
-                    <img src="../IMG/Cursos/mas.png" alt="ver más">
-                </div>
-                <div class="unidad">
-                    <h4>UNIDAD 6: Proyecto práctico</h4>
+                    <h4>UNIDAD 5: Proyecto final: aplicación completa de escritorio o web</h4>
                     <img src="../IMG/Cursos/mas.png" alt="ver más">
                 </div>
             </div>
         </section>
+
         <section class="contenedor-principal" id="contenedor-docente">
             <div>
                 <img src="../IMG/Cursos/profesor.jpg" alt="imagen del profesor" id="imagen-profe">
             </div>
             <div id="info">
-                <h2>Camilo Méndez</h2>
+                <h2>Julián Ramírez</h2>
                 <p>
-                    Camilo es desarrollador web con más de 8 años de experiencia en frontend y JavaScript. Su estilo de
-                    enseñanza combina teoría con proyectos prácticos que permiten a los estudiantes aplicar
-                    inmediatamente lo aprendido. Además, comparte buenas prácticas de codificación y herramientas que
-                    facilitan el trabajo diario como desarrollador.
+                    Julián Ramírez es ingeniero en software con más de 10 años de experiencia en desarrollo en C# y
+                    .NET. Ha trabajado en empresas internacionales y proyectos de gran escala. Su enfoque combina teoría
+                    profunda con prácticas reales, enseñando optimización, depuración y desarrollo profesional.
                 </p>
                 <div id="contenedor-estrella">
                     <img src="../IMG/Cursos/estrella.png" alt="puntuación del docente">
-                    <p>4.9</p>
+                    <p>4.8</p>
                 </div>
             </div>
         </section>
+
         <div>
             <h2 id="opinion">OPINIONES</h2>
         </div>
         <section class="contenedor-principal" id="contenedor-opiniones">
             <div>
-                <h3>Mariana Castillo</h3>
+                <h3>Diego López</h3>
                 <img src="../IMG/Cursos/estrella.png" alt="">
                 <img src="../IMG/Cursos/estrella.png" alt="">
                 <img src="../IMG/Cursos/estrella.png" alt="">
                 <img src="../IMG/Cursos/estrella.png" alt="">
                 <img src="../IMG/Cursos/estrella.png" alt="">
                 <p>
-                    Aprendí a programar mis primeras aplicaciones web. Los ejercicios prácticos hacen que cada concepto
-                    se entienda de verdad.
+                    Excelente curso, los ejercicios son muy prácticos y ayudan a entender C# a fondo.
                 </p>
             </div>
             <div>
-                <h3>Tomás Silva</h3>
+                <h3>Carolina Pérez</h3>
+                <img src="../IMG/Cursos/estrella.png" alt="">
                 <img src="../IMG/Cursos/estrella.png" alt="">
                 <img src="../IMG/Cursos/estrella.png" alt="">
                 <img src="../IMG/Cursos/estrella.png" alt="">
                 <img src="../IMG/Cursos/estrella.png" alt="">
                 <p>
-                    Muy bueno, aunque algunos ejemplos podrían ser un poco más desafiantes. Ideal para principiantes.
+                    Muy completo, especialmente la sección de interfaces gráficas y LINQ.
                 </p>
             </div>
             <div>
-                <h3>Paula Navarro</h3>
-                <img src="../IMG/Cursos/estrella.png" alt="">
+                <h3>Fernando García</h3>
                 <img src="../IMG/Cursos/estrella.png" alt="">
                 <img src="../IMG/Cursos/estrella.png" alt="">
                 <img src="../IMG/Cursos/estrella.png" alt="">
                 <img src="../IMG/Cursos/estrella.png" alt="">
                 <p>
-                    Excelente curso, el docente explica todo de manera clara y detallada. Recomiendo hacer todos los
-                    ejercicios.
+                    Intenso, pero aprendí técnicas profesionales para aplicar en proyectos reales
                 </p>
             </div>
             <div>
-                <h3>Lucas Herrera</h3>
+                <h3>Valentina Herrera</h3>
+                <img src="../IMG/Cursos/estrella.png" alt="">
                 <img src="../IMG/Cursos/estrella.png" alt="">
                 <img src="../IMG/Cursos/estrella.png" alt="">
                 <img src="../IMG/Cursos/estrella.png" alt="">
                 <p>
-                    Se aprende mucho, los proyectos prácticos ayudan a consolidar los conocimientos.
+                    Proyectos finales geniales, me siento lista para un entorno profesional
                 </p>
             </div>
         </section>
+
         <section>
             <h2 class="titulos">CURSOS SIMILARES</h2>
             <div class="cursos-similares">
                 <div class="contenedor-curso">
                     <div class="imagen-curso-similar">
-                        <img src="../IMG/Logo HTML5.png" alt="Logo HTML5" />
+                        <img src="../IMG/Otros Cursos/java.png" alt="Logo Java" />
                     </div>
                     <div class="titulo-curso">
-                        <h4>CURSO HTML5</h4>
+                        <h4>CURSO Java</h4>
                     </div>
                     <div class="abrir-comprar">
-                        <a href="./zz02-curso-html-sesion-iniciada.html">Ver Detalles</a>
-                        <button><a href="./inscripcion.html">Inscribirme</a></button>
+                        <a href="./curso-java.html">Ver Detalles</a>
+                        <button><a href="./login.html">Inscribirme</a></button>
                     </div>
                     <div class="duracion-valor">
-                        <p>20 hs</p>
-                        <p>$ 60.000</p>
+                        <p>35 hs</p>
+                        <p>$100.000</p>
                     </div>
                 </div>
                 <div class="contenedor-curso">
                     <div class="imagen-curso-similar">
-                        <img src="../IMG/Logo CSS3.png" alt="Logo HTML5" />
+                        <img src="../IMG/Otros Cursos/logo-mysql.png" alt="Logo MySQL" />
                     </div>
                     <div class="titulo-curso">
-                        <h4>CURSO CSS3</h4>
+                        <h4>CURSO MySQL</h4>
                     </div>
                     <div class="abrir-comprar">
-                        <a href="./zz02-curso-css-sesion-iniciada.html">Ver Detalles</a>
-                        <button><a href="./inscripcion.html">Inscribirme</a></button>
+                        <a href="./curso-mysql.html">Ver Detalles</a>
+                        <button><a href="./login.html">Inscribirme</a></button>
                     </div>
                     <div class="duracion-valor">
-                        <p>25 hs</p>
-                        <p>$ 80.000</p>
+                        <p>28 hs</p>
+                        <p>$11.500</p>
                     </div>
                 </div>
                 <div class="contenedor-curso">
                     <div class="imagen-curso-similar">
-                        <img src="../IMG/Cursos/logo-jquery.png" alt="Logo jQuery" />
+                        <img src="../IMG/Otros Cursos/logo-node.png" alt="Logo Node" />
                     </div>
                     <div class="titulo-curso">
-                        <h4>CURSO jQuery</h4>
+                        <h4>CURSO Node.js</h4>
                     </div>
                     <div class="abrir-comprar">
-                        <a href="./zz02-curso-jquery-sesion-iniciada.html">Ver Detalles</a>
-                        <button><a href="./inscripcion.html">Inscribirme</a></button>
+                        <a href="./curso-node.html">Ver Detalles</a>
+                        <button><a href="./login.html">Inscribirme</a></button>
                     </div>
                     <div class="duracion-valor">
-                        <p>15 hs</p>
-                        <p>$ 20.000</p>
+                        <p>30 hs</p>
+                        <p>$13.500</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
     <footer>
         <div class="footer-recuadros">
             <h3>Datos del Grupo</h3>
@@ -286,7 +282,6 @@
 
         <div class="footer-recuadros">
             <div class="footer-recuadros-info">
-
                 <div class="footer-recuadros-info-datos">
                     <h3>ACERCA DE</h3>
                     <ul>
@@ -298,23 +293,41 @@
                 <div class="footer-recuadros-info-datos">
                     <h3>CURSOS DESTACADOS</h3>
                     <ul>
-                        <a href="../pages/zz02-curso-html-sesion-iniciada.html">
+                        <a href="../pages/curso-html.html">
                             <li>Html 5</li>
                         </a>
-                        <a href="../pages/zz02-curso-css-sesion-iniciada.html">
+                        <a href="../pages/curso-css.html">
                             <li>CSS</li>
                         </a>
-                        <a href="../pages/zz02-curso-js-sesion-iniciada.html">
+                        <a href="../pages/curso-js.html">
                             <li>JavaScript</li>
                         </a>
-                        <a href="../pages/zz02-curso-blockchain-sesion-iniciada.html">
+                        <a href="../pages/curso-blockchain.html">
                             <li>Blockchain</li>
                         </a>
-                        <a href="../pages/zz02-curso-jquery-sesion-iniciada.html">
+                        <a href="../pages/curso-jquery.html">
                             <li>JQuery</li>
                         </a>
-                        <a href="../pages/zz02-curso-java-sesion-iniciada.html">
+                        <a href="../pages/curso-java.html">
                             <li>Java</li>
+                        </a>
+                        <a href="../pages/curso-python.html">
+                            <li>Python</li>
+                        </a>
+                        <a href="../pages/curso-csharp.html">
+                            <li>C#</li>
+                        </a>
+                        <a href="../pages/curso-php.html">
+                            <li>PHP</li>
+                        </a>
+                        <a href="../pages/curso-mysql.html">
+                            <li>MySQL</li>
+                        </a>
+                        <a href="../pages/curso-node.html">
+                            <li>Node.js</li>
+                        </a>
+                        <a href="../pages/curso-react.html">
+                            <li>React</li>
                         </a>
                     </ul>
                 </div>
