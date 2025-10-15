@@ -1,208 +1,277 @@
-
-body{
-    background-color: #4197ff;
+body {
+  background-color: #4197ff;
 }
 
-.carrito-layout{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.carrito-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.carrito-titulo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    text-decoration: underline;
-    gap: 2em;
-    margin: 2em 0;
+.carrito-titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  text-decoration: underline;
+  gap: 2em;
+  margin: 2em 0;
 }
 
-.carrito-titulo img{
-    height: 5em;
-    width: 5em;
+.carrito-titulo img {
+  height: 5em;
+  width: 5em;
 }
 
 .carrito {
-    background-color: #a0ded6;
-    width: auto;
-    margin: 2em 10em;
-    border: 2px solid black;
-    border-radius: 10px;
-    
+  background-color: #a0ded6;
+  width: auto;
+  margin: 2em 10em;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
-.carrito-item{
-    width: auto;
-    display: grid;
-    grid-template-columns: 1fr 3fr 2fr;
-    grid-template-rows: 6em 3em 6em;
-    border-bottom: 1px solid black;
+.carrito-item {
+  width: auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr;
+  grid-template-rows: 6em 3em 6em;
+  border-bottom: 1px solid black;
 }
 
-.imagen{
-    grid-column: 1;
-    grid-row: 2;    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: none;
+.imagen {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: none;
 }
 
-.titulo-curso{
-    grid-row: 1;
-    grid-column: 2;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    letter-spacing: 0.3em;
-    border-bottom: none;
+.titulo-curso {
+  grid-row: 1;
+  grid-column: 2;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  letter-spacing: 0.3em;
+  border-bottom: none;
 }
-.datos{
-    grid-column: 2;
-    grid-row: 2;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 5em;
-    border-bottom: none;
-}
-
-.datos  p{
-    margin-top: 0.3em;
-    font-size: 1.3em;
-    font-weight: 700;
+.datos {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5em;
+  border-bottom: none;
 }
 
-#valoracion-curso{
-    display: flex;
-    align-items: center;
+.datos p {
+  margin-top: 0.3em;
+  font-size: 1.3em;
+  font-weight: 700;
 }
 
-.precio-unitario{
-    grid-row: 2;
-    grid-column: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3em;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    border-bottom: none;
+#valoracion-curso {
+  display: flex;
+  align-items: center;
 }
 
-
-
-#carrito-precio-total{
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.precio-unitario {
+  grid-row: 2;
+  grid-column: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  border-bottom: none;
 }
 
-#carrito-precio-total h2{
-    font-size: 2em;
-    text-decoration: underline;
-    padding: 2em 0 0.5em 0;
+#carrito-precio-total {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#carrito-precio-total p{
-    font-size: 3em;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    padding: 0.5em;
+#carrito-precio-total h2 {
+  font-size: 2em;
+  text-decoration: underline;
+  padding: 2em 0 0.5em 0;
 }
 
-#carrito-precio-total button{
-    width: 15em;
-    height: 4em;
-    margin: 0 1em 4em 1em;
-    font-weight: 600;
-}
-#boton-cancelar{
-    background-color: red;
-    color: white
+#carrito-precio-total p {
+  font-size: 3em;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 0.5em;
 }
 
-
+#carrito-precio-total button {
+  width: 15em;
+  height: 4em;
+  margin: 0 1em 4em 1em;
+  font-weight: 600;
+}
+#boton-cancelar {
+  background-color: red;
+  color: white;
+}
 
 /**************************************/
 
-@media screen and (max-width: 1184px){
-
-.precio-unitario{
-    font-size: 2em;
-}    
-#carrito-precio-total p{
-    font-size: 2em;
-    
-}
-
-}
-
-
-
-
-@media screen and (width < 958px){
-    body{
-        font-size: 70%;
+@media screen and (max-width: 61em) {
+    .carrito-layout{
+        width: 90%;
     }
 
-    
     .carrito {
-    width: 30em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0em  0em;
-    margin-left: 3em;
-    margin-bottom: 3em;
+        /* Reducimos los márgenes laterales para dar más espacio al contenido */
+        margin: 2em 1.5em;
     }
 
-
-    .carrito-item{
-    grid-template-columns: 1fr 3fr 3.5fr;
+    .carrito-item {
+        /* ¡EL CAMBIO CLAVE! Pasamos de 3 columnas a 2 para que no se apriete el contenido */
+        grid-template-columns: 1fr 2fr; /* Columna 1 para la imagen, Columna 2 para el texto */
+        grid-template-rows: auto;      /* Las filas se ajustan solas al contenido que tengan */
+        
+        /* Definimos un mapa visual para reubicar los elementos fácilmente */
+        grid-template-areas: 
+            "imagen titulo"
+            "imagen datos"
+            "imagen precio";
+        
+        padding: 1.5em 1em; /* Añadimos espacio interno para que no se pegue a los bordes */
+        column-gap: 1.5em;    /* Un poco de espacio entre la imagen y el texto */
     }
 
-
-    .imagen-curso{
-        width: 10em;
+    /* Ahora, reasignamos cada elemento a su nueva área en la grilla de tablet */
+    
+    .imagen {
+        grid-area: imagen; /* Ocupa el área 'imagen' */
+        /* Reseteamos la posición fija anterior para que la grilla la controle */
+        grid-row: auto;
+        grid-column: auto;
     }
 
-    .titulo-curso{
-        text-align: center;
+    .titulo-curso {
+        grid-area: titulo; /* Ocupa el área 'titulo' */
+        grid-row: auto;
+        grid-column: auto;
+        /* Lo alineamos hacia abajo para que esté más cerca de los datos */
+        align-items: flex-end;
     }
 
-    .datos{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    .datos {
+        grid-area: datos; /* Ocupa el área 'datos' */
+        grid-row: auto;
+        grid-column: auto;
+        gap: 2em; /* Reducimos el espacio entre valoración y horas */
+        font-size: 0.9em; /* Ajustamos ligeramente el tamaño de la fuente */
+    }
+
+    .precio-unitario {
+        grid-area: precio; /* Ocupa el área 'precio' */
+        grid-row: auto;
+        grid-column: auto;
+        /* Lo alineamos a la izquierda y arriba de su celda */
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-size: 2.2em; /* Reducimos el tamaño para que no sea tan grande */
+    }
+
+    /* Ajustamos también el tamaño de la sección del total */
+    #carrito-precio-total h2{
+        font-size: 1.8em;
+    }
+    #carrito-precio-total p {
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (max-width: 47em) {
+  .carrito-titulo {
+    font-size: 1.5em;
     gap: 1em;
-    
-    }
+    margin: 1em 0;
+  }
+  .carrito {
+    width: 95%;
+    justify-content: center;
+  }
 
+  .carrito-titulo img {
+    width: 2em;
+    height: 2em;
+  }
 
-    .datos p{
-        margin-left: 2.8em;
-    }
+  .carrito-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "imagen titulo"
+      "imagen datos"
+      "precio precio";
+    gap: 0.5em 1em;
+    margin: 0 1em 1em 1em;
+    padding: 1em;
+  }
 
-    #valoracion-curso p{
-        margin-left: 0;
-    }
-    .precio-unitario{
+  .imagen {
+    grid-area: imagen;
+    grid-row: auto;
+    grid-column: auto;
+    align-items: center;
+  }
+
+  .titulo-curso {
+    grid-area: titulo;
+    grid-row: auto;
+    grid-column: auto;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 0.1em;
+  }
+
+  .datos {
+    grid-area: datos;
+    grid-row: auto;
+    grid-column: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    justify-content: center;
+  }
+
+  .datos p {
+    font-size: 1.1em;
+  }
+
+  .precio-unitario {
+    grid-area: precio;
+    grid-row: auto;
+    grid-column: auto;
     font-size: 2em;
-    letter-spacing: 0em;
-    }
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
 
-    .carrito-botones{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
+  #carrito-precio-total h2 {
+    font-size: 1.6em;
+  }
+
+  #carrito-precio-total p {
+    font-size: 2.2em;
+  }
+
+  #carrito-precio-total button {
+    width: 90%;
+    height: 3.8em;
+  }
 }
