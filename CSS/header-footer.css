@@ -1,141 +1,9 @@
+/* Estilos generales y reset */
 * {
     margin: 0;
+    padding: 0; /* Añadido para un mejor reseteo */
     box-sizing: border-box;
     font-family: sans-serif;
-}
-
-header {
-    background-color: #1693a5;
-    height: 12em;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header-div__logo {
-    height: auto;
-}
-
-#logo {
-    width: 10em;
-    margin-left: 5em;
-    border-radius: 50%;
-    border: 1px solid black;
-}
-
-#buscador {
-    height: 3em;
-    width: 40em;
-}
-
-.header-div__carrito {
-    height: 100%;
-    width: 15%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    position: relative;
-    margin-right: 2em;
-}
-
-
-.buscador-links summary {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5em;
-    padding: 0.5em 0.75em;
-    border: 0.06em solid #cfcfcf;
-    width: 18em;
-    background: #fff;
-    font-weight: 600;
-}
-
-.buscador-links ul {
-    list-style: none;
-    margin: 0;
-    padding: 0.5em 0;
-    line-height: 1em; 
-    border-radius: 0 0 10px 10px;
-    width: 18em;
-    background: #fff;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.25em 0.5em;
-}
-
-.buscador-links li {
-  margin: 0;             
-  font-size: 0.8em;
-  font-weight: 600; 
-}
-
-.buscador-links a {
-  text-decoration: none;
-  padding: 0.25em 0.5em; 
-}
-
-
-#boton-login{
-    background-color: white;
-    border-radius: 10px;
-    padding: 1em 2em;
-    font-weight: 600;
-}
-
-.header-div__carrito button {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    position: relative;
-}
-
-#carrito-y-numero{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-#carrito {
-    height: 5em;
-    width: 5em;
-    
-}
-
-#header-div__cantidad_items {
-    height: 2.5em;
-    width: 2.5em;
-    background-color: #ff000000;
-    border-radius: 100%;
-    border: black solid 0.25em;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-weight: 800;
-}
-
-.navegation {
-    height: 5em;
-    width: auto;
-    background-color: #45b5c4;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-.navegation__items {
-    height: 5em;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    list-style: none;
-    font-weight: 700;
 }
 
 a {
@@ -143,22 +11,172 @@ a {
     color: #000;
 }
 
-/********************************************************************/
-
-footer {
-    width: auto;
-    height: 30em;
+/*************************** HEADER ***************************/
+header {
     background-color: #1693a5;
+    min-height: 12em; /* Usamos min-height para que pueda crecer si el contenido se envuelve */
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    flex-wrap: wrap; /* ¡CLAVE! Permite que los elementos pasen a la siguiente línea si no caben */
+    justify-content: space-between;
     align-items: center;
+    padding: 1em 2em; /* Usamos padding en el contenedor para el espaciado */
+    gap: 1.5em; /* Añade espacio entre los elementos del header */
+}
+
+#logo {
+    width: 10em;
+    /* margin-left: 5em; -> Eliminado, el padding del header se encarga del espacio */
+    border-radius: 50%;
     border: 1px solid black;
+    flex-shrink: 0; /* Evita que el logo se encoja */
+}
+
+/* Contenedor del buscador para mejor control */
+.header-div__buscador {
+    flex-grow: 1; /* Permite que el buscador ocupe el espacio disponible */
+    display: flex;
+    justify-content: center;
+    min-width: 250px; /* Ancho mínimo para que no se comprima demasiado */
+}
+
+.buscador-links {
+    width: 100%; /* Ocupa el 100% de su contenedor (.header-div__buscador) */
+    max-width: 45em; /* Límite para que no sea excesivamente ancho en pantallas grandes */
+}
+
+.buscador-links summary, .buscador-links ul {
+    width: 100%; /* Hacemos que el summary y la lista sean fluidos */
+}
+
+.buscador-links summary {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    padding: 0.75em;
+    border: 0.06em solid #cfcfcf;
+    background: #fff;
+    font-weight: 600;
+}
+
+.buscador-links ul {
+    list-style: none;
+    padding: 0.5em;
+    line-height: 1em;
+    border-radius: 0 0 10px 10px;
+    background: #fff;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Rejilla responsive */
+    gap: 0.25em 0.5em;
+}
+
+.buscador-links li {
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+.buscador-links a {
+    padding: 0.25em 0.5em;
+}
+
+.header-div__carrito {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centramos los elementos */
+    align-items: center;
+    gap: 1.5em; /* Espacio entre el botón de login y el carrito */
+    flex-shrink: 0; /* Evita que esta sección se encoja */
+}
+
+#boton-login {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1em 2em;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+#carrito-y-numero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+#button-carrito{
+    background-color: transparent;
+    border: none;
+}
+
+#carrito {
+    height: 5em;
+    width: 5em;
+}
+
+#header-div__cantidad_items {
+    height: 2.5em;
+    width: 2.5em;
+    background-color: white;
+    border-radius: 100%;
+    border: black solid 0.25em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    position: absolute; /* Posicionado relativo al contenedor #carrito-y-numero */
+    top: -10px;
+    right: -10px;
+}
+
+/*************************** NAVEGACIÓN ***************************/
+.navegation {
+    height: auto; /* Altura automática para adaptarse al contenido */
+    min-height: 5em;
+    width: 100%;
+    background-color: #45b5c4;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    display: flex; /* Añadido para centrar la lista */
+    justify-content: center;
+}
+
+.navegation__items {
+    height: 100%;
+    padding: 1em;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los links se envuelvan en pantallas pequeñas */
+    justify-content: center; /* Centra los links */
+    align-items: center;
+    list-style: none;
+    font-weight: 700;
+    gap: 2em; /* Espacio entre elementos de la navegación */
+}
+
+/*************************** FOOTER ***************************/
+footer {
+    width: 100%;
+    height: auto; /* Altura automática */
+    background-color: #1693a5;
+    display: flex;
+    flex-direction: row; /* Cambiará a columna en pantallas pequeñas */
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start; /* Alinea los items al inicio */
+    border: 1px solid black;
+    padding: 3em 2em;
+    gap: 2em;
 }
 
 .footer-recuadros {
-    width: 30em;
-    height: 15em;
+    flex: 1; /* Permite que los recuadros crezcan y ocupen el espacio */
+    min-width: 280px; /* Ancho mínimo antes de que se envuelvan */
 }
 
 .footer-recuadros h3 {
@@ -175,41 +193,26 @@ footer {
 
 .footer-recuadros-info {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     gap: 2em;
-}
-
-.footer-recuadros-info-datos {
-    flex: 1;
 }
 
 .footer-recuadros-info ul {
     list-style: none;
     padding: 0;
-    margin: 0;
     line-height: 2em;
 }
 
-.footer-recuadros-info ul li {
-    text-align: start;
-}
-
-.footer-recuadros-info a {
-    text-decoration: none;
-    color: black;
-}
-
 .footer-redes {
-    height: 10em;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 1em;
+    flex-wrap: wrap;
 }
 
 .footer-redes-logos {
     border-radius: 1em;
+    width: 4em; /* Tamaño base para los logos de redes */
 }
 
 #flecha-vuelta-inicio {
@@ -217,161 +220,94 @@ footer {
     position: fixed;
     bottom: 0.5em;
     right: 0.35em;
+    color: #1693a5;
+    text-shadow: 1px 1px 2px black;
 }
 
 #footer-nota-legal {
     text-align: center;
     padding: 1em;
     width: 100%;
+    flex-basis: 100%; /* Asegura que ocupe todo el ancho en el flex container */
 }
 
 
-/**********************  Media Queries  ******************************/
+/********************** Media Queries ******************************/
 
-@media screen and (width < 900px) {
-    /********************************************************/
-
+/* === Para Tablets (hasta 992px) === */
+@media screen and (max-width: 992px) {
     header {
-        display: flex;
-        flex-direction: row;
         justify-content: space-around;
-        align-items: center;
     }
 
-    #logo {
-        margin-left: 0;
-        width: 8em;
-    }
-
-    
-    .buscador-links summary {
-        height: 3em;
-        width: 20em;
-    }
-
-    .buscador-links ul {
-        height: 8em;
-        width: 20em;
-    }
-
-    #boton-login{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 1.5em;
-        width: 4em;
-    }
-
-    .header-div__carrito {
-        width: 10em;
-    }
-
-}
-
-@media screen and (max-width: 61em) {
-    
-    .header-div__carrito {
-        justify-content: space-evenly;
-        margin-right: 2em;
-        position: relative;
-    }
-
-    
     footer {
-        flex-direction: column;
-        height: auto;
-        padding: 2em 1em;
+        flex-direction: column; /* Apila las secciones del footer */
+        align-items: center;
+        text-align: center;
     }
 
     .footer-recuadros {
-        width: 100%;
-        height: auto;
-        margin-bottom: 2em;
-        text-align: center;
+        width: 80%; /* Ocupa un ancho considerable pero no todo */
+        max-width: 500px;
     }
-
-    .footer-recuadros h3 {
-        padding: 0;
-    }
-
+    
     .footer-recuadros-info {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 1em;
-    }
-
-    .footer-recuadros-info-datos {
-        width: 100%;
+        justify-content: center;
     }
 
     .footer-recuadros-info ul li {
         text-align: center;
     }
+}
 
-    .footer-redes {
-        justify-content: center;
+/* === Para Móviles (hasta 768px) === */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column; /* Apila los elementos del header verticalmente */
+    }
+
+    #logo {
+        width: 8em;
+    }
+    
+    .header-div__carrito {
+        flex-direction: column;
+        width: 100%;
         gap: 1em;
     }
 
-    #footer-nota-legal {
-        font-size: 0.9em;
-    }
-}
-
-
-@media screen and (max-width: 47em) {
-    #boton-login{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 1.5em;
-        width: 4em;
-    }
-    
-    .footer-recuadros {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+    #boton-login {
+        max-width: 250px;
+        padding: 0.8em;
     }
 
-    ul {
-        list-style: none;
-        padding-left: 0;
-    }
-
-    #footer-recuadros-info-datos-cursos h4 {
-        text-align: start;
-        padding-left: 0.5em;
-    }
-
-    #footer-recuadros-info-datos-generales {
-        display: flex;
-        flex-direction: row;
-    }
-
-    #footer-recuadros-info-datos-generales ul li {
-        text-align: center;
-    }
-
-    .footer-redes-logos {
-        width: 4em;
-        margin: 0.5em;
+    .navegation__items {
+        flex-direction: column; /* Apila los links de navegación */
+        gap: 1em;
+        padding: 1.5em 0;
     }
 
     #flecha-vuelta-inicio {
-        display: none;
+        display: none; /* Ocultamos la flecha en móviles por ser intrusiva */
+    }
+}
+
+/* === Para Móviles Pequeños (hasta 480px) === */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 15px; /* Ajusta el tamaño de la fuente base */
+    }
+    
+    header, footer {
+        padding: 1.5em 1em; /* Menos padding en los lados */
     }
 
-    .buscador-links summary {
-        height: 3em;
-        width: 15em;
+    #logo {
+        width: 7em;
     }
 
-    .buscador-links ul {
-        height: 8em;
-        width: 15em;
+    #carrito {
+        width: 4.5em;
+        height: 4.5em;
     }
-
 }
