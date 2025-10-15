@@ -128,8 +128,6 @@
 .jquery { background-color: #0769ad; } 
 .blockchain { background-color: #3c3c3c; } 
 
-/* -------------------- Media Queries -------------------- */
-
 @media (max-width: 768px) {
     .day-cell {
         min-height: 80px; 

@@ -1,147 +1,148 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: sans-serif;
-    background-color: rgb(65, 151, 608);
-    margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: sans-serif;
+  background-color: rgb(65, 151, 608);
+  margin: 0;
 }
 
 .login-form-container {
-    background-color: #a0ded6;
-    padding: 6em;
-    border-radius: 0.9375em;
-    box-shadow: 0 0 0.9375em rgba(0,0,0,0.2);
-    width: 45em;
-    box-sizing: border-box;
-    border: 1px solid black;
+  background-color: #a0ded6;
+  padding: 6em;
+  border-radius: 0.9375em;
+  box-shadow: 0 0 0.9375em rgba(0, 0, 0, 0.2);
+  width: 45em;
+  box-sizing: border-box;
+  border: 1px solid black;
 }
 
 .logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2em;
-    gap: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2em;
+  gap: 1em;
 }
 
 .logo {
-    width: 5em;
-    height: 5em;
-    border-radius: 50%;
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
 }
 
 .empresa-nombre {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #333;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
 }
 
 .titulo {
-    text-align: center;
-    margin-bottom: 1.25em;
-    font-size: 1.25em;
-    font-weight: bold;
-    color: #333;
+  text-align: center;
+  margin-bottom: 1.25em;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #333;
 }
 
-.login__label, .contacto__label {
-    display: block;
-    margin-bottom: 0.625em;
-    font-size: 0.875em;
-    color: #555;
+.login__label,
+.contacto__label {
+  display: block;
+  margin-bottom: 0.625em;
+  font-size: 0.875em;
+  color: #555;
 }
 
 .login__input {
-    width: 100%;
-    padding: 0.625em;
-    margin-top: 0.3125em;
-    margin-bottom: 0.9375em;
-    border: 0.0625em solid #ccc;
-    border-radius: 0.3125em;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 0.625em;
+  margin-top: 0.3125em;
+  margin-bottom: 0.9375em;
+  border: 0.0625em solid #ccc;
+  border-radius: 0.3125em;
+  box-sizing: border-box;
 }
 
 .boton-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
 }
 
 button {
-    border: none;
+  border: none;
 }
 
 .boton {
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
-    background-color: #4f46e5;
-    color: white;
-    padding: 0.625em 0.875em;
-    border-radius: 0.3125em;
-    font-size: 0.875em;
-    box-sizing: border-box;
-    cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  background-color: #4f46e5;
+  color: white;
+  padding: 0.625em 0.875em;
+  border-radius: 0.3125em;
+  font-size: 0.875em;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
 .overlay {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.7);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
 .popup {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 0.625em;
-    border: 2px solid #0073e6;
-    text-align: center;
-    box-shadow: 0 0.125em 0.5em rgba(0,0,0,0.3);
-    max-width: 90%;
-    width: 30em;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 0.625em;
+  border: 2px solid #0073e6;
+  text-align: center;
+  box-shadow: 0 0.125em 0.5em rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+  width: 30em;
 }
 
 .button-submit {
-    width: 6.25em;
-    padding: 0.625em;
-    border-radius: 0.3125em;
-    background-color: rgb(65, 151, 208);
-    color: white;
-    text-decoration: none;
+  width: 6.25em;
+  padding: 0.625em;
+  border-radius: 0.3125em;
+  background-color: rgb(65, 151, 208);
+  color: white;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 50em) {
-    .login-form-container {
-        width: 90%;
-        padding: 2em;
-        margin: 0 auto;
-    }
+  .login-form-container {
+    width: 90%;
+    padding: 2em;
+    margin: 0 auto;
+  }
 
-    .logo {
-        width: 3em;
-        height: 3em;
-    }
+  .logo {
+    width: 3em;
+    height: 3em;
+  }
 
-    .empresa-nombre {
-        font-size: 1.2em;
-    }
+  .empresa-nombre {
+    font-size: 1.2em;
+  }
 
-    .boton-container {
-        flex-direction: column;
-        gap: 0.5em;
-    }
+  .boton-container {
+    flex-direction: column;
+    gap: 0.5em;
+  }
 
-    .boton {
-        width: 100%;
-        text-align: center;
-    }
+  .boton {
+    width: 100%;
+    text-align: center;
+  }
 }
