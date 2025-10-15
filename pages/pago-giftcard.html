@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="../IMG/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="../CSS/pago.css">
     <link rel="stylesheet" href="../CSS/header-footer.css">
-    <title>Edu Courses | Confirmacion de compra</title>
+    <title>Edu Courses | Pago</title>
 
 </head>
 
@@ -20,12 +20,13 @@
     <details>
     <summary>Buscar curso</summary>
     <ul>
-        <li><a href="../pages/curso-html.html">HTML5</a></li>
-        <li><a href="../pages/curso-css.html">CSS3</a></li>
-        <li><a href="../pages/curso-js.html">JavaScript</a></li>
-        <li><a href="../pages/curso-blockchain.html">Blockchain</a></li>
-        <li><a href="../pages/curso-jquery.html">JQuery</a></li>
-        <li><a href="../pages/curso-java.html">Java</a></li>
+        <li><a href="../pages/zz02-curso-html-sesion-iniciada.html">HTML5</a></li>
+        <li><a href="../pages/zz02-curso-css-sesion-iniciada.html">CSS3</a></li>
+        <li><a href="../pages/zz02-curso-js-sesion-iniciada.html">JavaScript</a></li>
+        <li><a href="../pages/zz02-curso-blockchain-sesion-iniciada.html">Blockchain</a></li>
+        <li><a href="../pages/zz02-curso-jquery-sesion-iniciada.html">JQuery</a></li>
+        <li><a href="../pages/zz02-curso-java-sesion-iniciada.html">Java</a></li>
+    </ul>
     </ul>
     </details>
     </div>
@@ -53,48 +54,44 @@
     <main>
         <div class="pago">
             <div class="pago-metodo">
-
                 <h2>PAGO</h2>
-
-
-                <form action="../pages/confirmacion-compra.html" method="get"
-                    enctype="application/x-www-form-urlencoded">
+                <form action="../pages/confirmacion-pago-giftcard.html" method="get"
+                    >
                     <div id="tarjeta">
-                        <label for="numero-tarjeta">Numero de Tarjeta</label>
+                        <label for="numero-tarjeta">Numero de Tarjeta <span id="asterisco">*</span></label>
                         <input type="number" id="numero-tarjeta" name="numero-tarjeta"
-                            placeholder="Ej: 9999 9999 9999 9999" maxlength="16">
+                            placeholder="Ej: 9999 9999 9999 9999" maxlength="16" required>
                     </div>
 
 
                     <div id="vencimiento-seguridad">
-                        <label for="vencimiento">Fecha de Vencimiento </label>
+                        <label for="vencimiento">Fecha de Vencimiento <span id="asterisco">*</span></label>
                         <input type="date" id="vencimiento" name="vencimiento" required>
-                        <label for="codigo-seguridad">Codigo de Seguridad </label>
+                        <label for="codigo-seguridad">Codigo de Seguridad <span id="asterisco">*</span></label>
                         <input type="number" maxlength="3" placeholder="CVV" required>
                     </div>
-                    <div>
-                        <label for="titular">Nombre y Apellido del titular</label>
+                    <div id="nombre-apellido-titular">
+                        <label for="titular">Nombre y Apellido del titular <span id="asterisco">*</span></label>
                         <input type="text" id="titular" name="titular" placeholder="Nicolás Gomez" required>
                     </div>
-
-                    <button type="submit">Confirmar Compra</button>
+                        <button type="submit">Confirmar Compra</button>
                 </form>
-
+                <div class="boton-cancelar">
+                    <a href="../index.html"><button id="cancelar">Cancelar</button></a>
+                </div>
+                
             </div>
-
-
-
             <div class="pago-resumen">
                 <h3>Resumen de Compra</h3>
                 <div class="pago-resumen-datos">
                     <div id="detalle-curso">
-                        <h4>Curso HTML - 5</h4>
-                        <p>$120.000</p>
+                        <h4>GIFT CARD</h4>
+                        <p>$ 50.000</p>
                     </div>
 
                     <div id="total">
                         <h4>Total:</h4>
-                        <p>$120.000</p>
+                        <p>$ 50.000</p>
                     </div>
                 </div>
 
@@ -102,16 +99,9 @@
             </div>
         </div>
 
-        <div class="overlay">
-            <div class="popup">
-                La Compra se ha Realizado con Exito !!
-                <br><br>
-                <a href="../pages/zz01-inicio-sesion-iniciada.html" class="button-submit">OK</a>
-            </div>
-        </div>
-
     </main>
-<footer>
+
+    <footer>
     <div class="footer-recuadros">
       <h3>Datos del Grupo</h3>
       <ul id="footer-datos-grupo">
@@ -135,14 +125,14 @@
         </div>
 
         <div class="footer-recuadros-info-datos">
-          <h3>CURSOS DESTACADOS</h3>
+          <h3>CURSOS</h3>
           <ul>
-            <li>Html 5</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Blockchain</li>
-            <li>JQuery</li>
-            <li>Java</li>
+            <a href="../pages/zz02-curso-html-sesion-iniciada.html"><li>Html 5</li></a>
+            <a href="../pages/zz02-curso-css-sesion-iniciada.html"><li>CSS</li></a>
+            <a href="../pages/zz02-curso-js-sesion-iniciada.html"><li>JavaScript</li></a>
+            <a href="../pages/zz02-curso-blockchain-sesion-iniciada.html"><li>Blockchain</li></a>
+            <a href="../pages/zz02-curso-jquery-sesion-iniciada.html"><li>JQuery</li></a>
+            <a href="../pages/zz02-curso-java-sesion-iniciada.html"><li>Java</li></a>
           </ul>
         </div>
 
