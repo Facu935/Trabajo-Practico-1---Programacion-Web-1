@@ -19,3 +19,10 @@ export const FOOTER_LINKS_CURSOS = [
     { name: "JQuery", link: "./pages/curso-jquery.html" },
     { name: "Java", link: "./pages/curso-java.html" },
 ]
+
+
+export const IMAGENES_SLIDER_HOME =[
+    { name: "Imagen-Slider-1", url: "../IMG/Slider-Imagen1-Home.jpg", alt: "Imagen Slider 1" },
+    { name: "Imagen-Slider-2", url: "../IMG/Slider-Imagen2-Home.jpg", alt: "Imagen Slider 2" },
+    { name: "Imagen-Slider-3", url: "../IMG/Slider-Imagen3-Home.jpg", alt: "Imagen Slider 3" },
+]
