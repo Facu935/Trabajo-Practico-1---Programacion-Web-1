@@ -50,10 +50,11 @@
   <nav class="navegation">
     <div>
       <ul class="navegation__items">
+        <!--
         <li><a href="index.html">INICIO</a></li>
         <li><a href="./pages/calendario.html">CALENDARIO</a></li>
         <li><a href="./pages/giftcard.html">GIFT CARD</a></li>
-        <li><a href="./pages/contacto.html">CONTACTO</a></li>
+        <li><a href="./pages/contacto.html">CONTACTO</a></li>-->
       </ul>
     </div>
   </nav>
@@ -61,8 +62,8 @@
 
 
 
-    <section >
-      <div class="slider">
+    <section class="slider" id="slider">
+      <div class="slider-contenedor">
         <img src="./IMG/Icono Slider.png" alt="Icono Slider IZQ" class="icono_slider" id="icono_slider_IZQ" />
         <img src="./IMG/Icono Slider.png" alt="Icono Slider DER" class="icono_slider" id="slider_icono_der" />
       </div>
@@ -275,7 +276,7 @@
     <div class="footer-recuadros">
       <div class="footer-recuadros-info">
 
-        <div class="footer-recuadros-info-datos">
+        <div class="footer-recuadros-info-datos" id="acerca-de">
           <h3>ACERCA DE</h3>
           <ul>
             <li><a href="./pages/sobre-nosotros.html">Sobre Nosotros</a></li>
@@ -283,7 +284,7 @@
           </ul>
         </div>
 
-        <div class="footer-recuadros-info-datos">
+        <div class="footer-recuadros-info-datos" id="cursos-destacados">
           <h3>CURSOS DESTACADOS</h3>
           <ul>
             <a href="./pages/curso-html.html">
@@ -326,6 +327,9 @@
   </footer>
   <a href="#inicio"><i id="flecha-vuelta-inicio">&#x1F53C;</i></a>
   <p id="footer-nota-legal">© Edu Courses. Todos los derechos reservados.</p>
+
+
+<script src="./JS/script.js" type="module"></script>
 </body>
 
 </html>

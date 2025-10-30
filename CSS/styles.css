@@ -10,7 +10,7 @@ body {
   align-content: center;
 }
 
-.slider {
+.slider-contenedor{
   height: 41em;
   width: auto;
   display: flex;
