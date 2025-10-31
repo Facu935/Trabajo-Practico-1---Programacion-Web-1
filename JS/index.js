@@ -1,20 +1,28 @@
-import { NAV, CURSOS_INFO, IMAGENES_SLIDER_HOME, PASOS_INSCRIPCION,
-         MEDIOS_PAGO_IMGS } from "../constants/constants.js";
+import { NAV, CURSOS_INFO, IMAGENES_SLIDER_HOME, PASOS_INSCRIPCION, MEDIOS_PAGO_IMGS,
+    INTEGRANTES_DEL_GRUPO} from "../constants/constants.js";
 import { Navbar } from "./navbar.js";
 import { SliderHome } from "./sliderHome.js";
+import { Footer } from "./footer.js";
 
 
 const barraNav = new Navbar();
+const sliderHome = new SliderHome();
+const footer = new Footer();
+
 barraNav.mostrarItems(NAV);
 
-
-const sliderHome = new SliderHome();
 sliderHome.mostrarNodos(IMAGENES_SLIDER_HOME);
 sliderHome.mostrarImagenesSegunNodoClickeado(IMAGENES_SLIDER_HOME);
 
-mostrarPasosDeInscripcion(PASOS_INSCRIPCION)
+
+mostrarPasosDeInscripcion(PASOS_INSCRIPCION);
+
 mostrarCursosDestacados(CURSOS_INFO);
+
 mostrarMediosDePago(MEDIOS_PAGO_IMGS);
+
+footer.mostrarIntegrantes(INTEGRANTES_DEL_GRUPO);
+
 
 
 
@@ -30,7 +38,6 @@ function mostrarPasosDeInscripcion(pasos){
 
     //Recuadros
     const contenedorGeneralPasos = document.createElement('div'); contenedorGeneralPasos.classList.add("section-pasos");
-   
     pasos.forEach(item =>{
         const contenedorPasos = document.createElement('div');
         contenedorPasos.classList.add("section-pasos-recuadros");

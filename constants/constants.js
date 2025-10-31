@@ -5,6 +5,13 @@ export const NAV = [
     { name: "CONTACTO", link: "./pages/contacto.html" },
 ]
 
+export const INTEGRANTES_DEL_GRUPO = [
+    {integrante: "Facundo Nicolás Olivieri (DNI: 42.290.776)" },
+    {integrante: "Agustin Bejarano (DNI: 41.173.682)"},
+    {integrante: "Nicolas Felipe Alvarez (DNI: 43.321.421)"},
+    {integrante: "Franco David Pereyra (DNI: 44.181.869)"},
+    {integrante: "Luis Omar Spataro (DNI: 36.494.378)"},
+]
 
 export const FOOTER_LINKS_ACERCA_DE = [
     { name: "Sobre Nosotros", link: "./pages/sobre-nosotros.html" },
