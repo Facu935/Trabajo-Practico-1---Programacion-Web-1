@@ -172,13 +172,13 @@ body {
   border: none;
 }
 
-#boton-ver-cursos {
+.boton-ver-cursos {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#boton-ver-cursos button {
+.boton-ver-cursos button {
   padding: 2em;
   margin-bottom: 5em;
 }
