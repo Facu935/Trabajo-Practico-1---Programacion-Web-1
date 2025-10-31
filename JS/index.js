@@ -1,5 +1,5 @@
-import { createElement } from "react";
-import {NAV, CURSOS_INFO, IMAGENES_SLIDER_HOME, MEDIOS_PAGO_IMGS } from "../constants/constants.js";
+import { NAV, CURSOS_INFO, IMAGENES_SLIDER_HOME, PASOS_INSCRIPCION,
+         MEDIOS_PAGO_IMGS } from "../constants/constants.js";
 import { Navbar } from "./navbar.js";
 import { SliderHome } from "./sliderHome.js";
 
@@ -12,12 +12,35 @@ const sliderHome = new SliderHome();
 sliderHome.mostrarNodos(IMAGENES_SLIDER_HOME);
 sliderHome.mostrarImagenesSegunNodoClickeado(IMAGENES_SLIDER_HOME);
 
-
+mostrarPasosDeInscripcion(PASOS_INSCRIPCION)
 mostrarCursosDestacados(CURSOS_INFO);
 mostrarMediosDePago(MEDIOS_PAGO_IMGS);
 
 
 
+
+function mostrarPasosDeInscripcion(pasos){
+    const seccionPasosInscripcion = document.querySelector("#pasos-inscripcion");
+    //Titulo
+    const tituloPasosInscripcion = document.createElement('h2');
+    tituloPasosInscripcion.classList.add("titulos");
+    tituloPasosInscripcion.id = "titulo-pasos";
+    tituloPasosInscripcion.textContent = "PASOS DE INSCRIPCION DE UN CURSO";
+    seccionPasosInscripcion.appendChild(tituloPasosInscripcion);
+
+    //Recuadros
+    const contenedorGeneralPasos = document.createElement('div'); contenedorGeneralPasos.classList.add("section-pasos");
+   
+    pasos.forEach(item =>{
+        const contenedorPasos = document.createElement('div');
+        contenedorPasos.classList.add("section-pasos-recuadros");
+
+        const templatePasos = `<h3>${item.titulo}</h3><p>${item.descripcion}</p>`
+        contenedorPasos.innerHTML = templatePasos;
+        contenedorGeneralPasos.appendChild(contenedorPasos);
+    });
+    seccionPasosInscripcion.appendChild(contenedorGeneralPasos);
+}
 
 function mostrarCursosDestacados(cursos){
     const seccionCursosDestacados = document.querySelector("#cursos-destacados");
@@ -85,7 +108,7 @@ function mostrarMediosDePago(imagenes){
     const seccionMediosDePago = document.querySelector("#medios-pago");
 
     //Titulo
-    const tituloMediosDePago = createElement('h2');
+    const tituloMediosDePago = document.createElement('h2');
     tituloMediosDePago.classList.add("titulos");
     tituloMediosDePago.id = "pagos";
     tituloMediosDePago.textContent = "MEDIOS DE PAGO";
@@ -95,11 +118,11 @@ function mostrarMediosDePago(imagenes){
     mediosDePago.classList.add("medios_de_pago");
 
     imagenes.forEach(item =>{
-        const templateMediosDePago = `
-            div class="medios_de_pago__recuadros">
-                <img src="${item.url}" alt="${item.alt}">
-            </div>`
-            mediosDePago.appendChild(templateMediosDePago);
+        const recuadroMedioDePago = document.createElement('div');
+        recuadroMedioDePago.classList.add("medios_de_pago__recuadros");
+        const templateMediosDePago = `<img src="${item.url}" alt="${item.alt}">`
+        recuadroMedioDePago.innerHTML = templateMediosDePago;
+        mediosDePago.appendChild(recuadroMedioDePago);
     });
 
     seccionMediosDePago.appendChild(tituloMediosDePago);
