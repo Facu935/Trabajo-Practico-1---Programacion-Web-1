@@ -1,8 +1,7 @@
-import { NAV } from "../constants/constants.js";
+import { createElement } from "react";
+import {NAV, CURSOS_INFO, IMAGENES_SLIDER_HOME, MEDIOS_PAGO_IMGS } from "../constants/constants.js";
 import { Navbar } from "./navbar.js";
 import { SliderHome } from "./sliderHome.js";
-import { IMAGENES_SLIDER_HOME } from "../constants/constants.js";
-import { CURSOS_INFO } from "../constants/constants.js";    
 
 
 const barraNav = new Navbar();
@@ -15,6 +14,9 @@ sliderHome.mostrarImagenesSegunNodoClickeado(IMAGENES_SLIDER_HOME);
 
 
 mostrarCursosDestacados(CURSOS_INFO);
+mostrarMediosDePago(MEDIOS_PAGO_IMGS);
+
+
 
 
 function mostrarCursosDestacados(cursos){
@@ -79,6 +81,30 @@ function botonVerTodosLosCursos(seccion){
     seccion.appendChild(verTodoslosLosCursos);
 }
 
+function mostrarMediosDePago(imagenes){
+    const seccionMediosDePago = document.querySelector("#medios-pago");
 
+    //Titulo
+    const tituloMediosDePago = createElement('h2');
+    tituloMediosDePago.classList.add("titulos");
+    tituloMediosDePago.id = "pagos";
+    tituloMediosDePago.textContent = "MEDIOS DE PAGO";
+    
+    //Imagenes
+    const mediosDePago = document.createElement('div');
+    mediosDePago.classList.add("medios_de_pago");
+
+    imagenes.forEach(item =>{
+        const templateMediosDePago = `
+            div class="medios_de_pago__recuadros">
+                <img src="${item.url}" alt="${item.alt}">
+            </div>`
+            mediosDePago.appendChild(templateMediosDePago);
+    });
+
+    seccionMediosDePago.appendChild(tituloMediosDePago);
+    seccionMediosDePago.appendChild(mediosDePago);
+    
+}
 
 

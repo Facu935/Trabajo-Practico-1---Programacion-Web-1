@@ -186,3 +186,13 @@ export const CURSOS_INFO = [
     
     
 ]
+
+export const MEDIOS_PAGO_IMGS = [
+    {url: "./IMG/Logo VISA CREDITO.png", alt:"Visa"},
+    {url: "./IMG/Logo MASTERCARD CREDITO.png", alt:"Mastercard"},
+    {url: "./IMG/Logo American Express.png", alt:"American Express"},
+    {url: "./IMG/Logo Ualá.png", alt:"Ualá"},
+    {url: "./IMG/Logo Mercado Pago.png", alt:"Mercado Pago"},
+    {url: "./IMG/Logo NaranjaX.png", alt:"Naranja X"},
+]
+
