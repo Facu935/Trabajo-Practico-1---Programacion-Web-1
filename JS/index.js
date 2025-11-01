@@ -1,5 +1,6 @@
 import { NAV, CURSOS_INFO, IMAGENES_SLIDER_HOME, PASOS_INSCRIPCION, MEDIOS_PAGO_IMGS,
-    INTEGRANTES_DEL_GRUPO} from "../constants/constants.js";
+        INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE ,FOOTER_LINKS_CURSOS,
+        FOOTER_REDES} from "../constants/constants.js";
 import { Navbar } from "./navbar.js";
 import { SliderHome } from "./sliderHome.js";
 import { Footer } from "./footer.js";
@@ -10,19 +11,14 @@ const sliderHome = new SliderHome();
 const footer = new Footer();
 
 barraNav.mostrarItems(NAV);
-
 sliderHome.mostrarNodos(IMAGENES_SLIDER_HOME);
 sliderHome.mostrarImagenesSegunNodoClickeado(IMAGENES_SLIDER_HOME);
-
-
 mostrarPasosDeInscripcion(PASOS_INSCRIPCION);
-
 mostrarCursosDestacados(CURSOS_INFO);
-
 mostrarMediosDePago(MEDIOS_PAGO_IMGS);
-
 footer.mostrarIntegrantes(INTEGRANTES_DEL_GRUPO);
-
+footer.mostrarLinks(FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS);
+footer.mostrarRedesSociales(FOOTER_REDES);
 
 
 

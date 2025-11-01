@@ -1,3 +1,5 @@
+
+
 export class Footer {
     constructor(){
     }
@@ -24,13 +26,75 @@ mostrarIntegrantes(intergrantes){
     FOOTER.appendChild(CONTENEDOR_INTEGRANTES);
     }
     
-
-mostrarLinks(links_footer){
-
+mostrarLinks(links_acerca_de, cursos_destacados){
+    mostrarLinksAcercaDe(links_acerca_de);
+    mostrarLinksCursosDestacados(cursos_destacados)
     }
+
+mostrarRedesSociales(redes_sociales){
+    const REDES = document.querySelector("#iconos-redes");
+    //Titulo
+    const TITULO = document.createElement("h3");
+    TITULO.textContent = "Redes Sociales";
+
+    const CONTENEDOR_REDES = document.createElement("div");
+    CONTENEDOR_REDES.classList.add("footer-redes");
+
+    redes_sociales.forEach(red => {
+        const templateRedes = `<a href=" ${red.href} " target="_blank"><img src="${red.img}" alt="${red.alt}" class="footer-redes-logos"></a>` 
+
+        CONTENEDOR_REDES.innerHTML += templateRedes;
+    });
+
+    REDES.appendChild(TITULO);
+    REDES.appendChild(CONTENEDOR_REDES);
+
 }
 
 
+}
+
+
+
+const FOOTER_INFO= document.querySelector("#footer-recuadros-info")
+
+function mostrarLinksAcercaDe(links_acerca_de){
+    const ACERCA_DE = document.createElement("div");
+    ACERCA_DE.classList.add("footer-recuadros-info-datos");
+    //Titulo
+    const TITULO = document.createElement("h3");
+    TITULO.textContent = "ACERCA DE";
+    
+    //Lista
+    const LISTA_ACERCA_DE = document.createElement("ul");
+    links_acerca_de.forEach(item =>{
+        const templateAcercaDe = `<li><a href="${item.link}"> ${item.name}</a></li>`
+        LISTA_ACERCA_DE.innerHTML += templateAcercaDe;
+    });
+
+    ACERCA_DE.appendChild(TITULO);
+    ACERCA_DE.appendChild(LISTA_ACERCA_DE);
+    FOOTER_INFO.appendChild(ACERCA_DE);
+}
+
+function mostrarLinksCursosDestacados(cursos_destacados){
+    const CURSOS_DESTACADOS = document.createElement("div");
+    CURSOS_DESTACADOS.classList.add("footer-recuadros-info-datos");
+    //Titulo
+    const TITULO = document.createElement("h3");
+    TITULO.textContent = "CURSOS DESTACADOS";
+    
+    //Lista
+    const LISTA_CURSOS_DESTACADOS = document.createElement("ul");
+    cursos_destacados.forEach(item =>{
+        const templateCursosDestacados = `<a href="${item.link}"><li>${item.name}</li></a>`      
+        LISTA_CURSOS_DESTACADOS.innerHTML += templateCursosDestacados;
+    });
+
+    CURSOS_DESTACADOS.appendChild(TITULO);
+    CURSOS_DESTACADOS.appendChild(LISTA_CURSOS_DESTACADOS);
+    FOOTER_INFO.appendChild(CURSOS_DESTACADOS);
+}
 
 
 

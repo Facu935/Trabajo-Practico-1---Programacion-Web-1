@@ -26,7 +26,13 @@ export const FOOTER_LINKS_CURSOS = [
     { name: "JQuery", link: "./pages/curso-jquery.html" },
     { name: "Java", link: "./pages/curso-java.html" },
 ]
-
+export const FOOTER_REDES = [
+    { img: "./IMG/Logo Facebook.png", alt: "Facebook", href: "https://www.facebook.com/"},
+    { img: "./IMG/Logo Instagram.jpeg", alt: "Instagram", href: "http://www.instagram.com"},
+    { img: "./IMG/Logo LinkedIn.png", alt: "LinkedIn", href: "http://www.linkedin.com"},
+    { img: "./IMG/Logo Xpng.png", alt: "X", href: "http://www.x.com"},
+    { img: "./IMG/Logo YT.png", alt: "YouTube", href: "http://www.youtube.com"},
+]
 
 export const IMAGENES_SLIDER_HOME =[
     { name: "Imagen-Slider-1", url: "../IMG/Slider-Imagen1-Home.jpg", alt: "Imagen Slider 1" },
