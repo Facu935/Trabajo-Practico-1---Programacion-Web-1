@@ -5,8 +5,8 @@ export const NAV = [
     { name: "CONTACTO", link: "./pages/contacto.html" },
 ]
 
-export const USUARIOS = [
-
+export const USUARIOS_REGISTRADOS = [
+    
 ]
 
 
