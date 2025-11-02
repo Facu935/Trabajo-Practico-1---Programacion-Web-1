@@ -15,7 +15,7 @@ export const INTEGRANTES_DEL_GRUPO = [
 
 export const FOOTER_LINKS_ACERCA_DE = [
     { name: "Sobre Nosotros", link: "./pages/sobre-nosotros.html" },
-    { name: "CSS", link: "./pages/preguntas-frecuentes.html" },
+    { name: "Preguntas Frecuentes", link: "./pages/preguntas-frecuentes.html" },
 ]
 
 export const FOOTER_LINKS_CURSOS = [

@@ -9,11 +9,13 @@ const sliderHome = new SliderHome();
 const footer = new Footer();
 
 barraNav.mostrarItems(NAV);
+
 sliderHome.mostrarNodos(IMAGENES_SLIDER_HOME);
 sliderHome.mostrarImagenesSegunNodoClickeado(IMAGENES_SLIDER_HOME);
 mostrarPasosDeInscripcion(PASOS_INSCRIPCION);
 mostrarCursosDestacados(CURSOS_INFO);
 mostrarMediosDePago(MEDIOS_PAGO_IMGS);
+
 footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS,FOOTER_REDES);
 
 
