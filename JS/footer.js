@@ -64,6 +64,7 @@ function mostrarLinksAcercaDe(links_acerca_de){
     const FOOTER_INFO= document.querySelector("#footer-recuadros-info")
     const ACERCA_DE = document.createElement("div");
     ACERCA_DE.classList.add("footer-recuadros-info-datos");
+    ACERCA_DE.classList.add("footer-recuadros");
     //Titulo
     const TITULO = document.createElement("h3");
     TITULO.textContent = "ACERCA DE";
@@ -86,6 +87,7 @@ function mostrarLinksCursosDestacados(cursos_destacados){
     const FOOTER_INFO= document.querySelector("#footer-recuadros-info")
     const CURSOS_DESTACADOS = document.createElement("div");
     CURSOS_DESTACADOS.classList.add("footer-recuadros-info-datos");
+    CURSOS_DESTACADOS.classList.add("footer-recuadros");
     //Titulo
     const TITULO = document.createElement("h3");
     TITULO.textContent = "CURSOS DESTACADOS";
