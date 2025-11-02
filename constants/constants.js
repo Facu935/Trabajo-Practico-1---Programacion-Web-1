@@ -5,6 +5,11 @@ export const NAV = [
     { name: "CONTACTO", link: "./pages/contacto.html" },
 ]
 
+export const USUARIOS = [
+
+]
+
+
 export const INTEGRANTES_DEL_GRUPO = [
     {integrante: "Facundo Nicolás Olivieri (DNI: 42.290.776)" },
     {integrante: "Agustin Bejarano (DNI: 41.173.682)"},
