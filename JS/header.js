@@ -55,7 +55,7 @@ export class Header{
         LINK_LOGIN.href = "./pages/login.html";
         const BOTON_LOGIN = document.createElement("button");
         BOTON_LOGIN.id = "boton-login";
-        BOTON_LOGIN.textContent = "Login";  //CAMBIAR SI ESTA LOGUEADO
+        BOTON_LOGIN.textContent = "Login";                      //CAMBIAR SI ESTA LOGUEADO
         LINK_LOGIN.appendChild(BOTON_LOGIN);
         CONTENEDOR_CARRITO.appendChild(LINK_LOGIN);
 
@@ -66,14 +66,14 @@ export class Header{
             //Numero
         const NUMERO = document.createElement("div");
         NUMERO.id = "header-div__cantidad_items";
-        NUMERO.textContent = "0";   //Aca meter funcion en base a los cursos que tenga el usuario
+        NUMERO.textContent = "0";                       //Aca meter funcion en base a los cursos que tenga el usuario
         CARRITO_Y_NUMERO.appendChild(NUMERO);
 
             //Imagen Carrito
         const LINK_CARRITO = document.createElement("a");
         const BOTON_CARRITO = document.createElement("button");
         const IMAGEN_CARRITO = document.createElement("img");
-        LINK_CARRITO.href = "./pages/login.html";  //VALIDAR SI USUARIO ESTA CONECTADO
+        LINK_CARRITO.href = "./pages/login.html";                   //VALIDAR SI USUARIO ESTA CONECTADO
         BOTON_CARRITO.id = "button-carrito";
         IMAGEN_CARRITO.src = "IMG/Icono Carrito de Compra.png";
         IMAGEN_CARRITO.alt = "Carrito de Compra";
