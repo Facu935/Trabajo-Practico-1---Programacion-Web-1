@@ -32,6 +32,7 @@ mostrarLinks(links_acerca_de, cursos_destacados){
     }
 
 mostrarRedesSociales(redes_sociales){
+    const FOOTER = document.querySelector("#footer");
     const REDES = document.querySelector("#iconos-redes");
     //Titulo
     const TITULO = document.createElement("h3");
@@ -48,7 +49,7 @@ mostrarRedesSociales(redes_sociales){
 
     REDES.appendChild(TITULO);
     REDES.appendChild(CONTENEDOR_REDES);
-
+    FOOTER.appendChild(REDES);
 }
 
 
@@ -56,9 +57,11 @@ mostrarRedesSociales(redes_sociales){
 
 
 
-const FOOTER_INFO= document.querySelector("#footer-recuadros-info")
+
 
 function mostrarLinksAcercaDe(links_acerca_de){
+    const FOOTER = document.querySelector("#footer");
+    const FOOTER_INFO= document.querySelector("#footer-recuadros-info")
     const ACERCA_DE = document.createElement("div");
     ACERCA_DE.classList.add("footer-recuadros-info-datos");
     //Titulo
@@ -75,9 +78,12 @@ function mostrarLinksAcercaDe(links_acerca_de){
     ACERCA_DE.appendChild(TITULO);
     ACERCA_DE.appendChild(LISTA_ACERCA_DE);
     FOOTER_INFO.appendChild(ACERCA_DE);
+    FOOTER.appendChild(FOOTER_INFO);
 }
 
 function mostrarLinksCursosDestacados(cursos_destacados){
+    const FOOTER = document.querySelector("#footer");
+    const FOOTER_INFO= document.querySelector("#footer-recuadros-info")
     const CURSOS_DESTACADOS = document.createElement("div");
     CURSOS_DESTACADOS.classList.add("footer-recuadros-info-datos");
     //Titulo
@@ -94,6 +100,7 @@ function mostrarLinksCursosDestacados(cursos_destacados){
     CURSOS_DESTACADOS.appendChild(TITULO);
     CURSOS_DESTACADOS.appendChild(LISTA_CURSOS_DESTACADOS);
     FOOTER_INFO.appendChild(CURSOS_DESTACADOS);
+    FOOTER.appendChild(FOOTER_INFO);
 }
 
 
