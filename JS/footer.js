@@ -36,6 +36,7 @@ mostrarRedesSociales(redes_sociales){
     const REDES = document.querySelector("#iconos-redes");
     //Titulo
     const TITULO = document.createElement("h3");
+    TITULO.id = "titulo-redes";
     TITULO.textContent = "Redes Sociales";
 
     const CONTENEDOR_REDES = document.createElement("div");

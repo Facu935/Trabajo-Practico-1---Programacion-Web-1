@@ -208,6 +208,10 @@ footer {
   flex-wrap: wrap;
 }
 
+#titulo-redes{
+  text-align: center;
+}
+
 .footer-redes-logos {
   border-radius: 1em;
   width: 4em;
