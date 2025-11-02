@@ -3,7 +3,7 @@ export class Curso{
     #_nombre;
     #_descripcion;
     #_precio;
-    #_valorcion;
+    #_valoracion;
     #_cantidadDeEstudiantes;
     #_duracion;
     #_requisitos;
@@ -24,7 +24,7 @@ export class Curso{
         return this.#_precio;
     }
     get valorcion(){
-        return this.#_valorcion;
+        return this.#_valoracion;
     }
     get cantidadDeEstudiantes(){
         return this.#_cantidadDeEstudiantes;

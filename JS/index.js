@@ -1,13 +1,15 @@
 import { NAV, CURSOS_INFO, IMAGENES_SLIDER_HOME, PASOS_INSCRIPCION, MEDIOS_PAGO_IMGS, INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE ,FOOTER_LINKS_CURSOS, FOOTER_REDES} from "../constants/constants.js";
+import { Header } from "./header.js";
 import { Navbar } from "./navbar.js";
 import { SliderHome } from "./sliderHome.js";
 import { Footer } from "./footer.js";
 
-
+const header = new Header();
 const barraNav = new Navbar();
 const sliderHome = new SliderHome();
 const footer = new Footer();
 
+header.mostrarHeader(CURSOS_INFO);
 barraNav.mostrarItems(NAV);
 
 sliderHome.mostrarNodos(IMAGENES_SLIDER_HOME);
