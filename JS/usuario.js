@@ -5,6 +5,8 @@ export class Usuario{
     #_email;
     #_password;
     #_cursosInscriptos;
+    #_logueado;
+    #_cursosEnCarrito;
 
 
     constructor(){
@@ -41,6 +43,16 @@ export class Usuario{
     get cursosInscriptos(){
         return this.#_cursosInscriptos;
     }
-
-
+    set logueado(logueado){
+        this.#_logueado = logueado;
+    }
+    get logueado(){
+        return this.#_logueado;
+    }
+    set cursosEnCarrito(cursos){
+        this.#_cursosEnCarrito = cursos;
+    }
+    get cursosEnCarrito(){
+        return this.#_cursosEnCarrito;
+    }
 }
