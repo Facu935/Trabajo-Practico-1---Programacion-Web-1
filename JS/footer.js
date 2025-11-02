@@ -1,10 +1,17 @@
-
-
 export class Footer {
     constructor(){
     }
 
-mostrarIntegrantes(intergrantes){
+
+mostrarFooter(integrantes, links_acerca_de, cursos_destacados, redes_sociales){
+    this.mostrarIntegrantes(integrantes);
+    this.mostrarLinks(links_acerca_de, cursos_destacados);
+    this.mostrarRedesSociales(redes_sociales);
+}
+
+
+
+mostrarIntegrantes(integrantes){
     const FOOTER = document.querySelector("#footer");
     const CONTENEDOR_INTEGRANTES = document.createElement('div');
     CONTENEDOR_INTEGRANTES.classList.add("footer-recuadros");
@@ -16,7 +23,7 @@ mostrarIntegrantes(intergrantes){
     CONTENEDOR_INTEGRANTES.appendChild(TITULO);
 
     //Lista
-    intergrantes.forEach(integrante => {
+    integrantes.forEach(integrante => {
         const ITEM_INTEGRANTE = document.createElement('li');
         ITEM_INTEGRANTE.textContent = integrante.integrante;
         LISTA_INTEGRANTES.appendChild(ITEM_INTEGRANTE);
