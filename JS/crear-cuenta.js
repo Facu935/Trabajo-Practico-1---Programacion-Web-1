@@ -1,20 +1,20 @@
 import { FORMULARIO_CREAR_CUENTA_INPUTS_LABELS } from "../constants/constants-crear-cuenta.js";
 import { Usuario } from "./usuario.js";
-import { USUARIOS_REGISTRADOS } from "../constants/constants.js";
+
 
 mostrarFormulario(FORMULARIO_CREAR_CUENTA_INPUTS_LABELS);
+//limpiarLocalStorageCompleto();
 
 
 
-
-
+//MAQUETADO DE LA PAGINA
 function mostrarFormulario(datos){
     const CONTAINER_COMPLETO = document.querySelector(".login-container");
     const CONTAINER_FORMULARIO = document.createElement("div");
     CONTAINER_FORMULARIO.classList.add("login-form-container");
 
     const FORMULARIO = document.createElement("form");
-    FORMULARIO.action = "./confirmacion-crear-cuenta.html" //METER VALIDACION
+    FORMULARIO.action = "./login.html" //METER VALIDACION
     FORMULARIO.method = "get"                                
     FORMULARIO.classList.add("login__form");
     FORMULARIO.id = "formulario";
@@ -90,6 +90,7 @@ function botones(formulario){
 }
 
 
+//FUNCIONES DE LA PAGINA
 function crearCuenta(formulario){
 
     
@@ -100,21 +101,60 @@ function crearCuenta(formulario){
         const email = document.querySelector("#email").value;
         const telefono = document.querySelector("#telefono").value;
         const password = document.querySelector("#password").value;
-        //const confirmacionPassword = document.querySelector("#confirm-password").value;
+        const confirmacionPassword = document.querySelector("#confirm-password").value;
+        const aceptacionTerminos = document.getElementsByName("acepto-terminos").value;
+
+
+        validacionEmailNoRepetido(email);
+        if (validacionEmailNoRepetido(email)){
+            alert('El Email ya esta asociado a una cuenta');
+            return;
+        } 
+
+        confirmacionDeClaves(password, confirmacionPassword);
+        validacionAceptarTerminos(aceptacionTerminos);
 
         const nuevoUsuario = new Usuario (username, email, telefono, password);
-        
-
-        USUARIOS_REGISTRADOS.push(nuevoUsuario);
         nuevoUsuario.agregarUsuarioALocalStorage(nuevoUsuario);
         
-
-       
-
-        //event.target.submit();    
+        alert('Cuenta Creada con EXITO!!');
+        event.target.submit();    
     });
     
 }
 
 
+function validacionEmailNoRepetido(email_nuevo){
+    let repetido = false;
+    
+    localStorageUsuarios().forEach(usuario => {
+        if (usuario.email === email_nuevo){
+            repetido = true;
+        }
+    });
+    return repetido;
+}
 
+function confirmacionDeClaves(password1, password2){
+        if (password1 !== password2){
+        alert("Las Constraseñas son distintas")
+        return;
+    }
+}
+
+function validacionAceptarTerminos(checkbox){
+    if (checkbox === false){
+        alert("Debe aceptar los terminos y condiciones")
+        return;
+    }
+}
+
+function localStorageUsuarios(){
+    const USUARIOS_EXISTENTES = JSON.parse(localStorage.getItem('usuarios') || '[]');
+    return USUARIOS_EXISTENTES;
+    //Mira el estado del ARRAY de LOCAL STORAGE, un array con muchos usuarios y tiene de clave 'usuarios'
+}
+
+function limpiarLocalStorageCompleto(){
+        localStorage.removeItem('usuarios');
+    }

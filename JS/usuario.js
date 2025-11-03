@@ -64,7 +64,7 @@ export class Usuario{
         return this.#_cursosEnCarrito;
     }
 
-    convertirAPlanoParaJSON(){
+    convertirUsuarioNuevoAPlanoParaJSON(){
         return {
             nombre: this.nombre,
             email: this.email,
@@ -77,17 +77,23 @@ export class Usuario{
     }
 
 
+
     agregarUsuarioALocalStorage(usuario){
+        const usuarioPlano = usuario.convertirUsuarioNuevoAPlanoParaJSON();
+        const coleccionDelLocalStorage = localStorage.getItem('usuarios');
+        const usuarios = JSON.parse(coleccionDelLocalStorage || '[]');       //Parsea lo que haya en el array O comienza vacio
 
-        const usuarioPlano = usuario.convertirAPlanoParaJSON();
-        localStorage.setItem(('usuarios' + USUARIOS_REGISTRADOS.length) +  JSON.stringify(usuarioPlano));
+        usuarios.push(usuarioPlano);      //Pushea el objeto (usuario) al array del LOCAL STORAGE;
+        localStorage.setItem('usuarios', JSON.stringify(usuarios)); // Va pisando la clave usuarios, pero aun asi agregando cada usuario plano en el Push
+
+        const USUARIOS_EXISTENTES = localStorage.getItem('usuarios');
+        console.log('Usuarios en storage:', JSON.parse(USUARIOS_EXISTENTES) || '[]');
 
     }
-
-
-    recuperarUsuarioJSON(clave){
-        const usuarioObj = localStorage.getItem(clave);
-        const usuario = JSON.parse(usuarioObj);
-        return usuario;
+    
+    limpiarLocalStorageCompleto(){
+        localStorage.removeItem('usuarios');
     }
+    
+
 }
