@@ -1,10 +1,9 @@
 import { FORMULARIO_CREAR_CUENTA_INPUTS_LABELS } from "../constants/constants-crear-cuenta.js";
 import { Usuario } from "./usuario.js";
-
+import { localStorageUsuarios, limpiarLocalStorage } from "./funciones-generales.js";
 
 mostrarFormulario(FORMULARIO_CREAR_CUENTA_INPUTS_LABELS);
-//limpiarLocalStorageCompleto();
-
+//limpiarLocalStorage('usuario');
 
 
 //MAQUETADO DE LA PAGINA
@@ -149,12 +148,5 @@ function validacionAceptarTerminos(checkbox){
     }
 }
 
-function localStorageUsuarios(){
-    const USUARIOS_EXISTENTES = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    return USUARIOS_EXISTENTES;
-    //Mira el estado del ARRAY de LOCAL STORAGE, un array con muchos usuarios y tiene de clave 'usuarios'
-}
 
-function limpiarLocalStorageCompleto(){
-        localStorage.removeItem('usuarios');
-    }
+

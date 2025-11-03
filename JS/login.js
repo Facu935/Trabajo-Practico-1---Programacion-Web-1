@@ -1,4 +1,4 @@
-
+import { guardarModificacionLocalStorage, localStorageUsuarios } from "./funciones-generales.js";
 
 
 
@@ -27,6 +27,8 @@ function mostrarLogin(){
 
     CONTAINER_LOGIN.appendChild(LOGIN);
     CONTAINER_COMPLETO.appendChild(CONTAINER_LOGIN);
+
+    validacionUsuarioYPassword()
 
 }
 
@@ -73,4 +75,30 @@ function botones(login){
     const BOTONES_CONTENIDO = `<a class="boton" href="./crear-cuenta.html">No tengo cuenta</a><button class="boton" href="../index.html">Iniciar Sesion</button>`
     BOTONES.innerHTML = BOTONES_CONTENIDO;
     login.appendChild(BOTONES);
+}
+
+
+function validacionUsuarioYPassword(){
+    const INICIAR_SESION = document.querySelector("#login");
+
+    INICIAR_SESION.addEventListener('submit',event => {
+        event.preventDefault();
+        const username = document.querySelector("#email").value;
+        const password = document.querySelector("#password").value;
+        const usuarios = localStorageUsuarios();
+        let bandera = false;
+
+        usuarios.forEach(element => {
+            if (username === element.email && password === element.password){
+                bandera = true;
+                element.logueado = true;
+                guardarModificacionLocalStorage(usuarios);
+                event.target.submit();
+            }
+        });
+
+        if(!bandera){
+            alert("Usuario o Contraseña INCORRECTA!!")
+        }
+    });  
 }
