@@ -1,5 +1,6 @@
 import { FORMULARIO_CREAR_CUENTA_INPUTS_LABELS } from "../constants/constants-crear-cuenta.js";
 import { Usuario } from "./usuario.js";
+import { USUARIOS_REGISTRADOS } from "../constants/constants.js";
 
 mostrarFormulario(FORMULARIO_CREAR_CUENTA_INPUTS_LABELS);
 
@@ -28,9 +29,9 @@ function mostrarFormulario(datos){
     CONTAINER_FORMULARIO.appendChild(FORMULARIO);
     CONTAINER_COMPLETO.appendChild(CONTAINER_FORMULARIO);
 
-    /*
+    
     crearCuenta(FORMULARIO);
-    */
+    
 
 }
 
@@ -88,30 +89,32 @@ function botones(formulario){
     formulario.appendChild(BOTONES);
 }
 
-/*
+
 function crearCuenta(formulario){
 
     
     formulario.addEventListener('submit', (event)=> {
-    event.preventDefault();
+        event.preventDefault();
 
-    const username = document.querySelector("#username").value;
-    const email = document.querySelector("#email").value;
-    const telefono = document.querySelector("#telefono").value;
-    const password = document.querySelector("#password").value;
-    //const confirmacionPassword = document.querySelector("#confirm-password").value;
+        const username = document.querySelector("#username").value;
+        const email = document.querySelector("#email").value;
+        const telefono = document.querySelector("#telefono").value;
+        const password = document.querySelector("#password").value;
+        //const confirmacionPassword = document.querySelector("#confirm-password").value;
 
-    
-    const nuevoUsuario = new Usuario(username, email, telefono, password);
-    localStorage.setItem('usuario', JSON.stringify(nuevoUsuario));
-    const objeto = localStorage.getItem('usuario');
-    const persona = JSON.parse(objeto);
-    alert("Nuevo Usuario:", persona.nombre);
+        const nuevoUsuario = new Usuario (username, email, telefono, password);
         
-    event.target.submit();    
+
+        USUARIOS_REGISTRADOS.push(nuevoUsuario);
+        nuevoUsuario.agregarUsuarioALocalStorage(nuevoUsuario);
+        
+
+       
+
+        //event.target.submit();    
     });
     
 }
-*/
+
 
 

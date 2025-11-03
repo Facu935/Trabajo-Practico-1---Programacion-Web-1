@@ -1,3 +1,5 @@
+import { USUARIOS_REGISTRADOS } from "../constants/constants.js";
+
 export class Usuario{
 
     #_nombre;
@@ -14,6 +16,9 @@ export class Usuario{
         this.email = email;
         this.telefono = telefono;
         this.password = password;
+        this.cursosInscriptos = [];
+        this.logueado = false;
+        this.cursosEnCarrito = [];
     }
 
     set nombre(nombre){
@@ -57,5 +62,32 @@ export class Usuario{
     }
     get cursosEnCarrito(){
         return this.#_cursosEnCarrito;
+    }
+
+    convertirAPlanoParaJSON(){
+        return {
+            nombre: this.nombre,
+            email: this.email,
+            telefono: this.telefono,
+            password: this.password,
+            cursosInscriptos: this.cursosInscriptos,
+            logueado: this.logueado,
+            cursosEnCarrito: this.cursosEnCarrito
+        }
+    }
+
+
+    agregarUsuarioALocalStorage(usuario){
+
+        const usuarioPlano = usuario.convertirAPlanoParaJSON();
+        localStorage.setItem(('usuarios' + USUARIOS_REGISTRADOS.length) +  JSON.stringify(usuarioPlano));
+
+    }
+
+
+    recuperarUsuarioJSON(clave){
+        const usuarioObj = localStorage.getItem(clave);
+        const usuario = JSON.parse(usuarioObj);
+        return usuario;
     }
 }
