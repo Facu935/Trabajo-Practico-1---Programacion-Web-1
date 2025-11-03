@@ -9,8 +9,11 @@ export class Usuario{
     #_cursosEnCarrito;
 
 
-    constructor(){
-
+    constructor(nombre, email, telefono, password){
+        this.nombre = nombre;
+        this.email = email;
+        this.telefono = telefono;
+        this.password = password;
     }
 
     set nombre(nombre){

@@ -1,4 +1,5 @@
 import { FORMULARIO_CREAR_CUENTA_INPUTS_LABELS } from "../constants/constants-crear-cuenta.js";
+import { Usuario } from "./usuario.js";
 
 mostrarFormulario(FORMULARIO_CREAR_CUENTA_INPUTS_LABELS);
 
@@ -13,8 +14,9 @@ function mostrarFormulario(datos){
 
     const FORMULARIO = document.createElement("form");
     FORMULARIO.action = "./confirmacion-crear-cuenta.html" //METER VALIDACION
-    FORMULARIO.method = "get"                              //Cambiar a POST???   
+    FORMULARIO.method = "get"                                
     FORMULARIO.classList.add("login__form");
+    FORMULARIO.id = "formulario";
 
     logoYNombre(FORMULARIO);
     tituloCrearCuenta(FORMULARIO);
@@ -25,6 +27,11 @@ function mostrarFormulario(datos){
 
     CONTAINER_FORMULARIO.appendChild(FORMULARIO);
     CONTAINER_COMPLETO.appendChild(CONTAINER_FORMULARIO);
+
+    /*
+    crearCuenta(FORMULARIO);
+    */
+
 }
 
 
@@ -80,4 +87,31 @@ function botones(formulario){
     BOTONES.innerHTML = BOTONES_CONTENIDO;
     formulario.appendChild(BOTONES);
 }
+
+/*
+function crearCuenta(formulario){
+
+    
+    formulario.addEventListener('submit', (event)=> {
+    event.preventDefault();
+
+    const username = document.querySelector("#username").value;
+    const email = document.querySelector("#email").value;
+    const telefono = document.querySelector("#telefono").value;
+    const password = document.querySelector("#password").value;
+    //const confirmacionPassword = document.querySelector("#confirm-password").value;
+
+    
+    const nuevoUsuario = new Usuario(username, email, telefono, password);
+    localStorage.setItem('usuario', JSON.stringify(nuevoUsuario));
+    const objeto = localStorage.getItem('usuario');
+    const persona = JSON.parse(objeto);
+    alert("Nuevo Usuario:", persona.nombre);
+        
+    event.target.submit();    
+    });
+    
+}
+*/
+
 
