@@ -8,6 +8,6 @@ export function guardarModificacionLocalStorage(usuarios){
     localStorage.setItem('usuarios', JSON.stringify(usuarios))
 }
 
-export function limpiarLocalStorage(clave){
-    localStorage.removeItem(clave);
+export function limpiarLocalStorage(){
+    localStorage.clear;
 }

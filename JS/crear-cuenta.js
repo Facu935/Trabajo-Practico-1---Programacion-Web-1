@@ -3,7 +3,7 @@ import { Usuario } from "./usuario.js";
 import { localStorageUsuarios, limpiarLocalStorage } from "./funciones-generales.js";
 
 mostrarFormulario(FORMULARIO_CREAR_CUENTA_INPUTS_LABELS);
-//limpiarLocalStorage('usuario');
+//limpiarLocalStorage();
 
 
 //MAQUETADO DE LA PAGINA
