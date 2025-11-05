@@ -1,7 +1,9 @@
+import { validarUsuarioConectadoParaNav, obtenerUsuarioLogueado } from "./funciones-generales.js";
+
+
 export class Header{
 
     constructor(){
-
     }
 
     mostrarHeader(cursos){
@@ -48,8 +50,17 @@ export class Header{
         const CONTENEDOR_CARRITO = document.createElement("div");
         CONTENEDOR_CARRITO.classList.add("header-div__carrito");
 
+        //METER UN IF DE USUARIO LOGUEADO O NO
+            //Si no esta logueado
+        
+         
+        if (!validarUsuarioConectadoParaNav()){
+            mostrarBotonLogin(CONTENEDOR_CARRITO);
+        } else {
+            mostrarNombreUsuarioLogueado(CONTENEDOR_CARRITO);
 
-        mostrarBotonLogin(CONTENEDOR_CARRITO);
+        }   
+        
 
         //Contenedro Carrito
         const CARRITO_Y_NUMERO = document.createElement("div");
@@ -61,6 +72,10 @@ export class Header{
 
         CONTENEDOR_CARRITO.appendChild(CARRITO_Y_NUMERO);
         HEADER.appendChild(CONTENEDOR_CARRITO);
+
+        //Funciones
+        mostrarOpcionesPerfilYCerrarSesion();
+
     }
 
 
@@ -100,3 +115,54 @@ function mostrarCarrito(contenedor){
         contenedor.appendChild(LINK_CARRITO);
 }
 
+
+function mostrarNombreUsuarioLogueado(contenedor){
+    
+    const NOMBRE_USUARIO = document.createElement("a");
+    NOMBRE_USUARIO.classList.add("nombre-usuario-logueado");
+    NOMBRE_USUARIO.textContent = "Bienvenido, " + obtenerUsuarioLogueado().nombre;
+    contenedor.appendChild(NOMBRE_USUARIO);
+
+    
+
+}
+
+function mostrarOpcionesPerfilYCerrarSesion(){
+    const boton = document.querySelector(".nombre-usuario-logueado");
+
+    boton.addEventListener("click", (event)=>{
+        event.preventDefault();
+        creacionOpciones(boton);
+
+    });
+}
+
+function creacionOpciones(boton){
+        const opciones_contenedor = document.createElement("div");
+        opciones_contenedor.classList.add("contendor-opciones-usuario");
+        const opciones = document.createElement("ul");
+
+        miPerfil(opciones);          //Hacer pagina perfil
+        cerrarSesion(opciones);     //Poner Funcionalidad de limpiar usuario logueado y refrescar pagina
+
+
+        opciones_contenedor.appendChild(opciones);
+        boton.appendChild(opciones_contenedor);
+}
+
+function miPerfil(contenedor_anexo){
+        const opcion_perfil = document.createElement("li");
+        const link_perfil = document.createElement("a");
+        link_perfil.href = "./pages/perfil.html";  
+        link_perfil.textContent = "Mi Perfil";
+        opcion_perfil.appendChild(link_perfil);
+        contenedor_anexo.appendChild(opcion_perfil);
+}
+function cerrarSesion(contenedor_anexo){
+        const opcion_cerrar_sesion = document.createElement("li");
+        const link_cerrar_sesion = document.createElement("a");
+        link_cerrar_sesion.href = "#";          
+        link_cerrar_sesion.textContent = "Cerrar Sesión";
+        opcion_cerrar_sesion.appendChild(link_cerrar_sesion);
+        contenedor_anexo.appendChild(opcion_cerrar_sesion);
+}

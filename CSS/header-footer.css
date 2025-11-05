@@ -97,6 +97,13 @@ header {
   cursor: pointer;
 }
 
+.nombre-usuario-logueado{
+  font-weight: 600;
+  text-decoration: underline;
+  padding: 1em 2em;
+
+}
+
 #carrito-y-numero {
   display: flex;
   flex-direction: column;

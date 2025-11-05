@@ -27,14 +27,14 @@ export function usuarioLogueado(usuarios){
 export function validarUsuarioConectadoParaNav(){
     let bandera = false;
     const USUARIO_LOGUEADO = JSON.parse(localStorage.getItem("usuarioLogueado"));
-        if (USUARIO_LOGUEADO !== null && USUARIO_LOGUEADO.logueado){
+        if (USUARIO_LOGUEADO && USUARIO_LOGUEADO.logueado){
             bandera = true;
         }
     return bandera;
 }
 
 
-export function obtenerNombreDelUsuarioLogueado(){
+export function obtenerUsuarioLogueado(){
     const USUARIO_LOGUEADO = JSON.parse(localStorage.getItem("usuarioLogueado"));
-    return USUARIO_LOGUEADO.nombre;
+    return USUARIO_LOGUEADO;
 }
