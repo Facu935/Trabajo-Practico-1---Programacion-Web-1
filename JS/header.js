@@ -1,5 +1,5 @@
-import { validarUsuarioConectadoParaNav, obtenerUsuarioLogueado } from "./funciones-generales.js";
-
+import { validarUsuarioConectadoParaNav, obtenerUsuarioLogueado, limpiarUsuarioLogueado } from "./funciones-generales.js";
+import { OPCIONES_PERFIL } from ".constants/constants.js";
 
 export class Header{
 
@@ -53,15 +53,15 @@ export class Header{
         //METER UN IF DE USUARIO LOGUEADO O NO
             //Si no esta logueado
         
-         
+        
         if (!validarUsuarioConectadoParaNav()){
             mostrarBotonLogin(CONTENEDOR_CARRITO);
         } else {
             mostrarNombreUsuarioLogueado(CONTENEDOR_CARRITO);
-
         }   
         
 
+        
         //Contenedro Carrito
         const CARRITO_Y_NUMERO = document.createElement("div");
         CARRITO_Y_NUMERO.id = "carrito-y-numero";
@@ -74,7 +74,7 @@ export class Header{
         HEADER.appendChild(CONTENEDOR_CARRITO);
 
         //Funciones
-        mostrarOpcionesPerfilYCerrarSesion();
+        //mostrarOpcionesPerfilYCerrarSesion(CONTENEDOR_CARRITO);
 
     }
 
@@ -124,33 +124,43 @@ function mostrarNombreUsuarioLogueado(contenedor){
     contenedor.appendChild(NOMBRE_USUARIO);
 
     
+    
 
 }
 
-function mostrarOpcionesPerfilYCerrarSesion(){
+/*
+function mostrarOpcionesPerfilYCerrarSesion(contenedor){
     const boton = document.querySelector(".nombre-usuario-logueado");
 
     boton.addEventListener("click", (event)=>{
         event.preventDefault();
-        creacionOpciones(boton);
+        creacionOpciones(boton, contenedor);
 
     });
 }
 
-function creacionOpciones(boton){
+function creacionOpciones(boton, contenedor){
+        
+        const existente = boton.querySelector(".contenedor-opciones-usuario");
+        if (existente){
+        existente.remove();
+        return;
+        }     
+
         const opciones_contenedor = document.createElement("div");
-        opciones_contenedor.classList.add("contendor-opciones-usuario");
+        opciones_contenedor.classList.add("contenedor-opciones-usuario");
         const opciones = document.createElement("ul");
 
-        miPerfil(opciones);          //Hacer pagina perfil
-        cerrarSesion(opciones);     //Poner Funcionalidad de limpiar usuario logueado y refrescar pagina
-
-
+        opcionMiPerfil(opciones);          //Hacer pagina perfil
+        opcionCerrarSesion(opciones);     //Poner Funcionalidad de limpiar usuario logueado y refrescar pagina
+        
         opciones_contenedor.appendChild(opciones);
-        boton.appendChild(opciones_contenedor);
+        contenedor.appendChild(opciones_contenedor);
+
+        cerrarSesion();
 }
 
-function miPerfil(contenedor_anexo){
+function opcionMiPerfil(contenedor_anexo){
         const opcion_perfil = document.createElement("li");
         const link_perfil = document.createElement("a");
         link_perfil.href = "./pages/perfil.html";  
@@ -158,11 +168,23 @@ function miPerfil(contenedor_anexo){
         opcion_perfil.appendChild(link_perfil);
         contenedor_anexo.appendChild(opcion_perfil);
 }
-function cerrarSesion(contenedor_anexo){
+function opcionCerrarSesion(contenedor_anexo){
         const opcion_cerrar_sesion = document.createElement("li");
         const link_cerrar_sesion = document.createElement("a");
-        link_cerrar_sesion.href = "#";          
+        link_cerrar_sesion.href = "./index.html";
+        link_cerrar_sesion.id = "cerrar-sesion"          
         link_cerrar_sesion.textContent = "Cerrar Sesión";
         opcion_cerrar_sesion.appendChild(link_cerrar_sesion);
         contenedor_anexo.appendChild(opcion_cerrar_sesion);
+        
 }
+
+function cerrarSesion(){
+    const boton_cerrar_sesion = document.querySelector("#cerrar-sesion");
+
+    boton_cerrar_sesion.addEventListener('click', (event) =>{
+        limpiarUsuarioLogueado();
+    });
+}
+
+*/

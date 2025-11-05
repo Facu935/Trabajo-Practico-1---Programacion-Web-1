@@ -104,6 +104,12 @@ header {
 
 }
 
+/*
+.contenedor-opciones-usuario{
+  order: 1;
+}
+*/
+
 #carrito-y-numero {
   display: flex;
   flex-direction: column;
