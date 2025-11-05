@@ -4,6 +4,10 @@ import { Header } from "./header.js";
 import { Navbar } from "./navbar.js";
 import { SliderHome } from "./sliderHome.js";
 import { Footer } from "./footer.js";
+/*
+import { limpiarUsuarioLogueado } from "./funciones-generales";
+limpiarUsuarioLogueado();
+*/
 
 const header = new Header();
 const barraNav = new Navbar();
@@ -22,6 +26,7 @@ mostrarMediosDePago(MEDIOS_PAGO_IMGS);
 footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS,FOOTER_REDES);
 
 
+;
 
 
 

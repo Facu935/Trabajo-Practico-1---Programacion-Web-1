@@ -4,7 +4,6 @@ export class Header{
 
     }
 
-
     mostrarHeader(cursos){
         this.logo();
         this.buscador(cursos);
@@ -44,32 +43,50 @@ export class Header{
     CONTENEDOR_LINKS_BUSCADOR.appendChild(ETIQUETA_DETAILS);
     HEADER.appendChild(CONTENEDOR_LINKS_BUSCADOR);
     }
-
     loginYCarrito(){
         const HEADER = document.querySelector("#inicio");
         const CONTENEDOR_CARRITO = document.createElement("div");
         CONTENEDOR_CARRITO.classList.add("header-div__carrito");
 
-        //Boton Login
+
+        mostrarBotonLogin(CONTENEDOR_CARRITO);
+
+        //Contenedro Carrito
+        const CARRITO_Y_NUMERO = document.createElement("div");
+        CARRITO_Y_NUMERO.id = "carrito-y-numero";
+        mostrarNumeroDelCarrito(CARRITO_Y_NUMERO);
+        mostrarCarrito(CARRITO_Y_NUMERO);
+        //Falta hacer la funcion que muestre el numero de items en el carrito según el usuario logueado actual
+        
+
+        CONTENEDOR_CARRITO.appendChild(CARRITO_Y_NUMERO);
+        HEADER.appendChild(CONTENEDOR_CARRITO);
+    }
+
+
+}
+
+
+function mostrarBotonLogin(contenedor_a_anexar){
         const LINK_LOGIN = document.createElement("a");
         LINK_LOGIN.href = "./pages/login.html";
         const BOTON_LOGIN = document.createElement("button");
         BOTON_LOGIN.id = "boton-login";
         BOTON_LOGIN.textContent = "Login";                      //CAMBIAR SI ESTA LOGUEADO
         LINK_LOGIN.appendChild(BOTON_LOGIN);
-        CONTENEDOR_CARRITO.appendChild(LINK_LOGIN);
+        contenedor_a_anexar.appendChild(LINK_LOGIN);
+}
 
-        //Carrito
-            //Contenedor
-        const CARRITO_Y_NUMERO = document.createElement("div");
-        CARRITO_Y_NUMERO.id = "carrito-y-numero";
-            //Numero
+function mostrarNumeroDelCarrito(contenedor){
         const NUMERO = document.createElement("div");
         NUMERO.id = "header-div__cantidad_items";
         NUMERO.textContent = "0";                       //Aca meter funcion en base a los cursos que tenga el usuario
-        CARRITO_Y_NUMERO.appendChild(NUMERO);
+        contenedor.appendChild(NUMERO);
 
-            //Imagen Carrito
+
+}
+
+function mostrarCarrito(contenedor){
         const LINK_CARRITO = document.createElement("a");
         const BOTON_CARRITO = document.createElement("button");
         const IMAGEN_CARRITO = document.createElement("img");
@@ -80,18 +97,6 @@ export class Header{
         IMAGEN_CARRITO.id = "carrito";
         BOTON_CARRITO.appendChild(IMAGEN_CARRITO);
         LINK_CARRITO.appendChild(BOTON_CARRITO);
-        CARRITO_Y_NUMERO.appendChild(LINK_CARRITO);
-
-
-
-        CONTENEDOR_CARRITO.appendChild(CARRITO_Y_NUMERO);
-        HEADER.appendChild(CONTENEDOR_CARRITO);
-    }
-
-
+        contenedor.appendChild(LINK_CARRITO);
 }
-
-
-
-
 

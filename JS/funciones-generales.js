@@ -11,6 +11,10 @@ export function guardarModificacionLocalStorage(usuarios){
 export function limpiarLocalStorage(){
     localStorage.clear();
 }
+export function limpiarUsuarioLogueado(){
+    localStorage.removeItem('usuarioLogueado');
+}
+
 
 export function usuarioLogueado(usuarios){
     usuarios.forEach(persona => {
@@ -18,4 +22,19 @@ export function usuarioLogueado(usuarios){
             localStorage.setItem("usuarioLogueado", JSON.stringify(persona));
         } 
     });
+}
+
+export function validarUsuarioConectadoParaNav(){
+    let bandera = false;
+    const USUARIO_LOGUEADO = JSON.parse(localStorage.getItem("usuarioLogueado"));
+        if (USUARIO_LOGUEADO !== null && USUARIO_LOGUEADO.logueado){
+            bandera = true;
+        }
+    return bandera;
+}
+
+
+export function obtenerNombreDelUsuarioLogueado(){
+    const USUARIO_LOGUEADO = JSON.parse(localStorage.getItem("usuarioLogueado"));
+    return USUARIO_LOGUEADO.nombre;
 }
