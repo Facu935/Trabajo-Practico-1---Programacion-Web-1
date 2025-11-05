@@ -37,11 +37,11 @@ export const FOOTER_LINKS_CURSOS = [
     { name: "Java", link: "./pages/curso-java.html" },
 ]
 export const FOOTER_REDES = [
-    { img: "./IMG/Logo Facebook.png", alt: "Facebook", href: "https://www.facebook.com/"},
-    { img: "./IMG/Logo Instagram.jpeg", alt: "Instagram", href: "http://www.instagram.com"},
-    { img: "./IMG/Logo LinkedIn.png", alt: "LinkedIn", href: "http://www.linkedin.com"},
-    { img: "./IMG/Logo Xpng.png", alt: "X", href: "http://www.x.com"},
-    { img: "./IMG/Logo YT.png", alt: "YouTube", href: "http://www.youtube.com"},
+    { img: "../IMG/Logo Facebook.png", alt: "Facebook", href: "https://www.facebook.com/"},
+    { img: "../IMG/Logo Instagram.jpeg", alt: "Instagram", href: "http://www.instagram.com"},
+    { img: "../IMG/Logo LinkedIn.png", alt: "LinkedIn", href: "http://www.linkedin.com"},
+    { img: "../IMG/Logo Xpng.png", alt: "X", href: "http://www.x.com"},
+    { img: "../IMG/Logo YT.png", alt: "YouTube", href: "http://www.youtube.com"},
 ]
 
 export const CURSOS_INFO = [
@@ -133,7 +133,7 @@ export const CURSOS_INFO = [
     requisitos: ["Acceso a Internet", "Fundametos de programación"],
     destacado: false,
     cuposDisponibles: 13,
-    img: "../IMG/Cursos/mysql.png",
+    img: "../IMG/Otros Cursos/logo-mysql.png",
     descripcion: "Este curso enseña MySQL a nivel profesional, ideal para quienes quieren diseñar y administrar bases de datos eficientes. Se cubren diseño de esquemas, consultas avanzadas, joins, triggers, procedimientos almacenados, optimización de consultas y seguridad. Los ejercicios incluyen bases de datos para e-commerce, blogs, sistemas de gestión y aplicaciones web complejas. Cada unidad incluye prácticas guiadas y proyectos que simulan entornos reales."
     },
     { 
@@ -145,7 +145,7 @@ export const CURSOS_INFO = [
     duracion: 30,
     requisitos: ["Acceso a Internet", "Conocimiento de JavaScript y conceptos básicos de backend"],
     cuposDisponibles: 19,
-    img: "../IMG/Cursos/nodejs.png",
+    img: "../IMG/Otros Cursos/logo-node.png",
     descripcion: "Este curso enseña Node.js de forma completa, ideal para quienes buscan desarrollar aplicaciones backend modernas. Se cubren arquitectura de servidores, manejo de APIs REST, Express, bases de datos, autenticación, middlewares, testing y despliegue en servidores. Los ejercicios incluyen desarrollo de aplicaciones de chat, e-commerce y APIs escalables. Cada unidad tiene prácticas guiadas y proyectos que simulan escenarios reales de backend profesional. "
     },
     { 
@@ -158,7 +158,7 @@ export const CURSOS_INFO = [
     requisitos: ["Conocimientos básicos de programación"],
     destacado: false,
     cuposDisponibles: 13,
-    img: "../IMG/Cursos/csharp.png",
+    img: "../IMG/Otros Cursos/logo-csharp.png",
     descripcion: "Este curso aborda C# a nivel profesional, ideal para quienes ya tienen experiencia básica en programación y desean crear aplicaciones robustas. Se cubren programación orientada a objetos, LINQ, manejo de archivos, colecciones, manejo de errores, interfaces gráficas con Windows Forms y WPF, y desarrollo de aplicaciones web con ASP.NET. Cada unidad incluye proyectos prácticos y ejercicios que simulan escenarios de desarrollo profesional. Al finalizar, podrás desarrollar aplicaciones completas de escritorio y web, aplicando buenas prácticas y patrones de diseño."
     },
     { 
@@ -171,7 +171,7 @@ export const CURSOS_INFO = [
     requisitos: ["Conocimientos básicos de programación", "Fundamentos de programación"],
     destacado: false,
     cuposDisponibles: 23,
-    img: "../IMG/Cursos/php.png",
+    img: "../IMG/Otros Cursos/logo-php.png",
     descripcion: "Este curso de PHP abarca desarrollo web backend avanzado, ideal para quienes quieren crear sitios y aplicaciones dinámicas. Se cubren PHP moderno, manejo de bases de datos, sesiones, seguridad, MVC, integración con APIs y desarrollo de sistemas completos. Los ejercicios incluyen blogs, e-commerce y sistemas de gestión. Cada unidad tiene prácticas guiadas que preparan al estudiante para proyectos profesionales."
     },
     { 
@@ -184,7 +184,7 @@ export const CURSOS_INFO = [
     requisitos: ["Conocimientos básicos de programación"],
     destacado: false,
     cuposDisponibles: 5,
-    img: "../IMG/Cursos/python.png",
+    img: "../IMG/Otros Cursos/Logo Python.png",
     descripcion: "Este curso de Python avanzado está diseñado para quienes ya conocen los fundamentos de programación y quieren dominar Python de manera profesional. Incluye estructuras de datos complejas, programación orientada a objetos, manejo de archivos, módulos y librerías externas, desarrollo de scripts para automatización, y proyectos aplicados en análisis de datos y desarrollo web con frameworks. Los estudiantes trabajarán en ejercicios prácticos que simulan problemas reales y en proyectos integradores que consolidan las habilidades adquiridas. Se enseñan también buenas prácticas, depuración profesional y documentación de código."
     },
     { 
@@ -197,7 +197,7 @@ export const CURSOS_INFO = [
     requisitos: ["Acceso a Internet", "Conocimientos sólidos de JavaScript, HTML y CSS"],
     destacado: false,
     cuposDisponibles: 30,
-    img: "../IMG/Cursos/react.png",
+    img: "../IMG/Otros Cursos/logo-react.png",
     descripcion: "Este curso cubre React a nivel avanzado, ideal para desarrolladores que quieren crear aplicaciones web interactivas y escalables. Se abordan componentes, hooks, routing, estado global, integración con APIs, testing y optimización de rendimiento. Los proyectos prácticos incluyen desarrollo de dashboards, e-commerce y SPA (Single Page Applications). Cada unidad tiene ejercicios y retos que simulan escenarios reales de trabajo profesional en frontend moderno"
     },
     

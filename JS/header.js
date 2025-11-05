@@ -20,7 +20,7 @@ export class Header{
     CONTENEDOR_LOGO.classList.add("header-div__logo");
 
     const IMAGEN =  document.createElement("img");
-    IMAGEN.src = "IMG/Logo TP.jpeg";
+    IMAGEN.src = "../IMG/Logo TP.jpeg";
     IMAGEN.alt = "Logo de la Empresa";
     IMAGEN.id = "logo";
 
@@ -86,7 +86,7 @@ export class Header{
 
 function mostrarBotonLogin(contenedor_a_anexar){
         const LINK_LOGIN = document.createElement("a");
-        LINK_LOGIN.href = "./pages/login.html";
+        LINK_LOGIN.href = "../pages/login.html";
         const BOTON_LOGIN = document.createElement("button");
         BOTON_LOGIN.id = "boton-login";
         BOTON_LOGIN.textContent = "Login";                      //CAMBIAR SI ESTA LOGUEADO
@@ -109,7 +109,7 @@ function mostrarCarrito(contenedor){
         const IMAGEN_CARRITO = document.createElement("img");
         LINK_CARRITO.href = "./pages/login.html";                   //VALIDAR SI USUARIO ESTA CONECTADO
         BOTON_CARRITO.id = "button-carrito";
-        IMAGEN_CARRITO.src = "IMG/Icono Carrito de Compra.png";
+        IMAGEN_CARRITO.src = "../IMG/Icono Carrito de Compra.png";
         IMAGEN_CARRITO.alt = "Carrito de Compra";
         IMAGEN_CARRITO.id = "carrito";
         BOTON_CARRITO.appendChild(IMAGEN_CARRITO);
