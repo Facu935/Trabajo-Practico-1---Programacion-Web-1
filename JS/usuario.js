@@ -91,9 +91,9 @@ export class Usuario{
 
     }
     
-    limpiarLocalStorageCompleto(){
-        localStorage.removeItem('usuarios');
-    }
     
+
+    
+
 
 }

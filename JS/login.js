@@ -1,4 +1,5 @@
-import { guardarModificacionLocalStorage, localStorageUsuarios } from "./funciones-generales.js";
+import { guardarModificacionLocalStorage, localStorageUsuarios, usuarioLogueado } from "./funciones-generales.js";
+
 
 
 
@@ -93,6 +94,7 @@ function validacionUsuarioYPassword(){
                 bandera = true;
                 element.logueado = true;
                 guardarModificacionLocalStorage(usuarios);
+                usuarioLogueado(usuarios);
                 event.target.submit();
             }
         });
@@ -102,3 +104,5 @@ function validacionUsuarioYPassword(){
         }
     });  
 }
+
+

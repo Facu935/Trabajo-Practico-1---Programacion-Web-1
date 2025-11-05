@@ -6,6 +6,7 @@ mostrarFormulario(FORMULARIO_CREAR_CUENTA_INPUTS_LABELS);
 //limpiarLocalStorage();
 
 
+
 //MAQUETADO DE LA PAGINA
 function mostrarFormulario(datos){
     const CONTAINER_COMPLETO = document.querySelector(".login-container");
@@ -92,7 +93,6 @@ function botones(formulario){
 //FUNCIONES DE LA PAGINA
 function crearCuenta(formulario){
 
-    
     formulario.addEventListener('submit', (event)=> {
         event.preventDefault();
 
@@ -111,7 +111,15 @@ function crearCuenta(formulario){
         } 
 
         confirmacionDeClaves(password, confirmacionPassword);
+        if (!confirmacionDeClaves(password, confirmacionPassword)){
+            alert("Las Constraseñas son distintas");
+            return;
+        }
         validacionAceptarTerminos(aceptacionTerminos);
+        if (!validacionAceptarTerminos(aceptacionTerminos)){
+            alert("Debe aceptar los Terminos y Condiciones");
+            return;
+        }
 
         const nuevoUsuario = new Usuario (username, email, telefono, password);
         nuevoUsuario.agregarUsuarioALocalStorage(nuevoUsuario);
@@ -135,17 +143,19 @@ function validacionEmailNoRepetido(email_nuevo){
 }
 
 function confirmacionDeClaves(password1, password2){
+    let iguales = true;
         if (password1 !== password2){
-        alert("Las Constraseñas son distintas")
-        return;
+        iguales = false;
     }
+    return iguales;
 }
 
 function validacionAceptarTerminos(checkbox){
+    let aceptado = true;
     if (checkbox === false){
-        alert("Debe aceptar los terminos y condiciones")
-        return;
+        aceptado = false;
     }
+    return aceptado;
 }
 
 

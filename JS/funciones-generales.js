@@ -9,5 +9,13 @@ export function guardarModificacionLocalStorage(usuarios){
 }
 
 export function limpiarLocalStorage(){
-    localStorage.clear;
+    localStorage.clear();
+}
+
+export function usuarioLogueado(usuarios){
+    usuarios.forEach(persona => {
+        if(persona.logueado){
+            localStorage.setItem("usuarioLogueado", JSON.stringify(persona));
+        } 
+    });
 }
