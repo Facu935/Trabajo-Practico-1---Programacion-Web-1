@@ -101,14 +101,16 @@ header {
   font-weight: 600;
   text-decoration: underline;
   padding: 1em 2em;
-
-}
-
-/*
-.contenedor-opciones-usuario{
   order: 1;
+
 }
-*/
+.contenedor-opciones-cuenta {
+    order:2; 
+  }
+
+
+
+
 
 #carrito-y-numero {
   display: flex;
@@ -119,6 +121,7 @@ header {
   border: none;
   cursor: pointer;
   position: relative;
+  order: 3;
 }
 #button-carrito {
   background-color: transparent;
