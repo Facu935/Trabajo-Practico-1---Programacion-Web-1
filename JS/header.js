@@ -1,4 +1,4 @@
-import { validarUsuarioConectadoParaNav, obtenerUsuarioLogueado} from "./funciones-generales.js";
+import { validarUsuarioConectadoParaNav, obtenerUsuarioLogueado, limpiarUsuarioLogueado} from "./funciones-generales.js";
 
 
 
@@ -129,19 +129,20 @@ function mostrarBienvenidoUsuario(contenedor){
 
 
 function crearOpcionesUsuario(contenedor_general){
-    //Creo y muestro
+
     const contenedor_opciones = document.createElement('div');
     contenedor_opciones.classList.add("contenedor-opciones-cuenta");
     const templateOpciones =
         `
         <ul class ="lista-opciones-cuenta">
-            <li><a href="./perfil.html">Mi Perfil</a></li>
-            <li><a href="./perfil.html">Cerrar Sesion</a></li>
+            <li><a href="/pages/perfil.html" id="perfil">Mi Perfil</a></li>
+            <li><a href="/index.html" id="cerrar-sesion">Cerrar Sesion</a></li>
         </ul>
         
         `;
     contenedor_opciones.innerHTML = templateOpciones;
     contenedor_general.appendChild(contenedor_opciones);
+    cerrarSesion();
 }
 
 function mostrarOpcionesUsuarios(contenedor_general){
@@ -161,5 +162,11 @@ function mostrarOpcionesUsuarios(contenedor_general){
     });
 }
 
+function cerrarSesion(){
+    const opcion_cerrar_Sesion = document.querySelector("#cerrar-sesion")
 
+    opcion_cerrar_Sesion.addEventListener('click', () => {
+        limpiarUsuarioLogueado();
+    });
+}
 

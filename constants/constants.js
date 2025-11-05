@@ -1,8 +1,4 @@
-export const OPCIONES_PERFIL = [
-    { name: "Mi Perfil", link: "./perfil.html" },
-    { name: "Cerrar Sesion", link: "index.html" },
 
-]
         
     
 
