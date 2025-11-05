@@ -79,12 +79,12 @@ function mostrarGrillaCursosDestacados(cursos, seccion){
     const contenedorPadre = document.createElement('div');
     contenedorPadre.id = "contenedor-grid-padre";
 
-    
+    let linkInscripcion = './pages/login.html';
     if(validarUsuarioConectadoParaNav()){
-        grillaUsuarioLogueado(cursos, seccion, contenedorCursos ,contenedorPadre);
-    } else {
-        grillaUsuarioDesLogueado(cursos, seccion, contenedorCursos, contenedorPadre);
-    }
+        linkInscripcion = "./pages/inscripcion.html";
+    } 
+
+    grillaCursos(cursos, seccion, contenedorCursos ,contenedorPadre , linkInscripcion);
 
 }
 
@@ -127,7 +127,7 @@ function mostrarMediosDePago(imagenes){
 }
 
 
-function grillaUsuarioLogueado(cursos, seccion, contenedorCursos , contenedorPadre){
+function grillaCursos(cursos, seccion, contenedorCursos , contenedorPadre, validacion){
     cursos.forEach(item =>{
         if(item.destacado == true){
             const templateCursos =
@@ -144,7 +144,7 @@ function grillaUsuarioLogueado(cursos, seccion, contenedorCursos , contenedorPad
                 </div>
                 <div class="contenedor-grid-hijo detalles-comprar">
                     <a href="${item.link}">Ver Detalles del Curso</a>
-                    <button><a href="./pages/inscripcion.html">Inscribirme</a></button>
+                    <button><a href="${validacion}">Inscribirme</a></button>
                 </div>
             </div>`
                 contenedorPadre.innerHTML += templateCursos;
@@ -154,30 +154,3 @@ function grillaUsuarioLogueado(cursos, seccion, contenedorCursos , contenedorPad
     seccion.appendChild(contenedorCursos);
 }
 
-
-function grillaUsuarioDesLogueado(cursos, seccion, contenedorCursos ,contenedorPadre){
-    cursos.forEach(item =>{
-        if(item.destacado == true){
-            const templateCursos =
-            `<div class="contenedor-grid-hijo">
-                <div class="contenedor-grid-hijo imagen">
-                    <img src="${item.img}" alt="Logo ${item.nombre}" /> 
-                </div>
-                <div class="contenedor-grid-hijo titulo">
-                    <h4>${item.nombre}</h4>
-                </div>
-                <div class="contenedor-grid-hijo datos">
-                    <p>${item.duracion} HS</p>
-                    <p>$ ${item.precio}</p>
-                </div>
-                <div class="contenedor-grid-hijo detalles-comprar">
-                    <a href="${item.link}">Ver Detalles del Curso</a>
-                    <button><a href="./pages/login.html">Inscribirme</a></button>
-                </div>
-            </div>`
-                contenedorPadre.innerHTML += templateCursos;
-        }
-    });
-    contenedorCursos.appendChild(contenedorPadre);
-    seccion.appendChild(contenedorCursos);
-}
