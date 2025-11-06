@@ -13,21 +13,22 @@ const CURSOS = obtenerUsuarioLogueado().cursosEnCarrito;
 header.mostrarHeader(CURSOS_INFO);
 barraNav.mostrarItems(NAV);
 
-
 cursosEnCarrito(CURSOS);
 footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS,FOOTER_REDES);
 
 
 
-
-
-function cursosEnCarrito(cursos){
-    const SECTION = document.querySelector(".carrito-layout")
+function cursosEnCarrito(array_cursos){
     const CARRITO = document.querySelector(".carrito");
+    cursos(CARRITO, array_cursos);
+    precioTotal(CARRITO)
 
+}
 
-    cursos.forEach(curso => {
-        const templateCarrito = `<div class="carrito-item">
+function cursos(contenedor, array_cursos){
+    array_cursos.forEach(curso => {
+        const templateCarrito = `
+                <div class="carrito-item">
                     <div class="carrito-item imagen">
                         <img src="${curso.img}" alt="Logo ${curso.nombre}" class="imagen-curso">
                     </div>
@@ -44,27 +45,24 @@ function cursosEnCarrito(cursos){
                     <div class="carrito-item precio-unitario">
                         <p>$ ${curso.precio}</p>
                     </div>
-                </div>`
-                CARRITO.innerHTML += templateCarrito;
+                </div>
+                `
+                contenedor.innerHTML += templateCarrito;
     });
-    SECTION.appendChild(CARRITO);
+}
 
-    const PRECIO_TOTAL = document.querySelector("#carrito-precio-total");
-    const templatePrecioTotal =`<div id="carrito-precio-total"></div>
-                        <h2>TOTAL</h2>
+function precioTotal(contenedor){
+        const templatePrecioTotal = `< <div id="carrito-precio-total">
+                    <h2>TOTAL</h2>
                     <p>$ ${calcularTotal(CURSOS)}</p>
                     <div class="carrito-botones">
                         <a href="../pages/pago.html"><button>CONFIRMAR COMPRA</button></a>
-                        <a href="./index.html"><button id="boton-cancelar">CANCELAR COMPRA</button></a>
+                        <a href="../index.html"><button id="boton-cancelar">CANCELAR COMPRA</button></a>
                     </div>
-                    </div>`
+                </div>  `
 
-    PRECIO_TOTAL.innerHTML = templatePrecioTotal;
-
-    
-
+        contenedor.innerHTML += templatePrecioTotal;
 }
-
 function calcularTotal(cursos){
     let total = 0;
     cursos.forEach(curso => {
