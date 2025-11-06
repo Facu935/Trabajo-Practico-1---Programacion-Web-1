@@ -6,10 +6,9 @@ import { SliderHome } from "./sliderHome.js";
 import { Footer } from "./footer.js";
 import { validarUsuarioConectadoParaNav } from "./funciones-generales.js";
 
-/*
-import { limpiarUsuarioLogueado } from "./funciones-generales";
-limpiarUsuarioLogueado();
-*/
+
+//localStorage.clear();
+
 
 const header = new Header();
 const barraNav = new Navbar();

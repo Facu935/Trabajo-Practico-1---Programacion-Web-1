@@ -1,4 +1,4 @@
-import { validarUsuarioConectadoParaNav, obtenerUsuarioLogueado, limpiarUsuarioLogueado} from "./funciones-generales.js";
+import { validarUsuarioConectadoParaNav, obtenerUsuarioLogueado, limpiarUsuarioLogueado, } from "./funciones-generales.js";
 
 
 
@@ -68,7 +68,7 @@ export class Header{
         CARRITO_Y_NUMERO.id = "carrito-y-numero";
         mostrarNumeroDelCarrito(CARRITO_Y_NUMERO);
         mostrarCarrito(CARRITO_Y_NUMERO);
-        //Falta hacer la funcion que muestre el numero de items en el carrito según el usuario logueado actual
+        
         
         
         CONTENEDOR_CARRITO.appendChild(CARRITO_Y_NUMERO);
@@ -92,13 +92,19 @@ function mostrarBotonLogin(contenedor_a_anexar){
 }
 
 function mostrarNumeroDelCarrito(contenedor){
+        const usuario_logueado = obtenerUsuarioLogueado();
+        let cantidadDeCursos = 0;
+
+        if (usuario_logueado !== null && usuario_logueado !== undefined){
+            cantidadDeCursos = usuario_logueado.cursosEnCarrito.length;
+        }
+        
         const NUMERO = document.createElement("div");
         NUMERO.id = "header-div__cantidad_items";
-        NUMERO.textContent = "0";                       //Aca meter funcion en base a los cursos que tenga el usuario
+        NUMERO.textContent = cantidadDeCursos;             
         contenedor.appendChild(NUMERO);
-
-
 }
+
 
 function mostrarCarrito(contenedor){
         const LINK_CARRITO = document.createElement("a");
@@ -113,6 +119,7 @@ function mostrarCarrito(contenedor){
         LINK_CARRITO.appendChild(BOTON_CARRITO);
         contenedor.appendChild(LINK_CARRITO);
 }
+
 
 
 function mostrarBienvenidoUsuario(contenedor){
