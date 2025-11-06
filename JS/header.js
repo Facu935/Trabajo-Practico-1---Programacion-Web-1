@@ -1,11 +1,13 @@
-import { validarUsuarioConectadoParaNav, obtenerUsuarioLogueado, limpiarUsuarioLogueado, guardarModificacionLocalStorage, guardarModificacionLocalStorageUsuarioLogueado, } from "./funciones-generales.js";
+import { validarUsuarioConectadoParaNav, obtenerUsuarioLogueado, limpiarUsuarioLogueado,
+    guardarModificacionLocalStorage, guardarModificacionLocalStorageUsuarioLogueado, limpiarLocalStorage, localStorageUsuarios } from "./funciones-generales.js";
 
-//localStorage.clear();
 
 export class Header{
 
     constructor(){
     }
+    
+    
 
     mostrarHeader(cursos){
         this.logo();
@@ -147,10 +149,7 @@ function modalCursosObtenidosEnCarrito(contador , contenedor){
                         sideBarCursosEnCarrito.innerHTML += templateCursos; 
                     }
 
-
-
-                        //Refrescar Modal
-
+                
                 //Boton Cerrar
                 const boton_cerrar_sideBar = document.createElement("button")
                 boton_cerrar_sideBar.classList.add("boton-cerrar-sideBar");
@@ -158,6 +157,7 @@ function modalCursosObtenidosEnCarrito(contador , contenedor){
                     boton_cerrar_sideBar.addEventListener('click', () =>{
                         sideBarCursosEnCarrito.remove();
                     });
+
                 //Anexos
                 sideBarCursosEnCarrito.appendChild(boton_cerrar_sideBar);
                 contenedor.appendChild(sideBarCursosEnCarrito);
@@ -172,7 +172,6 @@ function modalCursosObtenidosEnCarrito(contador , contenedor){
     });
 }
 function eliminarCursoDelSideBar(cursosEnCarritoDelUsuario, contenedor){
-                const CARRITO_Y_NUMERO = document.querySelector("#carrito-y-numero");
                 for (let i = 0; i < cursosEnCarritoDelUsuario.length; i++){
                 const CURSO_A_BORRAR = document.querySelector("#recuadro-sidebar" + (i+1));
                 const BOTON_ELIMINAR_CORRECTO = document.querySelector("#boton-eliminar" + (i+1));
@@ -184,7 +183,8 @@ function eliminarCursoDelSideBar(cursosEnCarritoDelUsuario, contenedor){
                         //CAMBIAR DATOS EN LS
                         const usuario = obtenerUsuarioLogueado();
                         usuario.cursosEnCarrito = cursosEnCarritoDelUsuario;
-                        guardarModificacionLocalStorage(usuario);
+
+                        copiaCursoUsuarioLogueadoALocalStorage(usuario)
                         guardarModificacionLocalStorageUsuarioLogueado(usuario);
                         const NUMERO = contenedor.querySelector('#header-div__cantidad_items');
                             if (NUMERO) {
@@ -199,7 +199,17 @@ function eliminarCursoDelSideBar(cursosEnCarritoDelUsuario, contenedor){
                 
 }
 
-
+function copiaCursoUsuarioLogueadoALocalStorage(usuario_logueado){
+    const TODOS_LOS_USUARIOS = localStorageUsuarios();
+    TODOS_LOS_USUARIOS.forEach(usuarioLS =>{
+        if (usuario_logueado.email === usuarioLS.email){
+            usuarioLS.cursosEnCarrito = usuario_logueado.cursosEnCarrito;
+            return;
+        }
+    });
+    guardarModificacionLocalStorage(TODOS_LOS_USUARIOS);
+    
+}
 
 
 
@@ -207,7 +217,7 @@ function mostrarCarrito(contenedor){
         const LINK_CARRITO = document.createElement("a");
         const BOTON_CARRITO = document.createElement("button");
         const IMAGEN_CARRITO = document.createElement("img");
-        LINK_CARRITO.href = "./pages/login.html";                   //VALIDAR SI USUARIO ESTA CONECTADO
+        LINK_CARRITO.href = "./pages/login.html";                   
         BOTON_CARRITO.id = "button-carrito";
         IMAGEN_CARRITO.src = "../IMG/Icono Carrito de Compra.png";
         IMAGEN_CARRITO.alt = "Carrito de Compra";
@@ -270,4 +280,5 @@ function cerrarSesion(){
         limpiarUsuarioLogueado();
     });
 }
+
 
