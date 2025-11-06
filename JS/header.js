@@ -114,7 +114,7 @@ function mostrarNumeroDelCarrito(contenedor){
 //Cambiar modalidad y cantidad de cursos
 //Agregar Evento para eliminar el curso del carrito
 function modalCursosObtenidosEnCarrito(contador , contenedor){
-
+    
 
     contador.addEventListener('click', () => {
         
@@ -130,6 +130,7 @@ function modalCursosObtenidosEnCarrito(contador , contenedor){
                 
                 //Grilla Con Cursos
                 const usuario_logueado = obtenerUsuarioLogueado();
+
                 const cursosEnCarritoDelUsuario = usuario_logueado.cursosEnCarrito;
                     //Recorre Array y va creando los recuadros
                 cursosEnCarritoDelUsuario.forEach(curso => {
@@ -137,7 +138,7 @@ function modalCursosObtenidosEnCarrito(contador , contenedor){
                                                 <h3>${curso.nombre}</h3>
                                                 <div class = "recuadro-curso-sidebar segundo-renglon">
                                                     <ul>
-                                                        <li>${curso.nombre}</li>
+                                                        <li id="nombre-curso-carrito">${curso.nombre}</li>
                                                         <li>(Cantidad)</li>
                                                         <li>(Modalidad)</li>
                                                     </ul>
@@ -165,9 +166,20 @@ function modalCursosObtenidosEnCarrito(contador , contenedor){
 }
 
 
-function botonBorrarCursoDelCarrito(){
-    
+function borrarCursoDelCarrito(){
+    const boton = document.querySelector(".boton-eliminar-curso-carrito");
+        boton.addEventListener('click', () =>{
+
+            //REMOVER EL ARRAY GENERAL
+            const usuario = obtenerUsuarioLogueado();
+            
+
+            //REMOVER CURSO EN EL QUE SE ENCUENTRA (renderizar devuelta)
+            
+
+        });
 }
+
 
 
 function mostrarCarrito(contenedor){
