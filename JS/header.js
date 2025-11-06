@@ -1,4 +1,4 @@
-import { validarUsuarioConectadoParaNav, obtenerUsuarioLogueado, limpiarUsuarioLogueado, } from "./funciones-generales.js";
+import { validarUsuarioConectadoParaNav, obtenerUsuarioLogueado, limpiarUsuarioLogueado, guardarModificacionLocalStorage, guardarModificacionLocalStorageUsuarioLogueado, } from "./funciones-generales.js";
 
 //localStorage.clear();
 
@@ -114,11 +114,9 @@ function mostrarNumeroDelCarrito(contenedor){
 //Cambiar modalidad y cantidad de cursos
 //Agregar Evento para eliminar el curso del carrito
 function modalCursosObtenidosEnCarrito(contador , contenedor){
-    
 
     contador.addEventListener('click', () => {
-        
-//Arreglar esto para que desaparezca al tocar el numero, auqne tenga el Cerrar
+        //Arreglar esto para que desaparezca al tocar el numero, auqne tenga el Cerrar
         const recuadro = document.querySelector(".sideBar-cursos-carrito")
             if (recuadro){
             sideBarCursosEnCarrito.remove();
@@ -133,24 +131,26 @@ function modalCursosObtenidosEnCarrito(contador , contenedor){
 
                 const cursosEnCarritoDelUsuario = usuario_logueado.cursosEnCarrito;
                     //Recorre Array y va creando los recuadros
-                cursosEnCarritoDelUsuario.forEach(curso => {
-                    const templateCursos = `<div class="recuadro-curso-sidebar">
+                    for(let i = 0; i < cursosEnCarritoDelUsuario.length; i++ ){
+                    const curso = cursosEnCarritoDelUsuario[i];
+                    const templateCursos = `<div class="recuadro-curso-sidebar" id="recuadro-sidebar${i+1}">
                                                 <h3>${curso.nombre}</h3>
                                                 <div class = "recuadro-curso-sidebar segundo-renglon">
                                                     <ul>
-                                                        <li id="nombre-curso-carrito">${curso.nombre}</li>
+                                                        <li id="precio-curso-carrito">${curso.precio}</li>
                                                         <li>(Cantidad)</li>
                                                         <li>(Modalidad)</li>
                                                     </ul>
-                                                    <button class="boton-eliminar-curso-carrito">Eliminar Curso</button>
+                                                    <button class="boton-eliminar-curso-carrito" id="boton-eliminar${i+1}">Eliminar Curso</button>
                                                 </div>
                                             </div>`
-                        sideBarCursosEnCarrito.innerHTML += templateCursos;                 
-                });
-                //Añadir Evento de eliminar curso del carrito aca
+                        sideBarCursosEnCarrito.innerHTML += templateCursos; 
+                    }
 
 
-                
+
+                        //Refrescar Modal
+
                 //Boton Cerrar
                 const boton_cerrar_sideBar = document.createElement("button")
                 boton_cerrar_sideBar.classList.add("boton-cerrar-sideBar");
@@ -161,24 +161,45 @@ function modalCursosObtenidosEnCarrito(contador , contenedor){
                 //Anexos
                 sideBarCursosEnCarrito.appendChild(boton_cerrar_sideBar);
                 contenedor.appendChild(sideBarCursosEnCarrito);
+
+
+
+                //Añadir Evento de eliminar curso del carrito aca
+                eliminarCursoDelSideBar(cursosEnCarritoDelUsuario, contenedor);
+
+
         }    
     });
 }
+function eliminarCursoDelSideBar(cursosEnCarritoDelUsuario, contenedor){
+                const CARRITO_Y_NUMERO = document.querySelector("#carrito-y-numero");
+                for (let i = 0; i < cursosEnCarritoDelUsuario.length; i++){
+                const CURSO_A_BORRAR = document.querySelector("#recuadro-sidebar" + (i+1));
+                const BOTON_ELIMINAR_CORRECTO = document.querySelector("#boton-eliminar" + (i+1));
+                    
+                    BOTON_ELIMINAR_CORRECTO.addEventListener('click', () => {
+                        CURSO_A_BORRAR.remove();
+                        cursosEnCarritoDelUsuario.splice(i, 1);
 
-
-function borrarCursoDelCarrito(){
-    const boton = document.querySelector(".boton-eliminar-curso-carrito");
-        boton.addEventListener('click', () =>{
-
-            //REMOVER EL ARRAY GENERAL
-            const usuario = obtenerUsuarioLogueado();
-            
-
-            //REMOVER CURSO EN EL QUE SE ENCUENTRA (renderizar devuelta)
-            
-
-        });
+                        //CAMBIAR DATOS EN LS
+                        const usuario = obtenerUsuarioLogueado();
+                        usuario.cursosEnCarrito = cursosEnCarritoDelUsuario;
+                        guardarModificacionLocalStorage(usuario);
+                        guardarModificacionLocalStorageUsuarioLogueado(usuario);
+                        const NUMERO = contenedor.querySelector('#header-div__cantidad_items');
+                            if (NUMERO) {
+                                NUMERO.textContent = cursosEnCarritoDelUsuario.length;
+                            } else {
+                                mostrarNumeroDelCarrito(contenedor);
+                            }
+                        return;
+                    });
+                }
+                
+                
 }
+
+
 
 
 

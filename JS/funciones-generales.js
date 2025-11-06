@@ -7,6 +7,9 @@ export function localStorageUsuarios(){
 export function guardarModificacionLocalStorage(usuarios){
     localStorage.setItem('usuarios', JSON.stringify(usuarios))
 }
+export function guardarModificacionLocalStorageUsuarioLogueado(usuario){
+    localStorage.setItem('usuarioLogueado', JSON.stringify(usuario))
+}
 
 export function limpiarLocalStorage(){
     localStorage.clear();
