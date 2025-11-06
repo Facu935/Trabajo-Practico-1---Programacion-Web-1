@@ -51,8 +51,7 @@ export class Header{
         const CONTENEDOR_CARRITO = document.createElement("div");
         CONTENEDOR_CARRITO.classList.add("header-div__carrito");
 
-        //METER UN IF DE USUARIO LOGUEADO O NO
-            //Si no esta logueado
+
         
         
         if (!validarUsuarioConectadoParaNav()){
@@ -63,7 +62,7 @@ export class Header{
         }   
         
 
-        //crearOpcionesUsuario(CONTENEDOR_CARRITO);
+
         //Contenedro Carrito
         const CARRITO_Y_NUMERO = document.createElement("div");
         CARRITO_Y_NUMERO.id = "carrito-y-numero";
@@ -75,8 +74,6 @@ export class Header{
         CONTENEDOR_CARRITO.appendChild(CARRITO_Y_NUMERO);
         HEADER.appendChild(CONTENEDOR_CARRITO);
 
-        //Funciones
-        //mostrarOpcionesPerfilYCerrarSesion(CONTENEDOR_CARRITO);
 
     }
 
