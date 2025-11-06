@@ -148,6 +148,27 @@ header {
   right: -10px;
 }
 
+.sideBar-cursos-carrito{
+  display: flex;
+  flex-direction: column;
+  width: 25em;
+  background-color: red;
+  position: absolute;
+  top: 5em;
+  right: -2em;
+}
+.segundo-renglon{
+  display: flex;
+  justify-content: space-between;
+}
+.sideBar-cursos-carrito ul{
+  display: flex;
+  flex-direction: row;
+}
+.boton-cerrar-sideBar{
+  width: 20%;
+}
+
 /*************************** NAVEGACIÓN ***************************/
 .navegation {
   height: auto;

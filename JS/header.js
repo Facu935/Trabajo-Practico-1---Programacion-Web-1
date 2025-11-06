@@ -1,6 +1,6 @@
 import { validarUsuarioConectadoParaNav, obtenerUsuarioLogueado, limpiarUsuarioLogueado, } from "./funciones-generales.js";
 
-
+//localStorage.clear();
 
 export class Header{
 
@@ -103,6 +103,70 @@ function mostrarNumeroDelCarrito(contenedor){
         NUMERO.id = "header-div__cantidad_items";
         NUMERO.textContent = cantidadDeCursos;             
         contenedor.appendChild(NUMERO);
+
+        
+        modalCursosObtenidosEnCarrito(NUMERO, contenedor);
+
+        
+
+}
+
+//Cambiar modalidad y cantidad de cursos
+//Agregar Evento para eliminar el curso del carrito
+function modalCursosObtenidosEnCarrito(contador , contenedor){
+
+
+    contador.addEventListener('click', () => {
+        
+//Arreglar esto para que desaparezca al tocar el numero, auqne tenga el Cerrar
+        const recuadro = document.querySelector(".sideBar-cursos-carrito")
+            if (recuadro){
+            sideBarCursosEnCarrito.remove();
+            return;
+            } else {
+                let sideBarCursosEnCarrito = document.createElement("div");
+                sideBarCursosEnCarrito.classList.add("sideBar-cursos-carrito");
+                
+                
+                //Grilla Con Cursos
+                const usuario_logueado = obtenerUsuarioLogueado();
+                const cursosEnCarritoDelUsuario = usuario_logueado.cursosEnCarrito;
+                    //Recorre Array y va creando los recuadros
+                cursosEnCarritoDelUsuario.forEach(curso => {
+                    const templateCursos = `<div class="recuadro-curso-sidebar">
+                                                <h3>${curso.nombre}</h3>
+                                                <div class = "recuadro-curso-sidebar segundo-renglon">
+                                                    <ul>
+                                                        <li>${curso.nombre}</li>
+                                                        <li>(Cantidad)</li>
+                                                        <li>(Modalidad)</li>
+                                                    </ul>
+                                                    <button class="boton-eliminar-curso-carrito">Eliminar Curso</button>
+                                                </div>
+                                            </div>`
+                        sideBarCursosEnCarrito.innerHTML += templateCursos;                 
+                });
+                //Añadir Evento de eliminar curso del carrito aca
+
+
+                
+                //Boton Cerrar
+                const boton_cerrar_sideBar = document.createElement("button")
+                boton_cerrar_sideBar.classList.add("boton-cerrar-sideBar");
+                boton_cerrar_sideBar.textContent = "Cerrar";
+                    boton_cerrar_sideBar.addEventListener('click', () =>{
+                        sideBarCursosEnCarrito.remove();
+                    });
+                //Anexos
+                sideBarCursosEnCarrito.appendChild(boton_cerrar_sideBar);
+                contenedor.appendChild(sideBarCursosEnCarrito);
+        }    
+    });
+}
+
+
+function botonBorrarCursoDelCarrito(){
+    
 }
 
 

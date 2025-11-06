@@ -7,7 +7,7 @@ import { Footer } from "./footer.js";
 import { validarUsuarioConectadoParaNav } from "./funciones-generales.js";
 
 
-//localStorage.clear();
+
 
 
 const header = new Header();
@@ -27,7 +27,7 @@ mostrarMediosDePago(MEDIOS_PAGO_IMGS);
 footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS,FOOTER_REDES);
 
 
-;
+
 
 
 
