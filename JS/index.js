@@ -28,7 +28,7 @@ footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS
 
 
 
-
+//localStorage.clear();
 
 
 function mostrarPasosDeInscripcion(pasos){

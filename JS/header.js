@@ -54,9 +54,6 @@ export class Header{
         const CONTENEDOR_CARRITO = document.createElement("div");
         CONTENEDOR_CARRITO.classList.add("header-div__carrito");
 
-
-        
-        
         if (!validarUsuarioConectadoParaNav()){
             mostrarBotonLogin(CONTENEDOR_CARRITO);
         } else {
@@ -64,20 +61,14 @@ export class Header{
             mostrarOpcionesUsuarios(CONTENEDOR_CARRITO);
         }   
         
-
-
         //Contenedro Carrito
         const CARRITO_Y_NUMERO = document.createElement("div");
         CARRITO_Y_NUMERO.id = "carrito-y-numero";
         mostrarNumeroDelCarrito(CARRITO_Y_NUMERO);
         mostrarCarrito(CARRITO_Y_NUMERO);
         
-        
-        
         CONTENEDOR_CARRITO.appendChild(CARRITO_Y_NUMERO);
         HEADER.appendChild(CONTENEDOR_CARRITO);
-
-
     }
 
 
@@ -89,7 +80,7 @@ function mostrarBotonLogin(contenedor_a_anexar){
         LINK_LOGIN.href = "../pages/login.html";
         const BOTON_LOGIN = document.createElement("button");
         BOTON_LOGIN.id = "boton-login";
-        BOTON_LOGIN.textContent = "Login";                      //CAMBIAR SI ESTA LOGUEADO
+        BOTON_LOGIN.textContent = "Login";                     
         LINK_LOGIN.appendChild(BOTON_LOGIN);
         contenedor_a_anexar.appendChild(LINK_LOGIN);
 }
@@ -112,23 +103,17 @@ function mostrarNumeroDelCarrito(contenedor){
         
 
 }
-
-//Cambiar modalidad y cantidad de cursos
-//Agregar Evento para eliminar el curso del carrito
 function modalCursosObtenidosEnCarrito(contador , contenedor){
     contador.addEventListener('click', () => {
         if (!validarUsuarioConectadoParaNav()) {
             window.location.href = "../pages/login.html";
             return;
         }
-            //Arreglar esto para que desaparezca al tocar el numero, auqne tenga el Cerrar
             const recuadro = document.querySelector(".sideBar-cursos-carrito")
                 if (recuadro){
                 recuadro.remove();
                 return;
                 }
-
-
                         let sideBarCursosEnCarrito = document.createElement("div");
                         sideBarCursosEnCarrito.classList.add("sideBar-cursos-carrito");
                         
@@ -155,6 +140,14 @@ function modalCursosObtenidosEnCarrito(contador , contenedor){
                                                         </div>
                                                     </div>`
                                 sideBarCursosEnCarrito.innerHTML += templateCursos; 
+                            }
+
+                            //Agregarle CLASE
+                            if (obtenerUsuarioLogueado().cursosEnCarrito.length === 0){
+                                const TITULO_NO_HAY_CURSOS = document.createElement('h2');
+                                TITULO_NO_HAY_CURSOS.textContent = "Todavía no se obtuvieron cursos";
+                                sideBarCursosEnCarrito.appendChild(TITULO_NO_HAY_CURSOS);
+                                
                             }
                         //Boton Cerrar
                         const boton_cerrar_sideBar = document.createElement("button")
