@@ -72,33 +72,7 @@ export class Usuario{
             password: this.password,
             cursosInscriptos: this.cursosInscriptos,
             logueado: this.logueado,
-            cursosEnCarrito: [    { 
-                                nombre: "HTML 5",
-                                link: "./pages/curso-html.html",
-                                precio: 60000,
-                                valoracion: 4.7,
-                                cantidadDeEstudiantes: 12.5,
-                                duracion: 20,
-                                requisitos: ["Acceso a Internet"],
-                                destacado: true,
-                                cuposDisponibles: 3,
-                                img: "../IMG/Cursos/logo-html.png",
-                                descripcion: "Este curso está diseñado para quienes quieren comenzar a construir páginas web desde cero. Se abordarán todos los fundamentos de HTML, incluyendo la estructura de un documento, etiquetas, enlaces, imágenes y formularios. Aprenderás a crear contenido estructurado y semántico, entendiendo cómo los navegadores interpretan el código y cómo mejorar la accesibilidad de tus páginas. Además, el curso incluye prácticas guiadas para que desarrolles pequeñas páginas web completas y funcionales. Al finalizar, serás capaz de crear sitios web simples y sentar las bases para aprender CSS y JavaScript."
-                                },
-                                { 
-                                nombre: "HTML 5",
-                                link: "./pages/curso-html.html",
-                                precio: 60000,
-                                valoracion: 4.7,
-                                cantidadDeEstudiantes: 12.5,
-                                duracion: 20,
-                                requisitos: ["Acceso a Internet"],
-                                destacado: true,
-                                cuposDisponibles: 3,
-                                img: "../IMG/Cursos/logo-html.png",
-                                descripcion: "Este curso está diseñado para quienes quieren comenzar a construir páginas web desde cero. Se abordarán todos los fundamentos de HTML, incluyendo la estructura de un documento, etiquetas, enlaces, imágenes y formularios. Aprenderás a crear contenido estructurado y semántico, entendiendo cómo los navegadores interpretan el código y cómo mejorar la accesibilidad de tus páginas. Además, el curso incluye prácticas guiadas para que desarrolles pequeñas páginas web completas y funcionales. Al finalizar, serás capaz de crear sitios web simples y sentar las bases para aprender CSS y JavaScript."
-                                }
-                            ]
+            cursosEnCarrito: this.cursosEnCarrito
         }
     }
 
