@@ -212,7 +212,11 @@ function mostrarCarrito(contenedor){
         const LINK_CARRITO = document.createElement("a");
         const BOTON_CARRITO = document.createElement("button");
         const IMAGEN_CARRITO = document.createElement("img");
-        LINK_CARRITO.href = "./pages/login.html";                   
+        if (validarUsuarioConectadoParaNav()){
+            LINK_CARRITO.href = "./pages/carrito.html";
+        } else{
+            LINK_CARRITO.href = "./pages/login.html";
+        }
         BOTON_CARRITO.id = "button-carrito";
         IMAGEN_CARRITO.src = "../IMG/Icono Carrito de Compra.png";
         IMAGEN_CARRITO.alt = "Carrito de Compra";
