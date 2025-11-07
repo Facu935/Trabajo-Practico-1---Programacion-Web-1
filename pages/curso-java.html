@@ -90,9 +90,7 @@
                         <li>Duración: 35 hs</li>
                     </ul>
                     <div id="boton">
-                        <a href="./inscripcion.html">
-                            <a href="../pages/zz03-login-p-java.html"><button id="div-boton">INSCRIBIRME</button></a>
-                        </a>
+                            <button id="boton-inscribirse" data-curso="java">INSCRIBIRME</button>
                         <p>$70.000</p>
                     </div>
                     <p class="cupos">4 CUPOS DISPONIBLES</p>
@@ -321,6 +319,28 @@
 
     <a href="#inicio"><i id="flecha-vuelta-inicio">&#x1F53C;</i></a>
     <p id="footer-nota-legal">© Edu Courses. Todos los derechos reservados.</p>
+
+    <div class="modal">
+        <div class="contenedor-modal">
+            <div>
+                <h3 id="titulo-modal"></h3>
+            </div>
+            <div>
+                <img src="" alt="" id="modal-img-curso">
+            </div>
+            <div class="info-curso">
+                <p id="duracion-modal"></p>
+                <p id="profesor-modal"></p>
+                <p id="precio-modal"></p>
+            </div>
+            <div id="botones">
+                <a href="./inscripcion.html">ACEPTAR</a>
+                <button id="hidden-modal">CANCELAR</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../JS/detallesCursos.js"></script>
 </body>
 
 </html>

@@ -20,19 +20,19 @@
             <details>
                 <summary>Buscar curso</summary>
                 <ul>
-    <li><a href="./curso-html.html">HTML5</a></li>
-    <li><a href="./curso-css.html">CSS3</a></li>
-    <li><a href="./curso-js.html">JavaScript</a></li>
-    <li><a href="./curso-blockchain.html">Blockchain</a></li>
-    <li><a href="./curso-jquery.html">JQuery</a></li>
-    <li><a href="./curso-java.html">Java</a></li>
-    <li><a href="./curso-mysql.html">MySQL</a></li>
-    <li><a href="./curso-csharp.html">C#</a></li>
-    <li><a href="./curso-php.html">PHP</a></li>
-    <li><a href="./curso-python.html">Python</a></li>
-    <li><a href="./curso-node.html">Node.js</a></li>
-    <li><a href="./curso-react.html">React</a></li>
-    </ul>
+                    <li><a href="./curso-html.html">HTML5</a></li>
+                    <li><a href="./curso-css.html">CSS3</a></li>
+                    <li><a href="./curso-js.html">JavaScript</a></li>
+                    <li><a href="./curso-blockchain.html">Blockchain</a></li>
+                    <li><a href="./curso-jquery.html">JQuery</a></li>
+                    <li><a href="./curso-java.html">Java</a></li>
+                    <li><a href="./curso-mysql.html">MySQL</a></li>
+                    <li><a href="./curso-csharp.html">C#</a></li>
+                    <li><a href="./curso-php.html">PHP</a></li>
+                    <li><a href="./curso-python.html">Python</a></li>
+                    <li><a href="./curso-node.html">Node.js</a></li>
+                    <li><a href="./curso-react.html">React</a></li>
+                </ul>
             </details>
         </div>
         <div class="header-div__carrito">
@@ -95,7 +95,7 @@
                         <li>Duración: 40 hs</li>
                     </ul>
                     <div id="boton">
-                        <a href="../pages/zz03-login-p-html.html"><button id="div-boton">INSCRIBIRME</button></a>
+                        <button id="boton-inscribirse" data-curso="python">INSCRIBIRME</button>
                         <p>$95.000</p>
                     </div>
                     <p class="cupos">5 CUPOS DISPONIBLES</p>
@@ -372,6 +372,28 @@
 
     <a href="#inicio"><i id="flecha-vuelta-inicio">&#x1F53C;</i></a>
     <p id="footer-nota-legal">© Edu Courses. Todos los derechos reservados.</p>
+
+    <div class="modal">
+        <div class="contenedor-modal">
+            <div>
+                <h3 id="titulo-modal"></h3>
+            </div>
+            <div>
+                <img src="" alt="" id="modal-img-curso">
+            </div>
+            <div class="info-curso">
+                <p id="duracion-modal"></p>
+                <p id="profesor-modal"></p>
+                <p id="precio-modal"></p>
+            </div>
+            <div id="botones">
+                <a href="./inscripcion.html">ACEPTAR</a>
+                <button id="hidden-modal">CANCELAR</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../JS/detallesCursos.js"></script>
 </body>
 
 </html>
