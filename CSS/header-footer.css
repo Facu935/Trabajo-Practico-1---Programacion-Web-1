@@ -1,317 +1,317 @@
-/* Estilos generales y reset */
 * {
-    margin: 0;
-    padding: 0; /* Añadido para un mejor reseteo */
-    box-sizing: border-box;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 a {
-    text-decoration: none;
-    color: #000;
+  text-decoration: none;
+  color: #000;
 }
 
 /*************************** HEADER ***************************/
 header {
-    background-color: #1693a5;
-    min-height: 12em; /* Usamos min-height para que pueda crecer si el contenido se envuelve */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; /* ¡CLAVE! Permite que los elementos pasen a la siguiente línea si no caben */
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em 2em; /* Usamos padding en el contenedor para el espaciado */
-    gap: 1.5em; /* Añade espacio entre los elementos del header */
+  background-color: #1693a5;
+  min-height: 12em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  gap: 1.5em;
 }
 
 #logo {
-    width: 10em;
-    /* margin-left: 5em; -> Eliminado, el padding del header se encarga del espacio */
-    border-radius: 50%;
-    border: 1px solid black;
-    flex-shrink: 0; /* Evita que el logo se encoja */
+  width: 10em;
+  border-radius: 50%;
+  border: 1px solid black;
+  flex-shrink: 0;
 }
 
-/* Contenedor del buscador para mejor control */
 .header-div__buscador {
-    flex-grow: 1; /* Permite que el buscador ocupe el espacio disponible */
-    display: flex;
-    justify-content: center;
-    min-width: 250px; /* Ancho mínimo para que no se comprima demasiado */
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 250px;
 }
 
 .buscador-links {
-    width: 100%; /* Ocupa el 100% de su contenedor (.header-div__buscador) */
-    max-width: 45em; /* Límite para que no sea excesivamente ancho en pantallas grandes */
+  width: 100%;
+  max-width: 45em;
 }
 
-.buscador-links summary, .buscador-links ul {
-    width: 100%; /* Hacemos que el summary y la lista sean fluidos */
+.buscador-links summary,
+.buscador-links ul {
+  width: 100%;
 }
 
 .buscador-links summary {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5em;
-    padding: 0.75em;
-    border: 0.06em solid #cfcfcf;
-    background: #fff;
-    font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.75em;
+  border: 0.06em solid #cfcfcf;
+  background: #fff;
+  font-weight: 600;
 }
 
 .buscador-links ul {
-    list-style: none;
-    padding: 0.5em;
-    line-height: 1em;
-    border-radius: 0 0 10px 10px;
-    background: #fff;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Rejilla responsive */
-    gap: 0.25em 0.5em;
+  list-style: none;
+  padding: 0.5em;
+  line-height: 1em;
+  border-radius: 0 0 10px 10px;
+  background: #fff;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.25em 0.5em;
 }
 
 .buscador-links li {
-    font-size: 0.8em;
-    font-weight: 600;
+  font-size: 0.8em;
+  font-weight: 600;
 }
 
 .buscador-links a {
-    padding: 0.25em 0.5em;
+  padding: 0.25em 0.5em;
 }
 
 .header-div__carrito {
-    display: flex;
-    flex-direction: row;
-    justify-content: center; /* Centramos los elementos */
-    align-items: center;
-    gap: 1.5em; /* Espacio entre el botón de login y el carrito */
-    flex-shrink: 0; /* Evita que esta sección se encoja */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  flex-shrink: 0;
 }
 
 #boton-login {
-    background-color: white;
-    border-radius: 10px;
-    padding: 1em 2em;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1em 2em;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
 }
 
 #carrito-y-numero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
 }
-#button-carrito{
-    background-color: transparent;
-    border: none;
+#button-carrito {
+  background-color: transparent;
+  border: none;
 }
 
 #carrito {
-    height: 5em;
-    width: 5em;
+  height: 5em;
+  width: 5em;
 }
 
 #header-div__cantidad_items {
-    height: 2.5em;
-    width: 2.5em;
-    background-color: white;
-    border-radius: 100%;
-    border: black solid 0.25em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 800;
-    position: absolute; /* Posicionado relativo al contenedor #carrito-y-numero */
-    top: -10px;
-    right: -10px;
+  height: 2.5em;
+  width: 2.5em;
+  background-color: white;
+  border-radius: 100%;
+  border: black solid 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  position: absolute;
+  top: -10px;
+  right: -10px;
 }
 
 /*************************** NAVEGACIÓN ***************************/
 .navegation {
-    height: auto; /* Altura automática para adaptarse al contenido */
-    min-height: 5em;
-    width: 100%;
-    background-color: #45b5c4;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    display: flex; /* Añadido para centrar la lista */
-    justify-content: center;
+  height: auto;
+  min-height: 5em;
+  width: 100%;
+  background-color: #45b5c4;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: center;
 }
 
 .navegation__items {
-    height: 100%;
-    padding: 1em;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap; /* Permite que los links se envuelvan en pantallas pequeñas */
-    justify-content: center; /* Centra los links */
-    align-items: center;
-    list-style: none;
-    font-weight: 700;
-    gap: 2em; /* Espacio entre elementos de la navegación */
+  height: 100%;
+  padding: 1em;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  font-weight: 700;
+  gap: 2em;
 }
 
 /*************************** FOOTER ***************************/
 footer {
-    width: 100%;
-    height: auto; /* Altura automática */
-    background-color: #1693a5;
-    display: flex;
-    flex-direction: row; /* Cambiará a columna en pantallas pequeñas */
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: flex-start; /* Alinea los items al inicio */
-    border: 1px solid black;
-    padding: 3em 2em;
-    gap: 2em;
+  width: 100%;
+  height: auto;
+  background-color: #1693a5;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  border: 1px solid black;
+  padding: 3em 2em;
+  gap: 2em;
 }
 
 .footer-recuadros {
-    flex: 1; /* Permite que los recuadros crezcan y ocupen el espacio */
-    min-width: 280px; /* Ancho mínimo antes de que se envuelvan */
+  flex: 1;
+  min-width: 280px;
 }
 
 .footer-recuadros h3 {
-    padding: 0 1em;
-    margin-bottom: 0.5em;
+  padding: 0 1em;
+  margin-bottom: 0.5em;
 }
 
 #footer-datos-grupo {
-    list-style: none;
-    padding-left: 1em;
-    line-height: 2em;
-    margin-top: 2em;
+  list-style: none;
+  padding-left: 1em;
+  line-height: 2em;
+  margin-top: 2em;
 }
 
 .footer-recuadros-info {
-    display: flex;
-    gap: 2em;
+  display: flex;
+  gap: 2em;
 }
 
 .footer-recuadros-info ul {
-    list-style: none;
-    padding: 0;
-    line-height: 2em;
+  list-style: none;
+  padding: 0;
+  line-height: 2em;
 }
 
 .footer-redes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  flex-wrap: wrap;
 }
 
 .footer-redes-logos {
-    border-radius: 1em;
-    width: 4em; /* Tamaño base para los logos de redes */
+  border-radius: 1em;
+  width: 4em;
 }
 
 #flecha-vuelta-inicio {
-    font-size: 4em;
-    position: fixed;
-    bottom: 0.5em;
-    right: 0.35em;
-    color: #1693a5;
-    text-shadow: 1px 1px 2px black;
+  font-size: 4em;
+  position: fixed;
+  bottom: 0.5em;
+  right: 0.35em;
+  color: #1693a5;
+  text-shadow: 1px 1px 2px black;
 }
 
 #footer-nota-legal {
-    text-align: center;
-    padding: 1em;
-    width: 100%;
-    flex-basis: 100%; /* Asegura que ocupe todo el ancho en el flex container */
+  text-align: center;
+  padding: 1em;
+  width: 100%;
+  flex-basis: 100%;
 }
 
-
-/********************** Media Queries ******************************/
-
-/* === Para Tablets (hasta 992px) === */
 @media screen and (max-width: 992px) {
-    .buscador-links{
-        width: 80%;
-    }
+  .buscador-links {
+    width: 80%;
+  }
 
-    header {
-        justify-content: space-around;
-    }
+  header {
+    justify-content: space-around;
+  }
 
-    footer {
-        flex-direction: column; /* Apila las secciones del footer */
-        align-items: center;
-        text-align: center;
-    }
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    .footer-recuadros {
-        width: 80%; /* Ocupa un ancho considerable pero no todo */
-        max-width: 500px;
-    }
-    
-    .footer-recuadros-info {
-        justify-content: center;
-    }
+  .footer-recuadros {
+    width: 80%;
+    max-width: 500px;
+  }
 
-    .footer-recuadros-info ul li {
-        text-align: center;
-    }
+  .footer-recuadros-info {
+    justify-content: center;
+  }
+
+  .footer-recuadros-info ul li {
+    text-align: center;
+  }
 }
 
-/* === Para Móviles (hasta 768px) === */
 @media screen and (max-width: 768px) {
-    header {
-        flex-direction: column; /* Apila los elementos del header verticalmente */
-    }
+  header {
+    flex-direction: column;
+  }
 
-    #logo {
-        width: 8em;
-    }
-    
-    .header-div__carrito {
-        flex-direction: column;
-        width: 100%;
-        gap: 1em;
-    }
+  #logo {
+    width: 8em;
+  }
 
-    #boton-login {
-        max-width: 250px;
-        padding: 0.8em;
-    }
+  .header-div__carrito {
+    flex-direction: column;
+    width: 100%;
+    gap: 1em;
+  }
 
-    .navegation__items {
-        flex-direction: column; /* Apila los links de navegación */
-        gap: 1em;
-        padding: 1.5em 0;
-    }
+  #boton-login {
+    max-width: 250px;
+    padding: 0.8em;
+  }
 
-    #flecha-vuelta-inicio {
-        display: none; /* Ocultamos la flecha en móviles por ser intrusiva */
-    }
+  .navegation__items {
+    flex-direction: column;
+    gap: 1em;
+    padding: 1.5em 0;
+  }
+
+  #flecha-vuelta-inicio {
+    display: none;
+  }
 }
 
-/* === Para Móviles Pequeños (hasta 480px) === */
 @media screen and (max-width: 480px) {
-    body {
-        font-size: 15px; /* Ajusta el tamaño de la fuente base */
-    }
-    
-    header, footer {
-        padding: 1.5em 1em; /* Menos padding en los lados */
-    }
+  body {
+    font-size: 15px;
+  }
 
-    #logo {
-        width: 7em;
-    }
+  header,
+  footer {
+    padding: 1.5em 1em;
+  }
 
-    #carrito {
-        width: 4.5em;
-        height: 4.5em;
-    }
+  #logo {
+    width: 7em;
+  }
+
+  #carrito {
+    width: 4.5em;
+    height: 4.5em;
+  }
+
+  #inicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }

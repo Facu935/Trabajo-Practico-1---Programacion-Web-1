@@ -1,413 +1,411 @@
 * {
-    box-sizing: border-box;
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: #4197ff;
-    font-weight: 600;
+  background-color: #4197ff;
+  font-weight: 600;
 }
 
 .contenedor-principal {
-    width: 60%;
-    margin: 3em auto 3em auto;
-    border-radius: 50px;
-    padding: 1em;
-    background-color: #45b5c4;
+  width: 60%;
+  margin: 3em auto 3em auto;
+  border-radius: 50px;
+  padding: 1em;
+  background-color: #45b5c4;
 }
 
 #imagen-texto {
-    display: flex;
-    align-items: start;
-    justify-content: start;
-    gap: 5em;
-    margin-top: 1em;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 5em;
+  margin-top: 1em;
 }
 
 #valoracion-curso {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    margin: 0.2em 0 1em 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 0.2em 0 1em 0;
 }
 
 #valoracion-curso p {
-    margin-right: 2em;
+  margin-right: 2em;
 }
 
 #imagen {
-    margin: 2em 4em 0 8em;
+  margin: 2em 4em 0 8em;
 }
 
 #listas {
-    margin-top: 1.5em;
+  margin-top: 1.5em;
 }
 
 #listas li {
-    margin: 0.8em;
-    padding-left: 0.5em;
+  margin: 0.8em;
+  padding-left: 0.5em;
 }
 
 ul {
-    margin: 0.5em;
+  margin: 0.5em;
 }
 
 #boton {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 0.5em;
-    margin-top: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 0.5em;
+  margin-top: 2.5em;
 }
 
 #div-boton {
-    color: black;
-    font-weight: bold;
-    background-color: #17ede8;
-    padding: 1em;
-    border: 3px solid black;
-    border-radius: 10px;
+  color: black;
+  font-weight: bold;
+  background-color: #17ede8;
+  padding: 1em;
+  border: 3px solid black;
+  border-radius: 10px;
 }
 
 #div-boton:hover {
-    background-color: #a0ded6;
-    color: black;
-    cursor: pointer;
+  background-color: #a0ded6;
+  color: black;
+  cursor: pointer;
 }
 
-.cupos{
-    margin: 0.5em 0 0 0.5em;
-    color: red;
-    font-weight: 900;
+.cupos {
+  margin: 0.5em 0 0 0.5em;
+  color: red;
+  font-weight: 900;
 }
 
 #contenidos {
-    padding: 2.5em;
-    width: 40%;
+  padding: 2.5em;
+  width: 40%;
 }
 
 #contenidos h2 {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    margin: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin: 1em;
 }
 
 .unidad {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 2px solid black;
-    padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid black;
+  padding: 1em;
 }
 
 .unidad img {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #unidad-uno {
-    border: 1px solid black;
+  border: 1px solid black;
 }
 
 .clases {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5em;
 }
 
 .clase {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.2em;
-    cursor: not-allowed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+  cursor: not-allowed;
 }
 
 #contenedor-docente {
-    display: flex;
-    align-items: start;
-    justify-content: start;
-    gap: 5em;
-    margin-top: 1em;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 5em;
+  margin-top: 1em;
 }
 
 #imagen-profe {
-    height: 150px;
-    width: 150px;
-    border-radius: 70px;
-    object-fit: cover;
-    margin-left: 1em;
+  height: 150px;
+  width: 150px;
+  border-radius: 70px;
+  object-fit: cover;
+  margin-left: 1em;
 }
 
 #info h2 {
-    margin-top: 0.3em;
-    margin-bottom: 0.8em;
+  margin-top: 0.3em;
+  margin-bottom: 0.8em;
 }
 
 #contenedor-estrella {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #contenedor-estrella p {
-    margin-top: 0.2em;
+  margin-top: 0.2em;
 }
 
 #contenedor-opiniones {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2.5em;
+  width: 100%;
+  margin-top: 1em;
+}
+
+#contenedor-opiniones div {
+  background-color: #a0ded6;
+  border-radius: 50px;
+  padding: 1em;
+}
+
+#contenedor-opiniones img {
+  height: 35px;
+}
+
+#opinion {
+  margin-left: 5em;
+}
+
+.cursos-similares {
+  background-color: #45b5c4;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  padding: 2em;
+}
+
+.contenedor-curso {
+  background-color: #a0ded6;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  margin: 0 1em;
+}
+
+.imagen-curso-similar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.titulo-curso {
+  text-align: center;
+  border: 2px solid black;
+  margin-bottom: 1em;
+}
+
+.abrir-comprar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.abrir-comprar button {
+  padding: 0.2em;
+  margin: 0.5em;
+  width: 100%;
+  cursor: pointer;
+}
+
+.abrir-comprar a {
+  display: block;
+  width: 100%;
+}
+
+.duracion-valor {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/************************************/
+@media screen and (max-width: 1440px) {
+  .contenedor-principal {
+    width: 75%;
+    justify-content: start;
+  }
+
+  #imagen {
+    margin: 0;
+    height: 10em;
+  }
+
+  #contenidos {
+    width: 75%;
+  }
+
+  #contenedor-opiniones {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 2.5em;
     width: 100%;
     margin-top: 1em;
-}
+  }
 
-#contenedor-opiniones div {
-    background-color: #a0ded6;
-    border-radius: 50px;
-    padding: 1em;
-}
+  #contenedor-opiniones div {
+    padding: 2em;
+  }
 
-#contenedor-opiniones img {
-    height: 35px;
-}
-
-#opinion {
-    margin-left: 5em;
-}
-
-.cursos-similares {
+  .cursos-similares {
     background-color: #45b5c4;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: stretch;
     padding: 2em;
-}
+  }
 
-.contenedor-curso {
-    background-color: #a0ded6;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
-    margin: 0 1em;
-}
-
-.imagen-curso-similar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
-}
-
-.titulo-curso {
-    text-align: center;
-    border: 2px solid black;
-    margin-bottom: 1em;
-}
-
-.abrir-comprar {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 0.5em;
-}
-
-.abrir-comprar button {
-    padding: 0.2em;
-    margin: 0.5em;
+  .contenedor-curso {
     width: 100%;
-    cursor: pointer;
-}
+    margin: 0.5em;
+  }
 
-.abrir-comprar a {
-  display: block;
-  width: 100%; 
-}
-
-.duracion-valor {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-/************************************/
-@media screen and (max-width: 1440px) {
-    .contenedor-principal {
-        width: 75%;
-        justify-content: start;
-    }
-
-    #imagen {
-        margin: 0;
-        height: 10em;
-    }
-
-    #contenidos {
-        width: 75%;
-    }
-
-    #contenedor-opiniones {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 2.5em;
-        width: 100%;
-        margin-top: 1em;
-    }
-
-    #contenedor-opiniones div {
-        padding: 2em;
-    }
-
-    .cursos-similares {
-        background-color: #45b5c4;
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: stretch;
-        padding: 2em;
-    }
-
-    .contenedor-curso {
-        width: 100%;
-        margin: 0.5em;
-    }
-
-    .contenedor-curso img{
-        max-width: 100%;
-    }
+  .contenedor-curso img {
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 1024px) {
-    .contenedor-principal {
-        width: 90%;
-        justify-content: start;
-    }
+  .contenedor-principal {
+    width: 90%;
+    justify-content: start;
+  }
 
-    #imagen {
-        margin: 0;
-        height: 10em;
-    }
+  #imagen {
+    margin: 0;
+    height: 10em;
+  }
 
-    #contenidos {
-        width: 100%;
-    }
+  #contenidos {
+    width: 100%;
+  }
 
-    .cursos-similares {
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-    }
+  .cursos-similares {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
 
-    .contenedor-curso img {
-        max-width: 100%;
-    }
-
+  .contenedor-curso img {
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  .contenedor-principal {
+    width: 100%;
+    justify-content: start;
+  }
 
-    .contenedor-principal {
-        width: 100%;
-        justify-content: start;
-    }
+  #imagen {
+    margin: 0;
+    height: 10em;
+  }
 
-    #imagen {
-        margin: 0;
-        height: 10em;
-    }
+  #contenidos {
+    width: 100%;
+  }
 
-    #contenidos {
-        width: 100%;
-    }
+  #contenedor-opiniones {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
 
-    #contenedor-opiniones {
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: start;
-    }
+  #contenedor-opiniones div {
+    padding: 2em;
+  }
 
-    #contenedor-opiniones div {
-        padding: 2em;
-    }
+  .cursos-similares {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .cursos-similares {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contenedor-curso {
-        width: 100%;
-        margin: 0.5em 0;
-        max-width: 60%;
-    }
+  .contenedor-curso {
+    width: 100%;
+    margin: 0.5em 0;
+    max-width: 60%;
+  }
 }
 
 @media screen and (max-width: 620px) {
-    #imagen-texto {
-        flex-direction: column;
-        gap: 1em;
-    }
+  #imagen-texto {
+    flex-direction: column;
+    gap: 1em;
+  }
 
-    #imagen {
-        margin: 0 auto;
-        height: auto;
-        max-width: 80%;
-    }
+  #imagen {
+    margin: 0 auto;
+    height: auto;
+    max-width: 80%;
+  }
 
-    .contenedor-principal {
-        width: 100%;
-        padding: 1em;
-    }
+  .contenedor-principal {
+    width: 100%;
+    padding: 1em;
+  }
 
-    #contenidos {
-        width: 100%;
-        padding: 2em;
-    }
+  #contenidos {
+    width: 100%;
+    padding: 2em;
+  }
 
-    #contenedor-docente {
-        flex-direction: column;
-        gap: 1em;
-        align-items: center;
-        text-align: center;
-    }
+  #contenedor-docente {
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    text-align: center;
+  }
 
-    #imagen-profe {
-        margin: 0 auto;
-        height: auto;
-        max-width: 80%;
-    }
+  #imagen-profe {
+    margin: 0 auto;
+    height: auto;
+    max-width: 80%;
+  }
 
-    #info {
-        width: 100%;
-        padding: 1em;
-    }
+  #info {
+    width: 100%;
+    padding: 1em;
+  }
 
-    #contenedor-opiniones img {
-        height: 1.5em;
-    }
+  #contenedor-opiniones img {
+    height: 1.5em;
+  }
 
-    .cursos-similares {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .cursos-similares {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .contenedor-curso {
-        width: 100%;
-        margin: 0.5em 0;
-        max-width: 90%;
-    }
+  .contenedor-curso {
+    width: 100%;
+    margin: 0.5em 0;
+    max-width: 90%;
+  }
 }
