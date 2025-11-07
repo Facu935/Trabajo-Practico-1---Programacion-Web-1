@@ -133,13 +133,15 @@ function modalCursosObtenidosEnCarrito(contador , contenedor){
                             //Recorre Array y va creando los recuadros
                             for(let i = 0; i < cursosEnCarritoDelUsuario.length; i++ ){
                             const curso = cursosEnCarritoDelUsuario[i];
-                            const templateCursos = `<div class="recuadro-curso-sidebar" id="recuadro-sidebar${i+1}">
+                            const templateCursos = `<div class="recuadro-curso-sidebar" id="recuadro-sidebar${i+1}"><div class="titulo-curso-sidebar">
+                                                        <img src="${curso.img}" alt="Logo ${curso.nombre}" id="logo-curso-sidebar">
                                                         <h3>${curso.nombre}</h3>
+                                                        </div>
                                                         <div class = "recuadro-curso-sidebar segundo-renglon">
                                                             <ul>
-                                                                <li id="precio-curso-carrito">${curso.precio}</li>
-                                                                <li>(Cantidad)</li>
-                                                                <li>(Modalidad)</li>
+                                                                <li id="precio-curso-carrito">Precio: ${curso.precio}</li>
+                                                                <li>Cantidad: (Cantidad)</li>
+                                                                <li>Modalidad: (Modalidad)</li>
                                                             </ul>
                                                             <button class="boton-eliminar-curso-carrito" id="boton-eliminar${i+1}">Eliminar Curso</button>
                                                         </div>
