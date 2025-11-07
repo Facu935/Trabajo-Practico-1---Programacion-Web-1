@@ -97,15 +97,30 @@ header {
   cursor: pointer;
 }
 
+.nombre-usuario-logueado{
+  font-weight: 600;
+  text-decoration: underline;
+  padding: 1em 2em;
+  order: 1;
+
+}
+.contenedor-opciones-cuenta {
+    order:2; 
+  }
+
+
+
+
+
 #carrito-y-numero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
 }
 #button-carrito {
   background-color: transparent;
@@ -130,6 +145,27 @@ header {
   position: absolute;
   top: -10px;
   right: -10px;
+}
+
+.sideBar-cursos-carrito{
+  display: flex;
+  flex-direction: column;
+  width: 25em;
+  background-color: red;
+  position: absolute;
+  top: 5em;
+  right: -2em;
+}
+.segundo-renglon{
+  display: flex;
+  justify-content: space-between;
+}
+.sideBar-cursos-carrito ul{
+  display: flex;
+  flex-direction: row;
+}
+.boton-cerrar-sideBar{
+  width: 20%;
 }
 
 /*************************** NAVEGACIÓN ***************************/
@@ -206,6 +242,10 @@ footer {
   align-items: center;
   gap: 1em;
   flex-wrap: wrap;
+}
+
+#titulo-redes{
+  text-align: center;
 }
 
 .footer-redes-logos {
