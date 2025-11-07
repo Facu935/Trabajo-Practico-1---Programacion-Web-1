@@ -86,6 +86,7 @@ header {
   align-items: center;
   gap: 1.5em;
   flex-shrink: 0;
+  position: relative;
 }
 
 #boton-login {
@@ -98,12 +99,37 @@ header {
 }
 
 .nombre-usuario-logueado{
+  font-size: 1.2em;
   font-weight: 600;
-  text-decoration: underline;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #93d8e2;
   padding: 1em 2em;
   order: 1;
+  
 
 }
+.contenedor-opciones-cuenta{
+  position: absolute;
+  padding: 1em 2.35em;
+  top: 50px;
+  left: 0;
+  background-color: #93d8e2;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.lista-opciones-cuenta{
+  list-style: none;
+}
+.lista-opciones-cuenta li{
+  padding: 0.5em;
+  margin: 2px 0px;
+  text-align: center;
+}
+
 .contenedor-opciones-cuenta {
     order:2; 
   }

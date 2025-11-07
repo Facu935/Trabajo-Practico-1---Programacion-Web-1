@@ -58,7 +58,7 @@ export class Header{
             mostrarBotonLogin(CONTENEDOR_CARRITO);
         } else {
             mostrarBienvenidoUsuario(CONTENEDOR_CARRITO);
-            mostrarOpcionesUsuarios(CONTENEDOR_CARRITO);
+
         }   
         
         //Contenedro Carrito
@@ -69,6 +69,11 @@ export class Header{
         
         CONTENEDOR_CARRITO.appendChild(CARRITO_Y_NUMERO);
         HEADER.appendChild(CONTENEDOR_CARRITO);
+
+        if(validarUsuarioConectadoParaNav()){
+            mostrarOpcionesUsuarios();
+        }
+         
     }
 
 
@@ -234,12 +239,12 @@ function mostrarBienvenidoUsuario(contenedor){
     BIENVENIDO_USUARIO.classList.add("nombre-usuario-logueado");
     BIENVENIDO_USUARIO.textContent = "Bienvenido, " + obtenerUsuarioLogueado().nombre;
     contenedor.appendChild(BIENVENIDO_USUARIO);
-    
+    //mostrarOpcionesUsuarios(BIENVENIDO_USUARIO);
 }
 
 
-function crearOpcionesUsuario(contenedor_general){
-
+function crearOpcionesUsuario(){
+    const boton_bienvenido = document.querySelector(".nombre-usuario-logueado");
     const contenedor_opciones = document.createElement('div');
     contenedor_opciones.classList.add("contenedor-opciones-cuenta");
     const templateOpciones =
@@ -251,12 +256,13 @@ function crearOpcionesUsuario(contenedor_general){
         
         `;
     contenedor_opciones.innerHTML = templateOpciones;
-    contenedor_general.appendChild(contenedor_opciones);
+    boton_bienvenido.appendChild(contenedor_opciones);
     cerrarSesion();
 }
 
-function mostrarOpcionesUsuarios(contenedor_general){
-    const boton_bienvenido = contenedor_general.querySelector(".nombre-usuario-logueado") //El Bievenido
+function mostrarOpcionesUsuarios(){
+    const boton_bienvenido = document.querySelector(".nombre-usuario-logueado");
+     //El Bievenido
     boton_bienvenido.addEventListener('click', () => {
         
         //Se fija si ya existe, si esta lo elimina, si no, lo crea con el metodo
@@ -265,7 +271,7 @@ function mostrarOpcionesUsuarios(contenedor_general){
             yaExistente.remove();
             return;
         } else {
-            crearOpcionesUsuario(contenedor_general)
+            crearOpcionesUsuario();
         }
 
         
