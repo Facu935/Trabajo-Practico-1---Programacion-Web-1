@@ -1,14 +1,10 @@
-import { NAV, CURSOS_INFO, INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE ,FOOTER_LINKS_CURSOS, FOOTER_REDES} from "../constants/constants.js";
-import{ IMAGENES_SLIDER_HOME, PASOS_INSCRIPCION, MEDIOS_PAGO_IMGS,} from "../constants/constants-home.js";
+import { NAV, CURSOS_INFO, INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS, FOOTER_REDES } from "../constants/constants.js";
+import { IMAGENES_SLIDER_HOME, PASOS_INSCRIPCION, MEDIOS_PAGO_IMGS, } from "../constants/constants-home.js";
 import { Header } from "./header.js";
 import { Navbar } from "./navbar.js";
 import { SliderHome } from "./sliderHome.js";
 import { Footer } from "./footer.js";
 import { validarUsuarioConectadoParaNav } from "./funciones-generales.js";
-
-
-
-
 
 const header = new Header();
 const barraNav = new Navbar();
@@ -24,14 +20,11 @@ mostrarPasosDeInscripcion(PASOS_INSCRIPCION);
 mostrarCursosDestacados(CURSOS_INFO);
 mostrarMediosDePago(MEDIOS_PAGO_IMGS);
 
-footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS,FOOTER_REDES);
-
-
+footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS, FOOTER_REDES);
 
 //localStorage.clear();
 
-
-function mostrarPasosDeInscripcion(pasos){
+function mostrarPasosDeInscripcion(pasos) {
     const seccionPasosInscripcion = document.querySelector("#pasos-inscripcion");
     //Titulo
     const tituloPasosInscripcion = document.createElement('h2');
@@ -42,7 +35,7 @@ function mostrarPasosDeInscripcion(pasos){
 
     //Recuadros
     const contenedorGeneralPasos = document.createElement('div'); contenedorGeneralPasos.classList.add("section-pasos");
-    pasos.forEach(item =>{
+    pasos.forEach(item => {
         const contenedorPasos = document.createElement('div');
         contenedorPasos.classList.add("section-pasos-recuadros");
 
@@ -53,16 +46,16 @@ function mostrarPasosDeInscripcion(pasos){
     seccionPasosInscripcion.appendChild(contenedorGeneralPasos);
 }
 
-function mostrarCursosDestacados(cursos){
+function mostrarCursosDestacados(cursos) {
     const seccionCursosDestacados = document.querySelector("#cursos-destacados");
-    
+
     mostrarTituloCursosDestacados(seccionCursosDestacados)
     mostrarGrillaCursosDestacados(cursos, seccionCursosDestacados);
     botonVerTodosLosCursos(seccionCursosDestacados);
 
 }
 
-function mostrarTituloCursosDestacados(seccion){
+function mostrarTituloCursosDestacados(seccion) {
     const titulo = document.createElement('h2');
     titulo.classList.add("titulos")
     titulo.textContent = "CURSOS DESTACADOS";
@@ -70,7 +63,7 @@ function mostrarTituloCursosDestacados(seccion){
 
 }
 
-function mostrarGrillaCursosDestacados(cursos, seccion){
+function mostrarGrillaCursosDestacados(cursos, seccion) {
     //Cursos
     const contenedorCursos = document.createElement('div');
     contenedorCursos.classList.add("cursos");
@@ -83,11 +76,11 @@ function mostrarGrillaCursosDestacados(cursos, seccion){
         linkInscripcion = "./pages/inscripcion.html";
     } 
 
-    grillaCursos(cursos, seccion, contenedorCursos ,contenedorPadre , linkInscripcion);
+    grillaCursos(cursos, seccion, contenedorCursos, contenedorPadre, linkInscripcion);
 
 }
 
-function botonVerTodosLosCursos(seccion){
+function botonVerTodosLosCursos(seccion) {
     const verTodoslosLosCursos = document.createElement('a')
     const botonVerTodosLosCursos = document.createElement('button');
     verTodoslosLosCursos.href = "./pages/otrosCursos.html";
@@ -98,8 +91,7 @@ function botonVerTodosLosCursos(seccion){
     seccion.appendChild(verTodoslosLosCursos);
 }
 
-
-function mostrarMediosDePago(imagenes){
+function mostrarMediosDePago(imagenes) {
     const seccionMediosDePago = document.querySelector("#medios-pago");
 
     //Titulo
@@ -107,12 +99,12 @@ function mostrarMediosDePago(imagenes){
     tituloMediosDePago.classList.add("titulos");
     tituloMediosDePago.id = "pagos";
     tituloMediosDePago.textContent = "MEDIOS DE PAGO";
-    
+
     //Imagenes
     const mediosDePago = document.createElement('div');
     mediosDePago.classList.add("medios_de_pago");
 
-    imagenes.forEach(item =>{
+    imagenes.forEach(item => {
         const recuadroMedioDePago = document.createElement('div');
         recuadroMedioDePago.classList.add("medios_de_pago__recuadros");
         const templateMediosDePago = `<img src="${item.url}" alt="${item.alt}">`
@@ -122,9 +114,7 @@ function mostrarMediosDePago(imagenes){
 
     seccionMediosDePago.appendChild(tituloMediosDePago);
     seccionMediosDePago.appendChild(mediosDePago);
-    
 }
-
 
 function grillaCursos(cursos, seccion, contenedorCursos , contenedorPadre, validacion){
     cursos.forEach(item =>{
@@ -149,7 +139,7 @@ function grillaCursos(cursos, seccion, contenedorCursos , contenedorPadre, valid
                 contenedorPadre.innerHTML += templateCursos;
         }
     });
+
     contenedorCursos.appendChild(contenedorPadre);
     seccion.appendChild(contenedorCursos);
 }
-
