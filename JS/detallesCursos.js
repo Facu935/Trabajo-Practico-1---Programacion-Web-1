@@ -11,30 +11,37 @@ const imagen = document.querySelector("#modal-img-curso");
 const duracion = document.querySelector("#duracion-modal");
 const profesor = document.querySelector("#profesor-modal");
 const valor = document.querySelector("#precio-modal");
+const botonAceptar = document.querySelector("#boton-aceptar");
 const botonCancelar = document.querySelector("#hidden-modal");
+
+let cursoSeleccionado = null;
 
 boton.addEventListener("click", () => {
 
-     if (!validarUsuarioConectadoParaNav()) {
+    if (!validarUsuarioConectadoParaNav()) {
         alert("Para inscribirse debe tener una sesión iniciada.");
         return;
     }
-        const cursoSeleccionado = cursos_info.find(curso => curso.cursoId === cursoId);
+    cursoSeleccionado = cursos_info.find(curso => curso.cursoId === cursoId);
 
-        mostrarModal(cursoSeleccionado)
+    mostrarModal(cursoSeleccionado)
 })
 
-function mostrarModal(cursoSeleccionado){
-    titulo.textContent=`Te estas inscribiendo a ${cursoSeleccionado.nombre}`;
+function mostrarModal(cursoSeleccionado) {
+    titulo.textContent = `Te estas inscribiendo a ${cursoSeleccionado.nombre}`;
     imagen.src = cursoSeleccionado.img;
     imagen.alt = `Logo de ${cursoSeleccionado.nombre}`;
-    duracion.textContent=`Duracion: ${cursoSeleccionado.duracion}`;
-    profesor.textContent=`Profesor: ${cursoSeleccionado.profesor}`;
-    valor.textContent=`Precio: $${cursoSeleccionado.precio}`
+    duracion.textContent = `Duracion: ${cursoSeleccionado.duracion}`;
+    profesor.textContent = `Profesor: ${cursoSeleccionado.profesor}`;
+    valor.textContent = `Precio: $${cursoSeleccionado.precio}`
 
     modal.classList.add("show-modal");
-     document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
 }
+
+botonAceptar.addEventListener("click", () => {
+    window.location.href = `../pages/inscripcion.html?curso=${encodeURIComponent(cursoSeleccionado.nombre)}&precio=${cursoSeleccionado.precio}`;
+})
 
 botonCancelar.addEventListener("click", () => {
     modal.classList.remove("show-modal");
