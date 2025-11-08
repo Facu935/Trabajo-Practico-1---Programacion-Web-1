@@ -20,6 +20,7 @@ barraNav.mostrarItems(NAV);
 
 sliderHome.mostrarNodos(IMAGENES_SLIDER_HOME);
 sliderHome.mostrarImagenesSegunNodoClickeado(IMAGENES_SLIDER_HOME);
+sliderHome.mostrarImagenCadaXSegundos(IMAGENES_SLIDER_HOME);
 mostrarPasosDeInscripcion(PASOS_INSCRIPCION);
 mostrarCursosDestacados(CURSOS_INFO);
 mostrarMediosDePago(MEDIOS_PAGO_IMGS);
