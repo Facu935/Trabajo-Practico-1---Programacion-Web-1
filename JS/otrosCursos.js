@@ -24,7 +24,7 @@ function grillaCompleta(cursos) {
         let linkAUsar;
 
         if (validarUsuarioConectadoParaNav()) {
-            linkAUsar = `inscripcion.html?precio=${curso.precio}`;
+            linkAUsar = `../pages/inscripcion.html?curso=${encodeURIComponent(curso.nombre)}&precio=${curso.precio}`;
         } else {
             linkAUsar = "login.html";
         }
@@ -49,6 +49,6 @@ function grillaCompleta(cursos) {
         </div>`;
         section.innerHTML += templateRecuadro;
     });
-    
+
     main.appendChild(section);
 }

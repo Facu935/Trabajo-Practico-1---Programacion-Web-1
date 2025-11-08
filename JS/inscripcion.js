@@ -11,15 +11,15 @@ const footer = new Footer();
 header.mostrarHeader(CURSOS_INFO);
 barraNav.mostrarItems(NAV);
 
-// 1. Captura el precio de la URL ANTES de llamar a nada
 const urlParams = new URLSearchParams(window.location.search);
 const precioBaseDelCurso = urlParams.get('precio') || 0;
+const nombreDelCurso = urlParams.get('curso') || "Curso";
 
-gestionarTipoInscripcion("#contenido-principal");
+gestionarTipoInscripcion("#contenido-principal", nombreDelCurso);
 
 footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS, FOOTER_REDES);
 
-function gestionarTipoInscripcion(selectorPadre) {
+function gestionarTipoInscripcion(selectorPadre, nombreDelCurso) {
   const contenedor = document.querySelector(selectorPadre);
   if (!contenedor) {
     console.error("Error: No se encontró el contenedor principal.");
@@ -30,14 +30,19 @@ function gestionarTipoInscripcion(selectorPadre) {
   main.className = 'container';
   const divWrapper = document.createElement('div');
 
+  const createTituloDelCurso = document.createElement('h2');
+  createTituloDelCurso.textContent = `Formulario de Inscripción: ${nombreDelCurso}`  
+  createTituloDelCurso.classList.add('pregunta-inscripcion')
+
   const preguntaUsuarioText = document.createElement('h3');
-  preguntaUsuarioText.textContent = '¿Que tipo de inscripcion es?'
+  preguntaUsuarioText.textContent = 'Ámbito de la inscripción'
   preguntaUsuarioText.classList.add('pregunta-inscripcion')
 
   const seleccionUsuarioText = document.createElement('p');
-  seleccionUsuarioText.textContent = 'Seleccione una opcion:'
+  seleccionUsuarioText.textContent = 'Seleccione una opción:'
   seleccionUsuarioText.classList.add('opcion-inscripcion');
 
+  divWrapper.appendChild(createTituloDelCurso)
   divWrapper.appendChild(preguntaUsuarioText)
   divWrapper.appendChild(seleccionUsuarioText)
   divWrapper.appendChild(crearFieldsetTipoInscripcion())
