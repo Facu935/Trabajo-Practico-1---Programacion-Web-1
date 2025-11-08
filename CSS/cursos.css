@@ -228,16 +228,11 @@ ul {
   cursor: pointer;
 }
 
-.abrir-comprar a {
-  display: block;
+.abrir-comprar button {
+  padding: 0.2em;
+  margin: 0.5em;
   width: 100%;
-}
-
-.duracion-valor {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  cursor: pointer;
 }
 
 /************************************/
