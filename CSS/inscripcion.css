@@ -24,7 +24,8 @@
   padding: 1rem;
 }
 
-.titulo-inscripcion, .pregunta-inscripcion {
+.titulo-inscripcion,
+.pregunta-inscripcion {
   margin-bottom: 1rem;
   text-align: start;
   font-size: 1.5rem;
@@ -35,7 +36,6 @@
   text-align: start;
   font-size: 1.2rem;
 }
-
 
 fieldset {
   display: grid;
@@ -63,7 +63,7 @@ fieldset {
 /* fieldsetTipoInscripcion */
 .fieldset-ambito {
   display: flex;
-  gap: 1.5rem; 
+  gap: 1.5rem;
   border: none;
   padding: 0;
   margin: 0;
@@ -72,7 +72,7 @@ fieldset {
 .container-input-ambito {
   display: flex;
   align-items: center;
-  gap: 0.5rem;  
+  gap: 0.5rem;
   border-radius: 5px;
   padding: 0.5rem 1rem;
   border: none;

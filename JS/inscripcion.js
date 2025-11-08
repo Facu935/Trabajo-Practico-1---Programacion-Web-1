@@ -31,7 +31,7 @@ function gestionarTipoInscripcion(selectorPadre, nombreDelCurso) {
   const divWrapper = document.createElement('div');
 
   const createTituloDelCurso = document.createElement('h2');
-  createTituloDelCurso.textContent = `Formulario de Inscripción: ${nombreDelCurso}`  
+  createTituloDelCurso.textContent = `Formulario de Inscripción: ${nombreDelCurso}`
   createTituloDelCurso.classList.add('pregunta-inscripcion')
 
   const preguntaUsuarioText = document.createElement('h3');
@@ -144,14 +144,9 @@ function mostrarFormularioEmpresarial(selectorPadre, precio) {
   contenedor.appendChild(form);
 }
 
-/**
- * Crea el <fieldset> con los radio buttons "Personal" y "Empresarial".
- */
 function crearFieldsetTipoInscripcion() {
   const fieldset = document.createElement('fieldset');
   fieldset.className = 'fieldset-ambito'
-  // Puedes añadir una clase si necesitas los estilos CSS de flexbox
-  // fieldset.className = 'fieldset-ambito'; 
 
   const templateInterno =
     `         

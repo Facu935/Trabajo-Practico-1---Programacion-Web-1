@@ -72,9 +72,9 @@ function mostrarGrillaCursosDestacados(cursos, seccion) {
     contenedorPadre.id = "contenedor-grid-padre";
 
     let linkInscripcion = './pages/login.html';
-    if(validarUsuarioConectadoParaNav()){
+    if (validarUsuarioConectadoParaNav()) {
         linkInscripcion = "./pages/inscripcion.html";
-    } 
+    }
 
     grillaCursos(cursos, seccion, contenedorCursos, contenedorPadre, linkInscripcion);
 }
@@ -115,19 +115,19 @@ function mostrarMediosDePago(imagenes) {
     seccionMediosDePago.appendChild(mediosDePago);
 }
 
-function grillaCursos(cursos, seccion, contenedorCursos , contenedorPadre, validacion){
-    cursos.forEach(curso =>{
+function grillaCursos(cursos, seccion, contenedorCursos, contenedorPadre) {
+    cursos.forEach(curso => {
         let linkAUsar;
 
         if (validarUsuarioConectadoParaNav()) {
             linkAUsar = `../pages/inscripcion.html?curso=${encodeURIComponent(curso.nombre)}&precio=${curso.precio}`;
         } else {
-            linkAUsar = "login.html";
+            linkAUsar = `../pages/login.html`;
         }
 
-        if(curso.destacado == true){
+        if (curso.destacado == true) {
             const templateCursos =
-            `<div class="contenedor-grid-hijo">
+                `<div class="contenedor-grid-hijo">
                 <div class="contenedor-grid-hijo imagen">
                     <img src="${curso.img}" alt="Logo ${curso.nombre}" /> 
                 </div>
@@ -143,7 +143,7 @@ function grillaCursos(cursos, seccion, contenedorCursos , contenedorPadre, valid
                     <button><a href="${linkAUsar}">Inscribirme</a></button>
                 </div>
             </div>`
-                contenedorPadre.innerHTML += templateCursos;
+            contenedorPadre.innerHTML += templateCursos;
         }
     });
 

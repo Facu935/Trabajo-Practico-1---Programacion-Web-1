@@ -26,7 +26,7 @@ function grillaCompleta(cursos) {
         if (validarUsuarioConectadoParaNav()) {
             linkAUsar = `../pages/inscripcion.html?curso=${encodeURIComponent(curso.nombre)}&precio=${curso.precio}`;
         } else {
-            linkAUsar = "login.html";
+            linkAUsar = `../pages/login.html`;
         }
 
         const templateRecuadro = `<div class="otros-cursos-recuadro">
