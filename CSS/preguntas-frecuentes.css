@@ -1,119 +1,128 @@
 
 
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.titulos {
+  background-color: #45b5c4;
+  height: 4em;
+  text-align: center;
+  align-content: center;
+}
+
+header {
+  background-color: #1693a5;
+  height: 12em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-div__logo {
+  height: auto;
+}
+
+#logo {
+  width: 10em;
+  margin-left: 5em;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+#buscador {
+  height: 3em;
+  width: 40em;
+}
+
+.header-div__carrito {
+  height: 100%;
+  width: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.header-div__carrito button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#carrito {
+  height: 5em;
+  width: 5em;
+}
+
+#header-div__cantidad_items {
+  height: 2.5em;
+  width: 2.5em;
+  background-color: #ff000000;
+  border-radius: 100%;
+  border: black solid 0.25em;
+  position: absolute;
+  right: 5em;
+  bottom: 8em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+}
+
+.navegation {
+  height: 5em;
+  width: auto;
+  background-color: #45b5c4;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.navegation__items {
+  height: 5em;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/************************************************/
+
 body {
   margin: 0;
   background-color: #4197ff;
-  box-sizing: border-box;
-}
-.principal{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-h1{
-  margin: 4em;
-}
-.titulos{
-  margin-top: 10em;
-  margin-bottom: 2em;
+.preguntas-frecuentes {
+  padding: 4em;
 }
 
-.perfil-imagen-nombre{
-  width: 80%;
-  display: flex;
-  align-items: center;
-
-
-  
-}
-#foto-perfil{
-  width: 20em;
-  height: 20em;
-}
-#nombre-usuario{
-  margin-left: 2em;
-  font-size: 2.5em;
+.preguntas-frecuentes h1 {
+  font-size: 4em;
 }
 
-
-/**********************************/
-.cursos-inscripto{
-  background-color: #45b5c4;
-  width: 80%;
-  display: flex;
-  justify-content: space-around;
-  align-items: stretch;
-  padding: 2em;
-  margin-bottom: 5em;
-}
-
-.contenedor-curso {
-  background-color: #a0ded6;
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1;
-  margin: 0 1em;
-}
-
-.imagen-curso-similar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1em;
-}
-
-.titulo-curso {
-  text-align: center;
-  border: 2px solid black;
-  margin-bottom: 1em;
-}
-
-.abrir-comprar {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 0.5em;
-}
-
-.abrir-comprar button {
-  padding: 0.2em;
-  margin: 0.5em;
-  width: 100%;
-  cursor: pointer;
-}
-
-.abrir-comprar button {
-  padding: 0.2em;
-  margin: 0.5em;
-  width: 100%;
-  cursor: pointer;
-}
-
-.duracion-valor{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-#eliminar-perfil{
-  padding: 1em;
-  margin: 2em 0;
-  background-color: rgb(255, 0, 0);
-  color: white;
+.preguntas-frecuentes li {
+  margin-top: 3em;
+  margin-bottom: 1.5em;
   font-size: 1.5em;
-  border: 2px solid black;
-  border-radius: 10px;
-
+  font-weight: 700;
 }
-
-
-
+.preguntas-frecuentes p {
+  font-size: 1.3em;
+  margin-left: 0.7em;
+}
 
 /************************************************/
 

@@ -47,7 +47,7 @@ export const FOOTER_REDES = [
 export const CURSOS_INFO = [
     { 
     nombre: "HTML 5",
-    link: "./pages/curso-html.html",
+    link: "../pages/curso-html.html",
     precio: 60000,
     valoracion: 4.7,
     cantidadDeEstudiantes: 12.5,
@@ -60,7 +60,7 @@ export const CURSOS_INFO = [
     },
     { 
     nombre: "CSS3",
-    link: "./pages/curso-css.html",
+    link: "../pages/curso-css.html",
     precio: 60000,
     valoracion: 4.6,
     cantidadDeEstudiantes: 10.2,
@@ -73,7 +73,7 @@ export const CURSOS_INFO = [
     },
     { 
     nombre: "JavaScript",
-    link: "./pages/curso-js.html",
+    link: "../pages/curso-js.html",
     precio: 100000,
     valoracion: 4.8,
     cantidadDeEstudiantes: 8.7,
@@ -86,7 +86,7 @@ export const CURSOS_INFO = [
     },
     { 
     nombre: "Blockchain",
-    link: "./pages/curso-blockchain.html",
+    link: "../pages/curso-blockchain.html",
     precio: 30000,
     valoracion: 4.7,
     cantidadDeEstudiantes: 1.7,
@@ -99,7 +99,7 @@ export const CURSOS_INFO = [
     },
     { 
     nombre: "Jquery",
-    link: "./pages/curso-Jquery.html",
+    link: "../pages/curso-Jquery.html",
     precio: 20000,
     valoracion: 4.5,
     cantidadDeEstudiantes: 4.5,
@@ -112,7 +112,7 @@ export const CURSOS_INFO = [
     },
     { 
     nombre: "Java",
-    link: "./pages/curso-Java.html",
+    link: "../pages/curso-Java.html",
     precio: 70000,
     valoracion: 4.6,
     cantidadDeEstudiantes: 10.9,
@@ -125,7 +125,7 @@ export const CURSOS_INFO = [
     },
     { 
     nombre: "MySQL",
-    link: "./pages/curso-mysql.html",
+    link: "../pages/curso-mysql.html",
     precio: 11500,
     valoracion: 4.8,
     cantidadDeEstudiantes: 1,
@@ -138,7 +138,7 @@ export const CURSOS_INFO = [
     },
     { 
     nombre: "Node.js",
-    link: "./pages/curso-node.html",
+    link: "../pages/curso-node.html",
     precio: 13500,
     valoracion: 4.8,
     cantidadDeEstudiantes: 2.6,
@@ -150,7 +150,7 @@ export const CURSOS_INFO = [
     },
     { 
     nombre: "C#",
-    link: "./pages/curso-csharp.html",
+    link: "../pages/curso-csharp.html",
     precio: 15000,
     valoracion: 4.8,
     cantidadDeEstudiantes: 1.3,
@@ -163,7 +163,7 @@ export const CURSOS_INFO = [
     },
     { 
     nombre: "PHP",
-    link: "./pages/curso-php.html",
+    link: "../pages/curso-php.html",
     precio: 12800,
     valoracion: 4.7,
     cantidadDeEstudiantes: 1.2,
@@ -176,7 +176,7 @@ export const CURSOS_INFO = [
     },
     { 
     nombre: "Python",
-    link: "./pages/curso-python.html",
+    link: "../pages/curso-python.html",
     precio: 95000,
     valoracion: 4.9,
     cantidadDeEstudiantes: 15,
@@ -189,7 +189,7 @@ export const CURSOS_INFO = [
     },
     { 
     nombre: "React",
-    link: "./pages/curso-react.html",
+    link: "../pages/curso-react.html",
     precio: 14000,
     valoracion: 4.9,
     cantidadDeEstudiantes: 3.2,

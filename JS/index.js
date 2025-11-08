@@ -1,4 +1,5 @@
-import { NAV, CURSOS_INFO, INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE ,FOOTER_LINKS_CURSOS, FOOTER_REDES} from "../constants/constants.js";
+import { NAV, CURSOS_INFO, INTEGRANTES_DEL_GRUPO,
+        FOOTER_LINKS_ACERCA_DE ,FOOTER_LINKS_CURSOS, FOOTER_REDES} from "../constants/constants.js";
 import{ IMAGENES_SLIDER_HOME, PASOS_INSCRIPCION, MEDIOS_PAGO_IMGS,} from "../constants/constants-home.js";
 import { Header } from "./header.js";
 import { Navbar } from "./navbar.js";
