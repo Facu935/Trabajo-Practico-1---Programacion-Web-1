@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  background-color: #4197ff;
+  box-sizing: border-box;
+}
+.principal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1{
+  margin: 4em;
+}
+.titulos{
+  margin-top: 10em;
+  margin-bottom: 2em;
+}
+
+.perfil-imagen-nombre{
+  width: 80%;
+  display: flex;
+  align-items: center;
+
+
+  
+}
+#foto-perfil{
+  width: 20em;
+  height: 20em;
+}
+#nombre-usuario{
+  margin-left: 2em;
+  font-size: 2.5em;
+}
+
+
+/**********************************/
+.cursos-inscripto{
+  background-color: #45b5c4;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  padding: 2em;
+  margin-bottom: 5em;
+}
+
+.contenedor-curso {
+  background-color: #a0ded6;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  margin: 0 1em;
+}
+
+.imagen-curso-similar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.titulo-curso {
+  text-align: center;
+  border: 2px solid black;
+  margin-bottom: 1em;
+}
+
+.abrir-comprar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.abrir-comprar button {
+  padding: 0.2em;
+  margin: 0.5em;
+  width: 100%;
+  cursor: pointer;
+}
+
+.abrir-comprar button {
+  padding: 0.2em;
+  margin: 0.5em;
+  width: 100%;
+  cursor: pointer;
+}
+
+.duracion-valor{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#eliminar-perfil{
+    padding: 1em;
+    margin: 2em 0;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    font-size: 1.5em;
+    border: 2px solid black;
+    border-radius: 10px;
+
+}

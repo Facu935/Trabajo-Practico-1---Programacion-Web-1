@@ -14,14 +14,17 @@ body {
 h1{
   margin: 4em;
 }
-h2{
-  margin: 2em;
+.titulos{
+  margin-top: 10em;
+  margin-bottom: 2em;
 }
+
 .perfil-imagen-nombre{
   width: 80%;
-  background-color: red;
   display: flex;
   align-items: center;
+
+
   
 }
 #foto-perfil{
@@ -37,11 +40,12 @@ h2{
 /**********************************/
 .cursos-inscripto{
   background-color: #45b5c4;
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: space-around;
   align-items: stretch;
   padding: 2em;
+  margin-bottom: 5em;
 }
 
 .contenedor-curso {
@@ -96,6 +100,19 @@ h2{
   flex-direction: row;
   justify-content: space-around;
 }
+
+#eliminar-perfil{
+  padding: 1em;
+  margin: 2em 0;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  font-size: 1.5em;
+  border: 2px solid black;
+  border-radius: 10px;
+
+}
+
+
 
 
 /************************************************/
