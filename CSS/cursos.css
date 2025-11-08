@@ -62,7 +62,7 @@ ul {
   margin-top: 2.5em;
 }
 
-#boton-inscribirse {
+.boton-inscribirse {
   color: black;
   font-weight: bold;
   background-color: #17ede8;
@@ -71,7 +71,7 @@ ul {
   border-radius: 10px;
 }
 
-#boton-inscribirse:hover {
+.boton-inscribirse:hover {
   background-color: #a0ded6;
   color: black;
   cursor: pointer;

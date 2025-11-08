@@ -43,7 +43,7 @@ export const CURSOS_INFO = [
   {
     cursoId: "html",
     nombre: "HTML 5",
-    link: "./pages/curso-html.html",
+    link: "./pages/cursos.html?curso=html",
     precio: 60000,
     valoracion: 4.7,
     cantidadDeEstudiantes: 12.5,
