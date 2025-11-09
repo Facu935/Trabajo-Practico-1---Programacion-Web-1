@@ -3,7 +3,9 @@ import { NAV, CURSOS_INFO, INTEGRANTES_DEL_GRUPO,
 import { Header } from "../JS/header.js";
 import { Navbar } from "../JS/navbar.js";
 import { Footer } from "../JS/footer.js";
-import { obtenerUsuarioLogueado, cursosInscriptosDelUsuario, localStorageUsuarios } from "./funciones-generales.js";
+import { obtenerUsuarioLogueado, cursosInscriptosDelUsuario,
+        localStorageUsuarios, limpiarUsuarioLogueado, guardarModificacionLocalStorage, 
+        limpiarLocalStorage} from "./funciones-generales.js";
 
 const header = new Header();
 const barraNav = new Navbar();
@@ -45,24 +47,52 @@ function mostrarPerfil(){
     BOTON_ELIMINAR_PERFIL.id = 'eliminar-perfil';
     BOTON_ELIMINAR_PERFIL.textContent = " ELIMINAR PERFIL"    
     PERFIL.appendChild(BOTON_ELIMINAR_PERFIL);
-
-    //Modal Confirmacion Eliminar Cuenta
+    
+    //Modal
     const MODAL_AVISO = document.createElement('dialog');
-    MODAL_AVISO.classList.add('modal-confirmacion-eliminar-cuenta');
-    MODAL_AVISO.textContent = "Desea Eliminar su Cuenta ??"
-
+    const CONTENEDOR_MODAL = document.createElement('div')
     const BOTON_CONFIRMAR = document.createElement('button');
+    const BOTON_CANCELAR = document.createElement('button');
+
+    MODAL_AVISO.classList.add("modal");
+
+    CONTENEDOR_MODAL.classList.add('modal-confirmacion-eliminar-cuenta');
+    CONTENEDOR_MODAL.textContent = "Desea Eliminar su Cuenta ??"
+
     BOTON_CONFIRMAR.textContent = "CONFIRMAR";
     BOTON_CONFIRMAR.id = "boton-confirmar-eliminacion";
-    const BOTON_CANCELAR = document.createElement('button');
-    BOTON_CANCELAR.textContent = "CANCELAR";
-    BOTON_CONFIRMAR.id = "boton-cancelar-eliminacion";
     
-    MODAL_AVISO.appendChild(BOTON_CONFIRMAR);
-    MODAL_AVISO.appendChild(BOTON_CANCELAR);
+    BOTON_CANCELAR.textContent = "CANCELAR";
+    BOTON_CANCELAR.id = "boton-cancelar-eliminacion";
+    
+    CONTENEDOR_MODAL.appendChild(BOTON_CONFIRMAR);
+    CONTENEDOR_MODAL.appendChild(BOTON_CANCELAR);
+    MODAL_AVISO.appendChild(CONTENEDOR_MODAL);
 
     PERFIL.appendChild(MODAL_AVISO);
+
+
+
+    eliminarCuenta(PERFIL, MODAL_AVISO);
+    cancelarEliminacion(BOTON_CANCELAR, MODAL_AVISO);
+    confirmarEliminacion(BOTON_CONFIRMAR, MODAL_AVISO);
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
 
 function mostrarCursosInscriptos(cursos){
     let templateCursos = '';
@@ -86,26 +116,41 @@ function mostrarCursosInscriptos(cursos){
     return templateCursos;
 }
 
-
-function eliminarPerfil(){
-    const PERFIL = document.querySelector(".principal");
-    const BOTON_ELIMINAR_PERFIL = document.querySelector("#eliminar-perfil")
-    const MODAL_AVISO = document.querySelector('.modal-confirmacion-eliminar-cuenta');
-    
-
-    BOTON_ELIMINAR_PERFIL.addEventListener('click', () => {
-        //Fondo Oscuro
-        const FONDO_OSCURO = document.createElement('div');
-        FONDO_OSCURO.classList.add('eliminar-perfil-fondo');
-        PERFIL.appendChild(FONDO_OSCURO);
-
-        MODAL_AVISO.showModal();
-
-
-
+function eliminarCuenta(perfil, modal){
+    const BOTON_ELIMINAR = document.querySelector("#eliminar-perfil");
+    BOTON_ELIMINAR.addEventListener('click', ()=> {
         
-        
-
-
+        const fondo = document.createElement('div');
+        fondo.classList.add("eliminar-perfil-fondo");
+        fondo.appendChild(modal);
+        perfil.appendChild(fondo);
+        modal.showModal();
     });
 }
+
+function cancelarEliminacion(boton_cancelar, modal){
+        boton_cancelar.addEventListener('click', ()=>{
+        const FONDO = document.querySelector(".eliminar-perfil-fondo")
+        modal.close();
+        FONDO.remove();
+    });
+}
+
+function confirmarEliminacion(boton_confirmar, modal){
+        boton_confirmar.addEventListener('click', () =>{
+        const USUARIOS = localStorageUsuarios();
+        const USUARIO_LOGUEADO = obtenerUsuarioLogueado();
+
+        for (let i = 0; i < USUARIOS.length; i++){
+            if (USUARIO_LOGUEADO.email === USUARIOS[i].email){
+                USUARIOS.splice(i,1);
+                guardarModificacionLocalStorage(USUARIOS);
+                limpiarUsuarioLogueado();
+                modal.close();
+                window.location.href = '../index.html';
+                return;
+            }
+        }
+    });
+}
+

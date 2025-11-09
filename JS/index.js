@@ -7,6 +7,7 @@ import { SliderHome } from "./sliderHome.js";
 import { Footer } from "./footer.js";
 import { validarUsuarioConectadoParaNav } from "./funciones-generales.js";
 
+//localStorage.clear();
 
 
 
@@ -30,7 +31,7 @@ footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS
 
 
 
-//localStorage.clear();
+
 
 
 function mostrarPasosDeInscripcion(pasos){
