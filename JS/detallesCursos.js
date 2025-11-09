@@ -48,7 +48,7 @@ function mostrarUnidad(unidad) {
 
     const estabaAbierta = clases.classList.contains("show-clases");
     
-    document.querySelectorAll(".clases").forEach(c => element.classList.remove("show-clases"));
+    document.querySelectorAll(".clases").forEach(element => element.classList.remove("show-clases"));
 
     if (!estabaAbierta) {
         clases.classList.add("show-clases");
