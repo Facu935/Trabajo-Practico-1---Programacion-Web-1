@@ -109,11 +109,15 @@ ul {
 }
 
 .clases {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-around;
   padding: 0.5em;
   border: 1px solid black;
+}
+
+.show-clases{
+  display: flex;
 }
 
 .clase {
