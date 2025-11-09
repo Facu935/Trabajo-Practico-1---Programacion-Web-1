@@ -5,9 +5,9 @@
 
 export const NAV = [
     { name: "INICIO", link: "index.html" },
-    { name: "CALENDARIO", link: "./pages/calendario.html" },
-    { name: "GIFT CARD", link: "./pages/giftcard.html" },
-    { name: "CONTACTO", link: "./pages/contacto.html" },
+    { name: "CALENDARIO", link: "../pages/calendario.html" },
+    { name: "GIFT CARD", link: "../pages/giftcard.html" },
+    { name: "CONTACTO", link: "../pages/contacto.html" },
 ]
 
 export const USUARIOS_REGISTRADOS = [
