@@ -1,7 +1,7 @@
 import { NAV, CURSOS_INFO, INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS, FOOTER_REDES } from "../constants/constants.js";
 import { Header } from "./header.js";
 import { Navbar } from "./navbar.js";
-import { crearFieldsetParticipante } from "./seccion-inscripcion/fieldset.js";
+import { crearFieldsetPersonal } from "./seccion-inscripcion/fieldset.js";
 import { Footer } from "./footer.js";
 
 const header = new Header();
@@ -28,6 +28,7 @@ function gestionarTipoInscripcion(selectorPadre, nombreDelCurso) {
 
   const main = document.createElement('main');
   main.className = 'container';
+
   const divWrapper = document.createElement('div');
 
   const createTituloDelCurso = document.createElement('h2');
@@ -46,7 +47,6 @@ function gestionarTipoInscripcion(selectorPadre, nombreDelCurso) {
   divWrapper.appendChild(preguntaUsuarioText)
   divWrapper.appendChild(seleccionUsuarioText)
   divWrapper.appendChild(crearFieldsetTipoInscripcion())
-
 
   const contenedorDinamico = document.createElement('div');
   contenedorDinamico.id = "form-dinamico-container";
@@ -80,7 +80,7 @@ function actualizarVista() {
 function mostrarFormularioPersonal(selectorPadre, precio) {
   const contenedor = document.querySelector(selectorPadre);
   if (!contenedor) return;
-  contenedor.innerHTML = ""; // Limpia el contenedor
+  contenedor.innerHTML = "";
 
   const form = document.createElement('form');
   form.action = '../pages/inscripcion-confirmada.html';
@@ -91,7 +91,7 @@ function mostrarFormularioPersonal(selectorPadre, precio) {
   titulo.textContent = 'INSCRIPCIÓN PERSONAL';
   form.appendChild(titulo);
 
-  form.appendChild(crearFieldsetParticipante(1));
+  form.appendChild(crearFieldsetPersonal(1));
   //form.appendChild(crearFieldsetParticipante(2));
   //form.appendChild(crearFieldsetParticipante(3));
 

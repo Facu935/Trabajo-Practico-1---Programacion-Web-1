@@ -24,7 +24,7 @@ function grillaCompleta(cursos) {
         let linkAUsar;
 
         if (validarUsuarioConectadoParaNav()) {
-            linkAUsar = `../pages/inscripcion.html?curso=${encodeURIComponent(curso.nombre)}&precio=${curso.precio}`;
+            linkAUsar = `../pages/inscripcion.html?curso=$º{encodeURIComponent(curso.nombre)}&precio=${curso.precio}`;
         } else {
             linkAUsar = `../pages/login.html`;
         }
