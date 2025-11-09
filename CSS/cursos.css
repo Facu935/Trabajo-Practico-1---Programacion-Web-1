@@ -95,7 +95,8 @@ ul {
   margin: 1em;
 }
 
-.unidad {
+.bloque-unidad{
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -103,12 +104,8 @@ ul {
   padding: 1em;
 }
 
-.unidad img {
+.bloque-unidad img {
   cursor: pointer;
-}
-
-#unidad-uno {
-  border: 1px solid black;
 }
 
 .clases {
@@ -116,6 +113,7 @@ ul {
   align-items: center;
   justify-content: space-around;
   padding: 0.5em;
+  border: 1px solid black;
 }
 
 .clase {

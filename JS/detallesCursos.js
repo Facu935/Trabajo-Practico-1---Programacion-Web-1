@@ -24,6 +24,7 @@ const profesor = document.querySelector("#profesor-modal");
 const valor = document.querySelector("#precio-modal");
 const botonAceptar = document.querySelector("#boton-aceptar");
 const botonCancelar = document.querySelector("#hidden-modal");
+const unidades = document.querySelectorAll(".bloque-unidad");
 
 let cursoSeleccionado = null;
 
@@ -32,6 +33,21 @@ const nombreCursoParams = urlParams.get("curso");
 
 let cursoNombre = cursos_info.find(curso => curso.cursoId === nombreCursoParams);
 
+unidades.forEach(element => {
+
+    element.addEventListener("click", (e) => {
+
+        const unidadElegida = e.target;
+        mostrarUnidad(unidadElegida);
+    });
+});
+
+function mostrarUnidad(unidad) {
+    const unidadId = unidad.dataset.unidad;
+
+    const clases= document.querySelectorAll(".clases");
+    
+}
 
 boton.forEach(element => {
 
@@ -68,3 +84,4 @@ botonCancelar.addEventListener("click", () => {
     modal.classList.remove("show-modal");
     document.body.style.overflow = "";
 });
+
