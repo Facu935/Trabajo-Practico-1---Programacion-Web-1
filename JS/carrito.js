@@ -26,6 +26,13 @@ function cursosEnCarrito(array_cursos){
 }
 
 function cursos(contenedor, array_cursos){
+    if (array_cursos.length === 0){
+        const TITULO = document.createElement('h3');
+        TITULO.classList.add("titulo-no-hay-cursos");
+        TITULO.textContent = "NO SE ENCUENTRAN CURSOS CARGADOS";
+        contenedor.appendChild(TITULO);
+    }
+
     array_cursos.forEach(curso => {
         const templateCarrito = `
                 <div class="carrito-item">
@@ -52,16 +59,26 @@ function cursos(contenedor, array_cursos){
 }
 
 function precioTotal(contenedor){
-        const templatePrecioTotal = `< <div id="carrito-precio-total">
+        const templatePrecioTotal = `<div id="carrito-precio-total">
                     <h2>TOTAL</h2>
                     <p>$ ${calcularTotal(CURSOS)}</p>
                     <div class="carrito-botones">
-                        <a href="../pages/pago.html"><button>CONFIRMAR COMPRA</button></a>
+                        <a href="../pages/pago.html" id="confirmar-compra"><button>CONFIRMAR COMPRA</button></a>
                         <a href="../index.html"><button id="boton-cancelar">CANCELAR COMPRA</button></a>
                     </div>
                 </div>  `
 
         contenedor.innerHTML += templatePrecioTotal;
+        
+        
+        if (calcularTotal(CURSOS) === 0){
+            const boton_confirmar = document.querySelector("#confirmar-compra");
+            boton_confirmar.addEventListener('click', (event) => {
+                event.preventDefault();
+                alert("Cargue Cursos al Carrito para realizar la compra")
+            });
+        } 
+        
 }
 function calcularTotal(cursos){
     let total = 0;
