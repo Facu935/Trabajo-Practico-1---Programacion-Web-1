@@ -29,12 +29,12 @@ export const FOOTER_LINKS_ACERCA_DE = [
 ]
 
 export const FOOTER_LINKS_CURSOS = [
-    { name: "Html 5", link: "../pages/curso-html.html" },
-    { name: "CSS", link: "../pages/curso-css.html" },
-    { name: "JavaScript", link: "../pages/curso-js.html" },
-    { name: "Blockchain", link: "../pages/curso-blockchain.html" },
-    { name: "JQuery", link: "../pages/curso-jquery.html" },
-    { name: "Java", link: "../pages/curso-java.html" },
+    { name: "Html 5", link: "../pages/cursos.html" },
+    { name: "CSS", link: "../pages/cursos.html" },
+    { name: "JavaScript", link: "../pages/cursos.html" },
+    { name: "Blockchain", link: "../pages/cursos.html" },
+    { name: "JQuery", link: "../pages/cursos.html" },
+    { name: "Java", link: "../pages/cursos.html" },
 ]
 export const FOOTER_REDES = [
     { img: "../IMG/Logo Facebook.png", alt: "Facebook", href: "https://www.facebook.com/"},
