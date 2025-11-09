@@ -16,7 +16,6 @@ const USUARIO_LOGUEADO = obtenerUsuarioLogueado();
 header.mostrarHeader(CURSOS_INFO);
 barraNav.mostrarItems(NAV);
 mostrarPerfil();
-eliminarPerfil();
 footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS,FOOTER_REDES);
 
 
