@@ -11,155 +11,82 @@
 </head>
 
 <body>
-<header id="inicio">
-    <div class="header-div__logo">
-    <img src="../IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo" />
-    </div>
-<div class="buscador-links">
-<details>
-    <summary>Buscar curso</summary>
-    <ul>
-    <li><a href="./curso-html.html">HTML5</a></li>
-    <li><a href="./curso-css.html">CSS3</a></li>
-    <li><a href="./curso-js.html">JavaScript</a></li>
-    <li><a href="./curso-blockchain.html">Blockchain</a></li>
-    <li><a href="./curso-jquery.html">JQuery</a></li>
-    <li><a href="./curso-java.html">Java</a></li>
-    <li><a href="./curso-mysql.html">MySQL</a></li>
-    <li><a href="./curso-csharp.html">C#</a></li>
-    <li><a href="./curso-php.html">PHP</a></li>
-    <li><a href="./curso-python.html">Python</a></li>
-    <li><a href="./curso-node.html">Node.js</a></li>
-    <li><a href="./curso-react.html">React</a></li>
-    </ul>
-</details>
-</div>
-    <div class="header-div__carrito">
-    <a href="../pages/login.html"><button id="boton-login">Login</button></a>
-    <div id="carrito-y-numero">
-        <div id="header-div__cantidad_items">
-        <p>0</p>
-        </div>
-        <a href="../pages/login.html"><button id="button-carrito"><img src="../IMG/Icono Carrito de Compra.png" alt="Carrito de Compra"
-        id="carrito" /></button></a>
-    </div>  
-    </div>
-</header>
+    <header id="inicio"></header>
     <nav class="navegation">
         <div>
-            <ul class="navegation__items">
-                <li><a href="../index.html">INICIO</a></li>
-                <li><a href="../pages/calendario.html">CALENDARIO</a></li>
-                <li><a href="../pages/giftcard.html">GIFT CARD</a></li>
-                <li><a href="../pages/contacto.html">CONTACTO</a></li>
-            </ul>
+            <ul class="navegation__items"></ul>
         </div>
     </nav>
+
     <div class="container-contacto">
         <div class="contacto">
-            <form action="./confirmacion-contacto.html" method="get" class="contacto__form">
+            <form id="contactForm" class="contacto__form">
                 <h2 class="titulo">CONTACTO</h2>
+
                 <label for="name" class="contacto__label">
                     *Nombre:
                     <input type="text" name="name" id="name" required placeholder="Name" class="contacto__input">
                 </label>
+
                 <label for="lastname" class="contacto__label">
                     *Apellido:
                     <input type="text" name="lastname" id="lastname" required placeholder="Last Name"
                         class="contacto__input">
                 </label>
+
                 <label for="email" class="contacto__label">
                     *E-mail:
                     <input type="email" name="email" id="email" required placeholder="ejemplo@ejemplo.com"
                         class="contacto__input">
                 </label>
+
                 <label for="phone" class="contacto__label">
                     Teléfono:
-                    <input type="number" name="phone" id="phone" placeholder="Phone" class="contacto__input"
-                        max="9999999999" min="11111111">
+                    <input type="text" name="phone" id="phone" placeholder="1234-5678" class="contacto__input">
                 </label>
+
                 <label for="message" class="contacto__label">
                     *Consulta:
                     <textarea class="contacto__input" name="message" id="message"
-                        placeholder="Quisiera consultar sobre..." required></textarea>
+                        placeholder="Quisiera consultar sobre..." maxlength="1000" required></textarea>
+                    <small id="charCount">0 / 1000</small>
                 </label>
+
                 <button type="submit" class="button-submit">Enviar</button>
             </form>
         </div>
 
         <div class="contacto__nosotros">
             <div class="container__nosotros">
-                <h2 class="titulo">NOSOTROS</h2>
+                <h2 class="titulo">Edu Courses</h2>
                 <ul class="nosotros__lista">
-                    <li>E-mail: empresa@gmail.com</li>
-                    <li>Teléfono: 9999999999</li>
+                    <li>E-mail: educourses@gmail.com</li>
+                    <li>Teléfono: 1455-1251</li>
                     <li>Dirección: Adolfo Alsina 2458</li>
                     <li>Localidad: CABA</li>
-                    <LI>Horario Atención: 10 a 20 HS</LI>
+                    <li>Horario Atención: 10 a 20 HS</li>
                 </ul>
             </div>
             <div class="container__ubicacion">
-                <img class="ubicacion__img" src="../IMG/Ubicacion-contacto.jpg" alt="Ubicacion: Adolfo Alsina 2458">
+                <iframe class="ubicacion__img" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.68225019808!2d-58.40580161152339!3d-34.61219558819092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaef4580a91b%3A0x4575be612ef76d11!2sAdolfo%20Alsina%202458%2C%20C1090AAN%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1762699482733!5m2!1ses!2sar" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>
-    <footer>
-        <div class="footer-recuadros">
-            <h3>Datos del Grupo</h3>
-            <ul id="footer-datos-grupo">
-                <li>Facundo Nicolás Olivieri (DNI: 42.290.776)</li>
-                <li>Agustin Bejarano (DNI: 41.173.682)</li>
-                <li>Nicolas Felipe Alvarez (DNI: 43.321.421)</li>
-                <li>Franco David Pereyra (DNI: 44.181.869)</li>
-                <li>Luis Omar Spataro (DNI: 36.494.378)</li>
-            </ul>
-        </div>
 
-        <div class="footer-recuadros">
-            <div class="footer-recuadros-info">
+    <dialog id="successDialog">
+        <p>Consulta enviada</p>
+        <button id="acceptBtn">Aceptar</button>
+    </dialog>
 
-                <div class="footer-recuadros-info-datos">
-                    <h3>ACERCA DE</h3>
-                    <ul>
-                        <li><a href="../pages/sobre-nosotros.html">Sobre Nosotros</a></li>
-                        <li><a href="../pages/preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-recuadros-info-datos">
-                    <h3>CURSOS DESTACADOS</h3>
-                    <ul>
-                        <li>Html 5</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>Blockchain</li>
-                        <li>JQuery</li>
-                        <li>Java</li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="footer-recuadros">
-            <h3>Redes Sociales</h3>
-            <div class="footer-redes">
-                <a href="https://www.facebook.com/" target="_blank"><img src="../IMG/Logo Facebook.png" alt="Facebook"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.instagram.com" target="_blank"><img src="../IMG/Logo Instagram.jpeg" alt="Instagram"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.linkedin.com" target="_blank"><img src="../IMG/Logo LinkedIn.png" alt="LinkedIn"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.x.com" target="_blank"><img src="../IMG/Logo Xpng.png" alt="X"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.youtube.com" target="_blank"><img src="../IMG/Logo YT.png" alt="YouTube"
-                        class="footer-redes-logos"></a>
-            </div>
-        </div>
+    <footer id="footer">
+        <ul id="footer-datos-grupo"></ul>
+        <div class="footer-recuadros-info" id="footer-recuadros-info"></div>
+        <div class="footer-recuadros" id="iconos-redes"></div>
     </footer>
 
-    <a href="#inicio"><i id="flecha-vuelta-inicio">&#x1F53C;</i></a>
-    <p id="footer-nota-legal">© Edu Courses. Todos los derechos reservados.</p>
+    <script src="../JS/contacto.js" type="module"></script>
 </body>
+
+
 
 </html>
