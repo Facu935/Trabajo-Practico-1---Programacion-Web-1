@@ -72,7 +72,7 @@ export class Usuario{
             password: this.password,
             cursosInscriptos: this.cursosInscriptos,
             logueado: this.logueado,
-            cursosEnCarrito: this.cursosEnCarrito
+            cursosEnCarrito: this.cursosEnCarrito      
         }
     }
 

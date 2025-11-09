@@ -40,3 +40,9 @@ export function obtenerUsuarioLogueado() {
     const USUARIO_LOGUEADO = JSON.parse(localStorage.getItem("usuarioLogueado"));
     return USUARIO_LOGUEADO;
 }
+
+export function cursosInscriptosDelUsuario(){
+    const USUARIO = JSON.parse(localStorage.getItem("usuarioLogueado"));
+    const CURSOS_INSCRIPTOS = USUARIO.cursosInscriptos;
+    return CURSOS_INSCRIPTOS;
+}
