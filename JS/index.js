@@ -132,27 +132,35 @@ function mostrarMediosDePago(imagenes){
 }
 
 
-function grillaCursos(cursos, seccion, contenedorCursos , contenedorPadre, validacion){
-    cursos.forEach(item =>{
-        if(item.destacado == true){
+function grillaCursos(cursos, seccion, contenedorCursos, contenedorPadre) {
+    cursos.forEach(curso => {
+        let linkAUsar;
+
+        if (validarUsuarioConectadoParaNav()) {
+            linkAUsar = `../pages/inscripcion.html?curso=${encodeURIComponent(curso.nombre)}&precio=${curso.precio}&img=${curso.img}&valoracion=${curso.valoracion}&duracion=${curso.duracion}`;
+        } else {
+            linkAUsar = `../pages/login.html`;
+        }
+
+        if (curso.destacado == true) {
             const templateCursos =
-            `<div class="contenedor-grid-hijo">
+                `<div class="contenedor-grid-hijo">
                 <div class="contenedor-grid-hijo imagen">
-                    <img src="${item.img}" alt="Logo ${item.nombre}" /> 
+                    <img src="${curso.img}" alt="Logo ${curso.nombre}" /> 
                 </div>
                 <div class="contenedor-grid-hijo titulo">
-                    <h4>${item.nombre}</h4>
+                    <h4>${curso.nombre}</h4>
                 </div>
                 <div class="contenedor-grid-hijo datos">
-                    <p>${item.duracion} HS</p>
-                    <p>$ ${item.precio}</p>
+                    <p>${curso.duracion} HS</p>
+                    <p>$ ${curso.precio}</p>
                 </div>
                 <div class="contenedor-grid-hijo detalles-comprar">
-                    <a href="${item.link}">Ver Detalles del Curso</a>
-                    <button><a href="${validacion}">Inscribirme</a></button>
+                    <a href="${curso.link}">Ver Detalles del Curso</a>
+                    <button><a href="${linkAUsar}">Inscribirme</a></button>
                 </div>
             </div>`
-                contenedorPadre.innerHTML += templateCursos;
+            contenedorPadre.innerHTML += templateCursos;
         }
     });
     contenedorCursos.appendChild(contenedorPadre);
