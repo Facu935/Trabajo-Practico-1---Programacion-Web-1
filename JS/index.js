@@ -91,6 +91,8 @@ function mostrarGrillaCursosDestacados(cursos, seccion){
 }
 
 function botonVerTodosLosCursos(seccion){
+    const contenedor_boton = document.createElement("div");
+    contenedor_boton.classList.add("contenedor-boton-ver-cursos");
     const verTodoslosLosCursos = document.createElement('a')
     const botonVerTodosLosCursos = document.createElement('button');
     verTodoslosLosCursos.href = "./pages/otrosCursos.html";
@@ -98,7 +100,8 @@ function botonVerTodosLosCursos(seccion){
     botonVerTodosLosCursos.textContent = "VER TODOS LOS CURSOS";
     verTodoslosLosCursos.appendChild(botonVerTodosLosCursos);
 
-    seccion.appendChild(verTodoslosLosCursos);
+    contenedor_boton.appendChild(verTodoslosLosCursos);
+    seccion.appendChild(contenedor_boton);
 }
 
 
