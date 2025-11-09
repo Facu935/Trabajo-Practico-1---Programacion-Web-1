@@ -86,31 +86,51 @@ header {
   align-items: center;
   gap: 1.5em;
   flex-shrink: 0;
+  position: relative;
 }
 
 #boton-login {
-  background-color: white;
-  border-radius: 10px;
-  padding: 1em 2em;
   font-weight: 600;
-  border: none;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #93d8e2;
+  padding: 1em 2em;
   cursor: pointer;
 }
 
 .nombre-usuario-logueado{
+  font-size: 1.2em;
   font-weight: 600;
-  text-decoration: underline;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #93d8e2;
   padding: 1em 2em;
-  order: 1;
-
+  
 }
+.contenedor-opciones-cuenta{
+  position: absolute;
+  padding: 1em 2.35em;
+  top: 50px;
+  left: 0;
+  background-color: #93d8e2;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.lista-opciones-cuenta{
+  list-style: none;
+}
+.lista-opciones-cuenta li{
+  padding: 0.5em;
+  margin: 2px 0px;
+  text-align: center;
+}
+
 .contenedor-opciones-cuenta {
     order:2; 
   }
-
-
-
-
 
 #carrito-y-numero {
     display: flex;
@@ -151,21 +171,53 @@ header {
   display: flex;
   flex-direction: column;
   width: 25em;
-  background-color: red;
+  background-color: #93d8e2;
+  border: 2px solid black;
+  border-radius: 10px;
   position: absolute;
   top: 5em;
   right: -2em;
+  cursor: auto;
+}
+.recuadro-curso-sidebar{
+  padding: 1em;
+}
+.sideBar-cursos-carrito h2 { /*"Todavia No hay Cursos"*/
+  text-align: center;
+  margin: 0.5em;
+}
+
+.titulo-curso-sidebar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#logo-curso-sidebar{
+  height: 4em;
+  width: 4em;
 }
 .segundo-renglon{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
+
 .sideBar-cursos-carrito ul{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  list-style: none;
+  gap: 10px;
+}
+.boton-eliminar-curso-carrito{
+  height: 3em;
+  padding: 0 1em;
+  font-weight: 600;
+  background-color: #f83a3a;
 }
 .boton-cerrar-sideBar{
   width: 20%;
+  padding: 0.5em;
+  margin: 1em;
 }
 
 /*************************** NAVEGACIÓN ***************************/

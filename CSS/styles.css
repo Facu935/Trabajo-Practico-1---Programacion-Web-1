@@ -164,11 +164,11 @@ body {
   align-items: center;
   border: none;
 }
-
-#boton-ver-cursos{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.contenedor-boton-ver-cursos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
 }
 
 #boton-ver-cursos button{
