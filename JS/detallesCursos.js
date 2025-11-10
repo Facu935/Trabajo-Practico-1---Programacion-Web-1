@@ -37,16 +37,22 @@ unidades.forEach(element => {
 
     element.addEventListener("click", (e) => {
 
-        const unidadElegida = e.target;
+        const unidadElegida = e.currentTarget;
         mostrarUnidad(unidadElegida);
     });
 });
 
 function mostrarUnidad(unidad) {
     const unidadId = unidad.dataset.unidad;
+    const clases = document.querySelector(`.clases[data-clases="${unidadId}"]`);
 
-    const clases= document.querySelectorAll(".clases");
+    const estabaAbierta = clases.classList.contains("show-clases");
     
+    document.querySelectorAll(".clases").forEach(element => element.classList.remove("show-clases"));
+
+    if (!estabaAbierta) {
+        clases.classList.add("show-clases");
+    }
 }
 
 boton.forEach(element => {

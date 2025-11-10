@@ -91,6 +91,13 @@ fieldset {
 
 /* ----------- */
 
+/* Oculta las flechas */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .container-button {
   display: flex;
   align-items: center;
@@ -290,4 +297,9 @@ fieldset {
     height: 2rem;
     font-size: 0.8rem;
   }
+}
+
+.add-persona-disabled {
+  cursor: not-allowed !important;
+  opacity: 0.6;
 }
