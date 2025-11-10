@@ -5,30 +5,22 @@
 }
 
 .container {
-  background-color: #a0ded6;
+  background-color: rgb(65, 151, 208);
   min-height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
 }
 
-.container-titulo-curso {
-  margin: 2rem 0;
-}
-
-.formulario {
-  width: 100%;
-  max-width: 120vh;
-  padding: 1rem;
-}
-
-.titulo-inscripcion,
-.pregunta-inscripcion {
+.pregunta-inscripcion,
+.titulo-inscripcion {
   margin-bottom: 1rem;
   text-align: start;
   font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
 }
 
 .opcion-inscripcion {
@@ -37,65 +29,100 @@
   font-size: 1.2rem;
 }
 
-fieldset {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 0.5fr;
-  gap: 1rem;
-  border: none;
-  margin: 1rem 0;
-  padding: 1rem;
-  background-color: #f0f0f0;
-  border-radius: 8px;
-}
-
-.container-input {
-  display: flex;
-  align-items: center;
-}
-
-.container-input input {
-  width: 100%;
-  border-radius: 5px;
-  padding-left: 1rem;
-  border: 1px solid #ccc;
-}
-
-/* fieldsetTipoInscripcion */
 .fieldset-ambito {
   display: flex;
   gap: 1.5rem;
   border: none;
   padding: 0;
-  margin: 0;
+  margin: 1rem 0 2rem 0;
+  background: none;
 }
 
 .container-input-ambito {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  border-radius: 5px;
-  padding: 0.5rem 1rem;
-  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid black;
+  transition: background-color 0.2s;
+}
+
+.container-input-ambito:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.container-input-ambito input:checked + label {
+  font-weight: 600;
 }
 
 .container-input-ambito label {
   cursor: pointer;
+  font-size: 1.1rem;
 }
 
-/* actualizarVista */
-
-.oculto {
-  display: none;
+.formulario {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2em;
+  background-color: #a0ded6;
+  border: 1px solid black;
+  border-radius: 0.5em;
 }
 
-/* ----------- */
+fieldset {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  border: none;
+  margin: 1rem 0;
+  padding: 0;
+  background-color: transparent;
+}
 
-/* Oculta las flechas */
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+legend {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0 0.5rem;
+  margin-left: 0.5rem;
+  color: #000; /* Texto negro */
+}
+
+#contenedor-fieldsets-empresa fieldset {
+  grid-template-columns: 1fr 1fr 1fr 1fr auto;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.container-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 0.3125em;
+  padding: 0.5rem 0.75rem;
+  background-color: #fff;
+}
+
+.container-input input {
+  width: 100%;
+  height: auto;
+  font-size: 1rem;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.container-input input:focus {
+  outline: none;
+}
+
+.container-input input:invalid:not(:placeholder-shown) {
+  border-color: transparent;
+  background-color: transparent;
 }
 
 .container-button {
@@ -109,6 +136,12 @@ input[type=number]::-webkit-inner-spin-button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  color: #c00; /* Rojo más simple */
+  transition: transform 0.2s;
+}
+
+.icon-delete:hover {
+  transform: scale(1.2);
 }
 
 .add-persona {
@@ -116,43 +149,81 @@ input[type=number]::-webkit-inner-spin-button {
   align-items: center;
   margin: 1rem 0;
   cursor: pointer;
+  color: #000;
+}
+
+.add-persona:hover {
+  color: rgb(65, 151, 208);
 }
 
 .icon-add {
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin-right: 0.5rem;
 }
 
 .add-persona p {
   font-size: 1rem;
-  color: #333;
+  font-weight: 600;
+}
+
+.add-persona-disabled {
+  cursor: not-allowed !important;
+  opacity: 0.6;
+  color: #555;
+}
+
+.add-persona-disabled:hover {
+  color: #555;
 }
 
 .container-precio-inscribirse {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid black;
+}
+
+.container-precio-inscribirse .price-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .container-precio-inscribirse p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000;
+}
+
+#precio-total-display-empresa,
+#precio-total-display-personal {
+  font-size: 1.4rem;
   font-weight: bold;
+  color: #000;
 }
 
 .btn-inscribirse {
-  width: 10rem;
+  width: 12rem;
   height: 2.5rem;
-  border-radius: 0.3125rem;
+  border-radius: 0.3125em;
   background-color: rgb(65, 151, 208);
   color: white;
   border: none;
   cursor: pointer;
   font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 .btn-inscribirse:hover {
-  background-color: rgb(50, 120, 180);
+  background-color: rgb(45, 130, 185);
+}
+
+.btn-inscribirse:disabled {
+  background-color: #9eaf04;
+  cursor: not-allowed;
 }
 
 .overlay {
@@ -169,7 +240,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .popup {
-  background: #f0f0f0;
+  background: #fff;
   padding: 2rem;
   border-radius: 0.625em;
   border: 2px solid #0073e6;
@@ -179,127 +250,121 @@ input[type=number]::-webkit-inner-spin-button {
   width: 30em;
 }
 
-@media screen and (max-width: 61em) {
-  .container {
-    padding: 0.75rem;
-  }
+.popup h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #000;
+  text-align: center;
+}
+.popup h4 {
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+  text-align: left;
+}
+.popup p {
+  font-size: 1rem;
+  line-height: 1.4;
+  text-align: left;
+}
+.popup li {
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
 
+.popup a.btn-inscribirse {
+  display: block;
+  width: auto;
+  text-align: center;
+  padding: 0.625em;
+  height: auto;
+  text-decoration: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.oculto {
+  display: none;
+}
+
+@media screen and (max-width: 61em) {
   .formulario {
     max-width: 90%;
-    margin: 0 auto;
+    padding: 1.5rem;
   }
 
-  .titulo-inscripcion {
-    font-size: 1.3rem;
-  }
-
-  fieldset {
-    grid-template-columns: 1fr 1fr 1fr 0.5fr;
+  fieldset,
+  #contenedor-fieldsets-empresa fieldset {
+    grid-template-columns: 1fr 1fr;
     gap: 0.75rem;
-    padding: 0.75rem;
   }
 
-  .container-input input {
-    height: 2.2rem;
-    padding-left: 0.75rem;
+  #contenedor-fieldsets-empresa .container-button {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
   }
 
-  .icon-delete {
-    font-size: 1.3rem;
-  }
-
-  .add-persona {
-    margin: 0.75rem 0;
-  }
-
-  .icon-add {
-    font-size: 1.8rem;
-  }
-
-  .add-persona p {
-    font-size: 0.9rem;
+  .container-input:nth-child(4) {
+    grid-column: 1 / -1;
   }
 
   .container-precio-inscribirse {
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
   }
 
+  .container-precio-inscribirse .price-details,
   .container-precio-inscribirse p {
-    font-size: 1.1rem;
+    text-align: center;
   }
 
   .btn-inscribirse {
-    width: 9rem;
-    height: 2.2rem;
-    font-size: 0.9rem;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 47em) {
   .container {
-    padding: 0.5rem;
-  }
-
-  .container-titulo-curso {
-    margin: 1rem 0;
+    padding: 1rem 0.5rem;
   }
 
   .formulario {
-    max-width: 100%;
-    padding: 0.5rem;
+    padding: 1rem 0.5rem;
   }
 
+  .pregunta-inscripcion,
   .titulo-inscripcion {
     font-size: 1.2rem;
   }
 
-  fieldset {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  fieldset,
+  #contenedor-fieldsets-empresa fieldset {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
     padding: 0.5rem;
   }
 
-  .container-input input {
-    height: 2rem;
-    padding-left: 0.5rem;
+  #contenedor-fieldsets-empresa .container-button {
+    justify-content: center;
   }
 
-  .icon-delete {
-    font-size: 1.2rem;
-  }
-
-  .add-persona {
-    margin: 0.5rem 0;
-  }
-
-  .icon-add {
-    font-size: 1.5rem;
-  }
-
-  .add-persona p {
-    font-size: 0.8rem;
-  }
-
-  .container-precio-inscribirse {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+  .container-input:nth-child(4) {
+    grid-column: auto;
   }
 
   .container-precio-inscribirse p {
     font-size: 1rem;
+    text-align: center;
   }
 
-  .btn-inscribirse {
-    width: 100%;
-    max-width: 8rem;
-    height: 2rem;
-    font-size: 0.8rem;
+  #precio-total-display-empresa,
+  #precio-total-display-personal {
+    font-size: 1.2rem;
   }
-}
-
-.add-persona-disabled {
-  cursor: not-allowed !important;
-  opacity: 0.6;
 }
