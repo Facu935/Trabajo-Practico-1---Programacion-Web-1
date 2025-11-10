@@ -126,9 +126,27 @@ h1{
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+  background: #f0f0f0;
+  padding: 2rem;
+  border-radius: 0.625em;
+  border: 2px solid #0073e6;
+  text-align: center;
+  box-shadow: 0 0.125em 0.5em rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+  width: 30em;
 }
 
 .modal-confirmacion-eliminar-cuenta{
   display: flex;
   flex-direction: column;
+  gap: 1em;
+}
+
+.modal-confirmacion-eliminar-cuenta button{
+  padding: 1em;
+}
+
+#boton-cancelar-eliminacion{
+  background-color: red;
+  color: white;
 }
