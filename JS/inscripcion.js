@@ -84,7 +84,6 @@ function mostrarFormularioPersonal(selectorPadre, precio) {
   contenedor.innerHTML = "";
 
   const form = document.createElement('form');
-  form.action = '../pages/inscripcion-confirmada.html';
   form.className = 'formulario';
 
   const titulo = document.createElement('h3');
@@ -92,17 +91,68 @@ function mostrarFormularioPersonal(selectorPadre, precio) {
   titulo.textContent = 'INSCRIPCIÓN PERSONAL';
 
   form.appendChild(titulo);
-  form.appendChild(crearFieldsetPersonal(1));
+
+  const fieldset = crearFieldsetPersonal(1);
+  form.appendChild(fieldset);
 
   const divPrecio = document.createElement('div');
   divPrecio.className = 'container-precio-inscribirse';
   divPrecio.innerHTML = `
-        <p>Precio total: $${precio}</p>
-        <button class="btn-inscribirse" type="submit">INSCRIBIRSE</button>
+        <p id="precio-total-display-personal">Precio total: $${parseFloat(precio).toFixed(2)}</p>
+        <button id="btn-mostrar-resumen-personal" class="btn-inscribirse" type="button" disabled>INSCRIBIRSE</button>
     `;
 
   form.appendChild(divPrecio);
   contenedor.appendChild(form);
+
+  const btnInscribirse = document.getElementById('btn-mostrar-resumen-personal');
+  const inputsPersonales = fieldset.querySelectorAll('input[type="text"], input[type="email"], input[type="number"], input[type="tel"]');
+
+  function validarFormularioPersonal() {
+    let todosCompletos = true;
+
+    for (const input of inputsPersonales) {
+      if (!input.checkValidity()) {
+        todosCompletos = false;
+        break;
+      }
+    }
+
+    btnInscribirse.disabled = !todosCompletos;
+  }
+
+  inputsPersonales.forEach(input => {
+    input.addEventListener('input', validarFormularioPersonal);
+  });
+
+  function mostrarResumenPersonal() {
+    agregarCursoAlCarrito(precioBaseDelCurso);
+
+    const nombre = fieldset.querySelector(`input[name="nombre-1"]`)?.value || 'N/A';
+    const apellido = fieldset.querySelector(`input[name="apellido-1"]`)?.value || 'N/A';
+    const dni = fieldset.querySelector(`input[name="dni-1"]`)?.value || 'N/A';
+    const telefono = fieldset.querySelector(`input[name="telefono-1"]`)?.value || 'N/A';
+
+    let resumenHtml = '<h3>Resumen de Inscripción</h3>';
+    resumenHtml += '<h4>Participante:</h4><ul>';
+    resumenHtml += `<li style="list-style-type: none;">
+        <strong>Persona:</strong> ${nombre} ${apellido} (DNI: ${dni})<br>
+        <small>Tel: ${telefono}</small>
+      </li>`;
+    resumenHtml += '</ul>';
+
+    const total = document.getElementById('precio-total-display-personal').textContent;
+
+    resumenHtml += `<div style="margin-top: 1rem; text-align: left;">
+                      <p><strong>${total}</strong></p>
+                    </div>`;
+
+    resumenHtml += '<a href="../pages/carrito.html" class="btn-inscribirse" style="margin-top: 1rem; text-decoration: none; display: inline-block; padding: 0.5rem 1rem; text-align: center;">Ir a Pagar</a>';
+
+    crearModal(resumenHtml);
+  }
+
+  btnInscribirse.addEventListener('click', mostrarResumenPersonal);
 }
 
 function mostrarFormularioEmpresarial(selectorPadre, precioBase) {
@@ -121,10 +171,15 @@ function mostrarFormularioEmpresarial(selectorPadre, precioBase) {
     <fieldset>
         <legend>Datos de la Empresa</legend>
         <div class="container-input">
-            <input type="text" id="razon-social" name="razon-social" placeholder="Razón Social" required />
+            <input type="text" id="razon-social" name="razon-social" placeholder="Razón Social" required 
+                   pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ ]+" 
+                   title="Solo puedes ingresar letras y espacios." />
         </div>
         <div class="container-input">
-            <input type="text" id="cuit" name="cuit" placeholder="CUIT" required />
+            <input type="text" id="cuit" name="cuit" placeholder="CUIT" required 
+                   inputmode="numeric" 
+                   pattern="\\d{11}" 
+                   title="Solo números (11 dígitos sin guiones)." />
         </div>
         <div class="container-input">
             <input type="email" id="email-corp" name="email-corp" placeholder="Email Corporativo" required />
@@ -220,6 +275,9 @@ function mostrarFormularioEmpresarial(selectorPadre, precioBase) {
 
   }
 
+  // =================================================================
+  // MODIFICACIÓN: Se actualiza la función de validación.
+  // =================================================================
   function validarYAlternarBotonAdd() {
     const primerFieldset = document.querySelector('#contenedor-fieldsets-empresa fieldset[data-person-id="1"]');
 
@@ -229,7 +287,7 @@ function mostrarFormularioEmpresarial(selectorPadre, precioBase) {
     let todosLlenos = true;
 
     for (const input of inputs) {
-      if (input.value.trim() === '') {
+      if (!input.checkValidity()) {
         todosLlenos = false;
         break;
       }
@@ -243,11 +301,15 @@ function mostrarFormularioEmpresarial(selectorPadre, precioBase) {
 
   }
 
+  // =================================================================
+  // MODIFICACIÓN: Se actualiza la función de validación.
+  // =================================================================
   function validarFormularioCompleto() {
     let todosCompletos = true;
 
     for (const input of inputsEmpresa) {
-      if (input.value.trim() === '') {
+      // MODIFICACIÓN: Usamos checkValidity()
+      if (!input.checkValidity()) {
         todosCompletos = false;
         break;
       }
@@ -259,7 +321,8 @@ function mostrarFormularioEmpresarial(selectorPadre, precioBase) {
         todosCompletos = false;
       }
       for (const input of inputsParticipantes) {
-        if (input.value.trim() === '') {
+        // MODIFICACIÓN: Usamos checkValidity()
+        if (!input.checkValidity()) {
           todosCompletos = false;
           break;
         }
@@ -298,49 +361,9 @@ function mostrarFormularioEmpresarial(selectorPadre, precioBase) {
   }
 
   function mostrarResumen() {
-    try {
-      const usuarioLogueado = obtenerUsuarioLogueado();
-
-      if (usuarioLogueado) {
-        const pPrecioTotalElement = document.getElementById('precio-total-display-empresa');
-
-        const precioTotalCalculado = pPrecioTotalElement.textContent.split('$')[1] || 0;
-
-        const cursoCompleto = {
-          nombre: nombreDelCurso,
-          precio: parseFloat(precioTotalCalculado),
-          img: imgDelCurso,
-          valoracion: valoracionDelCurso,
-          duracion: duracionDelCurso
-        };
-
-        const yaInscripto = usuarioLogueado.cursosEnCarrito.find(curso => curso.nombre === cursoCompleto.nombre);
-
-        if (!yaInscripto) {
-          usuarioLogueado.cursosEnCarrito.push(cursoCompleto);
-
-          guardarModificacionLocalStorageUsuarioLogueado(usuarioLogueado);
-
-          const todosLosUsuarios = localStorageUsuarios();
-          const indiceUsuario = todosLosUsuarios.findIndex(user => user.email === usuarioLogueado.email);
-
-          if (indiceUsuario !== -1) {
-            todosLosUsuarios[indiceUsuario] = usuarioLogueado;
-            guardarModificacionLocalStorage(todosLosUsuarios);
-            console.log(`Curso (objeto) '${cursoCompleto.nombre}' agregado a ${usuarioLogueado.email}`);
-          } else {
-            console.warn("No se encontró al usuario en el array principal para actualizar.");
-          }
-
-        } else {
-          console.log("El usuario ya está inscripto en este curso.");
-        }
-      } else {
-        console.warn("No hay usuario logueado. No se puede inscribir el curso.");
-      }
-    } catch (error) {
-      console.error("Error al inscribir el curso:", error);
-    }
+    const pPrecioTotalElement = document.getElementById('precio-total-display-empresa');
+    const precioTotalCalculado = pPrecioTotalElement.textContent.split('$')[1] || 0;
+    agregarCursoAlCarrito(precioTotalCalculado); // <-- Llamada a la función global
 
     const fieldsets = document.querySelectorAll('#contenedor-fieldsets-empresa fieldset');
     let resumenHtml = '<h3>Resumen de Inscripción</h3>';
@@ -381,29 +404,67 @@ function mostrarFormularioEmpresarial(selectorPadre, precioBase) {
     crearModal(resumenHtml);
   }
 
-  function crearModal(contenido) {
-    const overlay = document.createElement('div');
-    overlay.className = 'overlay';
-
-    const popup = document.createElement('div');
-    popup.className = 'popup';
-    popup.innerHTML = contenido;
-
-    overlay.appendChild(popup);
-    document.body.appendChild(overlay);
-
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay || e.target.id === 'btn-cerrar-modal') {
-        document.body.removeChild(overlay);
-      }
-    });
-
-  }
-
   contadorPersonas = 1;
   agregarCamposPersona(contadorPersonas);
   actualizarPrecioTotal();
   btnInscribirse.addEventListener('click', mostrarResumen);
+}
+
+function agregarCursoAlCarrito(precioFinal) {
+  try {
+    const usuarioLogueado = obtenerUsuarioLogueado();
+
+    if (usuarioLogueado) {
+      const cursoCompleto = {
+        nombre: nombreDelCurso,
+        precio: parseFloat(precioFinal),
+        img: imgDelCurso,
+        valoracion: valoracionDelCurso,
+        duracion: duracionDelCurso
+      };
+
+      const yaInscripto = usuarioLogueado.cursosEnCarrito.find(curso => curso.nombre === cursoCompleto.nombre);
+
+      if (!yaInscripto) {
+        usuarioLogueado.cursosEnCarrito.push(cursoCompleto);
+        guardarModificacionLocalStorageUsuarioLogueado(usuarioLogueado);
+        const todosLosUsuarios = localStorageUsuarios();
+        const indiceUsuario = todosLosUsuarios.findIndex(user => user.email === usuarioLogueado.email);
+
+        if (indiceUsuario !== -1) {
+          todosLosUsuarios[indiceUsuario] = usuarioLogueado;
+          guardarModificacionLocalStorage(todosLosUsuarios);
+          console.log(`Curso (objeto) '${cursoCompleto.nombre}' agregado a ${usuarioLogueado.email}`);
+        } else {
+          console.warn("No se encontró al usuario en el array principal para actualizar.");
+        }
+      } else {
+        console.log("El usuario ya está inscripto en este curso.");
+      }
+    } else {
+      console.warn("No hay usuario logueado. No se puede inscribir el curso.");
+    }
+  } catch (error) {
+    console.error("Error al inscribir el curso:", error);
+  }
+}
+
+function crearModal(contenido) {
+  const overlay = document.createElement('div');
+  overlay.className = 'overlay';
+
+  const popup = document.createElement('div');
+  popup.className = 'popup';
+  popup.innerHTML = contenido;
+
+  overlay.appendChild(popup);
+  document.body.appendChild(overlay);
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay || e.target.id === 'btn-cerrar-modal') {
+      document.body.removeChild(overlay);
+    }
+  });
 }
 
 function crearFieldsetTipoInscripcion() {
