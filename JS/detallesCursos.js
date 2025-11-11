@@ -15,9 +15,7 @@ footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS
 const cursos_info = CURSOS_INFO;
 const claseContenidos = CLASES_CONTENIDOS_CURSOS;
 
-const cursoId = document.querySelector("[data-curso]").dataset.curso;
 const modal = document.querySelector(".modal");
-const boton = document.querySelectorAll(".boton-inscribirse");
 const titulo = document.querySelector("#titulo-modal");
 const imagen = document.querySelector("#modal-img-curso");
 const duracion = document.querySelector("#duracion-modal");
@@ -34,6 +32,8 @@ let cursoSeleccionado = cursos_info.find(curso => curso.cursoId === nombreCursoP
 //let cursoNombre = cursos_info.find(curso => curso.cursoId === nombreCursoParams);
 
 //Creación html
+document.title = `Edu Courses | Curso de ${cursoSeleccionado.nombre}`;
+
 const logoCurso = document.querySelector("#imagen");
 logoCurso.src = cursoSeleccionado.img;
 logoCurso.alt = `Logo ${cursoSeleccionado.nombre}`;
@@ -111,8 +111,106 @@ unidadesCurso.forEach((unidad, i) => {
 });
 sectionUnidad.appendChild(contenedorUnidades);
 
-/////////////////
 
+const contenedorDocente = document.querySelector("#contenedor-docente");
+
+const divImgDocente = document.createElement("div");
+const imgDocente = document.createElement("img");
+imgDocente.src = "../IMG/Cursos/profesor.jpg"
+imgDocente.alt = "imagén del profesor";
+imgDocente.id = "imagen-profe";
+
+const divInfoDocente = document.createElement("div");
+divInfoDocente.id = "info";
+const nombreDocente = document.createElement("h2");
+nombreDocente.textContent = cursoSeleccionado.docente.nombre;
+const pDocente = document.createElement("p");
+pDocente.textContent = cursoSeleccionado.docente.descripcion;
+const divValoracionDocente = document.createElement("div");
+
+divValoracionDocente.id = "contenedor-estrella";
+const imgEstrella = document.createElement("img");
+imgEstrella.src = "../IMG/Cursos/estrella.png";
+imgEstrella.alt = "Valoración del docente";
+const pValoracion = document.createElement("p");
+pValoracion.textContent = cursoSeleccionado.docente.valoracion;
+
+divValoracionDocente.appendChild(imgEstrella);
+divValoracionDocente.appendChild(pValoracion);
+divInfoDocente.appendChild(nombreDocente);
+divInfoDocente.appendChild(pDocente);
+divInfoDocente.appendChild(divValoracionDocente);
+divImgDocente.appendChild(imgDocente);
+contenedorDocente.appendChild(divImgDocente);
+contenedorDocente.appendChild(divInfoDocente);
+
+const contenedorOpiniones = document.querySelector("#contenedor-opiniones");
+
+cursoSeleccionado.opiniones.forEach(opinion => {
+    const divOpina = document.createElement("div");
+
+    const estrellas = `<img src="../IMG/Cursos/estrella.png" alt="estrella">`.repeat(opinion.cantidad);
+
+    divOpina.innerHTML = `
+        <h3>${opinion.nombre}</h3>
+        ${estrellas}
+        <p>${opinion.comentario}</p>
+    `;
+
+    contenedorOpiniones.appendChild(divOpina);
+});
+
+const contenedorCursosSimilares = document.querySelector(".cursos-similares");
+
+cursoSeleccionado.cursosSimilares.forEach(cursoId => {
+
+    const cursoSimilar = CURSOS_INFO.find(c => c.cursoId === cursoId);
+
+    const divCurso = document.createElement("div");
+    divCurso.classList.add("contenedor-curso");
+    const divLogoCurso = document.createElement("div");
+    divLogoCurso.classList.add("imagen-curso-similar");
+    const imgLogo = document.createElement("img");
+    imgLogo.src = cursoSimilar.img;
+    imgLogo.alt = `Logo ${cursoSimilar.nombre}`;
+
+    const divTitulo = document.createElement("div");
+    divTitulo.classList.add("titulo-curso");
+    const tituloCurso = document.createElement("h4");
+    tituloCurso.textContent = `CURSO ${cursoSimilar.nombre}`;
+
+    const divVerComprar = document.createElement("div");
+    divVerComprar.classList.add("abrir-comprar");
+    divVerComprar.innerHTML = `
+        <a href=${cursoSimilar.link}>Ver Detalles</a>
+        <button class="boton-inscribirse" data-curso="${cursoSimilar.cursoId}">INSCRIBIRME</button> 
+    `;
+
+    const divPrecioHoras = document.createElement("div");
+    divPrecioHoras.classList.add("duracion-valor");
+    divPrecioHoras.innerHTML = `
+        <p>${cursoSimilar.duracion} hs</p>
+        <p>$${cursoSimilar.precio}</p>
+    `;
+
+    divLogoCurso.appendChild(imgLogo);
+    divTitulo.appendChild(tituloCurso);
+
+    divCurso.appendChild(divLogoCurso);
+    divCurso.appendChild(divTitulo);
+    divCurso.appendChild(divVerComprar);
+    divCurso.appendChild(divPrecioHoras);
+
+    contenedorCursosSimilares.appendChild(divCurso);
+});
+
+
+
+/////////////////////////////////////
+
+
+
+///////////ACCORDION
 const unidades = document.querySelectorAll(".bloque-unidad");
 
 unidades.forEach(element => {
@@ -145,6 +243,10 @@ function mostrarUnidad(unidad) {
     }
 }
 
+//////MODAL
+const boton = document.querySelectorAll(".boton-inscribirse");
+const cursoId = document.querySelector("[data-curso]").dataset.curso;
+
 boton.forEach(element => {
 
     element.addEventListener("click", (e) => {
@@ -159,6 +261,8 @@ boton.forEach(element => {
         mostrarModal(cursoSeleccionado)
     })
 });
+
+
 
 function mostrarModal(cursoSeleccionado) {
     titulo.textContent = `Te estas inscribiendo a ${cursoSeleccionado.nombre}`;

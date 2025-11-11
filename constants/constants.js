@@ -64,7 +64,18 @@ export const CURSOS_INFO = [
             { titulo: "Etiquetas esenciales: párrafos, listas, enlaces e imágenes", duracion: 4 },
             { titulo: "Tablas y formularios: cómo recopilar información del usuario", duracion: 4 },
             { titulo: "Proyecto final: crear tu primera página web completa", duracion: 4 }
-        ]
+        ],
+        docente:
+        {
+            nombre: "Mariana López", descripcion: "Mariana López es diseñadora web con más de 10 años de experiencia enseñando HTML y CSS. Ha trabajado en múltiples proyectos de sitios corporativos y tiendas online, y disfruta transmitir conocimientos de manera clara y práctica. Su enfoque se centra en que los estudiantes comprendan el “por qué” detrás de cada etiqueta y estructura, para que puedan aplicar lo aprendido en proyectos reales. Además, Mariana comparte recursos adicionales y ejercicios complementarios para reforzar el aprendizaje", valoracion: 4.8
+        },
+        opiniones: [
+            { nombre: "Juan Pérez", cantidad: 5, comentario: "El curso superó mis expectativas. Mariana explica cada concepto con ejemplos claros y prácticos. Me gustó que haya ejercicios guiados y que al final podamos armar un proyecto completo que se siente estructurar contenido." },
+            { nombre: "Laura Gómez", cantidad: 4, comentario: "Muy bueno para quienes empiezan desde cero. Aprendí mucho sobre la semántica de HTML y cómo organizar el contenido correctamente. Me hubiera gustado que haya más ejercicios de práctica por unidad, pero el material de lectura complementaria ayudó bastante." },
+            { nombre: "Martín Díaz", cantidad: 5, comentario: "Excelente curso. Lo que más me gustó es que no solo enseñan etiquetas, sino que Mariana explica cómo los navegadores leen el código y cómo optimizarlo. Ya me siento más seguro para continuar con CSS y JavaScript." },
+            { nombre: "Sofía Fernández", cantidad: 4, comentario: "Muy completo, aunque algunas explicaciones son algo densas, los ejemplos prácticos ayudan mucho. Recomiendo tomarlo con paciencia y seguir todos los ejercicios para aprovecharlo al máximo." },
+        ],
+        cursosSimilares: ["css", "javascript", "jquery"]
     },
     {
         cursoId: "css",
@@ -85,7 +96,17 @@ export const CURSOS_INFO = [
             { titulo: "Layouts con Flexbox y Grid", duracion: 5 },
             { titulo: "Colores, fuentes y estilos", duracion: 5 },
             { titulo: "Animaciones y proyecto final", duracion: 5 }
-        ]
+        ],
+        docente: {
+            nombre: "Federico Ramírez", descripcion: "Federico es desarrollador frontend con especialización en diseño de interfaces y experiencia de usuario. Durante más de 8 años ha enseñado CSS y herramientas de diseño a estudiantes y profesionales. Su enfoque es práctico: enseña cómo lograr resultados visuales atractivos y funcionales, explicando tanto la teoría como las mejores prácticas para cada proyecto.", valoracion: 4.7
+        },
+        opiniones: [
+            { nombre: "Valentina Torres", cantidad: 5, comentario: "El curso me permitió entender cómo organizar layouts complejos. Federico explica con claridad y los ejercicios prácticos ayudan mucho." },
+            { nombre: "Nicolás Ruiz", cantidad: 4, comentario: "Muy útil, aunque algunas unidades fueron un poco rápidas. Los ejemplos de Grid y Flexbox son excelentes." },
+            { nombre: "Camila Ortiz", cantidad: 5, comentario: " Aprendí a diseñar páginas modernas y responsivas. El material adicional que comparte el docente es muy valioso." },
+            { nombre: "Diego Blanco", cantidad: 4, comentario: "Recomendable para quienes ya saben HTML y quieren dominar CSS de manera práctica." },
+        ],
+        cursosSimilares: ["html", "javascript", "jquery"]
     },
     {
         cursoId: "javascript",
@@ -107,7 +128,17 @@ export const CURSOS_INFO = [
             { titulo: "DOM y eventos", duracion: 5 },
             { titulo: "Arrays y objetos", duracion: 5 },
             { titulo: "Proyecto práctico", duracion: 5 }
-        ]
+        ],
+        docente: {
+            nombre: "Camilo Méndez", descripcion: "Camilo es desarrollador web con más de 8 años de experiencia en frontend y JavaScript. Su estilo de enseñanza combina teoría con proyectos prácticos que permiten a los estudiantes aplicar inmediatamente lo aprendido. Además, comparte buenas prácticas de codificación y herramientas que facilitan el trabajo diario como desarrollador.", valoracion: 4.9
+        },
+        opiniones: [
+            { nombre: "Mariana Castillo", cantidad: 5, comentario: "Aprendí a programar mis primeras aplicaciones web. Los ejercicios prácticos hacen que cada concepto se entienda de verdad." },
+            { nombre: "Tomás Silva", cantidad: 4, comentario: "Muy bueno, aunque algunos ejemplos podrían ser un poco más desafiantes. Ideal para principiantes." },
+            { nombre: "Paula Navarro", cantidad: 5, comentario: "Excelente curso, el docente explica todo de manera clara y detallada. Recomiendo hacer todos los ejercicios." },
+            { nombre: "Lucas Herrera", cantidad: 4, comentario: "Se aprende mucho, los proyectos prácticos ayudan a consolidar los conocimientos." },
+        ],
+        cursosSimilares: ["html", "css", "jquery"]
     },
     {
         cursoId: "blockchain",
@@ -128,7 +159,17 @@ export const CURSOS_INFO = [
             { titulo: "Minería y nodos", duracion: 4 },
             { titulo: "Smart contracts", duracion: 4 },
             { titulo: "Aplicaciones prácticas", duracion: 4 }
-        ]
+        ],
+        docente: {
+            nombre: "Santiago Rojas", descripcion: "Santiago es ingeniero en sistemas especializado en blockchain y tecnologías descentralizadas. Ha trabajado en proyectos de criptomonedas y contratos inteligentes, y su enfoque docente se centra en explicar la teoría junto con ejercicios prácticos. Busca que los estudiantes comprendan tanto la lógica detrás de blockchain como su implementación real en proyectos digitales.", valoracion: 4.8
+        },
+        opiniones: [
+            { nombre: "Camila Herrera", cantidad: 5, comentario: "Curso muy completo y actualizado. Aprendí conceptos complejos de manera sencilla y práctica." },
+            { nombre: "Matías López", cantidad: 4, comentario: "La explicación es clara, y los ejemplos ayudan a entender cómo funciona blockchain en la vida real." },
+            { nombre: "Florencia Díaz", cantidad: 4, comentario: "Me gustó la parte de contratos inteligentes y cómo aplicarlos en proyectos propios. Muy recomendable." },
+            { nombre: "Joaquín Pérez", cantidad: 4, comentario: "Me gustó la parte de contratos inteligentes y cómo aplicarlos en proyectos propios. Muy recomendable." },
+        ],
+        cursosSimilares: ["javascript", "jquery", "java"]
     },
     {
         cursoId: "jquery",
@@ -148,7 +189,17 @@ export const CURSOS_INFO = [
             { titulo: "Selectores y métodos básicos", duracion: 4 },
             { titulo: "Eventos y animaciones", duracion: 4 },
             { titulo: "Proyecto práctico", duracion: 3 },
-        ]
+        ],
+        docente: {
+            nombre: "Laura Benítez", descripcion: "Laura es especialista en frontend y jQuery, con más de 5 años enseñando desarrollo web. Su metodología se centra en ejemplos prácticos que los estudiantes puedan aplicar inmediatamente. Además, destaca la importancia de escribir código limpio y mantenible, y comparte técnicas para optimizar el rendimiento de las páginas.", valoracion: 4.6
+        },
+        opiniones: [
+            { nombre: "Bruno Castillo", cantidad: 4, comentario: "Muy útil para agilizar el desarrollo web. Los ejercicios me ayudaron a entender mejor cómo interactuar con elementos de la página." },
+            { nombre: "Agustina Vega", cantidad: 5, comentario: "Aprendí a hacer animaciones y efectos en minutos. La explicación paso a paso facilita mucho el aprendizaje" },
+            { nombre: "Federico Santos", cantidad: 4, comentario: "El contenido es claro y práctico. Recomiendo complementar con ejercicios propios." },
+            { nombre: "Jimena López", cantidad: 4, comentario: "Ideal si ya sabes JavaScript y quieres trabajar con jQuery para proyectos web." },
+        ],
+        cursosSimilares: ["javascript", "html", "css"]
     },
     {
         cursoId: "java",
@@ -170,7 +221,17 @@ export const CURSOS_INFO = [
             { titulo: "Clases y objetos", duracion: 6 },
             { titulo: "Colecciones y arrays", duracion: 6 },
             { titulo: "Proyecto práctico", duracion: 6 }
-        ]
+        ],
+        docente: {
+            nombre: "Valeria Gómez", descripcion: "Valeria es desarrolladora Java con 10 años de experiencia en proyectos de software empresarial y educación tecnológica. Su metodología combina teoría, ejemplos prácticos y proyectos guiados, buscando que cada estudiante pueda aplicar lo aprendido en escenarios reales. Además, Valeria enfatiza buenas prácticas de programación y la importancia de la planificación antes de codificar.", valoracion: 4.7
+        },
+        opiniones: [
+            { nombre: "Nicolás Méndez", cantidad: 5, comentario: "Muy completo y didáctico. Los ejemplos y ejercicios me ayudaron a entender Java desde cero." },
+            { nombre: "Julieta Ruiz", cantidad: 4, comentario: "Excelente para principiantes. El ritmo del curso es bueno y los proyectos prácticos ayudan a consolidar conceptos." },
+            { nombre: "Sebastián Torres", cantidad: 5, comentario: "Aprendí mucho sobre programación orientada a objetos. Recomiendo seguir cada unidad con atención." },
+            { nombre: "Mariana Blanco", cantidad: 3, comentario: "Buena explicación de los conceptos, aunque algunas unidades son densas, los ejercicios ayudan mucho." },
+        ],
+        cursosSimilares: ["javascript", "blockchain", "html"]
     },
     {
         cursoId: "mysql",
@@ -191,7 +252,17 @@ export const CURSOS_INFO = [
             { titulo: "Procedimientos almacenados y triggers", duracion: 6 },
             { titulo: "Optimización y seguridad", duracion: 6 },
             { titulo: "Proyecto final: base de datos completa para aplicación", duracion: 6 }
-        ]
+        ],
+        docente: {
+            nombre: "Mariano Martinez", descripcion: "Mariano Martínez es administrador de bases de datos con más de 8 años de experiencia en MySQL y sistemas de gestión. Su enseñanza combina teoría, buenas prácticas y ejercicios prácticos para crear bases de datos profesionales y escalables.", valoracion: 4.8
+        },
+        opiniones: [
+            { nombre: "Diego Ramírez", cantidad: 5, comentario: "Aprendí a diseñar bases de datos reales y optimizadas para proyectos profesionales." },
+            { nombre: "Valentina López", cantidad: 5, comentario: "Muy completo, los ejercicios reflejan escenarios reales de trabajo." },
+            { nombre: "Lucas Fernández", cantidad: 4, comentario: "Intenso pero útil, la práctica con triggers y procedimientos es excelente." },
+            { nombre: "Mariana Torres", cantidad: 5, comentario: "Proyecto final muy desafiante, excelente para aprender MySQL avanzado." },
+        ],
+        cursosSimilares: ["nodejs", "php", "java"]
     },
     {
         cursoId: "nodejs",
@@ -211,7 +282,17 @@ export const CURSOS_INFO = [
             { titulo: "APIs REST y manejo de datos", duracion: 5 },
             { titulo: "Autenticación y seguridad", duracion: 5 },
             { titulo: "Proyecto final: aplicación backend completa", duracion: 5 }
-        ]
+        ],
+        docente: {
+            nombre: "Juan Salerno", descripcion: "Juan Salerno es desarrollador backend con más de 7 años de experiencia en Node.js y tecnologías relacionadas. Ha trabajado en startups y empresas internacionales, enfocándose en crear APIs eficientes y seguras. Su enseñanza combina teoría, buenas prácticas y desarrollo práctico de aplicaciones reales.", valoracion: 4.8
+        },
+        opiniones: [
+            { nombre: "Ana María López", cantidad: 5, comentario: "Muy práctico, con proyectos que realmente reflejan el entorno laboral." },
+            { nombre: "Diego Fernández", cantidad: 5, comentario: "Aprendí a crear APIs REST completas y seguras." },
+            { nombre: "Sergio González", cantidad: 4, comentario: " Exigente pero muy completo, excelente para desarrolladores avanzados." },
+            { nombre: "Julieta Torres", cantidad: 5, comentario: "Proyecto final desafiante y útil, lista para trabajar con Node.js profesionalmente." },
+        ],
+        cursosSimilares: ["react", "mysql", "javascript"]
     },
     {
         cursoId: "csharp",
@@ -232,7 +313,17 @@ export const CURSOS_INFO = [
             { titulo: "LINQ y manejo de datos", duracion: 7 },
             { titulo: "Interfaces gráficas con Windows Forms y WPF", duracion: 7 },
             { titulo: "Proyecto final: aplicación completa de escritorio o web", duracion: 7 }
-        ]
+        ],
+        docente: {
+            nombre: "Julián Ramírez", descripcion: "Julián Ramírez es ingeniero en software con más de 10 años de experiencia en desarrollo en C# y .NET.Ha trabajado en empresas internacionales y proyectos de gran escala.Su enfoque combina teoría profunda con prácticas reales, enseñando optimización, depuración y desarrollo profesional.", valoracion: 4.8
+        },
+        opiniones: [
+            { nombre: "Diego López", cantidad: 5, comentario: "Excelente curso, los ejercicios son muy prácticos y ayudan a entender C# a fondo." },
+            { nombre: "Carolina Pérez", cantidad: 5, comentario: "Muy completo, especialmente la sección de interfaces gráficas y LINQ." },
+            { nombre: "Fernando García", cantidad: 4, comentario: "Intenso, pero aprendí técnicas profesionales para aplicar en proyectos reales" },
+            { nombre: "Valentina Herrera", cantidad: 4, comentario: "Proyectos finales geniales, me siento lista para un entorno profesional" },
+        ],
+        cursosSimilares: ["java", "mysql", "nodejs"]
     },
     {
         cursoId: "php",
@@ -253,7 +344,17 @@ export const CURSOS_INFO = [
             { titulo: "Bases de datos y consultas SQL", duracion: 6 },
             { titulo: "MVC y seguridad en aplicaciones", duracion: 7 },
             { titulo: "Proyecto final: aplicación web completa", duracion: 7 }
-        ]
+        ],
+        docente: {
+            nombre: "Lucas Martínez", descripcion: "Lucas Martínez es desarrollador backend con más de 10 años de experiencia en PHP y sistemas web. Ha trabajado en grandes proyectos corporativos y startups. Su enseñanza combina teoría, buenas prácticas y desarrollo práctico de aplicaciones web completas.", valoracion: 4.7
+        },
+        opiniones: [
+            { nombre: "Laura Pérez", cantidad: 5, comentario: "Muy completo, aprendí a crear aplicaciones web reales." },
+            { nombre: "Martín Gómez", cantidad: 5, comentario: "Excelente explicación de seguridad y MVC, muy útil para proyectos profesionales." },
+            { nombre: "Ana Torres", cantidad: 4, comentario: "El proyecto final integra todo lo aprendido, muy recomendable." },
+            { nombre: "Nicolás Ramírez", cantidad: 5, comentario: "Intenso pero práctico, los ejercicios ayudan mucho a entender PHP moderno." },
+        ],
+        cursosSimilares: ["mysql", "html", "javascript"]
     },
     {
         cursoId: "python",
@@ -274,7 +375,17 @@ export const CURSOS_INFO = [
             { titulo: "Manejo avanzado de archivos y bases de datos", duracion: 6 },
             { titulo: "Automatización de tareas y scripts profesionales", duracion: 6 },
             { titulo: "Proyecto final: análisis de datos y mini aplicación web", duracion: 6 }
-        ]
+        ],
+        docente: {
+            nombre: "Laura Méndez", descripcion: "Laura Méndez es desarrolladora y data scientist con más de 12 años de experiencia en Python profesional. Ha trabajado en empresas tecnológicas, startups y proyectos de análisis de datos. Su enfoque de enseñanza combina teoría con práctica intensiva y la creación de proyectos reales, preparando al estudiante para desafíos profesionales. También comparte tips de optimización, buenas prácticas y depuración avanzada.", valoracion: 4.9
+        },
+        opiniones: [
+            { nombre: "Marcos Ruiz", cantidad: 5, comentario: "Un curso realmente completo. Laura explica cada concepto a profundidad y los proyectos son muy realistas. Aprendí a automatizar tareas y a usar librerías que antes no conocía." },
+            { nombre: "Lucía Fernández", cantidad: 5, comentario: "Los ejercicios son desafiantes y muy útiles para proyectos reales. Me encantó la sección de POO y cómo aplicar scripts profesionales." },
+            { nombre: "Carlos Gómez", cantidad: 5, comentario: "Muy recomendable para quienes buscan ir más allá de la programación básica en Python. Los proyectos finales ayudan a consolidar lo aprendido." },
+            { nombre: "Valentina López", cantidad: 4, comentario: "Excelente curso, completo y bien estructurado. Laura es una docente muy clara y los ejemplos son aplicables en la vida real profesional." },
+        ],
+        cursosSimilares: ["java", "csharp", "nodejs"]
     },
     {
         cursoId: "react",
@@ -295,7 +406,17 @@ export const CURSOS_INFO = [
             { titulo: "Hooks y manejo de efectos", duracion: 7 },
             { titulo: "Routing y manejo de estado global", duracion: 7 },
             { titulo: "royecto final: SPA completa", duracion: 7 }
-        ]
+        ],
+        docente: {
+            nombre: "Camila Torres", descripcion: " Camila Torres es desarrolladora frontend con más de 8 años de experiencia en React y frameworks modernos. Ha trabajado en startups y empresas tecnológicas, especializándose en interfaces reactivas, testing y optimización. Su enfoque se centra en enseñar de forma práctica, preparando a los estudiantes para proyectos profesionales reales.", valoracion: 4.9
+        },
+        opiniones: [
+            { nombre: "Nicolás López", cantidad: 5, comentario: "Excelente curso, los ejercicios son muy realistas y útiles." },
+            { nombre: "Mariana Silva", cantidad: 5, comentario: "Aprendí a crear aplicaciones web profesionales y escalables con React." },
+            { nombre: "Tomás Ramírez", cantidad: 4, comentario: "Requiere atención, pero el aprendizaje es muy sólido y aplicable." },
+            { nombre: "Laura Figueroa", cantidad: 5, comentario: "Los proyectos finales son geniales, ya puedo aplicar React profesionalmente." },
+        ],
+        cursosSimilares: ["nodejs", "html", "javascript"]
     },
 
 
