@@ -58,7 +58,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: start;
-  gap: 0.5em;
+  gap: 1em;
   margin-top: 2.5em;
 }
 
@@ -81,6 +81,21 @@ ul {
   margin: 0.5em 0 0 0.5em;
   color: red;
   font-weight: 900;
+}
+
+#eliminar-curso{
+  display: none;
+  font-weight: bolder;
+  background-color: red;
+  padding: 0.5em;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+#eliminar-curso:hover{
+  background-color: #fb6262;
+  color: black;
+  cursor: pointer;
 }
 
 #contenidos {
