@@ -15,9 +15,10 @@ export function agregarCursoAlCarrito(precioFinal, cursoInfo) {
         duracion: cursoInfo.duracion
       };
 
-      const yaInscripto = usuarioLogueado.cursosEnCarrito.find(curso => curso.nombre === cursoCompleto.nombre);
+      const yaEnCarrito = usuarioLogueado.cursosEnCarrito.find(curso => curso.nombre === cursoCompleto.nombre);
+      const yaEnInscriptos = (usuarioLogueado.cursosInscriptos || []).find(curso => curso.nombre === cursoCompleto.nombre);
 
-      if (!yaInscripto) {
+      if (!yaEnCarrito && !yaEnInscriptos) {
         usuarioLogueado.cursosEnCarrito.push(cursoCompleto);
         guardarModificacionLocalStorageUsuarioLogueado(usuarioLogueado);
         const todosLosUsuarios = localStorageUsuarios();
@@ -31,6 +32,9 @@ export function agregarCursoAlCarrito(precioFinal, cursoInfo) {
           alert("Error: No se pudo guardar la inscripción. Intente iniciar sesión nuevamente.");
           return false;
         }
+      } else if (yaEnInscriptos) {
+        alert("Ya estás inscripto en este curso.");
+        return false;
       } else {
         alert("Ya has agregado este curso al carrito.");
         return false;

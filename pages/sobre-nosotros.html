@@ -11,54 +11,16 @@
 </head>
 
 <body>
-    <header id="inicio">
-        <div class="header-div__logo">
-            <img src="../IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo" />
-        </div>
-        <div class="buscador-links">
-            <details>
-                <summary>Buscar curso</summary>
-                <ul>
-                    <li><a href="./curso-html.html">HTML5</a></li>
-                    <li><a href="./curso-css.html">CSS3</a></li>
-                    <li><a href="./curso-js.html">JavaScript</a></li>
-                    <li><a href="./curso-blockchain.html">Blockchain</a></li>
-                    <li><a href="./curso-jquery.html">JQuery</a></li>
-                    <li><a href="./curso-java.html">Java</a></li>
-                    <li><a href="./curso-mysql.html">MySQL</a></li>
-                    <li><a href="./curso-csharp.html">C#</a></li>
-                    <li><a href="./curso-php.html">PHP</a></li>
-                    <li><a href="./curso-python.html">Python</a></li>
-                    <li><a href="./curso-node.html">Node.js</a></li>
-                    <li><a href="./curso-react.html">React</a></li>
-                </ul>
-            </details>
-        </div>
-        <div class="header-div__carrito">
-            <a href="../pages/login.html"><button id="boton-login">Login</button></a>
-            <div id="carrito-y-numero">
-                <div id="header-div__cantidad_items">
-                    <p>0</p>
-                </div>
-                <a href="../pages/login.html"><button id="button-carrito"><img src="../IMG/Icono Carrito de Compra.png"
-                            alt="Carrito de Compra" id="carrito" /></button></a>
+    <header id="inicio"></header>
+        <nav class="navegation">
+            <div>
+                <ul class="navegation__items"></ul>
             </div>
-        </div>
-    </header>
+        </nav>
 
 
 
     <main>
-        <nav class="navegation">
-            <div>
-                <ul class="navegation__items">
-                    <li><a href="../index.html">INICIO</a></li>
-                    <li><a href="../pages/calendario.html">CALENDARIO</a></li>
-                    <li><a href="../pages/giftcard.html">GIFT CARD</a></li>
-                    <li><a href="../pages/contacto.html">CONTACTO</a></li>
-            </div>
-        </nav>
-
         <div class="encabezado-principal">
             <div class="encabezado-principal-titulos">
                 <h1>Aprende tecnología construyendo</h1>
@@ -215,63 +177,12 @@
 
 
 
-    <footer>
-        <div class="footer-recuadros">
-            <h3>Datos del Grupo</h3>
-            <ul id="footer-datos-grupo">
-                <li>Facundo Nicolás Olivieri (DNI: 42.290.776)</li>
-                <li>Agustin Bejarano (DNI: 41.173.682)</li>
-                <li>Nicolas Felipe Alvarez (DNI: 43.321.421)</li>
-                <li>Franco David Pereyra (DNI: 44.181.869)</li>
-                <li>Luis Omar Spataro (DNI: 36.494.378)</li>
-            </ul>
-        </div>
-
-        <div class="footer-recuadros">
-            <div class="footer-recuadros-info">
-
-                <div class="footer-recuadros-info-datos">
-                    <h3>ACERCA DE</h3>
-                    <ul>
-                        <li><a href="../pages/sobre-nosotros.html">Sobre Nosotros</a></li>
-                        <li><a href="../pages/preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-recuadros-info-datos">
-                    <h3>CURSOS</h3>
-                    <ul>
-                        <li>Html 5</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>Blockchain</li>
-                        <li>JQuery</li>
-                        <li>Java</li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="footer-recuadros">
-            <h3>Redes Sociales</h3>
-            <div class="footer-redes">
-                <a href="https://www.facebook.com/" target="_blank"><img src="../IMG/Logo Facebook.png" alt="Facebook"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.instagram.com" target="_blank"><img src="../IMG/Logo Instagram.jpeg" alt="Instagram"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.linkedin.com" target="_blank"><img src="../IMG/Logo LinkedIn.png" alt="LinkedIn"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.x.com" target="_blank"><img src="../IMG/Logo Xpng.png" alt="X"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.youtube.com" target="_blank"><img src="../IMG/Logo YT.png" alt="YouTube"
-                        class="footer-redes-logos"></a>
-            </div>
-        </div>
+    <footer id="footer">
+        <ul id="footer-datos-grupo"></ul>
+        <div class="footer-recuadros-info" id="footer-recuadros-info"></div>
+        <div class="footer-recuadros" id="iconos-redes"></div>
     </footer>
-
-    <a href="#inicio"><i id="flecha-vuelta-inicio">&#x1F53C;</i></a>
-    <p id="footer-nota-legal">© Edu Courses. Todos los derechos reservados.</p>
+    <script src="../JS/sobre-nosotros.js" type="module"></script>
 </body>
 
 </html>
