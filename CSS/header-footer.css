@@ -206,6 +206,12 @@ header {
   list-style: none;
   gap: 10px;
 }
+#valoracion-curso-carrito{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
 .boton-eliminar-curso-carrito{
   height: 3em;
   padding: 0 1em;

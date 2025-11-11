@@ -139,9 +139,10 @@ function modalCursosObtenidosEnCarrito(contador , contenedor){
                                                         </div>
                                                         <div class = "recuadro-curso-sidebar segundo-renglon">
                                                             <ul>
-                                                                <li id="precio-curso-carrito">Precio: ${curso.precio}</li>
-                                                                <li>Cantidad: (Cantidad)</li>
-                                                                <li>Modalidad: (Modalidad)</li>
+                                                                <li id="valoracion-curso-carrito">Valoracion:<img src="../IMG/Cursos/estrella.png" alt="" id> ${curso.valoracion}</li>
+                                                                <li id="precio-curso-carrito">Precio: $ ${curso.precio}</li>
+                                                                <li>Cantidad: 1</li>
+                                                                <li>Modalidad: Virtual</li>
                                                             </ul>
                                                             <button class="boton-eliminar-curso-carrito" id="boton-eliminar${i+1}">Eliminar Curso</button>
                                                         </div>
@@ -149,7 +150,7 @@ function modalCursosObtenidosEnCarrito(contador , contenedor){
                                 sideBarCursosEnCarrito.innerHTML += templateCursos; 
                             }
 
-                            //Agregarle CLASE
+                            //Si no hay cursos
                             if (obtenerUsuarioLogueado().cursosEnCarrito.length === 0){
                                 const TITULO_NO_HAY_CURSOS = document.createElement('h2');
                                 TITULO_NO_HAY_CURSOS.textContent = "Todavía no se obtuvieron cursos";
@@ -166,7 +167,8 @@ function modalCursosObtenidosEnCarrito(contador , contenedor){
                         //Anexos
                         sideBarCursosEnCarrito.appendChild(boton_cerrar_sideBar);
                         contenedor.appendChild(sideBarCursosEnCarrito);
-                        //Añadir Evento de eliminar curso del carrito aca
+
+                        
                         eliminarCursoDelSideBar(cursosEnCarritoDelUsuario, contenedor);
                 
         
