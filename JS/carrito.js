@@ -1,17 +1,12 @@
-import { NAV, CURSOS_INFO, INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE ,FOOTER_LINKS_CURSOS, FOOTER_REDES} from "../constants/constants.js";
-import { Header } from "./header.js";
-import { Navbar } from "./navbar.js";
+import { INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE ,FOOTER_LINKS_CURSOS, FOOTER_REDES} from "../constants/constants.js";
 import { Footer } from "./footer.js";
 import { obtenerUsuarioLogueado } from "./funciones-generales.js";
 
-const header = new Header();
-const barraNav = new Navbar();
 const footer = new Footer();
 const CURSOS = obtenerUsuarioLogueado().cursosEnCarrito;
 
 
-header.mostrarHeader(CURSOS_INFO);
-barraNav.mostrarItems(NAV);
+
 
 cursosEnCarrito(CURSOS);
 footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS,FOOTER_REDES);
