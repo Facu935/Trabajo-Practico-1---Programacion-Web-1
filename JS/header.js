@@ -220,7 +220,7 @@ function mostrarCarrito(contenedor){
         const BOTON_CARRITO = document.createElement("button");
         const IMAGEN_CARRITO = document.createElement("img");
         if (validarUsuarioConectadoParaNav()){
-            LINK_CARRITO.href = "./pages/carrito.html";
+            LINK_CARRITO.href = "../pages/carrito.html";
         } else{
             LINK_CARRITO.href = "./pages/login.html";
         }
