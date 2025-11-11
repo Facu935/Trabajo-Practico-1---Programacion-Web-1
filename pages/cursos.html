@@ -23,40 +23,31 @@
         <section class="contenedor-principal">
             <div id="imagen-texto">
                 <div>
-                    <img src="../IMG/Cursos/blockchain.png" alt="Logo blockchain" id="imagen">
+                    <img id="imagen">
                 </div>
                 <div>
-                    <h1>Blockchain</h1>
+                    <h1 id="titulo-curso"></h1>
                     <div id="valoracion-curso">
                         <img src="../IMG/Cursos/estrella.png" alt="puntuacion del curso" title="Valoración del curso">
-                        <p>4.7</p>
+                        <p id="valoracion"></p>
                         <img src="../IMG/Cursos/users.png" alt="Cantidad de estudiantes"
                             title="Cantidad de estudiantes">
-                        <p>1.7k</p>
+                        <p id="cantidadEstudiantes"></p>
                     </div>
-                    <p>
-                        Este curso ofrece una visión completa de la tecnología blockchain, desde los conceptos básicos
-                        hasta aplicaciones prácticas. Aprenderás cómo funcionan las criptomonedas, qué es la minería,
-                        cómo operan los nodos y cómo crear contratos inteligentes.
-                        Se incluyen ejemplos reales y casos de uso de empresas y startups. Los estudiantes desarrollarán
-                        un entendimiento profundo de cómo blockchain cambia la forma en que se manejan los datos y las
-                        transacciones digitales, y cómo se puede aplicar en distintos sectores.
-                    </p>
+                    <p id="descripcion"></p>
                     <div id="listas"></div>
                     <ul>
                         <li>Requisitos previos:
-                            <ul>
-                                <li>Acceso a internet</li>
-                                <li>Conocimiento básico de programación</li>
-                            </ul>
+                            <ul id="listaRequisitos"></ul>
                         </li>
-                        <li>Duración: 20 hs</li>
+                        <li id="duracion"></li>
                     </ul>
                     <div id="boton">
-                        <button class="boton-inscribirse" data-curso="blockchain">INSCRIBIRME</button>
-                        <p>$30.000</p>
+                        <button class="boton-inscribirse" id="btn-inscribirse-principal">INSCRIBIRME</button>
+                        <p id="precio"></p>
+                        <button id="eliminar-curso">ELIMINAR DEL CARRITO</button>
                     </div>
-                    <p class="cupos">7 CUPOS DISPONIBLES</p>
+                    <p class="cupos"></p>
                 </div>
             </div>
         </section>
@@ -65,126 +56,7 @@
                 <h2>CONTENIDOS</h2>
             </div>
             <div id="unidades">
-                <div id="unidad-uno">
-                    <div class="bloque-unidad" data-unidad="uno">
-                        <h4>UNIDAD 1: ¿Qué es blockchain?</h4>
-                        <img src="../IMG/Cursos/menos.png" alt="ver menos">
-                    </div>
-                    <div class="clases" data-clases="uno">
-                        <div class="clase">
-                            <img src="../IMG/Cursos/play.png" alt="reproducir clase">
-                            <p>4 hs</p>
-                        </div>
-                        <div class="clase">
-                            <img src="../IMG/Cursos/pdf.png" alt="leer teoria">
-                            <p>Teoría</p>
-                        </div>
-                        <div class="clase">
-                            <img src="../IMG/Cursos/ejercicios.png" alt="hacer ejercicios">
-                            <p>Ejercicios</p>
-                        </div>
-                        <div class="clase">
-                            <img src="../IMG/Cursos/test.png" alt="exámen de la unidad">
-                            <p>Examen</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="unidad-dos">
-                    <div class="bloque-unidad" data-unidad="dos">
-                        <h4>UNIDAD 2: Criptomonedas y wallets</h4>
-                        <img src="../IMG/Cursos/mas.png" alt="ver más">
-                    </div>
-                    <div class="clases" data-clases="dos">
-                        <div class="clase">
-                            <img src="../IMG/Cursos/play.png" alt="reproducir clase">
-                            <p>4 hs</p>
-                        </div>
-                        <div class="clase">
-                            <img src="../IMG/Cursos/pdf.png" alt="leer teoria">
-                            <p>Teoría</p>
-                        </div>
-                        <div class="clase">
-                            <img src="../IMG/Cursos/ejercicios.png" alt="hacer ejercicios">
-                            <p>Ejercicios</p>
-                        </div>
-                        <div class="clase">
-                            <img src="../IMG/Cursos/test.png" alt="exámen de la unidad">
-                            <p>Examen</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="unidad-tres">
-                    <div class="bloque-unidad" data-unidad="tres">
-                        <h4>UNIDAD 3: Minería y nodos</h4>
-                        <img src="../IMG/Cursos/mas.png" alt="ver más">
-                    </div>
-                    <div class="clases" data-clases="tres">
-                        <div class="clase">
-                            <img src="../IMG/Cursos/play.png" alt="reproducir clase">
-                            <p>4 hs</p>
-                        </div>
-                        <div class="clase">
-                            <img src="../IMG/Cursos/pdf.png" alt="leer teoria">
-                            <p>Teoría</p>
-                        </div>
-                        <div class="clase">
-                            <img src="../IMG/Cursos/ejercicios.png" alt="hacer ejercicios">
-                            <p>Ejercicios</p>
-                        </div>
-                        <div class="clase">
-                            <img src="../IMG/Cursos/test.png" alt="exámen de la unidad">
-                            <p>Examen</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="unidad-cuatro">
-                    <div class="bloque-unidad" data-unidad="cuatro">
-                        <h4>UNIDAD 4: Smart contracts</h4>
-                        <img src="../IMG/Cursos/mas.png" alt="ver más">
-                    </div>
-                    <div class="clases"  data-clases="cuatro">
-                        <div class="clase">
-                            <img src="../IMG/Cursos/play.png" alt="reproducir clase">
-                            <p>4 hs</p>
-                        </div>
-                        <div class="clase">
-                            <img src="../IMG/Cursos/pdf.png" alt="leer teoria">
-                            <p>Teoría</p>
-                        </div>
-                        <div class="clase">
-                            <img src="../IMG/Cursos/ejercicios.png" alt="hacer ejercicios">
-                            <p>Ejercicios</p>
-                        </div>
-                        <div class="clase">
-                            <img src="../IMG/Cursos/test.png" alt="exámen de la unidad">
-                            <p>Examen</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="unidad-cinco">
-                    <div class="bloque-unidad" data-unidad="cinco">
-                        <h4>UNIDAD 5: Aplicaciones prácticas</h4>
-                        <img src="../IMG/Cursos/mas.png" alt="ver más">
-                    </div>
-                    <div class="clases"  data-clases="cinco">
-                        <div class="clase">
-                            <img src="../IMG/Cursos/play.png" alt="reproducir clase">
-                            <p>4 hs</p>
-                        </div>
-                        <div class="clase">
-                            <img src="../IMG/Cursos/pdf.png" alt="leer teoria">
-                            <p>Teoría</p>
-                        </div>
-                        <div class="clase">
-                            <img src="../IMG/Cursos/ejercicios.png" alt="hacer ejercicios">
-                            <p>Ejercicios</p>
-                        </div>
-                        <div class="clase">
-                            <img src="../IMG/Cursos/test.png" alt="exámen de la unidad">
-                            <p>Examen</p>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </section>
         <section class="contenedor-principal" id="contenedor-docente">
