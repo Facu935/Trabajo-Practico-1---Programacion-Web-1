@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
     <link rel="stylesheet" href="../CSS/header-footer.css">
     <title>Edu Courses | Personalización de Gift Card</title>
 </head>
-
 <body>
     <header id="inicio">
         <div class="header-div__logo">
@@ -58,20 +56,17 @@
             <div class="giftcard-preview-area">
                 <div class="giftcard-box" id="preview-box">
                     <span class="preview-monto" id="monto-top-right">$0000.-</span>
-
                     <p class="preview-text-label">GIFT CARD para</p>
                     <h3 class="preview-destinatario" id="destinatario-name">Destinatario</h3>
-
                     <span class="preview-monto" id="monto-bottom-left" style="display: none;">$0000.-</span>
                 </div>
                 <p class="preview-label">VISTA PREVIA DE RESULTADO DE PERSONALIZACIÓN</p>
             </div>
 
-            <form class="giftcard-form" action="./confirmacion-giftcard.html" method="post">
-
+            <!-- FORMULARIO -->
+            <form id="formGiftcard" class="giftcard-form">
                 <label for="destinatario">Nombre Destinatario</label>
-                <input type="text" id="destinatario" name="nombre_destinatario" required
-                    placeholder="Nombre Destinatario" />
+                <input type="text" id="destinatario" name="nombre_destinatario" required placeholder="Nombre Destinatario" />
 
                 <div class="form-group">
                     <label>Color</label>
@@ -93,67 +88,15 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label>Tamaño de fuente</label>
-                    <div class="size-options">
-                        <input type="radio" id="size-20" name="font_size" value="20px">
-                        <label for="size-20">20px</label>
-
-                        <input type="radio" id="size-28" name="font_size" value="28px" checked>
-                        <label for="size-28">28px</label>
-
-                        <input type="radio" id="size-32" name="font_size" value="32px">
-                        <label for="size-32">32px</label>
-
-                        <input type="radio" id="size-48" name="font_size" value="48px">
-                        <label for="size-48">48px</label>
-
-                        <input type="radio" id="size-60" name="font_size" value="60px">
-                        <label for="size-60">60px</label>
-                    </div>
-                </div>
-
                 <label for="monto">Monto $</label>
                 <input type="number" id="monto" name="monto_giftcard" placeholder="Ej: 50000" min="1000" required />
 
-                <div class="form-group">
-                    <label>Ubicación</label>
-                    <div class="location-options">
-                        <input type="radio" id="loc-top-right" name="monto_location" value="top_right" checked>
-                        <label for="loc-top-right" class="loc-label">Top Der.</label>
-
-                        <input type="radio" id="loc-bottom-left" name="monto_location" value="bottom_left">
-                        <label for="loc-bottom-left" class="loc-label">Bottom Izq.</label>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Fondo</label>
-                    <div class="background-options">
-                        <input type="radio" id="bg-1" name="fondo" value="bg-blue" checked>
-                        <label for="bg-1" class="bg-swatch"></label>
-
-                        <input type="radio" id="bg-2" name="fondo" value="bg-gray">
-                        <label for="bg-2" class="bg-swatch"></label>
-
-                        <input type="radio" id="bg-3" name="fondo" value="bg-green">
-                        <label for="bg-3" class="bg-swatch"></label>
-
-                        <input type="radio" id="bg-4" name="fondo" value="bg-pattern-1">
-                        <label for="bg-4" class="bg-swatch"></label>
-
-                        <input type="radio" id="bg-5" name="fondo" value="bg-pattern-2">
-                        <label for="bg-5" class="bg-swatch"></label>
-                    </div>
-                </div>
-
                 <button type="submit" class="button-confirmar">CONFIRMAR</button>
-
             </form>
 
             <div class="overlay">
                 <div class="popup">
-                    El pedido se realizó con Exito!
+                    El pedido se realizó con Éxito!
                     <br><br>
                     <a href="../pages/confirmacion-giftcard.html" class="button-submit">OK</a>
                 </div>
@@ -175,7 +118,6 @@
 
         <div class="footer-recuadros">
             <div class="footer-recuadros-info">
-
                 <div class="footer-recuadros-info-datos">
                     <h3>ACERCA DE</h3>
                     <ul>
@@ -183,40 +125,34 @@
                         <li><a href="../pages/preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-recuadros-info-datos">
                     <h3>CURSOS DESTACADOS</h3>
                     <ul>
-                    <a href="../pages/curso-html.html"><li>Html 5</li></a>
-                    <a href="../pages/curso-css.html"><li>CSS</li></a>
-                    <a href="../pages/curso-js.html"><li>JavaScript</li></a>   
-                    <a href="../pages/curso-blockchain.html"><li>Blockchain</li></a>    
-                    <a href="../pages/curso-jquery.html"><li>JQuery</li></a>    
-                    <a href="../pages/curso-java.html"><li>Java</li></a>
+                        <a href="../pages/curso-html.html"><li>Html 5</li></a>
+                        <a href="../pages/curso-css.html"><li>CSS</li></a>
+                        <a href="../pages/curso-js.html"><li>JavaScript</li></a>
+                        <a href="../pages/curso-blockchain.html"><li>Blockchain</li></a>
+                        <a href="../pages/curso-jquery.html"><li>JQuery</li></a>
+                        <a href="../pages/curso-java.html"><li>Java</li></a>
+                    </ul>
                 </div>
-
             </div>
         </div>
 
         <div class="footer-recuadros">
             <h3>Redes Sociales</h3>
             <div class="footer-redes">
-                <a href="https://www.facebook.com/" target="_blank"><img src="../IMG/Logo Facebook.png" alt="Facebook"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.instagram.com" target="_blank"><img src="../IMG/Logo Instagram.jpeg" alt="Instagram"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.linkedin.com" target="_blank"><img src="../IMG/Logo LinkedIn.png" alt="LinkedIn"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.x.com" target="_blank"><img src="../IMG/Logo Xpng.png" alt="X"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.youtube.com" target="_blank"><img src="../IMG/Logo YT.png" alt="YouTube"
-                        class="footer-redes-logos"></a>
+                <a href="https://www.facebook.com/" target="_blank"><img src="../IMG/Logo Facebook.png" alt="Facebook" class="footer-redes-logos"></a>
+                <a href="http://www.instagram.com" target="_blank"><img src="../IMG/Logo Instagram.jpeg" alt="Instagram" class="footer-redes-logos"></a>
+                <a href="http://www.linkedin.com" target="_blank"><img src="../IMG/Logo LinkedIn.png" alt="LinkedIn" class="footer-redes-logos"></a>
+                <a href="http://www.x.com" target="_blank"><img src="../IMG/Logo Xpng.png" alt="X" class="footer-redes-logos"></a>
+                <a href="http://www.youtube.com" target="_blank"><img src="../IMG/Logo YT.png" alt="YouTube" class="footer-redes-logos"></a>
             </div>
         </div>
     </footer>
 
     <a href="#inicio"><i id="flecha-vuelta-inicio">&#x1F53C;</i></a>
     <p id="footer-nota-legal">© Edu Courses. Todos los derechos reservados.</p>
+    <script type="module" src="../JS/giftcard.js"></script>
 </body>
-
 </html>
