@@ -277,7 +277,7 @@ function mostrarModal(cursoSeleccionado) {
 }
 
 botonAceptar.addEventListener("click", () => {
-    window.location.href = `../pages/inscripcion.html?curso=${encodeURIComponent(cursoSeleccionado.nombre)}&precio=${cursoSeleccionado.precio}`;
+    window.location.href = `../pages/inscripcion.html?curso=${encodeURIComponent(cursoSeleccionado.nombre)}&precio=${cursoSeleccionado.precio}&img=${encodeURIComponent(cursoSeleccionado.img)}&valoracion=${cursoSeleccionado.valoracion}&duracion=${cursoSeleccionado.duracion}&ver=${cursoSeleccionado.link}`;
 })
 
 botonCancelar.addEventListener("click", () => {

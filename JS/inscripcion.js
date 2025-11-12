@@ -18,7 +18,9 @@ const cursoInfo = {
   precio: urlParams.get('precio') || 0,
   img: urlParams.get('img') || "Sin imagen",
   valoracion: urlParams.get('valoracion') || 0,
-  duracion: urlParams.get('duracion') || "Sin duracion"
+  duracion: urlParams.get('duracion') || "Sin duracion",
+  link: urlParams.get('ver') || "Sin link"
+  
 };
 
 gestionarTipoInscripcion("#contenido-principal", cursoInfo);
