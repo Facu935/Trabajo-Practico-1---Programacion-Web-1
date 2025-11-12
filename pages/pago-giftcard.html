@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="../IMG/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="../CSS/pago.css">
-    <link rel="stylesheet" href="../CSS/header-footer.css">
+    <link rel="stylesheet" href="../CSS/pago-giftcard.css" />
+    
+    <link rel="stylesheet" href="../CSS/header-footer.css" />
     <title>Edu Courses | Pago</title>
-
 </head>
 
 <body>
@@ -20,19 +20,18 @@
             <details>
                 <summary>Buscar curso</summary>
                 <ul>
-                    <li><a href="../pages/zz02-curso-html-sesion-iniciada.html">HTML5</a></li>
-                    <li><a href="../pages/zz02-curso-css-sesion-iniciada.html">CSS3</a></li>
-                    <li><a href="../pages/zz02-curso-js-sesion-iniciada.html">JavaScript</a></li>
-                    <li><a href="../pages/zz02-curso-blockchain-sesion-iniciada.html">Blockchain</a></li>
-                    <li><a href="../pages/zz02-curso-jquery-sesion-iniciada.html">JQuery</a></li>
-                    <li><a href="../pages/zz02-curso-java-sesion-iniciada.html">Java</a></li>
-                    <li><a href="./zz02-curso-mysql-sesion-iniciada.html">MySQL</a></li>
-                    <li><a href="./zz02-curso-csharp-sesion-iniciada.html">C#</a></li>
-                    <li><a href="./zz02-curso-php-sesion-iniciada.html">PHP</a></li>
-                    <li><a href="./zz02-curso-python-sesion-iniciada.html">Python</a></li>
-                    <li><a href="./zz02-curso-node-sesion-iniciada.html">Node.js</a></li>
-                    <li><a href="./zz02-curso-react-sesion-iniciada.html">React</a></li>
-                </ul>
+                    <li><a href="./curso-html.html">HTML5</a></li>
+                    <li><a href="./curso-css.html">CSS3</a></li>
+                    <li><a href="./curso-js.html">JavaScript</a></li>
+                    <li><a href="./curso-blockchain.html">Blockchain</a></li>
+                    <li><a href="./curso-jquery.html">JQuery</a></li>
+                    <li><a href="./curso-java.html">Java</a></li>
+                    <li><a href="./curso-mysql.html">MySQL</a></li>
+                    <li><a href="./curso-csharp.html">C#</a></li>
+                    <li><a href="./curso-php.html">PHP</a></li>
+                    <li><a href="./curso-python.html">Python</a></li>
+                    <li><a href="./curso-node.html">Node.js</a></li>
+                    <li><a href="./curso-react.html">React</a></li>
                 </ul>
             </details>
         </div>
@@ -47,6 +46,7 @@
             </div>
         </div>
     </header>
+
     <nav class="navegation">
         <div>
             <ul class="navegation__items">
@@ -57,35 +57,42 @@
             </ul>
         </div>
     </nav>
+
     <main>
         <div class="pago">
             <div class="pago-metodo">
                 <h2>PAGO</h2>
-                <form action="../pages/confirmacion-pago-giftcard.html" method="get">
+                <form action="../pages/confirmacion-pago-giftcard.html" method="get" id="form-pago">
                     <div id="tarjeta">
-                        <label for="numero-tarjeta">Numero de Tarjeta <span id="asterisco">*</span></label>
-                        <input type="number" id="numero-tarjeta" name="numero-tarjeta"
-                            placeholder="Ej: 9999 9999 9999 9999" maxlength="16" required>
+                        <label for="numero-tarjeta">Número de Tarjeta <span id="asterisco">*</span></label>
+                        <input type="text" id="numero-tarjeta" name="numero-tarjeta" inputmode="numeric" maxlength="19"
+                            placeholder="Ej: 1234 5678 9012 3456" required />
                     </div>
-
 
                     <div id="vencimiento-seguridad">
                         <label for="vencimiento">Fecha de Vencimiento <span id="asterisco">*</span></label>
-                        <input type="date" id="vencimiento" name="vencimiento" required>
-                        <label for="codigo-seguridad">Codigo de Seguridad <span id="asterisco">*</span></label>
-                        <input type="number" maxlength="3" placeholder="CVV" required>
+                        <input type="text" id="vencimiento" name="vencimiento" inputmode="numeric" maxlength="8"
+                            placeholder="DD/MM/AA" required />
+
+                        <label for="cvv">Código de Seguridad <span id="asterisco">*</span></label>
+                        <input type="text" id="cvv" name="cvv" inputmode="numeric" maxlength="3" placeholder="CVV"
+                            required />
                     </div>
+
                     <div id="nombre-apellido-titular">
                         <label for="titular">Nombre y Apellido del titular <span id="asterisco">*</span></label>
-                        <input type="text" id="titular" name="titular" placeholder="Nicolás Gomez" required>
+                        <input type="text" id="titular" name="titular" placeholder="Nicolás Gomez"
+                            pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+" title="Solo se permiten letras y espacios" required />
                     </div>
+
                     <button type="submit">Confirmar Compra</button>
                 </form>
+
                 <div class="boton-cancelar">
                     <a href="../index.html"><button id="cancelar">Cancelar</button></a>
                 </div>
-
             </div>
+
             <div class="pago-resumen">
                 <h3>Resumen de Compra</h3>
                 <div class="pago-resumen-datos">
@@ -99,11 +106,8 @@
                         <p>$ 50.000</p>
                     </div>
                 </div>
-
-
             </div>
         </div>
-
     </main>
 
     <footer>
@@ -117,65 +121,12 @@
                 <li>Luis Omar Spataro (DNI: 36.494.378)</li>
             </ul>
         </div>
-
-        <div class="footer-recuadros">
-            <div class="footer-recuadros-info">
-
-                <div class="footer-recuadros-info-datos">
-                    <h3>ACERCA DE</h3>
-                    <ul>
-                        <li><a href="../pages/sobre-nosotros.html">Sobre Nosotros</a></li>
-                        <li><a href="../pages/preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-recuadros-info-datos">
-                    <h3>CURSOS</h3>
-                    <ul>
-                        <a href="../pages/zz02-curso-html-sesion-iniciada.html">
-                            <li>Html 5</li>
-                        </a>
-                        <a href="../pages/zz02-curso-css-sesion-iniciada.html">
-                            <li>CSS</li>
-                        </a>
-                        <a href="../pages/zz02-curso-js-sesion-iniciada.html">
-                            <li>JavaScript</li>
-                        </a>
-                        <a href="../pages/zz02-curso-blockchain-sesion-iniciada.html">
-                            <li>Blockchain</li>
-                        </a>
-                        <a href="../pages/zz02-curso-jquery-sesion-iniciada.html">
-                            <li>JQuery</li>
-                        </a>
-                        <a href="../pages/zz02-curso-java-sesion-iniciada.html">
-                            <li>Java</li>
-                        </a>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="footer-recuadros">
-            <h3>Redes Sociales</h3>
-            <div class="footer-redes">
-                <a href="https://www.facebook.com/" target="_blank"><img src="../IMG/Logo Facebook.png" alt="Facebook"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.instagram.com" target="_blank"><img src="../IMG/Logo Instagram.jpeg" alt="Instagram"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.linkedin.com" target="_blank"><img src="../IMG/Logo LinkedIn.png" alt="LinkedIn"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.x.com" target="_blank"><img src="../IMG/Logo Xpng.png" alt="X"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.youtube.com" target="_blank"><img src="../IMG/Logo YT.png" alt="YouTube"
-                        class="footer-redes-logos"></a>
-            </div>
-        </div>
     </footer>
 
     <a href="#inicio"><i id="flecha-vuelta-inicio">&#x1F53C;</i></a>
     <p id="footer-nota-legal">© Edu Courses. Todos los derechos reservados.</p>
 
+    <script src="../JS/pagoGiftcard.js"></script>
 </body>
 
 </html>
