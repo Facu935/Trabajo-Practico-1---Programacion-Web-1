@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../CSS/header-footer.css">
     <link rel="shortcut icon" href="../IMG/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="../CSS/calendario.css"> 
-    <link rel="stylesheet" href="../CSS/header-footer.css">
     <title>Edu Courses | Calendario de Cursos</title>
 </head>
 
@@ -65,7 +64,9 @@
         <section class="calendar-wrapper">
             
             <div class="calendar-nav-header">
-                <h3 class="current-month-label">Septiembre / Octubre</h3> 
+                <button id="prev-btn" class="nav-btn">&#10094;</button> 
+                <h3 class="current-month-label" id="current-period-label"></h3> 
+                <button id="next-btn" class="nav-btn">&#10095;</button> 
             </div>
 
             <div class="calendar-grid weekdays">
@@ -78,63 +79,7 @@
                 <div class="day-name">SÁB</div>
             </div>
 
-            <div class="calendar-grid dates">
-                
-                <div class="day-cell">
-                    <span class="date-number">1 de sept</span>
-                </div>
-                <div class="day-cell"><span class="date-number">2</span></div>
-                <div class="day-cell"><span class="date-number">3</span></div>
-                <div class="day-cell"><span class="date-number">4</span></div>
-                <div class="day-cell"><span class="date-number">5</span></div>
-                <div class="day-cell"><span class="date-number">6</span></div>
-                <div class="day-cell"><span class="date-number">7</span></div>
-                
-                <div class="day-cell"><span class="date-number">8</span></div>
-                <div class="day-cell"><span class="date-number">9</span></div>
-                <div class="day-cell"><span class="date-number">10</span></div>
-                <div class="day-cell"><span class="date-number">11</span></div>
-                <div class="day-cell"><span class="date-number">12</span></div>
-                <div class="day-cell"><span class="date-number">13</span></div>
-                <div class="day-cell"><span class="date-number">14</span></div>
-
-                <div class="day-cell"><span class="date-number">15</span></div>
-                <div class="day-cell"><span class="date-number">16</span></div>
-                <div class="day-cell"><span class="date-number">17</span></div>
-                <div class="day-cell"><span class="date-number">18</span></div>
-                <div class="day-cell has-event">
-                    <span class="date-number">19</span>
-                    <a href="./curso-html.html" class="event-tag html">Nuevo curso de HTML5</a>
-                </div>
-                <div class="day-cell"><span class="date-number">20</span></div>
-                <div class="day-cell"><span class="date-number">21</span></div>
-
-                <div class="day-cell"><span class="date-number">22</span></div>
-                <div class="day-cell"><span class="date-number">23</span></div>
-                <div class="day-cell"><span class="date-number">24</span></div>
-                <div class="day-cell has-event">
-                    <span class="date-number">25</span>
-                    <a href="./curso-css.html" class="event-tag css">Nuevo curso de CSS3</a>
-                </div>
-                <div class="day-cell"><span class="date-number">26</span></div>
-                <div class="day-cell"><span class="date-number">27</span></div>
-                <div class="day-cell"><span class="date-number">28</span></div>
-
-                <div class="day-cell"><span class="date-number">29</span></div>
-                <div class="day-cell"><span class="date-number">30</span></div>
-                <div class="today day-cell has-event multi-event">
-                    <span class="date-number today-month">1 de oct</span>
-                    <a href="./curso-js.html" class="event-tag js">Nuevo curso de JavaScript</a>
-                    <a href="./curso-jquery.html" class="event-tag jquery">Nuevo curso de JQuery</a>
-                </div>
-                <div class="day-cell"><span class="date-number today-month">2</span></div>
-                <div class="day-cell has-event">
-                    <span class="date-number today-month">3</span>
-                    <a href="./curso-blockchain.html" class="event-tag blockchain">Nuevo curso de Blockchain</a>
-                </div>
-                <div class="day-cell"><span class="date-number today-month">4</span></div>
-                <div class="day-cell"><span class="date-number today-month">5</span></div>
-
+            <div class="calendar-grid dates" id="calendar-dates-container">
                 </div>
 
         </section>
@@ -197,6 +142,7 @@
 
   <a href="#inicio"><i id="flecha-vuelta-inicio">&#x1F53C;</i></a>
   <p id="footer-nota-legal">© Edu Courses. Todos los derechos reservados.</p>
+  <script src="../JS/calendario.js"></script>
 </body>
 
 </html>
