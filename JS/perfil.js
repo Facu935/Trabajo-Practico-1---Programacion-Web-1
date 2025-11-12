@@ -103,9 +103,6 @@ function mostrarCursosInscriptos(cursos){
                     <div class="titulo-curso">
                         <h4>CURSO ${curso.nombre}</h4>
                     </div>
-                    <div class="abrir-comprar">
-                        <a href=".${curso.link}">Ver Detalles</a>
-                    </div>
                     <div class="duracion-valor">
                         <p>${curso.duracion} hs</p>
                         <p>$ ${curso.precio}</p>
