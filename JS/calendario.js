@@ -32,26 +32,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const courseEvents = [
         // NOVIEMBRE 2025 (9 cursos)
         // Semana 1
-        { date: '2025-11-05', title: 'Nuevo curso de Java', url: './curso-java.html', tag: 'java' },         // Miércoles
-        { date: '2025-11-07', title: 'Nuevo curso de MySQL', url: './curso-mysql.html', tag: 'mysql' },       // Viernes
+        { date: '2025-11-05', title: 'Nuevo curso de Java', url: './cursos.html?curso=java', tag: 'java' },         // Miércoles
+        { date: '2025-11-07', title: 'Nuevo curso de MySQL', url: './cursos.html?curso=mysql', tag: 'mysql' },       // Viernes
         
         // Semana 2 (Dos cursos el Lunes 10)
-        { date: '2025-11-10', title: 'Nuevo curso de Python', url: './curso-python.html', tag: 'python' },     // Lunes 
-        { date: '2025-11-10', title: 'Nuevo curso de Blockchain', url: './curso-blockchain.html', tag: 'blockchain' }, // Lunes (DOBLE)
-        { date: '2025-11-12', title: 'Nuevo curso de C#', url: './curso-csharp.html', tag: 'csharp' },         // Miércoles
+        { date: '2025-11-10', title: 'Nuevo curso de Python', url: './cursos.html?curso=python', tag: 'python' },     // Lunes 
+        { date: '2025-11-10', title: 'Nuevo curso de Blockchain', url: './cursos.html?curso=blockchain', tag: 'blockchain' }, // Lunes (DOBLE)
+        { date: '2025-11-12', title: 'Nuevo curso de C#', url: './cursos.html?curso=csharp', tag: 'csharp' },         // Miércoles
         
         // Semana 3 (Dos cursos el Viernes 21)
-        { date: '2025-11-19', title: 'Nuevo curso de JavaScript', url: './curso-js.html', tag: 'js' },         // Miércoles
-        { date: '2025-11-21', title: 'Nuevo curso de PHP', url: './curso-php.html', tag: 'php' },             // Viernes
-        { date: '2025-11-21', title: 'Nuevo curso de JQuery', url: './curso-jquery.html', tag: 'jquery' },     // Viernes (DOBLE)
+        { date: '2025-11-19', title: 'Nuevo curso de JavaScript', url: './cursos.html?curso=javascript', tag: 'js' },         // Miércoles
+        { date: '2025-11-21', title: 'Nuevo curso de PHP', url: './cursos.html?curso=php', tag: 'php' },             // Viernes
+        { date: '2025-11-21', title: 'Nuevo curso de JQuery', url: './cursos.html?curso=jquery', tag: 'jquery' },     // Viernes (DOBLE)
 
         // Semana 4
-        { date: '2025-11-26', title: 'Nuevo curso de HTML5', url: './curso-html.html', tag: 'html' },          // Miércoles (Movido para llenar el hueco)
+        { date: '2025-11-26', title: 'Nuevo curso de HTML5', url: './cursos.html?curso=html', tag: 'html' },          // Miércoles (Movido para llenar el hueco)
         
         // DICIEMBRE 2025 (2 cursos)
         // Semana 1 (Diciembre)
-        { date: '2025-12-01', title: 'Nuevo curso de CSS3', url: './curso-css.html', tag: 'css' },            // Lunes (Movido para Dic)
-        { date: '2025-12-03', title: 'Nuevo curso de React', url: './curso-react.html', tag: 'react' },       // Miércoles
+        { date: '2025-12-01', title: 'Nuevo curso de CSS3', url: './cursos.html?curso=css', tag: 'css' },            // Lunes (Movido para Dic)
+        { date: '2025-12-03', title: 'Nuevo curso de React', url: './cursos.html?curso=react', tag: 'react' },       // Miércoles
     ];
 
     const getEventsForDay = (dateString) => {
