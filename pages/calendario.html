@@ -2,90 +2,90 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/styles.css">
-    <link rel="stylesheet" href="../CSS/header-footer.css">
-    <link rel="shortcut icon" href="../IMG/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="../CSS/calendario.css"> 
-    <title>Edu Courses | Calendario de Cursos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/styles.css">
+  <link rel="stylesheet" href="../CSS/header-footer.css">
+  <link rel="shortcut icon" href="../IMG/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../CSS/calendario.css">
+  <title>Edu Courses | Calendario de Cursos</title>
 </head>
 
 <body>
-<header id="inicio">
+  <header id="inicio">
     <div class="header-div__logo">
-    <img src="../IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo" />
+      <img src="../IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo" />
     </div>
-<div class="buscador-links">
-<details>
-    <summary>Buscar curso</summary>
-    <ul>
-    <li><a href="./curso-html.html">HTML5</a></li>
-    <li><a href="./curso-css.html">CSS3</a></li>
-    <li><a href="./curso-js.html">JavaScript</a></li>
-    <li><a href="./curso-blockchain.html">Blockchain</a></li>
-    <li><a href="./curso-jquery.html">JQuery</a></li>
-    <li><a href="./curso-java.html">Java</a></li>
-    <li><a href="./curso-mysql.html">MySQL</a></li>
-    <li><a href="./curso-csharp.html">C#</a></li>
-    <li><a href="./curso-php.html">PHP</a></li>
-    <li><a href="./curso-python.html">Python</a></li>
-    <li><a href="./curso-node.html">Node.js</a></li>
-    <li><a href="./curso-react.html">React</a></li>
-    </ul>
-</details>
-</div>
+    <div class="buscador-links">
+      <details>
+        <summary>Buscar curso</summary>
+        <ul>
+          <li><a href="./curso-html.html">HTML5</a></li>
+          <li><a href="./curso-css.html">CSS3</a></li>
+          <li><a href="./curso-js.html">JavaScript</a></li>
+          <li><a href="./curso-blockchain.html">Blockchain</a></li>
+          <li><a href="./curso-jquery.html">JQuery</a></li>
+          <li><a href="./curso-java.html">Java</a></li>
+          <li><a href="./curso-mysql.html">MySQL</a></li>
+          <li><a href="./curso-csharp.html">C#</a></li>
+          <li><a href="./curso-php.html">PHP</a></li>
+          <li><a href="./curso-python.html">Python</a></li>
+          <li><a href="./curso-node.html">Node.js</a></li>
+          <li><a href="./curso-react.html">React</a></li>
+        </ul>
+      </details>
+    </div>
     <div class="header-div__carrito">
-    <a href="../pages/login.html"><button id="boton-login">Login</button></a>
-    <div id="carrito-y-numero">
+      <a href="../pages/login.html"><button id="boton-login">Login</button></a>
+      <div id="carrito-y-numero">
         <div id="header-div__cantidad_items">
-        <p>0</p>
+          <p>0</p>
         </div>
-        <a href="../pages/login.html"><button id="button-carrito"><img src="../IMG/Icono Carrito de Compra.png" alt="Carrito de Compra"
-        id="carrito" /></button></a>
-    </div>  
+        <a href="../pages/login.html"><button id="button-carrito"><img src="../IMG/Icono Carrito de Compra.png"
+              alt="Carrito de Compra" id="carrito" /></button></a>
+      </div>
     </div>
-</header>
+  </header>
 
-    <nav class="navegation">
-        <div>
-            <ul class="navegation__items">
-                <li><a href="../index.html">INICIO</a></li>
-                <li><a href="../pages/calendario.html">CALENDARIO</a></li>
-                <li><a href="../pages/giftcard.html">GIFT CARD</a></li>
-                <li><a href="../pages/contacto.html">CONTACTO</a></li>
-            </ul>
-        </div>
-    </nav>
+  <nav class="navegation">
+    <div>
+      <ul class="navegation__items">
+        <li><a href="../index.html">INICIO</a></li>
+        <li><a href="../pages/calendario.html">CALENDARIO</a></li>
+        <li><a href="../pages/giftcard.html">GIFT CARD</a></li>
+        <li><a href="../pages/contacto.html">CONTACTO</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <main class="calendar-main">
-        <h2 class="titulos">Calendario de Próximos Cursos</h2>
+  <main class="calendar-main">
+    <h2 class="titulos">Calendario de Próximos Cursos</h2>
 
-        <section class="calendar-wrapper">
-            
-            <div class="calendar-nav-header">
-                <button id="prev-btn" class="nav-btn">&#10094;</button> 
-                <h3 class="current-month-label" id="current-period-label"></h3> 
-                <button id="next-btn" class="nav-btn">&#10095;</button> 
-            </div>
+    <section class="calendar-wrapper">
 
-            <div class="calendar-grid weekdays">
-                <div class="day-name">DOM</div>
-                <div class="day-name">LUN</div>
-                <div class="day-name">MAR</div>
-                <div class="day-name">MIÉ</div>
-                <div class="day-name">JUE</div>
-                <div class="day-name">VIE</div>
-                <div class="day-name">SÁB</div>
-            </div>
+      <div class="calendar-nav-header">
+        <button id="prev-btn" class="nav-btn">&#10094;</button>
+        <h3 class="current-month-label" id="current-period-label"></h3>
+        <button id="next-btn" class="nav-btn">&#10095;</button>
+      </div>
 
-            <div class="calendar-grid dates" id="calendar-dates-container">
-                </div>
+      <div class="calendar-grid weekdays">
+        <div class="day-name">DOM</div>
+        <div class="day-name">LUN</div>
+        <div class="day-name">MAR</div>
+        <div class="day-name">MIÉ</div>
+        <div class="day-name">JUE</div>
+        <div class="day-name">VIE</div>
+        <div class="day-name">SÁB</div>
+      </div>
 
-        </section>
-    </main>
+      <div class="calendar-grid dates" id="calendar-dates-container">
+      </div>
 
-<footer>
+    </section>
+  </main>
+
+  <footer>
     <div class="footer-recuadros">
       <h3>Datos del Grupo</h3>
       <ul id="footer-datos-grupo">

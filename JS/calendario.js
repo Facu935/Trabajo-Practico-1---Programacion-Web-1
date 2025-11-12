@@ -5,13 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
 
-    // **1. CONFIGURACIÓN INICIAL Y LÍMITES**
-    // ----------------------------------------------------
+   
     const getIsMobile = () => window.innerWidth <= 768; 
     let isMobile = getIsMobile();
     
-    const initialMonth = 10; // Noviembre (los meses en JS van de 0 a 11)
-    const finalMonth = 11;   // Diciembre
+    const initialMonth = 10; 
+    const finalMonth = 11;   
     const year = 2025;       
     
     let currentPeriod = { month: initialMonth, year: year, weekOffset: 0 }; 
@@ -27,41 +26,33 @@ document.addEventListener('DOMContentLoaded', () => {
     END_DATE_LIMIT.setDate(lastDayOfDec.getDate() + (6 - lastDayOfDec.getDay()));
 
 
-    // **2. DATOS DE LOS 11 CURSOS (DISTRIBUCIÓN REAJUSTADA)**
-    // ----------------------------------------------------
     const courseEvents = [
-        // NOVIEMBRE 2025 (9 cursos)
-        // Semana 1
-        { date: '2025-11-05', title: 'Nuevo curso de Java', url: './cursos.html?curso=java', tag: 'java' },         // Miércoles
-        { date: '2025-11-07', title: 'Nuevo curso de MySQL', url: './cursos.html?curso=mysql', tag: 'mysql' },       // Viernes
+        
+        { date: '2025-11-05', title: 'Nuevo curso de Java', url: './cursos.html?curso=java', tag: 'java' },         
+        { date: '2025-11-07', title: 'Nuevo curso de MySQL', url: './cursos.html?curso=mysql', tag: 'mysql' },       
         
         // Semana 2 (Dos cursos el Lunes 10)
-        { date: '2025-11-10', title: 'Nuevo curso de Python', url: './cursos.html?curso=python', tag: 'python' },     // Lunes 
-        { date: '2025-11-10', title: 'Nuevo curso de Blockchain', url: './cursos.html?curso=blockchain', tag: 'blockchain' }, // Lunes (DOBLE)
-        { date: '2025-11-12', title: 'Nuevo curso de C#', url: './cursos.html?curso=csharp', tag: 'csharp' },         // Miércoles
+        { date: '2025-11-10', title: 'Nuevo curso de Python', url: './cursos.html?curso=python', tag: 'python' },     
+        { date: '2025-11-10', title: 'Nuevo curso de Blockchain', url: './cursos.html?curso=blockchain', tag: 'blockchain' }, 
+        { date: '2025-11-12', title: 'Nuevo curso de C#', url: './cursos.html?curso=csharp', tag: 'csharp' },         
         
         // Semana 3 (Dos cursos el Viernes 21)
-        { date: '2025-11-19', title: 'Nuevo curso de JavaScript', url: './cursos.html?curso=javascript', tag: 'js' },         // Miércoles
-        { date: '2025-11-21', title: 'Nuevo curso de PHP', url: './cursos.html?curso=php', tag: 'php' },             // Viernes
-        { date: '2025-11-21', title: 'Nuevo curso de JQuery', url: './cursos.html?curso=jquery', tag: 'jquery' },     // Viernes (DOBLE)
+        { date: '2025-11-19', title: 'Nuevo curso de JavaScript', url: './cursos.html?curso=javascript', tag: 'js' },         
+        { date: '2025-11-21', title: 'Nuevo curso de PHP', url: './cursos.html?curso=php', tag: 'php' },             
+        { date: '2025-11-21', title: 'Nuevo curso de JQuery', url: './cursos.html?curso=jquery', tag: 'jquery' },     
 
         // Semana 4
-        { date: '2025-11-26', title: 'Nuevo curso de HTML5', url: './cursos.html?curso=html', tag: 'html' },          // Miércoles (Movido para llenar el hueco)
+        { date: '2025-11-26', title: 'Nuevo curso de HTML5', url: './cursos.html?curso=html', tag: 'html' },          
         
         // DICIEMBRE 2025 (2 cursos)
         // Semana 1 (Diciembre)
-        { date: '2025-12-01', title: 'Nuevo curso de CSS3', url: './cursos.html?curso=css', tag: 'css' },            // Lunes (Movido para Dic)
-        { date: '2025-12-03', title: 'Nuevo curso de React', url: './cursos.html?curso=react', tag: 'react' },       // Miércoles
+        { date: '2025-12-01', title: 'Nuevo curso de CSS3', url: './cursos.html?curso=css', tag: 'css' },            
+        { date: '2025-12-03', title: 'Nuevo curso de React', url: './cursos.html?curso=react', tag: 'react' },       
     ];
 
     const getEventsForDay = (dateString) => {
         return courseEvents.filter(event => event.date === dateString);
     };
-
-
-    // **3. FUNCIONES PRINCIPALES DE RENDERIZADO**
-    // (Esta sección no necesita cambios, mantiene la lógica de límites y responsive)
-    // ----------------------------------------------------
 
     const renderCalendar = ({ month, year, weekOffset }) => {
         calendarContainer.innerHTML = '';
@@ -71,8 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (isMobile) {
             // MODO SEMANAL: Solo se muestra una semana
-            // ------------------
-            
+
             const startDayOfFirstWeek = new Date(START_DATE_LIMIT);
             
             const currentStartDay = new Date(startDayOfFirstWeek);
@@ -93,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } else {
             // MODO MENSUAL (Desktop/Tablet)
-            // ------------------
             const firstDayOfMonth = new Date(year, month, 1);
             const lastDayOfMonth = new Date(year, month + 1, 0);
             
@@ -124,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nextBtn.disabled = month >= finalMonth; 
         }
 
-        // CREACIÓN DE CÉLULAS HTML (Común a ambos modos)
+        // CREACIÓN DE CÉLULAS HTML 
         daysToRender.forEach(date => {
             const dayCell = document.createElement('div');
             dayCell.classList.add('day-cell');

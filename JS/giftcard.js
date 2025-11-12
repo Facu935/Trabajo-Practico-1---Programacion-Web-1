@@ -7,7 +7,7 @@ export function agregarGiftcardAlUsuario(destinatario, monto, color) {
 
     if (!usuarioActual) {
         alert("Debes iniciar sesión para agregar una giftcard.");
-        window.location.href = "../pages/login.html"; // Redirige si no está logueado
+        window.location.href = "../pages/login.html"; 
         return;
     }
 
@@ -17,7 +17,6 @@ export function agregarGiftcardAlUsuario(destinatario, monto, color) {
         return;
     }
 
-    // Asignamos la giftcard al usuario logueado
     usuarios[usuarioIndex].giftcard = {
         destinatario: destinatario,
         monto: monto,
@@ -30,7 +29,6 @@ export function agregarGiftcardAlUsuario(destinatario, monto, color) {
     mostrarPopup();
 }
 
-// --- Función para mostrar el popup de éxito ---
 function mostrarPopup() {
     const overlay = document.querySelector(".overlay");
     if (overlay) {
@@ -38,14 +36,12 @@ function mostrarPopup() {
     }
 }
 
-// --- Manejo del formulario y vista previa ---
 document.addEventListener("DOMContentLoaded", () => {
     const formGiftcard = document.querySelector("#formGiftcard");
     const montoInput = document.querySelector("#monto");
     const destinatarioInput = document.querySelector("#destinatario");
     const colorRadios = document.querySelectorAll("input[name='color']");
 
-    // Elementos de vista previa
     const previewBox = document.querySelector("#preview-box");
     const previewMontoTop = document.querySelector("#monto-top-right");
     const previewMontoBottom = document.querySelector("#monto-bottom-left");
@@ -53,27 +49,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!formGiftcard) return;
 
-    // --- Actualiza la vista previa ---
     function actualizarVistaPrevia() {
         const monto = montoInput.value || "0000";
         const destinatario = destinatarioInput.value || "Destinatario";
         const colorSeleccionado = document.querySelector("input[name='color']:checked").value;
 
-        // Cambia fondo y textos
+        
         previewBox.style.backgroundColor = colorSeleccionado;
         previewMontoTop.textContent = `$${monto}.-`;
         previewMontoBottom.textContent = `$${monto}.-`;
         previewDestinatario.textContent = destinatario;
 
-        // Muestra el monto inferior si hay monto cargado
+        
         previewMontoBottom.style.display = montoInput.value ? "inline" : "none";
 
-        // Ajusta color de texto según el contraste
+       
         const textoColor = calcularContraste(colorSeleccionado);
         previewBox.style.color = textoColor;
     }
 
-    // --- Calcular contraste para texto legible ---
+ 
     function calcularContraste(hexColor) {
         hexColor = hexColor.replace("#", "");
         const r = parseInt(hexColor.substring(0, 2), 16);
@@ -83,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return luminancia > 150 ? "#000" : "#fff";
     }
 
-    // --- Listeners dinámicos ---
+   
     montoInput.addEventListener("input", actualizarVistaPrevia);
     destinatarioInput.addEventListener("input", actualizarVistaPrevia);
     colorRadios.forEach(radio => radio.addEventListener("change", actualizarVistaPrevia));
@@ -104,6 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
         agregarGiftcardAlUsuario(destinatario, monto, color);
     });
 
-    // --- Inicializa vista previa ---
+   
     actualizarVistaPrevia();
 });

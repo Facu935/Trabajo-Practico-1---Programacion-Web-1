@@ -5,39 +5,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const cvv = document.querySelector("#cvv");
     const nombre = document.querySelector("#titular");
 
-    // --- Formatear número de tarjeta en tiempo real: XXXX XXXX XXXX XXXX ---
+    // Formatear número de tarjeta en tiempo real: XXXX XXXX XXXX XXXX
     numeroTarjeta.addEventListener("input", (e) => {
         let value = e.target.value.replace(/\D/g, ""); // eliminar todo lo que no sea número
-        value = value.substring(0, 16); // máximo 16 dígitos
-        e.target.value = value.replace(/(.{4})/g, "$1 ").trim(); // añadir espacio cada 4 dígitos
+        value = value.substring(0, 16); // limitar a 16 dígitos
+        // insertar espacios cada 4 dígitos
+        e.target.value = value.replace(/(.{4})/g, "$1 ").trim();
     });
 
-    // --- Formatear fecha de vencimiento en tiempo real: DD/MM/AA ---
-    vencimiento.addEventListener("input", (e) => {
-        let value = e.target.value.replace(/\D/g, ""); // solo números
-        value = value.substring(0, 6); // máximo 6 dígitos
-        if (value.length >= 4) {
-            e.target.value = value.replace(/(\d{2})(\d{2})(\d{0,2})/, "$1/$2/$3").trim();
-        } else if (value.length >= 2) {
-            e.target.value = value.replace(/(\d{2})(\d{0,2})/, "$1/$2").trim();
-        } else {
-            e.target.value = value;
-        }
-    });
-
-    // --- Restringir CVV a 3 números ---
+    // Restringir CVV a 3 números
     cvv.addEventListener("input", (e) => {
         e.target.value = e.target.value.replace(/\D/g, "").substring(0, 3);
     });
 
-    // --- Restringir nombre a solo letras y espacios ---
+    // Restringir nombre a solo letras y espacios
     nombre.addEventListener("input", (e) => {
         e.target.value = e.target.value.replace(/[^A-Za-zÁÉÍÓÚáéíóúÑñ\s]/g, "");
     });
 
-    // --- Validación final al enviar ---
     form.addEventListener("submit", (e) => {
-        const numero = numeroTarjeta.value.replace(/\s/g, "");
+        const numero = numeroTarjeta.value.replace(/\s/g, ""); // quitar espacios
         const fechaTexto = vencimiento.value.trim();
         const cvvValue = cvv.value.trim();
         const nombreValue = nombre.value.trim();
@@ -56,27 +43,23 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+        if (!/^\d{16}$/.test(numero)) {
+            e.preventDefault();
+            alert("El número de tarjeta solo debe contener números.");
+            return;
+        }
+
         // --- Validar fecha de vencimiento ---
-        if (!/^\d{2}\/\d{2}\/\d{2}$/.test(fechaTexto)) {
-            e.preventDefault();
-            alert("La fecha debe tener el formato DD/MM/AA.");
-            return;
-        }
-
-        const [dia, mes, añoCorto] = fechaTexto.split("/").map(Number);
-        const año = 2000 + añoCorto;
-
-        if (mes < 1 || mes > 12 || dia < 1 || dia > 31) {
-            e.preventDefault();
-            alert("La fecha de vencimiento no es válida.");
-            return;
-        }
-
+        const [dia, mes, añoCorto] = fechaTexto.split("/");
+        const año = 2000 + parseInt(añoCorto);
+        const fechaIngresada = new Date(año, mes - 1);
         const hoy = new Date();
-        const fechaIngresada = new Date(año, mes - 1, dia);
-        if (fechaIngresada < hoy) {
+        const mesActual = hoy.getMonth() + 1;
+        const añoActual = hoy.getFullYear();
+
+        if (año < añoActual || (año === añoActual && mes < mesActual)) {
             e.preventDefault();
-            alert("La fecha de vencimiento no puede ser anterior a la actual.");
+            alert("La fecha de vencimiento no puede ser anterior al mes actual.");
             return;
         }
 
@@ -94,6 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // --- Si todo está bien ---
-        alert("✅ Datos validados correctamente. Procesando pago...");
+        alert("Datos validados correctamente. Procesando pago...");
     });
 });
