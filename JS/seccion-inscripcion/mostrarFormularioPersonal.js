@@ -49,7 +49,7 @@ export function mostrarFormularioPersonal(selectorPadre, cursoInfo) {
   });
 
   function mostrarResumenPersonal() {
-    const exito = agregarCursoAlCarrito(cursoInfo.precio, cursoInfo);
+    const exito = agregarCursoAlCarrito(cursoInfo.precio, cursoInfo, 1);
 
     if (!exito) {
       return;
