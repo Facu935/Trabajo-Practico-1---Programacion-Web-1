@@ -90,24 +90,30 @@ function mostrarBotonLogin(contenedor_a_anexar){
         contenedor_a_anexar.appendChild(LINK_LOGIN);
 }
 
-function mostrarNumeroDelCarrito(contenedor){
-        const usuario_logueado = obtenerUsuarioLogueado();
-        let cantidadDeCursos = 0;
+export function mostrarNumeroDelCarrito(contenedor){
+    const usuario_logueado = obtenerUsuarioLogueado();
+    let totalCantidad = 0;
 
-        if (usuario_logueado !== null && usuario_logueado !== undefined){
-            cantidadDeCursos = usuario_logueado.cursosEnCarrito.length;
-        }
-        
-        const NUMERO = document.createElement("div");
+    if (usuario_logueado) {
+        usuario_logueado.cursosEnCarrito.forEach(curso => {
+            totalCantidad += (curso.cantidad || 0);
+        });
+    }
+
+    // Buscar si ya existe el elemento contador; si no, lo creamos
+    let NUMERO = contenedor.querySelector('#header-div__cantidad_items');
+    if (!NUMERO) {
+        NUMERO = document.createElement("div");
         NUMERO.id = "header-div__cantidad_items";
-        NUMERO.textContent = cantidadDeCursos;             
         contenedor.appendChild(NUMERO);
 
+        // solo la primera vez asociamos el listener del sidebar
         modalCursosObtenidosEnCarrito(NUMERO, contenedor);
-
-        
-
+    }
+    NUMERO.textContent = totalCantidad;
 }
+
+
 function modalCursosObtenidosEnCarrito(contador , contenedor){
     contador.addEventListener('click', () => {
         if (!validarUsuarioConectadoParaNav()) {
@@ -141,7 +147,7 @@ function modalCursosObtenidosEnCarrito(contador , contenedor){
                                                             <ul>
                                                                 <li id="valoracion-curso-carrito">Valoracion:<img src="../IMG/Cursos/estrella.png" alt="" id> ${curso.valoracion}</li>
                                                                 <li id="precio-curso-carrito">Precio: $ ${curso.precio}</li>
-                                                                <li>Cantidad: 1</li>
+                                                                <li>Cantidad: ${curso.cantidad}</li>
                                                                 <li>Modalidad: Virtual</li>
                                                             </ul>
                                                             <button class="boton-eliminar-curso-carrito" id="boton-eliminar${i+1}">Eliminar Curso</button>
@@ -176,31 +182,56 @@ function modalCursosObtenidosEnCarrito(contador , contenedor){
     });
 }
 function eliminarCursoDelSideBar(cursosEnCarritoDelUsuario, contenedor){
-                for (let i = 0; i < cursosEnCarritoDelUsuario.length; i++){
-                const CURSO_A_BORRAR = document.querySelector("#recuadro-sidebar" + (i+1));
-                const BOTON_ELIMINAR_CORRECTO = document.querySelector("#boton-eliminar" + (i+1));
-                    
-                    BOTON_ELIMINAR_CORRECTO.addEventListener('click', () => {
-                        CURSO_A_BORRAR.remove();
-                        cursosEnCarritoDelUsuario.splice(i, 1);
+  for (let i = 0; i < cursosEnCarritoDelUsuario.length; i++){
+    const CURSO_A_BORRAR = document.querySelector("#recuadro-sidebar" + (i+1));
+    const BOTON_ELIMINAR_CORRECTO = document.querySelector("#boton-eliminar" + (i+1));
+    if (!BOTON_ELIMINAR_CORRECTO) continue;
 
-                        //CAMBIAR DATOS EN LS
-                        const usuario = obtenerUsuarioLogueado();
-                        usuario.cursosEnCarrito = cursosEnCarritoDelUsuario;
+    BOTON_ELIMINAR_CORRECTO.addEventListener('click', () => {
+      // objeto del curso en el array (puede ser undefined si algo raro pasó)
+      const cursoObj = cursosEnCarritoDelUsuario[i];
 
-                        copiaCursoUsuarioLogueadoALocalStorage(usuario)
-                        guardarModificacionLocalStorageUsuarioLogueado(usuario);
-                        const NUMERO = contenedor.querySelector('#header-div__cantidad_items');
-                            if (NUMERO) {
-                                NUMERO.textContent = cursosEnCarritoDelUsuario.length;
-                            } else {
-                                mostrarNumeroDelCarrito(contenedor);
-                            }
-                        return;
-                    });
-                }
-                
-                
+      if (!cursoObj) {
+        // fallback: si no existe objeto, eliminamos DOM y splice
+        if (CURSO_A_BORRAR) CURSO_A_BORRAR.remove();
+        cursosEnCarritoDelUsuario.splice(i, 1);
+      } else {
+        const cantidadActual = cursoObj.cantidad;
+
+        if (cantidadActual > 1) {
+          // decrementar cantidad y actualizar la vista del sidebar
+          cursoObj.cantidad = cantidadActual - 1;
+
+          if (CURSO_A_BORRAR) {
+            // buscamos el <li> que contiene "Cantidad:" y lo actualizamos
+            const lis = CURSO_A_BORRAR.querySelectorAll('li');
+            for (const li of lis) {
+              if (li.textContent.trim().startsWith('Cantidad:')) {
+                li.textContent = `Cantidad: ${cursoObj.cantidad}`;
+                break;
+              }
+            }
+          }
+        } else {
+          // cantidad === 1 -> eliminar el curso completamente
+          if (CURSO_A_BORRAR) CURSO_A_BORRAR.remove();
+          cursosEnCarritoDelUsuario.splice(i, 1);
+        }
+      }
+
+      // CAMBIAR DATOS EN LS
+      const usuario = obtenerUsuarioLogueado();
+      usuario.cursosEnCarrito = cursosEnCarritoDelUsuario;
+
+      copiaCursoUsuarioLogueadoALocalStorage(usuario);
+      guardarModificacionLocalStorageUsuarioLogueado(usuario);
+
+      // actualizar el contador (suma de cantidades)
+      mostrarNumeroDelCarrito(contenedor);
+
+      return;
+    });
+  }
 }
 
 function copiaCursoUsuarioLogueadoALocalStorage(usuario_logueado){
@@ -233,6 +264,20 @@ function mostrarCarrito(contenedor){
         BOTON_CARRITO.appendChild(IMAGEN_CARRITO);
         LINK_CARRITO.appendChild(BOTON_CARRITO);
         contenedor.appendChild(LINK_CARRITO);
+
+        /*
+        // --- Añadir listener para que la imagen del carrito abra el mismo sidebar que el numerito ---
+        BOTON_CARRITO.addEventListener('click', (e) => {
+        e.preventDefault(); // evita navegar por el href
+        // Aseguramos que el contador exista (si no, lo creamos)
+        mostrarNumeroDelCarrito(contenedor);
+        const NUMERO = document.querySelector('#header-div__cantidad_items');
+        if (NUMERO) {
+            // Disparar el click del numerito para reutilizar EXACTAMENTE el mismo comportamiento
+            NUMERO.click();
+        }
+        });
+        */
 }
 
 

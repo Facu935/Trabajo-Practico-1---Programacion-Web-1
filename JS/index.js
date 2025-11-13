@@ -3,11 +3,11 @@ import {
     FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS, FOOTER_REDES
 } from "../constants/constants.js";
 import { IMAGENES_SLIDER_HOME, PASOS_INSCRIPCION, MEDIOS_PAGO_IMGS, } from "../constants/constants-home.js";
-import { Header } from "./header.js";
+import { Header, mostrarNumeroDelCarrito } from "./header.js";
 import { Navbar } from "./navbar.js";
 import { SliderHome } from "./sliderHome.js";
 import { Footer } from "./footer.js";
-import { validarUsuarioConectadoParaNav } from "./funciones-generales.js";
+import { validarUsuarioConectadoParaNav, obtenerUsuarioLogueado, guardarModificacionLocalStorageUsuarioLogueado, localStorageUsuarios, guardarModificacionLocalStorage } from "./funciones-generales.js";
 import "./eventoModal.js";
 
 //localStorage.clear();
@@ -91,6 +91,76 @@ function mostrarGrillaCursosDestacados(cursos, seccion) {
 
     grillaCursos(cursos, seccion, contenedorCursos, contenedorPadre, linkInscripcion);
 
+
+// Listener para "Añadir al Carrito" (delegación en contenedor)
+// Listener: Añadir al carrito (evita duplicados y guarda toda la info del curso)
+const contenedorGrid = document.getElementById('contenedor-grid-padre');
+
+if (contenedorGrid) {
+  contenedorGrid.addEventListener('click', (e) => {
+    const boton = e.target.closest('.boton-add-carrito');
+    if (!boton) return;
+
+    const cursoId = boton.dataset.curso;
+    if (!cursoId) return;
+
+    // Si no está logueado -> redirigir al login (con params para volver si querés)
+    if (!validarUsuarioConectadoParaNav()) {
+      window.location.href = `./pages/login.html?redirect=carrito&curso=${encodeURIComponent(cursoId)}`;
+      return;
+    }
+
+    // Obtener usuario logueado
+    const usuario = obtenerUsuarioLogueado();
+    if (!usuario) {
+      window.location.href = `./pages/login.html?redirect=carrito&curso=${encodeURIComponent(cursoId)}`;
+      return;
+    }
+
+    // Buscar el curso completo en tus constantes
+    const curso = CURSOS_INFO.find(c => c.cursoId === cursoId);
+    if (!curso) {
+      alert('No se encontró el curso seleccionado.');
+      return;
+    }
+
+    // Asegurar el array de carrito
+    usuario.cursosEnCarrito = usuario.cursosEnCarrito || [];
+
+    // Si ya existe en el carrito -> incrementar cantidad; si no, agregar nuevo con cantidad = 1
+    const existenteIdx = usuario.cursosEnCarrito.findIndex(item => item.cursoId === cursoId);
+
+    if (existenteIdx !== -1) {
+      // incrementamos cantidad
+      const existente = usuario.cursosEnCarrito[existenteIdx];
+      existente.cantidad = (Number(existente.cantidad) || 0) + 1;
+    } else {
+      // Crear objeto completo para el carrito (copiamos todo el objeto curso y agregamos metadata)
+      const cursoParaCarrito = {
+        ...curso,
+        cantidad: 1,
+        addedAt: new Date().toISOString()
+      };
+      usuario.cursosEnCarrito.push(cursoParaCarrito);
+    }
+
+    // Guardar usuario logueado actualizado
+    guardarModificacionLocalStorageUsuarioLogueado(usuario);
+
+    // También actualizar la colección completa de usuarios en localStorage (si existe)
+    const usuarios = localStorageUsuarios(); // devuelve array
+    const idx = usuarios.findIndex(u => u.email === usuario.email);
+    if (idx !== -1) {
+      usuarios[idx].cursosEnCarrito = usuario.cursosEnCarrito;
+      guardarModificacionLocalStorage(usuarios);
+    }
+    const contenedor = document.getElementById('carrito-y-numero');
+    mostrarNumeroDelCarrito(contenedor);
+  });
+}
+
+
+
 }
 
 function botonVerTodosLosCursos(seccion) {
@@ -152,6 +222,7 @@ function grillaCursos(cursos, seccion, contenedorCursos, contenedorPadre) {
                     </div>
                     <div class="contenedor-grid-hijo detalles-comprar">
                         <a href="${curso.link}">Ver Detalles del Curso</a>
+                        <button class="boton-add-carrito" data-curso="${curso.cursoId}" type="button">Añadir al Carrito</button>
                         <button class="boton-inscribirse" data-curso="${curso.cursoId}">Inscribirme</button>
                     </div>
                 </div>`;

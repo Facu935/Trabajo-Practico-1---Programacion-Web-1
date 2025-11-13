@@ -150,9 +150,10 @@ body {
   grid-row: 4;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  gap: 1em;
   align-items: center;
   border: none;
+  margin: 1em;
 }
 .detalles-comprar a {
   display: inline;
@@ -160,7 +161,7 @@ body {
 .detalles-comprar button {
   width: 70%;
   height: 40%;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .horas-y-precio {
