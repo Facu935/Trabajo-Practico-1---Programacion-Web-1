@@ -8,7 +8,6 @@ import { Footer } from "../JS/footer.js";
 import {
     obtenerUsuarioLogueado, cursosInscriptosDelUsuario,
     localStorageUsuarios, limpiarUsuarioLogueado, guardarModificacionLocalStorage,
-    limpiarLocalStorage
 } from "./funciones-generales.js";
 
 const header = new Header();
@@ -20,6 +19,7 @@ const USUARIO_LOGUEADO = obtenerUsuarioLogueado();
 header.mostrarHeader(CURSOS_INFO);
 barraNav.mostrarItems(NAV);
 mostrarPerfil();
+formularioCambiarDatos();
 footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS, FOOTER_REDES);
 
 
@@ -30,14 +30,19 @@ footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS
 function mostrarPerfil() {
     const PERFIL = document.querySelector(".principal");
     const CURSOS_INSCRIPTOS = cursosInscriptosDelUsuario();
-    const GIFT = USUARIO_LOGUEADO.giftcard; // 👈 giftcard del usuario logueado
+    const GIFT = USUARIO_LOGUEADO.giftcard;
 
     let template = `
     <h1>PERFIL</h1>
     <div class="perfil-imagen-nombre">
         <img src="../IMG/Perfil/avatar.avif" alt="Foto de Perfil" id="foto-perfil">
-        <div class="recuadro-nombre">
+        <div class="recuadro-info">
             <h2 id="nombre-usuario">${USUARIO_LOGUEADO.nombre}</h2>
+                    <ul class="lista-datos-perfil">
+                        <li><strong>Email:</strong> ${USUARIO_LOGUEADO.email}</li>
+                        <li><strong>Teléfono:</strong> ${USUARIO_LOGUEADO.telefono}</li>
+                    </ul>
+            <button id="boton-cambiar-datos">Cambiar Datos</button>        
         </div>
     </div>
 
@@ -47,7 +52,7 @@ function mostrarPerfil() {
     </div>
     `;
 
-    // --- Mostrar giftcard si existe ---
+
     if (GIFT && GIFT.destinatario && GIFT.monto) {
         template += `
     <h2 class="titulos">Giftcard Comprada</h2>
@@ -69,14 +74,16 @@ function mostrarPerfil() {
 
 
     PERFIL.innerHTML = template;
+    
 
-    // --- Botón eliminar perfil (tu código existente) ---
+
+
     const BOTON_ELIMINAR_PERFIL = document.createElement('button');
     BOTON_ELIMINAR_PERFIL.id = 'eliminar-perfil';
     BOTON_ELIMINAR_PERFIL.textContent = " ELIMINAR PERFIL"
     PERFIL.appendChild(BOTON_ELIMINAR_PERFIL);
 
-    // --- Modal de eliminación (tu código existente) ---
+
     const MODAL_AVISO = document.createElement('dialog');
     const CONTENEDOR_MODAL = document.createElement('div');
     const BOTON_CONFIRMAR = document.createElement('button');
@@ -98,9 +105,6 @@ function mostrarPerfil() {
     cancelarEliminacion(BOTON_CANCELAR, MODAL_AVISO);
     confirmarEliminacion(BOTON_CONFIRMAR, MODAL_AVISO);
 }
-
-
-
 
 
 
@@ -166,5 +170,116 @@ function confirmarEliminacion(boton_confirmar, modal) {
             }
         }
     });
+}
+
+function formularioCambiarDatos() {
+    const boton = document.getElementById('boton-cambiar-datos');
+    const MODAL = document.createElement('dialog');
+    const USUARIO = obtenerUsuarioLogueado();
+    const EMAIL_PREVIO_DEL_LOGUEADO = USUARIO.email;
+
+    boton.addEventListener('click', () => {
+        creacionModal(MODAL);
+
+        const FORMULARIO = MODAL.querySelector('.form-cambiar-datos');
+        const boton_Cancelar = MODAL.querySelector('#cancelar-cambios');
+
+        boton_Cancelar.addEventListener('click', () => {
+            MODAL.close();
+            MODAL.remove();
+        });
+        cambiarDatos(FORMULARIO, MODAL ,EMAIL_PREVIO_DEL_LOGUEADO);
+        
+    });
+}
+
+function creacionModal(modal){
+    modal.classList.add('modal', 'modal-cambiar-datos');
+        modal.innerHTML = `
+            <form class="form-cambiar-datos" method="dialog">
+                <h3>Cambiar Datos</h3>
+                <p>(Cambie los datos que necesite, no hace falta rellenar todos los campos)</p>
+                <div class= labels-cambiar-datos>
+                    <label>
+                        Usuario:
+                        <input id="input-nombre" type="text" name="nombre">
+                    </label>
+
+                    <label>
+                        Email:
+                        <input id="input-email" type="email" name="email">
+                    </label>
+
+                    <label>
+                        Teléfono:
+                        <input id="input-tel" type="text" name="telefono">
+                    </label>
+
+                    <label>
+                        Password:
+                        <input id="input-password" type="password" name="password" autocomplete="nueva-password">
+                    </label>
+                </div>
+                <div class="acciones-modal" ">
+                    <button type="button" id="cancelar-cambios">Cancelar</button>
+                    <button type="submit" id="guardar-cambios">Guardar</button>
+                </div>
+            </form>
+        `;
+        document.body.appendChild(modal);
+        modal.showModal();
+}
+
+function cambiarDatos(form, modal, email_previo){
+            form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const nombre = modal.querySelector('#input-nombre').value.trim();
+            const email = modal.querySelector('#input-email').value.trim();
+            const telefono = modal.querySelector('#input-tel').value.trim();
+            const password = modal.querySelector('#input-password').value;
+
+
+            // obtener array de usuarios y buscar índice del actual por el email anterior
+            const USUARIOS_GUARDADOS = localStorageUsuarios();
+            const INDICE = USUARIOS_GUARDADOS.findIndex(usuario => usuario.email === email_previo);
+
+
+            /* El .some() funciona para que vea si hay alguno de esos usuarios en el array,
+            obviamente no queremos comparar con el usuario correcto, es por eso que obtenemos el indice anteriormente
+            para que no lo compare con el correcto*/
+
+            if (USUARIOS_GUARDADOS.some((usuario, indice) => usuario.email === email && indice !== INDICE)) {   
+                alert('El email ya está en uso por otro usuario.');
+                return;
+            }
+
+            /*Aca esta escrito con IFs ya que le tenemos que dar la oportunidad al usuario de que solo quiera cambiar una cosa por ejemplo*/
+            if (nombre){
+                USUARIOS_GUARDADOS[INDICE].nombre = nombre;
+            }
+            if (email){
+                USUARIOS_GUARDADOS[INDICE].email = email;
+            }
+            if (telefono){
+                USUARIOS_GUARDADOS[INDICE].telefono = telefono;
+            }
+
+            if (password){
+                USUARIOS_GUARDADOS[INDICE].password = password;
+            }
+
+
+
+            
+            localStorage.setItem('usuarios', JSON.stringify(USUARIOS_GUARDADOS));
+
+            const usuarioActualizado = USUARIOS_GUARDADOS[INDICE];
+            localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioActualizado));
+
+            modal.close();
+            modal.remove();
+            window.location.reload();
+        });
 }
 
