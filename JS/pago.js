@@ -93,21 +93,25 @@ function validacionTarjeta(){
     const NOMBRE_APELLIDO_TITULAR = document.querySelector("#titular").value;
 
     let bandera = true;
-    if (NUMERO_DE_TARJETA < 16){
+    if (NUMERO_DE_TARJETA.length < 16){
         bandera = false;
-        alert("ERROR al comprobar numero de tarjeta");
+        alert("ERROR al comprobar numero de tarjeta, debe tener 16 CARACTERES");
+        return;
     }
     if (!FECHA_DE_VENCIMIENTO){
         bandera = false;
         alert("Ingrese Fecha de Vencimiento");
+        return;
     }
     if(CODIGO_SEGURIDAD.length !== 3){
         bandera = false;
-        alert("ERROR al comprobar codigo de seguridad");
+        alert("ERROR al comprobar codigo de seguridad, debe tener 3 DIGITOS");
+        return;
     }
     if ( !NOMBRE_APELLIDO_TITULAR || /\d/.test(NOMBRE_APELLIDO_TITULAR)){ //Se fija si tiene un numero, que no deberia
         bandera = false;
-        alert("ERROR al comprobar titular de la tarjeta");
+        alert("ERROR al comprobar titular de la tarjeta, no debe poseer numeros, ni estar vacio");
+        return;
     }
     return bandera;
 }

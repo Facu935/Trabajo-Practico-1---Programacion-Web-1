@@ -24,9 +24,6 @@ footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS
 
 
 
-
-
-
 function mostrarPerfil() {
     const PERFIL = document.querySelector(".principal");
     const CURSOS_INSCRIPTOS = cursosInscriptosDelUsuario();
@@ -109,12 +106,6 @@ function mostrarPerfil() {
 
 
 
-
-
-
-
-
-
 function mostrarCursosInscriptos(cursos) {
     let templateCursos = '';
     cursos.forEach(curso => {
@@ -126,13 +117,17 @@ function mostrarCursosInscriptos(cursos) {
                         <h4>CURSO ${curso.nombre}</h4>
                     </div>
                     <div class="duracion-valor">
-                        <p>${curso.duracion} hs</p>
-                        <p>$ ${curso.precio}</p>
+                        <p>Duracion: ${curso.duracion} hs</p>
+                        <p>Precio Unitario: $ ${curso.precio}</p>
+                        <p>Cantidad: ${curso.cantidad}</p>
                     </div>
                 </div>`
     });
     return templateCursos;
 }
+
+
+
 
 function eliminarCuenta(perfil, modal) {
     const BOTON_ELIMINAR = document.querySelector("#eliminar-perfil");
@@ -171,6 +166,9 @@ function confirmarEliminacion(boton_confirmar, modal) {
         }
     });
 }
+
+
+
 
 function formularioCambiarDatos() {
     const boton = document.getElementById('boton-cambiar-datos');
