@@ -21,64 +21,76 @@ function cursosEnCarrito(array_cursos){
 }
 
 function cursos(contenedor, array_cursos){
-    if (array_cursos.length === 0){
+    contenedor.innerHTML = ''; // limpiamos por si hay algo previo
+
+    if (!array_cursos || array_cursos.length === 0){
         const TITULO = document.createElement('h3');
         TITULO.classList.add("titulo-no-hay-cursos");
         TITULO.textContent = "NO SE ENCUENTRAN CURSOS CARGADOS";
         contenedor.appendChild(TITULO);
+        return;
     }
 
     array_cursos.forEach(curso => {
+        const subtotal = curso.precio * curso.cantidad;
+
         const templateCarrito = `
-                <div class="carrito-item">
-                    <div class="carrito-item imagen">
-                        <img src="${curso.img}" alt="Logo ${curso.nombre}" class="imagen-curso">
-                    </div>
-                    <div class="carrito-item titulo-curso">
-                        <h2>Curso ${curso.nombre}</h2>
-                    </div>
-                    <div class="carrito-item datos">
-                        <div id="valoracion-curso">
-                            <img src="../IMG/Cursos/estrella.png" alt="Valoracion del Curso">
-                            <p>${curso.valoracion}</p>
-                        </div>
-                        <p>${curso.duracion} hs</p>
-                    </div>
-                    <div class="carrito-item precio-unitario">
-                        <p>$ ${curso.precio}</p>
-                    </div>
+            <div class="carrito-item">
+                <div class="carrito-item imagen">
+                    <img src="${curso.img}" alt="Logo ${curso.nombre}" class="imagen-curso">
                 </div>
-                `
-                contenedor.innerHTML += templateCarrito;
+                <div class="carrito-item titulo-curso">
+                    <h2>Curso ${curso.nombre}</h2>
+                </div>
+                <div class="carrito-item datos">
+                    <div id="valoracion-curso">
+                        <img src="../IMG/Cursos/estrella.png" alt="Valoracion del Curso">
+                        <p>${curso.valoracion}</p>
+                    </div>
+                    <p>${curso.duracion} hs</p>
+                    <p>Precio unitario:<br>$${curso.precio}</p>
+                    <p>Cantidad: ${curso.cantidad}</p>
+                </div>
+                <div class="carrito-item precio-unitario">
+                    <p>Subtotal:<br>$ ${subtotal}</p>
+                </div>
+            </div>
+        `;
+        contenedor.innerHTML += templateCarrito;
     });
 }
 
-function precioTotal(contenedor){
-        const templatePrecioTotal = `<div id="carrito-precio-total">
-                    <h2>TOTAL</h2>
-                    <p>$ ${calcularTotal(CURSOS)}</p>
-                    <div class="carrito-botones">
-                        <a href="../pages/pago.html" id="confirmar-compra"><button>CONFIRMAR COMPRA</button></a>
-                        <a href="../index.html"><button id="boton-cancelar">CANCELAR COMPRA</button></a>
-                    </div>
-                </div>  `
+function calcularTotal(cursos){
+    let total = 0;
+    cursos.forEach(curso => {
+        const cantidad = curso.cantidad;
+        const precio = curso.precio;
+        total += precio * cantidad;
+    });
+    return total;
+}
 
-        contenedor.innerHTML += templatePrecioTotal;
-        
-        
-        if (calcularTotal(CURSOS) === 0){
-            const boton_confirmar = document.querySelector("#confirmar-compra");
+function precioTotal(contenedor){
+    const total = calcularTotal(CURSOS);
+    const templatePrecioTotal = `
+        <div id="carrito-precio-total">
+            <h2>TOTAL</h2>
+            <p>$ ${total}</p>
+            <div class="carrito-botones">
+                <a href="../pages/pago.html" id="confirmar-compra"><button>CONFIRMAR COMPRA</button></a>
+                <a href="../index.html"><button id="boton-cancelar">CANCELAR COMPRA</button></a>
+            </div>
+        </div>
+    `;
+
+    contenedor.innerHTML += templatePrecioTotal;
+
+ 
+    if (total === 0){
+        const boton_confirmar = document.querySelector("#confirmar-compra");
             boton_confirmar.addEventListener('click', (event) => {
                 event.preventDefault();
                 alert("Cargue Cursos al Carrito para realizar la compra")
             });
-        } 
-        
-}
-function calcularTotal(cursos){
-    let total = 0;
-    cursos.forEach(curso => {
-        total += curso.precio;
-    })
-    return total;
+    }
 }
