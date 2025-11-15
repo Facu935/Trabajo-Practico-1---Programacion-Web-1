@@ -29,7 +29,8 @@ export function mostrarFormularioEmpresarial(selectorPadre, cursoInfo) {
                    title="Solo números (11 dígitos sin guiones)." />
         </div>
         <div class="container-input">
-            <input type="email" id="email-corp" name="email-corp" placeholder="Email Corporativo" required />
+            <input type="email" id="email-corp" name="email-corp" placeholder="Email Corporativo" required 
+                   title="Ingresa un formato de email válido (ej: info@empresa.com)." />
         </div>
     </fieldset>
   `;
@@ -55,7 +56,6 @@ export function mostrarFormularioEmpresarial(selectorPadre, cursoInfo) {
     contadorPersonas++;
     agregarCamposPersona(contadorPersonas);
     actualizarPrecioTotal();
-    validarFormularioCompleto();
   });
 
   form.appendChild(divAddPersona);
@@ -69,18 +69,13 @@ export function mostrarFormularioEmpresarial(selectorPadre, cursoInfo) {
         <p id="precio-participantes-display">Costo Participantes: $0.00</p>
         <p id="precio-total-display-empresa" style="font-weight: bold; margin-top: 5px;">Precio Total: $${parseFloat(cursoInfo.precio).toFixed(2)}</p>
       </div>
-      <button id="btn-mostrar-resumen-empresa" class="btn-inscribirse" type="button" disabled>INSCRIBIRSE</button>
+      <button id="btn-mostrar-resumen-empresa" class="btn-inscribirse" type="button">INSCRIBIRSE</button>
     `;
 
   form.appendChild(divPrecio);
   contenedor.appendChild(form);
 
   const btnInscribirse = document.getElementById('btn-mostrar-resumen-empresa');
-  const inputsEmpresa = form.querySelectorAll('#razon-social, #cuit, #email-corp');
-
-  inputsEmpresa.forEach(input => {
-    input.addEventListener('input', validarFormularioCompleto);
-  });
 
   function agregarCamposPersona(id) {
     const fieldset = crearFieldsetPersonal(id);
@@ -99,10 +94,8 @@ export function mostrarFormularioEmpresarial(selectorPadre, cursoInfo) {
           input.value = '';
         });
         validarYAlternarBotonAdd();
-        validarFormularioCompleto();
       } else {
         fieldset.remove();
-        validarFormularioCompleto();
       }
       actualizarPrecioTotal();
     });
@@ -114,7 +107,6 @@ export function mostrarFormularioEmpresarial(selectorPadre, cursoInfo) {
     const inputsParticipante = fieldset.querySelectorAll('input[type="text"], input[type="email"], input[type="number"], input[type="tel"]');
 
     inputsParticipante.forEach(input => {
-      input.addEventListener('input', validarFormularioCompleto);
       if (id === 1) {
         input.addEventListener('input', validarYAlternarBotonAdd);
       }
@@ -142,43 +134,11 @@ export function mostrarFormularioEmpresarial(selectorPadre, cursoInfo) {
     } else {
       divAddPersona.classList.add('add-persona-disabled');
     }
-
   }
-
-  function validarFormularioCompleto() {
-    let todosCompletos = true;
-
-    for (const input of inputsEmpresa) {
-      if (!input.checkValidity()) {
-        todosCompletos = false;
-        break;
-      }
-    }
-
-    if (todosCompletos) {
-      const inputsParticipantes = contenedorFieldsets.querySelectorAll('input[type="text"], input[type="email"], input[type="number"], input[type="tel"]');
-      if (inputsParticipantes.length === 0) {
-        todosCompletos = false;
-      }
-      for (const input of inputsParticipantes) {
-        if (!input.checkValidity()) {
-          todosCompletos = false;
-          break;
-        }
-      }
-    }
-
-    if (todosCompletos) {
-      btnInscribirse.disabled = false;
-    } else {
-      btnInscribirse.disabled = true;
-    }
-
-  }
-
+  
   function actualizarPrecioTotal() {
     const numeroDePersonas = document.querySelectorAll('#contenedor-fieldsets-empresa fieldset').length;
-    const precioBaseNum = parseFloat(cursoInfo.precio) || 0; // Usa cursoInfo
+    const precioBaseNum = parseFloat(cursoInfo.precio) || 0;
     const costoTotalParticipantes = numeroDePersonas * costoPorPersona;
     const total = precioBaseNum + costoTotalParticipantes;
     const pPrecioBase = document.getElementById('precio-base-display');
@@ -196,13 +156,19 @@ export function mostrarFormularioEmpresarial(selectorPadre, cursoInfo) {
     if (pPrecioTotal) {
       pPrecioTotal.textContent = `Precio Total: $${total.toFixed(2)}`;
     }
-
   }
 
   function mostrarResumen() {
+    const todosLosInputs = form.querySelectorAll('input[required]');
+    for (const input of todosLosInputs) {
+      if (!input.checkValidity()) {
+        alert(`Error en ${input.placeholder}: ${input.title}`);
+        return;
+      }
+    }
+
     const pPrecioTotalElement = document.getElementById('precio-total-display-empresa');
     const precioTotalCalculado = pPrecioTotalElement.textContent.split('$')[1] || 0;
-    // Pasa el precio calculado y el objeto cursoInfo
     const exito = agregarCursoAlCarrito(precioTotalCalculado, cursoInfo);
 
     if (!exito) {

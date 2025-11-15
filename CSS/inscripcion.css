@@ -87,7 +87,7 @@ legend {
   font-weight: 600;
   padding: 0 0.5rem;
   margin-left: 0.5rem;
-  color: #000; /* Texto negro */
+  color: #000;
 }
 
 #contenedor-fieldsets-empresa fieldset {
@@ -136,7 +136,7 @@ legend {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  color: #c00; /* Rojo más simple */
+  color: #c00;
   transition: transform 0.2s;
 }
 

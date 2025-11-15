@@ -24,7 +24,7 @@ export function mostrarFormularioPersonal(selectorPadre, cursoInfo) {
   divPrecio.className = 'container-precio-inscribirse';
   divPrecio.innerHTML = `
         <p id="precio-total-display-personal">Precio total: $${parseFloat(cursoInfo.precio).toFixed(2)}</p>
-        <button id="btn-mostrar-resumen-personal" class="btn-inscribirse" type="button" disabled>INSCRIBIRSE</button>
+        <button id="btn-mostrar-resumen-personal" class="btn-inscribirse" type="button">INSCRIBIRSE</button>
     `;
 
   form.appendChild(divPrecio);
@@ -33,22 +33,15 @@ export function mostrarFormularioPersonal(selectorPadre, cursoInfo) {
   const btnInscribirse = document.getElementById('btn-mostrar-resumen-personal');
   const inputsPersonales = fieldset.querySelectorAll('input[type="text"], input[type="email"], input[type="number"], input[type="tel"]');
 
-  function validarFormularioPersonal() {
-    let todosCompletos = true;
+  function mostrarResumenPersonal() {
+    
     for (const input of inputsPersonales) {
       if (!input.checkValidity()) {
-        todosCompletos = false;
-        break;
+        alert(`Error en ${input.placeholder}: ${input.title}`);
+        return;
       }
     }
-    btnInscribirse.disabled = !todosCompletos;
-  }
 
-  inputsPersonales.forEach(input => {
-    input.addEventListener('input', validarFormularioPersonal);
-  });
-
-  function mostrarResumenPersonal() {
     const exito = agregarCursoAlCarrito(cursoInfo.precio, cursoInfo);
 
     if (!exito) {
