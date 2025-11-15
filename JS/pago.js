@@ -46,7 +46,7 @@ function resumen(section, cursos){
             const templateResumen = `
                     <div id="detalle-curso">
                         <h4>Curso ${curso.nombre}</h4>
-                        <p>$ ${curso.precio}</p>
+                        <p>$ ${curso.precio} (X ${curso.cantidad})</p>
                     </div>`
             CONTENEDOR_DATOS.innerHTML += templateResumen;
     });
@@ -58,12 +58,13 @@ function resumen(section, cursos){
                     </div>`
     CONTENEDOR_DATOS.innerHTML += templatePrecioTotal;
 }
-
 function calcularTotal(cursos){
     let total = 0;
     cursos.forEach(curso => {
-        total += curso.precio;
-    })
+        const cantidad = curso.cantidad;
+        const precio = curso.precio;
+        total += precio * cantidad;
+    });
     return total;
 }
 
@@ -85,27 +86,32 @@ function confirmarCompra(){
 
 function validacionTarjeta(){
     const NUMERO = document.querySelector("#numero-tarjeta").value.trim();
-    const NUMERO_DE_TARJETA = NUMERO.replace(/\D/g, "");    //Espresion regular: elimina todos lo que sea caracteres no numericos (\D), y lo aplica todas las veces que ocurre (g)
+    const NUMERO_DE_TARJETA = NUMERO.replace(/\D/g, "");
+    //Expresion regular: elimina todos lo que sea caracteres no numericos (\D), y lo aplica todas las veces que ocurre (g)    
     const FECHA_DE_VENCIMIENTO = document.querySelector("#vencimiento").value;
     const CODIGO_SEGURIDAD = document.querySelector("#codigo-seguridad").value;
     const NOMBRE_APELLIDO_TITULAR = document.querySelector("#titular").value;
 
     let bandera = true;
-    if (NUMERO_DE_TARJETA < 16){
+    if (NUMERO_DE_TARJETA.length < 16){
         bandera = false;
-        alert("ERROR al comprobar numero de tarjeta");
+        alert("ERROR al comprobar numero de tarjeta, debe tener 16 CARACTERES");
+        return;
     }
     if (!FECHA_DE_VENCIMIENTO){
         bandera = false;
         alert("Ingrese Fecha de Vencimiento");
+        return;
     }
     if(CODIGO_SEGURIDAD.length !== 3){
         bandera = false;
-        alert("ERROR al comprobar codigo de seguridad");
+        alert("ERROR al comprobar codigo de seguridad, debe tener 3 DIGITOS");
+        return;
     }
     if ( !NOMBRE_APELLIDO_TITULAR || /\d/.test(NOMBRE_APELLIDO_TITULAR)){ //Se fija si tiene un numero, que no deberia
         bandera = false;
-        alert("ERROR al comprobar titular de la tarjeta");
+        alert("ERROR al comprobar titular de la tarjeta, no debe poseer numeros, ni estar vacio");
+        return;
     }
     return bandera;
 }

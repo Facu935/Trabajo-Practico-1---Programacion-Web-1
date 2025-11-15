@@ -91,9 +91,7 @@ main {
 
 #cancelar {
   height: 3.5em;
-  width: 50%;
   padding: 0 18em;
-  padding-bottom: 4em;
   background-color: rgb(209, 37, 37);
   color: white;
   border-radius: 10px;

@@ -11,52 +11,12 @@
 </head>
 
 <body>
-    <header id="inicio">
-        <div class="header-div__logo">
-            <img src="../IMG/Logo TP.jpeg" alt="Logo de la Empresa" id="logo" />
-        </div>
-        <div class="buscador-links">
-            <details>
-                <summary>Buscar curso</summary>
-                <ul>
-                    <li><a href="./curso-html.html">HTML5</a></li>
-                    <li><a href="./curso-css.html">CSS3</a></li>
-                    <li><a href="./curso-js.html">JavaScript</a></li>
-                    <li><a href="./curso-blockchain.html">Blockchain</a></li>
-                    <li><a href="./curso-jquery.html">JQuery</a></li>
-                    <li><a href="./curso-java.html">Java</a></li>
-                    <li><a href="./curso-mysql.html">MySQL</a></li>
-                    <li><a href="./curso-csharp.html">C#</a></li>
-                    <li><a href="./curso-php.html">PHP</a></li>
-                    <li><a href="./curso-python.html">Python</a></li>
-                    <li><a href="./curso-node.html">Node.js</a></li>
-                    <li><a href="./curso-react.html">React</a></li>
-                </ul>
-            </details>
-        </div>
-        <div class="header-div__carrito">
-            <a href="../index.html"><button id="boton-login">Cerrar Sesion</button></a>
-            <div id="carrito-y-numero">
-                <div id="header-div__cantidad_items">
-                    <p>1</p>
-                </div>
-                <a href="../pages/carrito.html"><button id="button-carrito"><img
-                            src="../IMG/Icono Carrito de Compra.png" alt="Carrito de Compra"
-                            id="carrito" /></button></a>
-            </div>
-        </div>
-    </header>
-
+    <header id="inicio"></header>
     <nav class="navegation">
-            <div>
-                <ul class="navegation__items">
-                    <li><a href="./zz01-inicio-sesion-iniciada.html">INICIO</a></li>
-                    <li><a href="../pages/zz06-calendario-logeado.html">CALENDARIO</a></li>
-                    <li><a href="../pages/zz06-giftcard-logeado.html">GIFT CARD</a></li>
-                    <li><a href="../pages/zz06-contacto-logeado.html">CONTACTO</a></li>
-                </ul>
-            </div>
-        </nav>
+        <div>
+            <ul class="navegation__items"></ul>
+        </div>
+    </nav>
 
     <main class="giftcard-main">
         <h2 class="titulos">Personalización de Gift Card</h2>
@@ -169,75 +129,15 @@
         </div>
     </main>
 
-    <footer>
-        <div class="footer-recuadros">
-            <h3>Datos del Grupo</h3>
-            <ul id="footer-datos-grupo">
-                <li>Facundo Nicolás Olivieri (DNI: 42.290.776)</li>
-                <li>Agustin Bejarano (DNI: 41.173.682)</li>
-                <li>Nicolas Felipe Alvarez (DNI: 43.321.421)</li>
-                <li>Franco David Pereyra (DNI: 44.181.869)</li>
-                <li>Luis Omar Spataro (DNI: 36.494.378)</li>
-            </ul>
-        </div>
-
-        <div class="footer-recuadros">
-            <div class="footer-recuadros-info">
-
-                <div class="footer-recuadros-info-datos">
-                    <h3>ACERCA DE</h3>
-                    <ul>
-                        <li><a href="../pages/sobre-nosotros.html">Sobre Nosotros</a></li>
-                        <li><a href="../pages/preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-recuadros-info-datos">
-                    <h3>CURSOS DESTACADOS</h3>
-                    <ul>
-                        <a href="../pages/zz02-curso-html-sesion-iniciada.html">
-                            <li>Html 5</li>
-                        </a>
-                        <a href="../pages/zz02-curso-css-sesion-iniciada.html">
-                            <li>CSS</li>
-                        </a>
-                        <a href="../pages/zz02-curso-js-sesion-iniciada.html">
-                            <li>JavaScript</li>
-                        </a>
-                        <a href="../pages/zz02-curso-blockchain-sesion-iniciada.html">
-                            <li>Blockchain</li>
-                        </a>
-                        <a href="../pages/zz02-curso-jquery-sesion-iniciada.html">
-                            <li>JQuery</li>
-                        </a>
-                        <a href="../pages/zz02-curso-java-sesion-iniciada.html">
-                            <li>Java</li>
-                        </a>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="footer-recuadros">
-            <h3>Redes Sociales</h3>
-            <div class="footer-redes">
-                <a href="https://www.facebook.com/" target="_blank"><img src="../IMG/Logo Facebook.png" alt="Facebook"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.instagram.com" target="_blank"><img src="../IMG/Logo Instagram.jpeg" alt="Instagram"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.linkedin.com" target="_blank"><img src="../IMG/Logo LinkedIn.png" alt="LinkedIn"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.x.com" target="_blank"><img src="../IMG/Logo Xpng.png" alt="X"
-                        class="footer-redes-logos"></a>
-                <a href="http://www.youtube.com" target="_blank"><img src="../IMG/Logo YT.png" alt="YouTube"
-                        class="footer-redes-logos"></a>
-            </div>
-        </div>
+    <footer id="footer">
+        <ul id="footer-datos-grupo"></ul>
+        <div class="footer-recuadros-info" id="footer-recuadros-info"></div>
+        <div class="footer-recuadros" id="iconos-redes"></div>
     </footer>
 
     <a href="#inicio"><i id="flecha-vuelta-inicio">&#x1F53C;</i></a>
-    <p id="footer-nota-legal">© Edu Courses. Todos los derechos reservados.</p>
+    <script type="module" src="../JS/giftcard-header-footer.js"></script>
+    <script type="module" src="../JS/giftcard.js"></script>
 </body>
 
 </html>

@@ -169,6 +169,7 @@ export function mostrarFormularioEmpresarial(selectorPadre, cursoInfo) {
 
     const pPrecioTotalElement = document.getElementById('precio-total-display-empresa');
     const precioTotalCalculado = pPrecioTotalElement.textContent.split('$')[1] || 0;
+    // Pasa el precio calculado y el objeto cursoInfo
     const exito = agregarCursoAlCarrito(precioTotalCalculado, cursoInfo);
 
     if (!exito) {

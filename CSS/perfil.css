@@ -33,12 +33,60 @@ h1 {
   height: 20em;
 }
 
-#nombre-usuario {
+.recuadro-info{
+  width: 80%;
+  height: 20em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 20px;
   margin-left: 2em;
-  font-size: 2.5em;
+  background-color: #a0ded6;
+}
+
+#nombre-usuario {
+  font-size: 3.5em;
+}
+.recuadro-info ul{
+  display: flex;
+  gap: 5em;
+  list-style: none;
+}
+
+.recuadro-info li{
+  font-size: 1.8em;
+}
+
+#boton-cambiar-datos{
+  padding: 1em;
+  font-size: 1.2em;
+}
+
+.form-cambiar-datos{
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.labels-cambiar-datos{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 1em;
+}
+
+.acciones-modal {
+  margin-top: 1em;
+  display: flex;
+  gap: 0.5em;
+  justify-content: flex-end;
 }
 
 
+
+/****************************************************************/
 .cursos-inscripto {
   background-color: #45b5c4;
   width: 80%;

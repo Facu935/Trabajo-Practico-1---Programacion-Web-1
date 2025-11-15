@@ -75,7 +75,7 @@ export const CURSOS_INFO = [
             { nombre: "Martín Díaz", cantidad: 5, comentario: "Excelente curso. Lo que más me gustó es que no solo enseñan etiquetas, sino que Mariana explica cómo los navegadores leen el código y cómo optimizarlo. Ya me siento más seguro para continuar con CSS y JavaScript." },
             { nombre: "Sofía Fernández", cantidad: 4, comentario: "Muy completo, aunque algunas explicaciones son algo densas, los ejemplos prácticos ayudan mucho. Recomiendo tomarlo con paciencia y seguir todos los ejercicios para aprovecharlo al máximo." },
         ],
-        cursosSimilares: ["css", "javascript", "jquery"]
+        cursosSimilares: ["css", "javascript", "jquery"],
     },
     {
         cursoId: "css",

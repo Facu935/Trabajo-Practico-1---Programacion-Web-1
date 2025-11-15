@@ -41,8 +41,15 @@ export function mostrarFormularioPersonal(selectorPadre, cursoInfo) {
         return;
       }
     }
+    btnInscribirse.disabled = !todosCompletos;
+  }
 
-    const exito = agregarCursoAlCarrito(cursoInfo.precio, cursoInfo);
+  inputsPersonales.forEach(input => {
+    input.addEventListener('input', validarFormularioPersonal);
+  });
+
+  function mostrarResumenPersonal() {
+    const exito = agregarCursoAlCarrito(cursoInfo.precio, cursoInfo, 1);
 
     if (!exito) {
       return;
