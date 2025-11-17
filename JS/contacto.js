@@ -28,8 +28,13 @@ form.addEventListener("submit", (e) => {
     const phone = phoneInput.value.trim();
     const message = messageInput.value.trim();
 
-    if (!name || !lastname) {
-    alert("El nombre y apellido no pueden estar vacíos.");
+    const regexSoloLetras = /^[a-zA-ZñÑááéíóúÁÉÍÓÚ ]+$/;
+    if (!regexSoloLetras.test(name)) {
+    alert("El nombre solo debe contener letras y espacios.");
+    return;
+}
+    if (!regexSoloLetras.test(lastname)) {
+    alert("El apellido solo debe contener letras y espacios.");
     return;
     }
 
