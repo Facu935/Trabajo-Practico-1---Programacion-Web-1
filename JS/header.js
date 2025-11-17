@@ -255,7 +255,7 @@ function mostrarCarrito(contenedor){
         if (validarUsuarioConectadoParaNav()){
             LINK_CARRITO.href = "../pages/carrito.html";
         } else{
-            LINK_CARRITO.href = "./pages/login.html";
+            LINK_CARRITO.href = "../pages/login.html";
         }
         BOTON_CARRITO.id = "button-carrito";
         IMAGEN_CARRITO.src = "../IMG/Icono Carrito de Compra.png";
