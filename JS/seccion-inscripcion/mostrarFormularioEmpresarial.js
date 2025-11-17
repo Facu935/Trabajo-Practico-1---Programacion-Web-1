@@ -14,25 +14,24 @@ export function mostrarFormularioEmpresarial(selectorPadre, cursoInfo) {
 
   form.className = 'formulario';
   form.innerHTML = `
-    <h3 class="titulo-inscripcion">INSCRIPCIÓN EMPRESARIAL</h3>
-    <fieldset>
-        <legend>Datos de la Empresa</legend>
-        <div class="container-input">
-            <input type="text" id="razon-social" name="razon-social" placeholder="Razón Social" required 
-                   pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ ]+" 
-                   title="Solo puedes ingresar letras y espacios." />
-        </div>
-        <div class="container-input">
-            <input type="text" id="cuit" name="cuit" placeholder="CUIT" required 
-                   inputmode="numeric" 
-                   pattern="\\d{11}" 
-                   title="Solo números (11 dígitos sin guiones)." />
-        </div>
-        <div class="container-input">
-            <input type="email" id="email-corp" name="email-corp" placeholder="Email Corporativo" required />
-        </div>
-    </fieldset>
-  `;
+    <h3 class="titulo-inscripcion">INSCRIPCIÓN EMPRESARIAL</h3>
+    <fieldset id="fieldset-empresa">
+        <legend>Datos de la Empresa</legend>
+        <div class="container-input">
+            <input type="text" id="razon-social" name="razon-social" placeholder="Razón Social" required 
+                   pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ ]+" title="Solo puedes ingresar letras y espacios." />
+        </div>
+        <div class="container-input">
+            <input type="text" id="cuit" name="cuit" placeholder="CUIT" required 
+                   inputmode="numeric" 
+                   pattern="\\d{11}" title="Solo números (11 dígitos sin guiones)." />
+        </div>
+        <div class="container-input">
+            <input type="email" id="email-corp" name="email-corp" placeholder="Email Corporativo" required 
+                   title="Ingresa un formato de email válido (ej: info@empresa.com)." />
+        </div>
+    </fieldset>
+  `;
 
   const tituloParticipantes = document.createElement('h4');
   tituloParticipantes.textContent = 'Datos de los Participantes';
@@ -55,7 +54,6 @@ export function mostrarFormularioEmpresarial(selectorPadre, cursoInfo) {
     contadorPersonas++;
     agregarCamposPersona(contadorPersonas);
     actualizarPrecioTotal();
-    validarFormularioCompleto();
   });
 
   form.appendChild(divAddPersona);
@@ -64,23 +62,18 @@ export function mostrarFormularioEmpresarial(selectorPadre, cursoInfo) {
   divPrecio.className = 'container-precio-inscribirse';
 
   divPrecio.innerHTML = `
-      <div class"price-details">
-        <p id="precio-base-display">Precio del Curso: $${parseFloat(cursoInfo.precio).toFixed(2)}</p>
-        <p id="precio-participantes-display">Costo Participantes: $0.00</p>
-        <p id="precio-total-display-empresa" style="font-weight: bold; margin-top: 5px;">Precio Total: $${parseFloat(cursoInfo.precio).toFixed(2)}</p>
-      </div>
-      <button id="btn-mostrar-resumen-empresa" class="btn-inscribirse" type="button" disabled>INSCRIBIRSE</button>
-    `;
+      <div class"price-details">
+        <p id="precio-base-display">Precio del Curso: $${parseFloat(cursoInfo.precio).toFixed(2)}</p>
+        <p id="precio-participantes-display">Costo Participantes: $0.00</p>
+        <p id="precio-total-display-empresa" style="font-weight: bold; margin-top: 5px;">Precio Total: $${parseFloat(cursoInfo.precio).toFixed(2)}</p>
+      </div>
+      <button id="btn-mostrar-resumen-empresa" class="btn-inscribirse" type="button">INSCRIBIRSE</button>
+    `;
 
   form.appendChild(divPrecio);
   contenedor.appendChild(form);
 
   const btnInscribirse = document.getElementById('btn-mostrar-resumen-empresa');
-  const inputsEmpresa = form.querySelectorAll('#razon-social, #cuit, #email-corp');
-
-  inputsEmpresa.forEach(input => {
-    input.addEventListener('input', validarFormularioCompleto);
-  });
 
   function agregarCamposPersona(id) {
     const fieldset = crearFieldsetPersonal(id);
@@ -99,10 +92,8 @@ export function mostrarFormularioEmpresarial(selectorPadre, cursoInfo) {
           input.value = '';
         });
         validarYAlternarBotonAdd();
-        validarFormularioCompleto();
       } else {
         fieldset.remove();
-        validarFormularioCompleto();
       }
       actualizarPrecioTotal();
     });
@@ -114,7 +105,6 @@ export function mostrarFormularioEmpresarial(selectorPadre, cursoInfo) {
     const inputsParticipante = fieldset.querySelectorAll('input[type="text"], input[type="email"], input[type="number"], input[type="tel"]');
 
     inputsParticipante.forEach(input => {
-      input.addEventListener('input', validarFormularioCompleto);
       if (id === 1) {
         input.addEventListener('input', validarYAlternarBotonAdd);
       }
@@ -145,40 +135,9 @@ export function mostrarFormularioEmpresarial(selectorPadre, cursoInfo) {
 
   }
 
-  function validarFormularioCompleto() {
-    let todosCompletos = true;
-
-    for (const input of inputsEmpresa) {
-      if (!input.checkValidity()) {
-        todosCompletos = false;
-        break;
-      }
-    }
-
-    if (todosCompletos) {
-      const inputsParticipantes = contenedorFieldsets.querySelectorAll('input[type="text"], input[type="email"], input[type="number"], input[type="tel"]');
-      if (inputsParticipantes.length === 0) {
-        todosCompletos = false;
-      }
-      for (const input of inputsParticipantes) {
-        if (!input.checkValidity()) {
-          todosCompletos = false;
-          break;
-        }
-      }
-    }
-
-    if (todosCompletos) {
-      btnInscribirse.disabled = false;
-    } else {
-      btnInscribirse.disabled = true;
-    }
-
-  }
-
   function actualizarPrecioTotal() {
     const numeroDePersonas = document.querySelectorAll('#contenedor-fieldsets-empresa fieldset').length;
-    const precioBaseNum = parseFloat(cursoInfo.precio) || 0; // Usa cursoInfo
+    const precioBaseNum = parseFloat(cursoInfo.precio) || 0;
     const costoTotalParticipantes = numeroDePersonas * costoPorPersona;
     const total = precioBaseNum + costoTotalParticipantes;
     const pPrecioBase = document.getElementById('precio-base-display');
@@ -200,10 +159,19 @@ export function mostrarFormularioEmpresarial(selectorPadre, cursoInfo) {
   }
 
   function mostrarResumen() {
+    const todosLosInputs = form.querySelectorAll('input[required]');
+
+    for (const input of todosLosInputs) {
+      if (!input.checkValidity()) {
+        alert(`Error en ${input.placeholder}: ${input.title}`);
+        return;
+      }
+    }
+
     const pPrecioTotalElement = document.getElementById('precio-total-display-empresa');
     const precioTotalCalculado = pPrecioTotalElement.textContent.split('$')[1] || 0;
-    // Pasa el precio calculado y el objeto cursoInfo
-    const exito = agregarCursoAlCarrito(precioTotalCalculado, cursoInfo);
+    const cantidadParticipantes = document.querySelectorAll('#contenedor-fieldsets-empresa fieldset').length || 1;
+    const exito = agregarCursoAlCarrito(precioTotalCalculado, cursoInfo, cantidadParticipantes);
 
     if (!exito) {
       return;
@@ -226,9 +194,9 @@ export function mostrarFormularioEmpresarial(selectorPadre, cursoInfo) {
       const telefono = fs.querySelector(`input[name="telefono-${id}"]`)?.value || 'N/A';
 
       resumenHtml += `<li style="list-style-type: none;">
-          <strong>Persona ${index + 1}:</strong> ${nombre} ${apellido} (DNI: ${dni})<br>
-          <small>Tel: ${telefono}</small>
-        </li>`;
+          <strong>Persona ${index + 1}:</strong> ${nombre} ${apellido} (DNI: ${dni})<br>
+          <small>Tel: ${telefono}</small>
+        </li>`;
     });
 
     resumenHtml += '</ul>';
@@ -238,10 +206,10 @@ export function mostrarFormularioEmpresarial(selectorPadre, cursoInfo) {
     const total = document.getElementById('precio-total-display-empresa').textContent;
 
     resumenHtml += `<div style="margin-top: 1rem; text-align: left;">
-                      <p>${base}</p>
-                      <p>${participantes}</p>
-                      <p><strong>${total}</strong></p>
-                    </div>`;
+                      <p>${base}</p>
+                      <p>${participantes}</p>
+                      <p><strong>${total}</strong></p>
+                    </div>`;
 
     resumenHtml += '<a href="../pages/carrito.html" class="btn-inscribirse" style="margin-top: 1rem; text-decoration: none; display: inline-block; padding: 0.5rem 1rem; text-align: center;">Ir a Pagar</a>';
 
