@@ -50,9 +50,13 @@ main {
   font-weight: 600;
 }
 #asterisco {
+  /* display: inline-block */
   font-size: 1.5em;
+  width: 6ch;
   font-weight: 800;
+  text-align: left;
 }
+
 #nombre-apellido-titular {
   margin-bottom: 3em;
 }

@@ -148,6 +148,14 @@ button[type="submit"]:hover {
   text-decoration: underline;
 }
 
+#errores p {
+    color: red;
+    margin: 4px 0 0 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+
 /* ==== RESPONSIVE ==== */
 @media (max-width: 768px) {
   .pago {
