@@ -78,6 +78,11 @@ h1 {
   font-size: 2em;
 }
 
+.boton-add-carrito{
+  width: 85%;
+  height: 52%;
+}
+
 /********************************/
 .modal {
   display: none;

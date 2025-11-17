@@ -4,6 +4,7 @@ import { Header } from "./header.js";
 import { Navbar } from "./navbar.js";
 import { Footer } from "./footer.js";
 import "./eventoModal.js";
+import"./agregar-al-carrito.js";
 
 const header = new Header();
 const barraNav = new Navbar();
@@ -37,6 +38,7 @@ function grillaCompleta(cursos) {
                 <a href="${curso.link}">Ver Detalles</a>
             </div>
             <div class="otro-cursos-recuadro inscripcion">
+                <button class="boton-add-carrito" data-curso="${curso.cursoId}" type="button">Añadir al Carrito</button>
                 <button class="boton-inscribirse" data-curso="${curso.cursoId}">Inscribirme</button>
             </div>
         </div>`;
