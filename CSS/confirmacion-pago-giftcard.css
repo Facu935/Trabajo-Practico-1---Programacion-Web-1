@@ -194,14 +194,6 @@ main {
 /*********************************/
 
 @media screen and (min-width: 1520.1px) and (max-width: 1864px) {
-  /*
-    #vencimiento-seguridad{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    }*/
-
   .pago {
     height: 50em;
   }

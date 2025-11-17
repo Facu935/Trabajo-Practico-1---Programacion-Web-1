@@ -1,8 +1,3 @@
-
-
-
-
-
 export const NAV = [
     { name: "INICIO", link: "../index.html" },
     { name: "CALENDARIO", link: "../pages/calendario.html" },
@@ -13,7 +8,6 @@ export const NAV = [
 export const USUARIOS_REGISTRADOS = [
 
 ]
-
 
 export const INTEGRANTES_DEL_GRUPO = [
     { integrante: "Facundo Nicolás Olivieri (DNI: 42.290.776)" },

@@ -21,11 +21,6 @@ mostrarPerfil();
 formularioCambiarDatos();
 footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS, FOOTER_REDES);
 
-
-
-/* ============================================================
-        MOSTRAR PERFIL
-============================================================ */
 function mostrarPerfil() {
     const PERFIL = document.querySelector(".principal");
     const CURSOS_INSCRIPTOS = cursosInscriptosDelUsuario();
@@ -51,7 +46,6 @@ function mostrarPerfil() {
     </div>
     `;
 
-    /* ------------------------ NUEVO: LISTA DE GIFTCARDS --------------------- */
     if (GIFT.length > 0) {
         template += `
         <h2 class="titulos">Giftcards Compradas</h2>
@@ -62,7 +56,6 @@ function mostrarPerfil() {
 
     PERFIL.innerHTML = template;
 
-    /* ---------------- BOTÓN ELIMINAR PERFIL ---------------- */
     const BOTON_ELIMINAR_PERFIL = document.createElement('button');
     BOTON_ELIMINAR_PERFIL.id = 'eliminar-perfil';
     BOTON_ELIMINAR_PERFIL.textContent = " ELIMINAR PERFIL"
@@ -89,14 +82,12 @@ function mostrarPerfil() {
     cancelarEliminacion(BOTON_CANCELAR, MODAL_AVISO);
     confirmarEliminacion(BOTON_CONFIRMAR, MODAL_AVISO);
 
-    /* Activar eliminación de giftcards */
     document.querySelectorAll(".btn-eliminar-gift").forEach(btn => {
         btn.addEventListener("click", () => {
             eliminarGiftcard(Number(btn.dataset.index));
         });
     });
 
-    /* Activar eliminación de cursos */
     document.querySelectorAll(".btn-eliminar-curso").forEach(btn => {
         btn.addEventListener("click", () => {
             eliminarCurso(Number(btn.dataset.index));
@@ -104,11 +95,6 @@ function mostrarPerfil() {
     });
 }
 
-
-
-/* ============================================================
-        MOSTRAR CURSOS INSCRIPTOS (con botón eliminar)
-============================================================ */
 function mostrarCursosInscriptos(cursos) {
     let templateCursos = '';
     cursos.forEach((curso, index) => {
@@ -131,11 +117,6 @@ function mostrarCursosInscriptos(cursos) {
     return templateCursos;
 }
 
-
-
-/* ============================================================
-        NUEVO — MOSTRAR TODAS LAS GIFTCARDS
-============================================================ */
 function mostrarGiftcards(giftcards) {
     return giftcards
         .map((g, index) => `
@@ -156,11 +137,6 @@ function mostrarGiftcards(giftcards) {
         .join("");
 }
 
-
-
-/* ============================================================
-        NUEVO — ELIMINAR GIFTCARD
-============================================================ */
 function eliminarGiftcard(index) {
     const usuarios = localStorageUsuarios();
     const usuario = obtenerUsuarioLogueado();
@@ -173,11 +149,6 @@ function eliminarGiftcard(index) {
     location.reload();
 }
 
-
-
-/* ============================================================
-        NUEVO — ELIMINAR CURSO
-============================================================ */
 function eliminarCurso(index) {
     const usuarios = localStorageUsuarios();
     const usuario = obtenerUsuarioLogueado();
@@ -190,11 +161,6 @@ function eliminarCurso(index) {
     location.reload();
 }
 
-
-
-/* ============================================================
-        ELIMINAR CUENTA
-============================================================ */
 function eliminarCuenta(perfil, modal) {
     const BOTON_ELIMINAR = document.querySelector("#eliminar-perfil");
     BOTON_ELIMINAR.addEventListener('click', () => {
@@ -233,11 +199,6 @@ function confirmarEliminacion(boton_confirmar, modal) {
     });
 }
 
-
-
-/* ============================================================
-        CAMBIAR DATOS (NO MODIFICADO)
-============================================================ */
 function formularioCambiarDatos() {
     const boton = document.getElementById('boton-cambiar-datos');
     const MODAL = document.createElement('dialog');
@@ -336,5 +297,3 @@ function cambiarDatos(form, modal, email_previo){
             window.location.reload();
         });
 }
-
-

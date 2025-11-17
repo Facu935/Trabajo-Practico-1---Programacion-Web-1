@@ -1,15 +1,8 @@
 import { guardarModificacionLocalStorage, localStorageUsuarios, usuarioLogueado } from "./funciones-generales.js";
 
-
-
-
 mostrarLogin();
 
-
-
-
 function mostrarLogin(){
-
     const CONTAINER_COMPLETO = document.querySelector(".login-container");
     const CONTAINER_LOGIN= document.createElement("div");
     CONTAINER_LOGIN.classList.add("login-form-container");
@@ -55,6 +48,7 @@ function tituloCrearCuenta(login){
     TITULO_LOGIN.textContent = "INICIAR SESIÓN";
     login.appendChild(TITULO_LOGIN);
 }
+
 function loginInputs(login){
         const login_input = document.createElement('div');
     const templateLogin = `<label for="username" class="login__label">
@@ -70,6 +64,7 @@ function loginInputs(login){
     login_input.innerHTML = templateLogin;
     login.appendChild(login_input);
 }
+
 function botones(login){
     const BOTONES = document.createElement("div");
     BOTONES.classList.add("boton-container");
@@ -77,7 +72,6 @@ function botones(login){
     BOTONES.innerHTML = BOTONES_CONTENIDO;
     login.appendChild(BOTONES);
 }
-
 
 function validacionUsuarioYPassword(){
     const INICIAR_SESION = document.querySelector("#login");
@@ -104,5 +98,3 @@ function validacionUsuarioYPassword(){
         }
     });  
 }
-
-

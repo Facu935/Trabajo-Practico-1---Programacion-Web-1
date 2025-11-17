@@ -23,9 +23,6 @@ h1 {
   width: 80%;
   display: flex;
   align-items: center;
-
-
-
 }
 
 #foto-perfil {
@@ -83,8 +80,6 @@ h1 {
   gap: 0.5em;
   justify-content: flex-end;
 }
-
-
 
 /****************************************************************/
 .cursos-inscripto {

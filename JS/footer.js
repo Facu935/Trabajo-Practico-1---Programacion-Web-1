@@ -21,12 +21,10 @@ export class Footer {
     CONTENEDOR_INTEGRANTES.classList.add("footer-recuadros");
     const LISTA_INTEGRANTES = document.querySelector("#footer-datos-grupo");
 
-    //Titulo
     const TITULO = document.createElement("h3");
     TITULO.textContent = "Datos del Grupo";
     CONTENEDOR_INTEGRANTES.appendChild(TITULO);
 
-    //Lista
     integrantes.forEach((integrante) => {
       const ITEM_INTEGRANTE = document.createElement("li");
       ITEM_INTEGRANTE.textContent = integrante.integrante;
@@ -45,12 +43,10 @@ export class Footer {
   mostrarRedesSociales(redes_sociales) {
     const FOOTER = document.querySelector("#footer");
     const REDES = document.querySelector("#iconos-redes");
-    //Titulo
     const TITULO = document.createElement("h3");
     TITULO.id = "titulo-redes";
     TITULO.textContent = "Redes Sociales";
 
-    //Iconos
     const CONTENEDOR_REDES = document.createElement("div");
     CONTENEDOR_REDES.classList.add("footer-redes");
 
@@ -92,11 +88,9 @@ function mostrarLinksAcercaDe(links_acerca_de) {
   ACERCA_DE.classList.add("footer-recuadros-info-datos");
   ACERCA_DE.classList.add("footer-recuadros");
 
-  //Titulo
   const TITULO = document.createElement("h3");
   TITULO.textContent = "ACERCA DE";
 
-  //Lista
   const LISTA_ACERCA_DE = document.createElement("ul");
   links_acerca_de.forEach((item) => {
     const templateAcercaDe = `<li><a href="${item.link}"> ${item.name}</a></li>`;
@@ -117,11 +111,9 @@ function mostrarLinksCursosDestacados(cursos_destacados) {
   CURSOS_DESTACADOS.classList.add("footer-recuadros-info-datos");
   CURSOS_DESTACADOS.classList.add("footer-recuadros");
 
-  //Titulo
   const TITULO = document.createElement("h3");
   TITULO.textContent = "CURSOS DESTACADOS";
 
-  //Lista
   const LISTA_CURSOS_DESTACADOS = document.createElement("ul");
   cursos_destacados.forEach((item) => {
     const templateCursosDestacados = `<a href="${item.link}"><li>${item.name}</li></a>`;

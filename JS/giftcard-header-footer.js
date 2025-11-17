@@ -12,5 +12,4 @@ barraNav.mostrarItems(NAV);
 
 const urlParams = new URLSearchParams(window.location.search);
 
-
 footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS, FOOTER_REDES);

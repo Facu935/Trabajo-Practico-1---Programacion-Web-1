@@ -9,86 +9,6 @@ body {
   background-color: rgb(65, 151, 608);
 }
 
-/*header {
-  background-color: #1693a5;
-  height: 12em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-div__logo {
-  height: auto;
-}
-
-#logo {
-  width: 10em;
-  margin-left: 5em;
-  border-radius: 50%;
-  border: 1px solid black;
-}
-
-#buscador {
-  height: 3em;
-  width: 40em;
-}
-
-.header-div__carrito {
-  height: 100%;
-  width: 15%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-#carrito {
-  height: 5em;
-  width: 5em;
-}
-
-#header-div__cantidad_items {
-  height: 2.5em;
-  width: 2.5em;
-  background-color: #ff000000;
-  border-radius: 100%;
-  border: black solid 0.25em;
-  position: absolute;
-  right: 5em;
-  bottom: 8em;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-weight: 800;
-}
-
-.navegation {
-  height: 5em;
-  width: auto;
-  background-color: #45b5c4;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-}
-
-.navegation__items {
-  height: 5em;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  list-style: none;
-  font-weight: 700;
-}
-
-a {
-  text-decoration: none;
-  color: #000;
-}*/
-
 .container-contacto {
   display: flex;
   justify-content: center;
@@ -185,40 +105,6 @@ textarea {
   padding: 0.3125em 0;
 }
 
-/*footer {
-  width: auto;
-  height: 20em;
-  background-color: #1693a5;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  border-top: 1px solid black;
-}
-
-.footer_recuadros {
-  width: 30em;
-  height: 15em;
-  background-color: #9eaf04;
-  border: 5px solid black;
-  text-align: center;
-}
-
-.footer_recuadros h3 {
-  padding: 2em;
-}
-
-.footer_redes {
-  display: flex;
-  justify-content: center;
-  gap: 1.5em;
-}
-
-.footer_recuadros ul {
-  list-style: none;
-}*/
-
-/* 🔹 Estilo del contador de caracteres */
 #charCount {
   display: block;
   text-align: right;
@@ -259,7 +145,6 @@ dialog {
   background-color: #005bb5;
 }
 
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -270,7 +155,6 @@ dialog {
     transform: scale(1);
   }
 }
-
 
 @media screen and (width < 115.625em) {
   .contacto__form {

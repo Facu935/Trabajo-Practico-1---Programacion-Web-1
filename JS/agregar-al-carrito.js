@@ -4,8 +4,6 @@ import {
 } from "./funciones-generales.js";
 import { mostrarNumeroDelCarrito } from "./header.js";
 
-
-
 document.addEventListener("click", (e) => {
     const boton = e.target.closest(".boton-add-carrito");
     if (!boton) return;

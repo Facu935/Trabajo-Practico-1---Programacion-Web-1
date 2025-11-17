@@ -63,7 +63,6 @@ function actualizarPreview() {
 destinatarioInput.addEventListener("input", actualizarPreview);
 montoInput.addEventListener("input", actualizarPreview);
 
-// color fondo
 document.querySelectorAll("input[name='color']").forEach(r => {
     r.addEventListener("change", e => {
         colorFondo = e.target.value;
@@ -71,7 +70,6 @@ document.querySelectorAll("input[name='color']").forEach(r => {
     });
 });
 
-// color letra
 document.querySelectorAll(".text-color-btn").forEach(btn => {
     btn.addEventListener("click", () => {
         document.querySelectorAll(".text-color-btn")
@@ -82,7 +80,6 @@ document.querySelectorAll(".text-color-btn").forEach(btn => {
     });
 });
 
-// tamaño letra
 document.querySelectorAll(".font-size-btn").forEach(btn => {
     btn.addEventListener("click", () => {
         document.querySelectorAll(".font-size-btn")
@@ -93,7 +90,6 @@ document.querySelectorAll(".font-size-btn").forEach(btn => {
     });
 });
 
-// ubicación monto
 document.querySelectorAll(".btn-pos").forEach(btn => {
     btn.addEventListener("click", () => {
         document.querySelectorAll(".btn-pos")

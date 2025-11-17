@@ -10,8 +10,6 @@ main {
   align-items: center;
 }
 
-/*********   grid general   *********/
-
 .pago {
   width: 80%;
   height: 40em;
@@ -20,7 +18,6 @@ main {
   grid-template-columns: repeat(2, 1fr);
 }
 
-/*********  Metodo      ***********/
 .pago-metodo {
   background-color: #a0ded6;
   margin: 2em;
@@ -50,7 +47,6 @@ main {
   font-weight: 600;
 }
 #asterisco {
-  /* display: inline-block */
   font-size: 1.5em;
   width: 6ch;
   font-weight: 800;
@@ -102,7 +98,6 @@ main {
   font-size: 1em;
 }
 
-/***************    Resumen        ********************/
 .pago-resumen {
   background-color: #a0ded6;
   height: 25em;
@@ -196,14 +191,6 @@ main {
 /*********************************/
 
 @media screen and (min-width: 1520.1px) and (max-width: 1864px) {
-  /*
-    #vencimiento-seguridad{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    }*/
-
   .pago {
     height: 50em;
   }
