@@ -72,9 +72,9 @@
   border-radius: 0.5em;
 }
 
-fieldset {
+.formulario > fieldset {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
   border: none;
   margin: 1rem 0;
@@ -82,19 +82,30 @@ fieldset {
   background-color: transparent;
 }
 
+#fieldset-empresa {
+  grid-template-columns: 1fr;
+  width: 40%;
+}
+
 legend {
   font-size: 1.2rem;
   font-weight: 600;
   padding: 0 0.5rem;
   margin-left: 0.5rem;
-  color: #000; /* Texto negro */
+  color: #000;
+  grid-column: 1 / -1;
+  margin-bottom: 0.5rem;
 }
 
 #contenedor-fieldsets-empresa fieldset {
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr auto;
   border: none;
   background-color: transparent;
   padding: 0;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
 }
 
 .container-input {
@@ -102,7 +113,6 @@ legend {
   align-items: center;
   border: 1px solid black;
   border-radius: 0.3125em;
-  padding: 0.5rem 0.75rem;
   background-color: #fff;
 }
 
@@ -111,7 +121,7 @@ legend {
   height: auto;
   font-size: 1rem;
   border-radius: 0;
-  padding: 0;
+  padding: 0.75rem 1rem;
   border: none;
   background-color: transparent;
 }
@@ -136,7 +146,7 @@ legend {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  color: #c00; /* Rojo más simple */
+  color: #c00;
   transition: transform 0.2s;
 }
 
@@ -256,6 +266,7 @@ legend {
   color: #000;
   text-align: center;
 }
+
 .popup h4 {
   font-size: 1.1rem;
   margin-top: 1.5rem;
@@ -263,11 +274,13 @@ legend {
   color: #333;
   text-align: left;
 }
+
 .popup p {
   font-size: 1rem;
   line-height: 1.4;
   text-align: left;
 }
+
 .popup li {
   margin-bottom: 0.75rem;
   text-align: left;
@@ -298,19 +311,29 @@ input[type="number"]::-webkit-inner-spin-button {
     padding: 1.5rem;
   }
 
-  fieldset,
+  .formulario > fieldset,
+  #fieldset-empresa,
   #contenedor-fieldsets-empresa fieldset {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  #fieldset-empresa .container-input:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  #fieldset-empresa{
+    width: 100%;
   }
 
   #contenedor-fieldsets-empresa .container-button {
     grid-column: 1 / -1;
     justify-content: flex-end;
+    margin-top: 0.5rem;
   }
 
   .container-input:nth-child(4) {
-    grid-column: 1 / -1;
+    grid-column: auto;
   }
 
   .container-precio-inscribirse {
@@ -343,14 +366,20 @@ input[type="number"]::-webkit-inner-spin-button {
     font-size: 1.2rem;
   }
 
-  fieldset,
+  .formulario > fieldset,
+  #fieldset-empresa,
   #contenedor-fieldsets-empresa fieldset {
     grid-template-columns: 1fr;
-    gap: 0.75rem;
+    gap: 1rem;
     padding: 0.5rem;
   }
 
+  #fieldset-empresa .container-input:nth-child(3) {
+    grid-column: auto;
+  }
+
   #contenedor-fieldsets-empresa .container-button {
+    grid-column: auto;
     justify-content: center;
   }
 
