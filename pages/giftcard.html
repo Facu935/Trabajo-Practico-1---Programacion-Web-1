@@ -34,12 +34,14 @@
             </div>
 
             <form id="formGiftcard" class="giftcard-form">
+
                 <label for="destinatario">Nombre Destinatario</label>
                 <input type="text" id="destinatario" name="nombre_destinatario" required
                     placeholder="Nombre Destinatario" />
 
+                <!-- COLORES DE FONDO -->
                 <div class="form-group">
-                    <label>Color</label>
+                    <label>Color Fondo</label>
                     <div class="color-options">
                         <input type="radio" id="color-negro" name="color" value="#000" checked>
                         <label for="color-negro" class="color-swatch" style="background-color: #000;"></label>
@@ -58,10 +60,47 @@
                     </div>
                 </div>
 
+                <!-- NUEVO: COLOR DE LETRA -->
+                <div class="form-group">
+                    <label>Color Letra</label>
+                    <div class="color-options">
+                        <span class="text-color-btn" data-color="#080" style="background:#080"></span>
+                        <span class="text-color-btn" data-color="#000" style="background:#000"></span>
+                        <span class="text-color-btn" data-color="#fff" style="background:#fff"></span>
+                        <span class="text-color-btn" data-color="#C00" style="background:#C00"></span>
+                        <span class="text-color-btn" data-color="#00F" style="background:#00F"></span>
+                    </div>
+                </div>
+
+
+                <!-- NUEVO: TAMAÑO DE FUENTE -->
+                <div class="form-group">
+                    <label>Tamaño de fuente</label>
+                    <div class="size-options">
+                        <button type="button" class="font-size-btn" data-size="20px">20px</button>
+                        <button type="button" class="font-size-btn" data-size="28px">28px</button>
+                        <button type="button" class="font-size-btn" data-size="32px">32px</button>
+                        <button type="button" class="font-size-btn" data-size="48px">48px</button>
+                        <button type="button" class="font-size-btn" data-size="60px">60px</button>
+                    </div>
+                </div>
+
+
                 <label for="monto">Monto $</label>
                 <input type="number" id="monto" name="monto_giftcard" placeholder="Ej: 50000" min="1000" required />
 
-                <button type="submit" class="button-confirmar">CONFIRMAR</button>
+                <!-- UBICACIÓN DEL MONTO -->
+                <div class="form-group">
+                    <label>Ubicación monto</label>
+                    <div class="location-options">
+                        <button type="button" class="btn-pos" data-pos="top-left">arriba izq</button>
+                        <button type="button" class="btn-pos" data-pos="top-right">arriba der</button>
+                        <button type="button" class="btn-pos" data-pos="bottom-left">abajo izq</button>
+                        <button type="button" class="btn-pos" data-pos="bottom-right">abajo der</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="button-confirmar">AGREGAR GIFTCARD</button>
             </form>
 
             <div class="overlay">
@@ -81,6 +120,7 @@
     </footer>
 
     <a href="#inicio"><i id="flecha-vuelta-inicio">&#x1F53C;</i></a>
+
     <script type="module" src="../JS/giftcard-header-footer.js"></script>
     <script type="module" src="../JS/giftcard.js"></script>
 </body>

@@ -15,7 +15,6 @@ const barraNav = new Navbar();
 const footer = new Footer();
 const USUARIO_LOGUEADO = obtenerUsuarioLogueado();
 
-
 header.mostrarHeader(CURSOS_INFO);
 barraNav.mostrarItems(NAV);
 mostrarPerfil();
@@ -24,10 +23,13 @@ footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS
 
 
 
+/* ============================================================
+        MOSTRAR PERFIL
+============================================================ */
 function mostrarPerfil() {
     const PERFIL = document.querySelector(".principal");
     const CURSOS_INSCRIPTOS = cursosInscriptosDelUsuario();
-    const GIFT = USUARIO_LOGUEADO.giftcard;
+    const GIFT = USUARIO_LOGUEADO.giftcards || [];
 
     let template = `
     <h1>PERFIL</h1>
@@ -49,37 +51,22 @@ function mostrarPerfil() {
     </div>
     `;
 
-
-    if (GIFT && GIFT.destinatario && GIFT.monto) {
+    /* ------------------------ NUEVO: LISTA DE GIFTCARDS --------------------- */
+    if (GIFT.length > 0) {
         template += `
-    <h2 class="titulos">Giftcard Comprada</h2>
-    <div class="giftcard-contenedor">
-        <div class="giftcard-card">
-            <div class="imagen-curso-similar">
-                <img src="../IMG/giftcard.png" alt="Giftcard" style="width:120px; height:auto;">
-            </div>
-            <div class="titulo-curso">
-                <h4>GIFT CARD</h4>
-            </div>
-            <div class="duracion-valor">
-                <p><strong>Destinatario:</strong> ${GIFT.destinatario}</p>
-                <p><strong>Monto:</strong> $${GIFT.monto}</p>
-            </div>
-        </div>
-    </div>`;
+        <h2 class="titulos">Giftcards Compradas</h2>
+        <div class="giftcard-lista">
+            ${mostrarGiftcards(GIFT)}
+        </div>`;
     }
 
-
     PERFIL.innerHTML = template;
-    
 
-
-
+    /* ---------------- BOTÓN ELIMINAR PERFIL ---------------- */
     const BOTON_ELIMINAR_PERFIL = document.createElement('button');
     BOTON_ELIMINAR_PERFIL.id = 'eliminar-perfil';
     BOTON_ELIMINAR_PERFIL.textContent = " ELIMINAR PERFIL"
     PERFIL.appendChild(BOTON_ELIMINAR_PERFIL);
-
 
     const MODAL_AVISO = document.createElement('dialog');
     const CONTENEDOR_MODAL = document.createElement('div');
@@ -101,34 +88,113 @@ function mostrarPerfil() {
     eliminarCuenta(PERFIL, MODAL_AVISO);
     cancelarEliminacion(BOTON_CANCELAR, MODAL_AVISO);
     confirmarEliminacion(BOTON_CONFIRMAR, MODAL_AVISO);
+
+    /* Activar eliminación de giftcards */
+    document.querySelectorAll(".btn-eliminar-gift").forEach(btn => {
+        btn.addEventListener("click", () => {
+            eliminarGiftcard(Number(btn.dataset.index));
+        });
+    });
+
+    /* Activar eliminación de cursos */
+    document.querySelectorAll(".btn-eliminar-curso").forEach(btn => {
+        btn.addEventListener("click", () => {
+            eliminarCurso(Number(btn.dataset.index));
+        });
+    });
 }
 
 
 
-
+/* ============================================================
+        MOSTRAR CURSOS INSCRIPTOS (con botón eliminar)
+============================================================ */
 function mostrarCursosInscriptos(cursos) {
     let templateCursos = '';
-    cursos.forEach(curso => {
-        templateCursos += `<div class="contenedor-curso">
-                    <div class="imagen-curso-similar">
-                        <img src="${curso.img}" alt="Logo ${curso.nombre}" />
-                    </div>
-                    <div class="titulo-curso">
-                        <h4>CURSO ${curso.nombre}</h4>
-                    </div>
-                    <div class="duracion-valor">
-                        <p>Duracion: ${curso.duracion} hs</p>
-                        <p>Precio Unitario: $ ${curso.precio}</p>
-                        <p>Cantidad: ${curso.cantidad}</p>
-                    </div>
-                </div>`
+    cursos.forEach((curso, index) => {
+        templateCursos += `
+        <div class="contenedor-curso">
+            <div class="imagen-curso-similar">
+                <img src="${curso.img}" alt="Logo ${curso.nombre}" />
+            </div>
+            <div class="titulo-curso">
+                <h4>CURSO ${curso.nombre}</h4>
+            </div>
+            <div class="duracion-valor">
+                <p>Duración: ${curso.duracion} hs</p>
+                <p>Precio Unitario: $ ${curso.precio}</p>
+                <p>Cantidad: ${curso.cantidad}</p>
+            </div>
+            <button class="btn-eliminar-curso" data-index="${index}">Eliminar Curso</button>
+        </div>`;
     });
     return templateCursos;
 }
 
 
 
+/* ============================================================
+        NUEVO — MOSTRAR TODAS LAS GIFTCARDS
+============================================================ */
+function mostrarGiftcards(giftcards) {
+    return giftcards
+        .map((g, index) => `
+            <div class="giftcard-card">
+                <div class="imagen-curso-similar">
+                    <img src="../IMG/giftcard.png" style="width:120px;">
+                </div>
+                <div class="titulo-curso">
+                    <h4>GIFT CARD</h4>
+                </div>
+                <div class="duracion-valor">
+                    <p><strong>Destinatario:</strong> ${g.destinatario}</p>
+                    <p><strong>Monto:</strong> $${g.monto}</p>
+                </div>
+                <button class="btn-eliminar-gift" data-index="${index}">Eliminar Giftcard</button>
+            </div>
+        `)
+        .join("");
+}
 
+
+
+/* ============================================================
+        NUEVO — ELIMINAR GIFTCARD
+============================================================ */
+function eliminarGiftcard(index) {
+    const usuarios = localStorageUsuarios();
+    const usuario = obtenerUsuarioLogueado();
+    const i = usuarios.findIndex(u => u.email === usuario.email);
+
+    usuarios[i].giftcards.splice(index, 1);
+    guardarModificacionLocalStorage(usuarios);
+    localStorage.setItem("usuarioLogueado", JSON.stringify(usuarios[i]));
+
+    location.reload();
+}
+
+
+
+/* ============================================================
+        NUEVO — ELIMINAR CURSO
+============================================================ */
+function eliminarCurso(index) {
+    const usuarios = localStorageUsuarios();
+    const usuario = obtenerUsuarioLogueado();
+    const i = usuarios.findIndex(u => u.email === usuario.email);
+
+    usuarios[i].cursosInscriptos.splice(index, 1);
+    guardarModificacionLocalStorage(usuarios);
+    localStorage.setItem("usuarioLogueado", JSON.stringify(usuarios[i]));
+
+    location.reload();
+}
+
+
+
+/* ============================================================
+        ELIMINAR CUENTA
+============================================================ */
 function eliminarCuenta(perfil, modal) {
     const BOTON_ELIMINAR = document.querySelector("#eliminar-perfil");
     BOTON_ELIMINAR.addEventListener('click', () => {
@@ -169,7 +235,9 @@ function confirmarEliminacion(boton_confirmar, modal) {
 
 
 
-
+/* ============================================================
+        CAMBIAR DATOS (NO MODIFICADO)
+============================================================ */
 function formularioCambiarDatos() {
     const boton = document.getElementById('boton-cambiar-datos');
     const MODAL = document.createElement('dialog');
@@ -237,22 +305,14 @@ function cambiarDatos(form, modal, email_previo){
             const telefono = modal.querySelector('#input-tel').value.trim();
             const password = modal.querySelector('#input-password').value;
 
-
-            // obtener array de usuarios y buscar índice del actual por el email anterior
             const USUARIOS_GUARDADOS = localStorageUsuarios();
             const INDICE = USUARIOS_GUARDADOS.findIndex(usuario => usuario.email === email_previo);
-
-
-            /* El .some() funciona para que vea si hay alguno de esos usuarios en el array,
-            obviamente no queremos comparar con el usuario correcto, es por eso que obtenemos el indice anteriormente
-            para que no lo compare con el correcto*/
 
             if (USUARIOS_GUARDADOS.some((usuario, indice) => usuario.email === email && indice !== INDICE)) {   
                 alert('El email ya está en uso por otro usuario.');
                 return;
             }
 
-            /*Aca esta escrito con IFs ya que le tenemos que dar la oportunidad al usuario de que solo quiera cambiar una cosa por ejemplo*/
             if (nombre){
                 USUARIOS_GUARDADOS[INDICE].nombre = nombre;
             }
@@ -262,14 +322,10 @@ function cambiarDatos(form, modal, email_previo){
             if (telefono){
                 USUARIOS_GUARDADOS[INDICE].telefono = telefono;
             }
-
             if (password){
                 USUARIOS_GUARDADOS[INDICE].password = password;
             }
 
-
-
-            
             localStorage.setItem('usuarios', JSON.stringify(USUARIOS_GUARDADOS));
 
             const usuarioActualizado = USUARIOS_GUARDADOS[INDICE];
@@ -280,4 +336,5 @@ function cambiarDatos(form, modal, email_previo){
             window.location.reload();
         });
 }
+
 
