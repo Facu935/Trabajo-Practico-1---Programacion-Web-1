@@ -30,25 +30,25 @@ form.addEventListener("submit", (e) => {
 
     const regexSoloLetras = /^[a-zA-ZñÑááéíóúÁÉÍÓÚ ]+$/;
     if (!regexSoloLetras.test(name)) {
-    alert("El nombre solo debe contener letras y espacios.");
-    return;
-}
+        alert("El nombre solo debe contener letras y espacios.");
+        return;
+    }
     if (!regexSoloLetras.test(lastname)) {
-    alert("El apellido solo debe contener letras y espacios.");
-    return;
+        alert("El apellido solo debe contener letras y espacios.");
+        return;
     }
 
     const validacionEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!validacionEmail.test(email)) {
-    alert("Ingrese un email válido.");
-    return;
+        alert("Ingrese un email válido.");
+        return;
     }
 
     if (phone !== "") {
-    const validacionTelefono = /^\d{4}-\d{4}$/;
-    if (!validacionTelefono.test(phone)) {
-        alert("El teléfono debe tener el formato 1234-5678 (8 dígitos con guión).");
-        return;
+        const validacionTelefono = /^\d{4}-\d{4}$/;
+        if (!validacionTelefono.test(phone)) {
+            alert("El teléfono debe tener el formato 1234-5678 (8 dígitos con guión).");
+            return;
         }
     }
 
@@ -60,12 +60,10 @@ form.addEventListener("submit", (e) => {
     dialog.showModal();
 });
 
-
 messageInput.addEventListener("input", () => {
     const current = messageInput.value.length;
     charCount.textContent = `${current} / 1000`;
 });
-
 
 acceptBtn.addEventListener("click", () => {
     dialog.close();

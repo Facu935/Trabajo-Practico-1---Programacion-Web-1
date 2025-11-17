@@ -2,7 +2,6 @@ export class Navbar {
     constructor() {
     }
 
-
     mostrarItems(items){
         const barraNav = document.querySelector(".navegation__items");
 
@@ -14,6 +13,5 @@ export class Navbar {
             elemento.appendChild(elementoLink);
             barraNav.appendChild(elemento);
         });
-
     }
 }

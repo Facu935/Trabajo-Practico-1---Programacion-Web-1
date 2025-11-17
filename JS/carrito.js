@@ -1,29 +1,24 @@
-import { INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE ,FOOTER_LINKS_CURSOS, FOOTER_REDES} from "../constants/constants.js";
+import { INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS, FOOTER_REDES } from "../constants/constants.js";
 import { Footer } from "./footer.js";
 import { obtenerUsuarioLogueado } from "./funciones-generales.js";
 
 const footer = new Footer();
 const CURSOS = obtenerUsuarioLogueado().cursosEnCarrito;
 
-
-
-
 cursosEnCarrito(CURSOS);
-footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS,FOOTER_REDES);
+footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS, FOOTER_REDES);
 
-
-
-function cursosEnCarrito(array_cursos){
+function cursosEnCarrito(array_cursos) {
     const CARRITO = document.querySelector(".carrito");
     cursos(CARRITO, array_cursos);
     precioTotal(CARRITO)
 
 }
 
-function cursos(contenedor, array_cursos){
-    contenedor.innerHTML = ''; // limpiamos por si hay algo previo
+function cursos(contenedor, array_cursos) {
+    contenedor.innerHTML = '';
 
-    if (!array_cursos || array_cursos.length === 0){
+    if (!array_cursos || array_cursos.length === 0) {
         const TITULO = document.createElement('h3');
         TITULO.classList.add("titulo-no-hay-cursos");
         TITULO.textContent = "NO SE ENCUENTRAN CURSOS CARGADOS";
@@ -60,7 +55,7 @@ function cursos(contenedor, array_cursos){
     });
 }
 
-function calcularTotal(cursos){
+function calcularTotal(cursos) {
     let total = 0;
     cursos.forEach(curso => {
         const cantidad = curso.cantidad;
@@ -70,7 +65,7 @@ function calcularTotal(cursos){
     return total;
 }
 
-function precioTotal(contenedor){
+function precioTotal(contenedor) {
     const total = calcularTotal(CURSOS);
     const templatePrecioTotal = `
         <div id="carrito-precio-total">
@@ -85,12 +80,11 @@ function precioTotal(contenedor){
 
     contenedor.innerHTML += templatePrecioTotal;
 
- 
-    if (total === 0){
+    if (total === 0) {
         const boton_confirmar = document.querySelector("#confirmar-compra");
-            boton_confirmar.addEventListener('click', (event) => {
-                event.preventDefault();
-                alert("Cargue Cursos al Carrito para realizar la compra")
-            });
+        boton_confirmar.addEventListener('click', (event) => {
+            event.preventDefault();
+            alert("Cargue Cursos al Carrito para realizar la compra")
+        });
     }
 }

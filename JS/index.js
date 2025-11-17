@@ -11,11 +11,6 @@ import { validarUsuarioConectadoParaNav, obtenerUsuarioLogueado, guardarModifica
 import "./eventoModal.js";
 import "./agregar-al-carrito.js";
 
-//localStorage.clear();
-
-
-
-
 const header = new Header();
 const barraNav = new Navbar();
 const sliderHome = new SliderHome();
@@ -33,21 +28,14 @@ mostrarMediosDePago(MEDIOS_PAGO_IMGS);
 
 footer.mostrarFooter(INTEGRANTES_DEL_GRUPO, FOOTER_LINKS_ACERCA_DE, FOOTER_LINKS_CURSOS, FOOTER_REDES);
 
-
-
-
-
-
 function mostrarPasosDeInscripcion(pasos) {
     const seccionPasosInscripcion = document.querySelector("#pasos-inscripcion");
-    //Titulo
     const tituloPasosInscripcion = document.createElement('h2');
     tituloPasosInscripcion.classList.add("titulos");
     tituloPasosInscripcion.id = "titulo-pasos";
     tituloPasosInscripcion.textContent = "PASOS DE INSCRIPCION DE UN CURSO";
     seccionPasosInscripcion.appendChild(tituloPasosInscripcion);
 
-    //Recuadros
     const contenedorGeneralPasos = document.createElement('div'); contenedorGeneralPasos.classList.add("section-pasos");
     pasos.forEach(item => {
         const contenedorPasos = document.createElement('div');
@@ -78,7 +66,6 @@ function mostrarTituloCursosDestacados(seccion) {
 }
 
 function mostrarGrillaCursosDestacados(cursos, seccion) {
-    //Cursos
     const contenedorCursos = document.createElement('div');
     contenedorCursos.classList.add("cursos");
 
@@ -111,14 +98,11 @@ function botonVerTodosLosCursos(seccion) {
 
 function mostrarMediosDePago(imagenes) {
     const seccionMediosDePago = document.querySelector("#medios-pago");
-
-    //Titulo
     const tituloMediosDePago = document.createElement('h2');
     tituloMediosDePago.classList.add("titulos");
     tituloMediosDePago.id = "pagos";
     tituloMediosDePago.textContent = "MEDIOS DE PAGO";
 
-    //Imagenes
     const mediosDePago = document.createElement('div');
     mediosDePago.classList.add("medios_de_pago");
 

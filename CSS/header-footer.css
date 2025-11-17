@@ -98,7 +98,7 @@ header {
   cursor: pointer;
 }
 
-.nombre-usuario-logueado{
+.nombre-usuario-logueado {
   font-size: 1.2em;
   font-weight: 600;
   border: 2px solid black;
@@ -107,7 +107,7 @@ header {
   padding: 0.5em;
   position: relative;
 }
-.contenedor-opciones-cuenta{
+.contenedor-opciones-cuenta {
   position: absolute;
   width: 100%;
   padding: 1em 2.35em;
@@ -117,28 +117,28 @@ header {
   border: 2px solid black;
   border-radius: 10px;
 }
-.lista-opciones-cuenta{
+.lista-opciones-cuenta {
   list-style: none;
 }
-.lista-opciones-cuenta li{
+.lista-opciones-cuenta li {
   padding: 0.5em;
   margin: 2px 0px;
   text-align: center;
 }
 
 .contenedor-opciones-cuenta {
-    order:2; 
-  }
+  order: 2;
+}
 
 #carrito-y-numero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
 }
 #button-carrito {
   background-color: transparent;
@@ -165,7 +165,7 @@ header {
   right: -10px;
 }
 
-.sideBar-cursos-carrito{
+.sideBar-cursos-carrito {
   display: flex;
   flex-direction: column;
   width: 25em;
@@ -177,53 +177,52 @@ header {
   right: -2em;
   cursor: auto;
 }
-.recuadro-curso-sidebar{
+.recuadro-curso-sidebar {
   padding: 1em;
 }
-.sideBar-cursos-carrito h2 { /*"Todavia No hay Cursos"*/
+.sideBar-cursos-carrito h2 {
   text-align: center;
   margin: 0.5em;
 }
 
-.titulo-curso-sidebar{
+.titulo-curso-sidebar {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#logo-curso-sidebar{
+#logo-curso-sidebar {
   height: 4em;
   width: 4em;
 }
-.segundo-renglon{
+.segundo-renglon {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.sideBar-cursos-carrito ul{
+.sideBar-cursos-carrito ul {
   display: flex;
   flex-direction: column;
   list-style: none;
   gap: 10px;
 }
-#valoracion-curso-carrito{
+#valoracion-curso-carrito {
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: center;
 }
-.boton-eliminar-curso-carrito{
+.boton-eliminar-curso-carrito {
   height: 3em;
   padding: 0 1em;
   font-weight: 600;
   background-color: #f83a3a;
 }
-.boton-cerrar-sideBar{
+.boton-cerrar-sideBar {
   width: 20%;
   padding: 0.5em;
   margin: 1em;
 }
-
 
 /*************************** NAVEGACIÓN ***************************/
 .navegation {
@@ -301,7 +300,7 @@ footer {
   flex-wrap: wrap;
 }
 
-#titulo-redes{
+#titulo-redes {
   text-align: center;
 }
 

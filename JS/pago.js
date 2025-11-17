@@ -7,7 +7,6 @@ datosTarjeta(SECTION);
 resumen(SECTION, CURSOS_USUARIO);
 confirmarCompra();
 
-
 function datosTarjeta(section) {
     const templateTarjeta = `<div class="pago-metodo">
                 <h2>PAGO</h2>
@@ -37,25 +36,22 @@ function datosTarjeta(section) {
 
     section.innerHTML += templateTarjeta;
 
-    // Formatear número de tarjeta mientras se escribe
     const numeroInput = document.querySelector("#numero-tarjeta");
     numeroInput.addEventListener("input", (e) => {
-        let valor = e.target.value.replace(/\D/g, '').slice(0, 16); // Solo números, max 16
-        valor = valor.replace(/(.{4})/g, '$1 ').trim(); // Formato xxxx xxxx xxxx xxxx
+        let valor = e.target.value.replace(/\D/g, '').slice(0, 16); 
+        valor = valor.replace(/(.{4})/g, '$1 ').trim();
         e.target.value = valor;
     });
 
-    // Limitar vencimiento a MM/AA
     const vencimientoInput = document.querySelector("#vencimiento");
     vencimientoInput.addEventListener("input", (e) => {
-        let valor = e.target.value.replace(/\D/g, '').slice(0, 4); // Solo 4 números
+        let valor = e.target.value.replace(/\D/g, '').slice(0, 4);
         if (valor.length >= 3) {
-            valor = valor.slice(0, 2) + '/' + valor.slice(2); // Formato MM/AA
+            valor = valor.slice(0, 2) + '/' + valor.slice(2);
         }
         e.target.value = valor;
     });
 
-    // Limitar CVV a 3 números
     const cvvInput = document.querySelector("#codigo-seguridad");
     cvvInput.addEventListener("input", (e) => {
         e.target.value = e.target.value.replace(/\D/g, '').slice(0, 3);
@@ -74,13 +70,13 @@ function resumen(section, cursos) {
         CONTENEDOR_DATOS.innerHTML += templateResumen;
     });
 
-    //Total
     const templatePrecioTotal = `<div id="total">
                         <h4>Total:</h4>
                         <p>$ ${calcularTotal(cursos)}</p>
                     </div>`
     CONTENEDOR_DATOS.innerHTML += templatePrecioTotal;
 }
+
 function calcularTotal(cursos) {
     let total = 0;
     cursos.forEach(curso => {
@@ -103,36 +99,30 @@ function confirmarCompra() {
             window.location.href = "../index.html";
         }
     });
-
-
 }
 
 function validacionTarjeta() {
-    const NUMERO = document.querySelector("#numero-tarjeta").value.replace(/\s/g, ''); // quitar espacios
+    const NUMERO = document.querySelector("#numero-tarjeta").value.replace(/\s/g, '');
     const FECHA_DE_VENCIMIENTO = document.querySelector("#vencimiento").value;
     const CODIGO_SEGURIDAD = document.querySelector("#codigo-seguridad").value;
     const NOMBRE_APELLIDO_TITULAR = document.querySelector("#titular").value;
 
-    // Validar número de tarjeta
     if (NUMERO.length !== 16) {
         alert("ERROR al comprobar numero de tarjeta, debe tener 16 DIGITOS");
         return false;
     }
 
-    // Validar formato de fecha MM/AA
     if (!/^\d{2}\/\d{2}$/.test(FECHA_DE_VENCIMIENTO)) {
         alert("Ingrese Fecha de Vencimiento válida MM/AA");
         return false;
     }
 
-    // Validar mes válido
     const [mes, anio] = FECHA_DE_VENCIMIENTO.split("/").map(Number);
     if (mes < 1 || mes > 12) {
         alert("Mes de vencimiento inválido. Debe ser entre 01 y 12");
         return false;
     }
 
-    // Validar CVV
     if (CODIGO_SEGURIDAD.length !== 3) {
         alert("ERROR al comprobar codigo de seguridad, debe tener 3 DIGITOS");
         return false;
@@ -143,7 +133,6 @@ function validacionTarjeta() {
         alert("ERROR al comprobar titular de la tarjeta, solo puede contener letras y espacios, no debe estar vacío");
         return false;
     }
-
 
     return true;
 }

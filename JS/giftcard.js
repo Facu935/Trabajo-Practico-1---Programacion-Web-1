@@ -1,16 +1,9 @@
-// ==================================================
-// IMPORTS
-// ==================================================
 import { 
     localStorageUsuarios, 
     guardarModificacionLocalStorage, 
     obtenerUsuarioLogueado 
 } from "./funciones-generales.js";
 
-
-// ==================================================
-// ELEMENTOS DEL DOM
-// ==================================================
 const previewBox = document.getElementById("preview-box");
 const montoTopRight = document.getElementById("monto-top-right");
 const montoBottomLeft = document.getElementById("monto-bottom-left");
@@ -19,40 +12,28 @@ const previewDestinatario = document.getElementById("destinatario-name");
 const montoInput = document.getElementById("monto");
 const form = document.getElementById("formGiftcard");
 
-// Estado de configuración
 let colorLetra = "#000";
 let tamanoLetra = "28px";
 let posicionMonto = "top-right";
 let colorFondo = "#000";
 
-
-// ==================================================
-// ACTUALIZAR PREVIEW
-// ==================================================
 function actualizarPreview() {
-
-    // nombre
     previewDestinatario.textContent = destinatarioInput.value || "Destinatario";
 
-    // monto
     const monto = montoInput.value ? `$${montoInput.value}.-` : "$0000.-";
     montoTopRight.textContent = monto;
     montoBottomLeft.textContent = monto;
 
-    // fondo
     previewBox.style.backgroundColor = colorFondo;
 
-    // letra
     previewDestinatario.style.color = colorLetra;
     montoTopRight.style.color = colorLetra;
     montoBottomLeft.style.color = colorLetra;
 
-    // tamaño letra
     previewDestinatario.style.fontSize = tamanoLetra;
     montoTopRight.style.fontSize = tamanoLetra;
     montoBottomLeft.style.fontSize = tamanoLetra;
 
-    // Reseteo posiciones
     montoTopRight.style.display = "block";
     montoBottomLeft.style.display = "none";
 
@@ -61,7 +42,6 @@ function actualizarPreview() {
     montoTopRight.style.left = "";
     montoTopRight.style.right = "";
 
-    // Posiciones correctas
     if (posicionMonto === "top-right") {
         montoTopRight.style.top = "15px";
         montoTopRight.style.right = "15px";
@@ -80,14 +60,9 @@ function actualizarPreview() {
     }
 }
 
-
-// ==================================================
-// EVENTOS
-// ==================================================
 destinatarioInput.addEventListener("input", actualizarPreview);
 montoInput.addEventListener("input", actualizarPreview);
 
-// color fondo
 document.querySelectorAll("input[name='color']").forEach(r => {
     r.addEventListener("change", e => {
         colorFondo = e.target.value;
@@ -95,7 +70,6 @@ document.querySelectorAll("input[name='color']").forEach(r => {
     });
 });
 
-// color letra
 document.querySelectorAll(".text-color-btn").forEach(btn => {
     btn.addEventListener("click", () => {
         document.querySelectorAll(".text-color-btn")
@@ -106,7 +80,6 @@ document.querySelectorAll(".text-color-btn").forEach(btn => {
     });
 });
 
-// tamaño letra
 document.querySelectorAll(".font-size-btn").forEach(btn => {
     btn.addEventListener("click", () => {
         document.querySelectorAll(".font-size-btn")
@@ -117,7 +90,6 @@ document.querySelectorAll(".font-size-btn").forEach(btn => {
     });
 });
 
-// ubicación monto
 document.querySelectorAll(".btn-pos").forEach(btn => {
     btn.addEventListener("click", () => {
         document.querySelectorAll(".btn-pos")
@@ -128,10 +100,6 @@ document.querySelectorAll(".btn-pos").forEach(btn => {
     });
 });
 
-
-// ==================================================
-// EXPORTADA — GUARDAR GIFT CARD EN USUARIO
-// ==================================================
 export function agregarGiftcardAlUsuario() {
 
     const usuarios = localStorageUsuarios();
@@ -174,24 +142,15 @@ export function agregarGiftcardAlUsuario() {
     mostrarPopup();
 }
 
-
-// ==================================================
-// ENVIAR FORM
-// ==================================================
 form.addEventListener("submit", e => {
     e.preventDefault();
     agregarGiftcardAlUsuario();
 });
 
-
-// ==================================================
-// POPUP
-// ==================================================
 function mostrarPopup() {
     const overlay = document.querySelector(".overlay");
     overlay.style.display = "flex";
 }
-
 
 // inicializar preview
 actualizarPreview();

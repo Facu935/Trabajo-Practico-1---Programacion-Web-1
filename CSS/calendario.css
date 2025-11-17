@@ -1,287 +1,286 @@
 .calendar-main {
-    padding: 1em;
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #4197ff; 
+  padding: 1em;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #4197ff;
 }
 
 .calendar-wrapper {
-    width: 100%;
-    max-width: 1200px;
-    margin: 2em auto;
-    background-color: white;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 1200px;
+  margin: 2em auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .calendar-nav-header {
-    display: flex; /* Habilitamos Flexbox para alinear botones y título */
-    justify-content: space-between; /* Distribuye espacio entre elementos */
-    align-items: center;
-    padding: 0.8em 1.5em; /* Añadimos padding para separar de los bordes */
-    font-size: 1.5em;
-    font-weight: bold;
-    border-bottom: 1px solid #ccc;
-    background-color: #f9f9f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 1.5em;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  background-color: #f9f9f9;
 }
 
 .current-month-label {
-    /* Mantenemos el estilo del título, pero ahora es dinámico */
-    margin: 0 10px; 
-    font-size: 1em;
+  margin: 0 10px;
+  font-size: 1em;
 }
 
-/* Estilos para los botones de navegación */
 .nav-btn {
-    background-color: #45b5c4; /* Un color que haga juego con tu navegación */
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    cursor: pointer;
-    font-size: 1.1em;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    font-weight: bold;
-    line-height: 1;
+  background-color: #45b5c4;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 1.1em;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-weight: bold;
+  line-height: 1;
 }
 
 .nav-btn:hover {
-    background-color: #389aa6;
+  background-color: #389aa6;
 }
 
 .nav-btn:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-    color: #666;
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: #666;
 }
 
-/* Días de otros meses (para vista mensual en desktop) */
 .day-cell.other-month {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 .day-cell.other-month .date-number {
-    color: #a0a0a0;
+  color: #a0a0a0;
 }
-
-/* Asegurar que las celdas tengan bordes visibles */
-.calendar-grid {
-    border-right: 1px solid #ccc; /* El borde derecho se manejará por las celdas */
-    border-bottom: 1px solid #ccc; /* El borde inferior se manejará por las celdas */
-    border-left: 0; /* Lo gestionaremos con las celdas */
-}
-/* Quitar los bordes dobles */
-.day-name, .day-cell {
-    border-left: 1px solid #ccc;
-    border-bottom: 1px solid #ccc; /* Se duplica con el .calendar-grid, pero funciona */
-    border-right: none;
-}
-
 
 .calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr); 
-    border-left: 1px solid #ccc; 
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-left: 0;
+}
+
+.day-name,
+.day-cell {
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-right: none;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-left: 1px solid #ccc;
 }
 
 .day-name {
-    padding: 8px 5px;
-    font-size: 0.85em;
-    font-weight: 600;
-    color: #555;
-    border-right: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    background-color: #f0f0f0;
+  padding: 8px 5px;
+  font-size: 0.85em;
+  font-weight: 600;
+  color: #555;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background-color: #f0f0f0;
 }
 
 /* -------------------- Celdas de Fechas -------------------- */
 
 .day-cell {
-    min-height: 120px; 
-    padding: 5px;
-    border-right: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-    cursor: default;
+  min-height: 120px;
+  padding: 5px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  cursor: default;
 }
 
 .date-number {
-    font-size: 0.9em;
-    font-weight: 500;
-    color: #333;
-    margin-bottom: 5px;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
 }
 
 .today-month {
-    color: #888; 
+  color: #888;
 }
 
 .today {
-    background-color: #e0f7fa; 
+  background-color: #e0f7fa;
 }
 
 .current-day-marker {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #4197ff; 
-    color: white;
-    font-size: 0.8em;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none; 
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #4197ff;
+  color: white;
+  font-size: 0.8em;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
 }
-
-/*
-.day-cell:nth-child(18) .date-number { 
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    /*border-radius: 50%;
-    background-color: #4197ff;
-    color: white;
-    text-align: center;
-    padding: 0;
-} */
-
 
 /* -------------------- Eventos/Cursos -------------------- */
 
 .event-tag {
-    
-    display: block;
-    width: 95%; 
-    font-size: 0.75em;
-    padding: 4px 6px;
-    margin: 2px 0;
-    border-radius: 3px;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    cursor: pointer;
+  display: block;
+  width: 95%;
+  font-size: 0.75em;
+  padding: 4px 6px;
+  margin: 2px 0;
+  border-radius: 3px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .event-tag:hover {
-    filter: brightness(1.1);
+  filter: brightness(1.1);
 }
 
 /* -------------------- Colores de los Cursos (EVENT TAGS) -------------------- */
 
 .event-tag {
-    /* ... Tus estilos base del evento ... */
-    
-    display: block;
-    width: 95%; 
-    font-size: 0.75em;
-    padding: 4px 6px;
-    margin: 2px 0;
-    border-radius: 3px;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    cursor: pointer;
+  display: block;
+  width: 95%;
+  font-size: 0.75em;
+  padding: 4px 6px;
+  margin: 2px 0;
+  border-radius: 3px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .event-tag:hover {
-    filter: brightness(1.1);
+  filter: brightness(1.1);
 }
 
-/* Colores originales */
-.html { background-color: #e34c26; } /* Naranja */
-.css { background-color: #264de4; }  /* Azul */
-.js { background-color: #f7df1e; color: #333; font-weight: bold; } /* Amarillo JS */
-.jquery { background-color: #0769ad; } /* Azul oscuro JQuery */
-.blockchain { background-color: #3c3c3c; } /* Gris oscuro */
-.java { background-color: #007396; }     /* Azul Cian Java */
-.mysql { background-color: #00758F; }    /* Azul oscuro MySQL */
-.csharp { background-color: #68217A; }   /* Púrpura C# */
-.php { background-color: #777BB4; }      /* Púrpura claro PHP */
-.python { background-color: #3776AB; }   /* Azul Python */
-.node { background-color: #339933; }     /* Verde Node.js */
-.react { background-color: #61DAFB; color: #333; font-weight: bold; } /* Azul React */
+.html {
+  background-color: #e34c26;
+}
+.css {
+  background-color: #264de4;
+}
+.js {
+  background-color: #f7df1e;
+  color: #333;
+  font-weight: bold;
+}
+.jquery {
+  background-color: #0769ad;
+}
+.blockchain {
+  background-color: #3c3c3c;
+}
+.java {
+  background-color: #007396;
+}
+.mysql {
+  background-color: #00758f;
+}
+.csharp {
+  background-color: #68217a;
+}
+.php {
+  background-color: #777bb4;
+}
+.python {
+  background-color: #3776ab;
+}
+.node {
+  background-color: #339933;
+}
+.react {
+  background-color: #61dafb;
+  color: #333;
+  font-weight: bold;
+}
 
-/* Para los días con varios eventos (Doble Curso) */
 .multi-event {
-    border-left: 3px solid #f83a3a; /* Resaltamos el día con un borde rojo */
+  border-left: 3px solid #f83a3a;
 }
 
-/* Para deshabilitar enlaces si están fuera de Nov/Dic en desktop (aunque no se vean) */
 .disabled-link {
-    cursor: default;
-    opacity: 0.7;
+  cursor: default;
+  opacity: 0.7;
 }
 
 @media (max-width: 768px) {
-    /* Ajustes generales */
-    .calendar-wrapper {
-        box-shadow: none; /* Más limpio en móvil */
-        border: none;
-    }
-    .day-cell {
-        min-height: 90px; 
-    }
-    
-    /* Vista Semanal: Oculta los días de la semana */
-    /* Dejamos solo un espacio pequeño si quieres mantener el encabezado de días */
-    .calendar-grid.weekdays {
-        font-size: 0.6em; /* Reducimos el tamaño para ahorrar espacio */
-    }
+  .calendar-wrapper {
+    box-shadow: none;
+    border: none;
+  }
+  .day-cell {
+    min-height: 90px;
+  }
 
-    /* La clave: forzamos a que solo se vean 7 celdas (la semana) */
-    .calendar-grid.dates {
-        /* JS solo renderiza la semana actual, por lo que el layout es semanal */
-        grid-template-columns: repeat(7, 1fr);
-        min-height: 120px; /* Altura mínima para una mejor visualización */
-    }
-    
-    .date-number {
-        font-size: 0.85em;
-    }
-    .event-tag {
-        font-size: 0.7em;
-        padding: 2px 4px;
-        margin: 1px 0;
-    }
+  .calendar-grid.weekdays {
+    font-size: 0.6em;
+  }
+
+  .calendar-grid.dates {
+    grid-template-columns: repeat(7, 1fr);
+    min-height: 120px;
+  }
+
+  .date-number {
+    font-size: 0.85em;
+  }
+  .event-tag {
+    font-size: 0.7em;
+    padding: 2px 4px;
+    margin: 1px 0;
+  }
 }
 
-/* --- Media Query para Móviles más pequeños --- */
 @media (max-width: 480px) {
-    .calendar-main {
-        padding: 0.5em;
-    }
-    .calendar-nav-header {
-        font-size: 1.2em;
-        padding: 0.6em 1em;
-    }
-    .nav-btn {
-        padding: 6px 12px;
-        font-size: 1em;
-    }
+  .calendar-main {
+    padding: 0.5em;
+  }
+  .calendar-nav-header {
+    font-size: 1.2em;
+    padding: 0.6em 1em;
+  }
+  .nav-btn {
+    padding: 6px 12px;
+    font-size: 1em;
+  }
 
-    .day-cell {
-        min-height: 70px; 
-        padding: 3px;
-    }
-    .day-name {
-        padding: 0.4em 0;
-        font-size: 0.65em;
-    }
-    .date-number {
-        font-size: 0.75em;
-    }
-    .event-tag {
-        font-size: 0.6em;
-        padding: 1px;
-    }
+  .day-cell {
+    min-height: 70px;
+    padding: 3px;
+  }
+  .day-name {
+    padding: 0.4em 0;
+    font-size: 0.65em;
+  }
+  .date-number {
+    font-size: 0.75em;
+  }
+  .event-tag {
+    font-size: 0.6em;
+    padding: 1px;
+  }
 }

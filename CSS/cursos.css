@@ -83,7 +83,7 @@ ul {
   font-weight: 900;
 }
 
-#eliminar-curso{
+#eliminar-curso {
   display: none;
   font-weight: bolder;
   background-color: red;
@@ -92,7 +92,7 @@ ul {
   border-radius: 10px;
 }
 
-#eliminar-curso:hover{
+#eliminar-curso:hover {
   background-color: #fb6262;
   color: black;
   cursor: pointer;
@@ -110,7 +110,7 @@ ul {
   margin: 1em;
 }
 
-.bloque-unidad{
+.bloque-unidad {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -131,7 +131,7 @@ ul {
   border: 1px solid black;
 }
 
-.show-clases{
+.show-clases {
   display: flex;
 }
 
